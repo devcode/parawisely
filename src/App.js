@@ -1,48 +1,27 @@
 import React from 'react';
-import {
-  ChakraProvider,
-  CSSReset,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-} from '@chakra-ui/core';
-import theme from '@chakra-ui/theme';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
+import { ChakraProvider, CSSReset } from '@chakra-ui/core';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import theme from './theme';
+
+import Pemetaan from './components/ui/Pemetaan';
+import Landing from './pages/Landing';
+import Kontak from './pages/Kontak';
+import Tentang from './pages/Tentang';
+import Eksplor from './pages/Eksplor';
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
       <CSSReset />
-      <Box textAlign="center" fontSize="xl">
-        <Grid
-          minH="100vh"
-          p={3}
-          direction="column"
-          align="center"
-          justify="center"
-        >
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
-        </Grid>
-      </Box>
+      <Router>
+        <Switch>
+          <Route path="/pemetaan" component={Pemetaan} />
+          <Route path="/kontak" component={Kontak} />
+          <Route path="/tentang" component={Tentang} />
+          <Route path="/eksplor" component={Eksplor} />
+          <Route path="/" component={Landing} />
+        </Switch>
+      </Router>
     </ChakraProvider>
   );
 }
