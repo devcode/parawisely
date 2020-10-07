@@ -10,6 +10,7 @@ import {
   SimpleGrid,
   Avatar,
   Divider,
+  Icon,
 } from '@chakra-ui/core';
 import React from 'react';
 import Layout from '../components/layouts';
@@ -18,6 +19,7 @@ import {
   IoIosArrowDown,
   IoIosBookmark,
   IoIosPeople,
+  IoIosArrowRoundForward,
 } from 'react-icons/io';
 
 import HeroIMG from '../assets/images/hero.png';
@@ -188,6 +190,32 @@ const Landing = () => {
         </Stack>
       </Section>
 
+      <Section>
+        <Stack direction="row" alignItems="center" spacing="5rem">
+          <Image
+            src={Bali}
+            w="540px"
+            h="540px"
+            objectFit="cover"
+            borderRadius="md"
+            shadow="md"
+          />
+          <Stack spacing="1rem" align="start">
+            <Heading>Keindahan alam yang diakui dunia</Heading>
+            <Text>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Condimentum diam orci pretium a pharetra, feugiat cursus. Dictumst
+              risus, sem egestas odio cras adipiscing vulputate. Nisi, risus in
+              suscipit non. Non commodo volutpat, pharetra, vel.
+            </Text>
+            <Button colorScheme="purple" variant="ghost">
+              Get Started
+              <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
+            </Button>
+          </Stack>
+        </Stack>
+      </Section>
+
       <Box py="3rem">
         <Stack align="center">
           <Text>GALERI</Text>
@@ -209,20 +237,53 @@ const Landing = () => {
         </Stack>
       </Box>
 
-      <Stack mx="auto" py="3rem" w="60%">
-        <Box textAlign="center">
-          <Heading>Jelajahi Keberagaman dan Keseruan budaya indonesia</Heading>
+      <Section mx="auto" w="60%">
+        <Stack textAlign="center" mb="10px">
+          <Heading mb="1px">
+            Jelajahi Keberagaman dan Keseruan budaya indonesia
+          </Heading>
           <Text>
             Telurusuri keindahan dan keberagaman berbagai budaya negara
             Indonesia bersama dengan kami anda bisa menikmati indahnya negara
             Indonesia
           </Text>
-        </Box>
-        <Stack direction="row" justify="center">
-          <Button colorScheme="purple">Ekporasi</Button>
-          <Button colorScheme="purple">Rekomendasi</Button>
         </Stack>
-      </Stack>
+        <Stack direction="row" justify="center">
+          <Button colorScheme="purple">
+            Ekporasi{' '}
+            <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
+          </Button>
+          <Button colorScheme="purple">
+            Rekomendasi{' '}
+            <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
+          </Button>
+        </Stack>
+      </Section>
+
+      <Section h="302px" mb="5rem">
+        <Stack
+          justify="space-between"
+          align="center"
+          direction="row"
+          background="purple.800"
+          color="white"
+          borderRadius="lg"
+        >
+          <Box p="3rem">
+            <Heading size="xl">Bergabung bersama komunitas wisatawan</Heading>
+            <Button mt="1rem" background="white" color="purple.800">
+              Gabung{' '}
+              <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
+            </Button>
+          </Box>
+          <Image
+            borderLeftRadius="full"
+            src={RajaAmpat}
+            h="300px"
+            objectFit="cover"
+          />
+        </Stack>
+      </Section>
     </Layout>
   );
 };
