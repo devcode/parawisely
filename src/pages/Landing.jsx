@@ -9,6 +9,7 @@ import {
   IconButton,
   SimpleGrid,
   Avatar,
+  Divider,
 } from '@chakra-ui/core';
 import React from 'react';
 import Layout from '../components/layouts';
@@ -18,13 +19,21 @@ import {
   IoIosBookmark,
   IoIosPeople,
 } from 'react-icons/io';
-import Map from '../components/ui/Map';
 
 import HeroIMG from '../assets/images/hero.png';
 import Bali from '../assets/images/bali.jpg';
 import RajaAmpat from '../assets/images/raja-ampat.jpg';
 import Yosemite from '../assets/images/yosemite.jpg';
 import Pemetaan from '../components/ui/Pemetaan';
+import Section from '../components/sections/Section';
+
+const Kelebihan = ({ total, title }) => (
+  <Box>
+    <Heading>{total}</Heading>
+    <Text>{title}</Text>
+    <Divider />
+  </Box>
+);
 
 const Feature = ({ title, description, icon, ...rest }) => (
   <Stack direction="row">
@@ -67,7 +76,7 @@ const Landing = () => {
   return (
     <Layout>
       <Stack direction="row" align="center">
-        <Box p={8}>
+        <Box p="5rem">
           <Text
             marginBottom="0.3rem"
             fontWeight="600"
@@ -143,7 +152,7 @@ const Landing = () => {
         />
       </Center>
 
-      <Stack px={8} py="3rem" spacing="1.3rem">
+      <Stack p="5rem" spacing="1.3rem">
         <Heading size="xl" w="50%" color="primary.800">
           Peta Pariwisata Negara Republik Indonesia
         </Heading>
@@ -151,7 +160,7 @@ const Landing = () => {
         {/* <Box h="400px" w="full" bg="gray.300" mb="1.3rem"></Box> */}
         <Pemetaan />
 
-        <Stack direction="row">
+        <Stack justify="center" direction="row" spacing="5rem">
           <Feature
             title="Populer di Indonesia"
             description="Tempat pariwisata yang populer dan pasti dikenal semua orang di Indonesia"
@@ -169,6 +178,15 @@ const Landing = () => {
           />
         </Stack>
       </Stack>
+
+      <Section>
+        <Stack justify="space-between" spacing="5rem" direction="row">
+          <Kelebihan total="90+" title="Prestasi Daerah" />
+          <Kelebihan total="100k+" title="Turis Pertahun" />
+          <Kelebihan total="900+" title="Tempat Pariwisata" />
+          <Kelebihan total="500k+" title="Wisatawan Puas" />
+        </Stack>
+      </Section>
 
       <Box py="3rem">
         <Stack align="center">

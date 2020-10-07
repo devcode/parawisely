@@ -1,8 +1,22 @@
 import React from 'react';
 import { Box, Divider, Icon, Link, Stack, Text } from '@chakra-ui/core';
 import { FaInstagram, FaTwitter, FaFacebook, FaDribbble } from 'react-icons/fa';
+import { Link as RouterLink } from 'react-router-dom';
 
 const IconSosmed = ({ icon, url }) => <Icon as={icon} />;
+
+const LinkItem = ({ to, isCenter, children, ...rest }) => (
+  <RouterLink to={to}>
+    <Link
+      href={to}
+      fontSize={isCenter ? '34px' : 'normal'}
+      fontWeight={isCenter ? '700' : '400'}
+      {...rest}
+    >
+      {children}
+    </Link>
+  </RouterLink>
+);
 
 const Footer = () => {
   return (
@@ -15,15 +29,15 @@ const Footer = () => {
           spacing="3rem"
           align="center"
         >
-          <Link>Beranda</Link>
-          <Link>Eksplor</Link>
-          <Link>Wisata Daerah</Link>
-          <Link fontWeight="700" fontSize="34px">
+          <LinkItem to="/">Beranda</LinkItem>
+          <LinkItem to="/eksplor">Eksplor</LinkItem>
+          <LinkItem to="/wisata-daerah">Wisata Daerah</LinkItem>
+          <LinkItem to="/" isCenter>
             Parawisely
-          </Link>
-          <Link>Tentang</Link>
-          <Link>Kontak</Link>
-          <Link>Rekomendasi</Link>
+          </LinkItem>
+          <LinkItem to="/tentang">Tentang</LinkItem>
+          <LinkItem to="/kontak">Kontak</LinkItem>
+          <LinkItem to="/rekomendasi">Rekomendasi</LinkItem>
         </Stack>
         <Divider />
 

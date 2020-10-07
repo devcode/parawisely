@@ -27,7 +27,8 @@ const Header = props => {
       wrap="wrap"
       w="100%"
       // mb={}
-      p={8}
+      py="1rem"
+      px="5rem"
       color="primary.800"
       {...props}
     >
