@@ -12,7 +12,7 @@ const Pemetaan = () => {
   const position = [state.lat, state.lang];
 
   return (
-    <Map center={position} zoom={state.zoom}>
+    <Map style={{ width: '100%' }} center={position} zoom={state.zoom}>
       <TileLayer
         attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

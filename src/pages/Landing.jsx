@@ -7,13 +7,12 @@ import {
   Text,
   Center,
   IconButton,
-  SimpleGrid,
-  Avatar,
   Divider,
   Icon,
 } from '@chakra-ui/core';
 import React from 'react';
 import Layout from '../components/layouts';
+import ReactPlayer from 'react-player';
 import {
   IoIosRibbon,
   IoIosArrowDown,
@@ -22,12 +21,21 @@ import {
   IoIosArrowRoundForward,
 } from 'react-icons/io';
 
+import PesonaIndoVideo from '../assets/video/pesona-indonesia.mp4';
 import HeroIMG from '../assets/images/hero.png';
+import AirTerjun from '../assets/images/air-terjun.jpg';
 import Bali from '../assets/images/bali.jpg';
 import RajaAmpat from '../assets/images/raja-ampat.jpg';
 import Yosemite from '../assets/images/yosemite.jpg';
 import Pemetaan from '../components/ui/Pemetaan';
 import Section from '../components/sections/Section';
+
+import AirnbLogo from '../assets/logo/airnb.png';
+import FedexLogo from '../assets/logo/fedex.png';
+import GoogleLogo from '../assets/logo/google.png';
+import HubspotLogo from '../assets/logo/hubspot.png';
+import MicrosoftLogo from '../assets/logo/microsoft.png';
+import WalmartLogo from '../assets/logo/walmart.png';
 
 const Kelebihan = ({ total, title }) => (
   <Box>
@@ -38,7 +46,7 @@ const Kelebihan = ({ total, title }) => (
 );
 
 const Feature = ({ title, description, icon, ...rest }) => (
-  <Stack direction="row">
+  <Stack spacing="1rem" direction="row">
     <IconButton
       as={icon}
       color="primary.800"
@@ -54,23 +62,29 @@ const Feature = ({ title, description, icon, ...rest }) => (
 );
 
 const Galeri = ({ name, location, image, ...rest }) => (
-  <Box p={5}>
+  <Box>
     <Image
-      borderRadius="md"
-      maxH="200px"
-      objectFit="cover"
-      w="300px"
       src={image}
+      h="361px"
+      w="261px"
+      objectFit="cover"
+      borderRadius="lg"
+      shadow="lg"
     />
-    <Stack direction="row" spacing="1rem" py="1rem">
-      <Avatar name={name} />
-      <Box>
-        <Heading as="h6" size="md">
-          {name}
-        </Heading>
-        <Text>{location}</Text>
-      </Box>
-    </Stack>
+    <Box
+      position="relative"
+      w="60%"
+      p="1rem"
+      top={-86}
+      borderTopRightRadius="lg"
+      style={{
+        backdropFilter: 'blur(10px)',
+        background: 'rgba(255, 255, 255, 0.7)',
+      }}
+    >
+      <Heading size="md">{name}</Heading>
+      <Text color="gray.600">{location}</Text>
+    </Box>
   </Box>
 );
 
@@ -154,7 +168,7 @@ const Landing = () => {
         />
       </Center>
 
-      <Stack p="5rem" spacing="1.3rem">
+      <Stack p="5rem" spacing="2rem">
         <Heading size="xl" w="50%" color="primary.800">
           Peta Pariwisata Negara Republik Indonesia
         </Heading>
@@ -162,7 +176,7 @@ const Landing = () => {
         {/* <Box h="400px" w="full" bg="gray.300" mb="1.3rem"></Box> */}
         <Pemetaan />
 
-        <Stack justify="center" direction="row" spacing="5rem">
+        <Stack justify="center" direction="row" mt="2rem">
           <Feature
             title="Populer di Indonesia"
             description="Tempat pariwisata yang populer dan pasti dikenal semua orang di Indonesia"
@@ -191,6 +205,26 @@ const Landing = () => {
       </Section>
 
       <Section>
+        <Stack direction="row" justify="space-between">
+          <Heading>Jelajahi Indoneisa lewat video dibawah</Heading>
+          <Text>
+            Video ini dibuat oleh pihak Pesona Indonesia dalam rangka
+            memperingati hari pariwisata dunia 2020, Mari bersama jelajahi
+            Indonesia dalam video singkat berikut!
+          </Text>
+        </Stack>
+
+        <Box mt="2rem">
+          <ReactPlayer
+            url={PesonaIndoVideo}
+            playing
+            width="100%"
+            height="40%"
+          />
+        </Box>
+      </Section>
+
+      <Section>
         <Stack direction="row" alignItems="center" spacing="5rem">
           <Image
             src={Bali}
@@ -216,26 +250,19 @@ const Landing = () => {
         </Stack>
       </Section>
 
-      <Box py="3rem">
-        <Stack align="center">
-          <Text>GALERI</Text>
-          <Heading mb="3rem">Tempat Pariwisata Favorit</Heading>
-
-          <SimpleGrid columns={3} spacing={10}>
-            <Galeri
-              name="Raja Ampat"
-              location="Raja Ampat, Indonesia"
-              image={RajaAmpat}
-            />
-            <Galeri name="Bali" location="Bali, Indonesia" image={Bali} />
-            <Galeri
-              name="Yosemite"
-              location="Yosemite, California"
-              image={Yosemite}
-            />
-          </SimpleGrid>
+      <Section>
+        <Stack direction="row" justify="space-between">
+          <Heading>Tempat yang difiturkan</Heading>
+          <Text>Lihat Semua </Text>
         </Stack>
-      </Box>
+
+        <Stack mt="2rem" spacing="1rem" justify="space-around" direction="row">
+          <Galeri name="Bali" location="Indonesia" image={Bali} />
+          <Galeri name="Raja Ampat" location="Indonesia" image={RajaAmpat} />
+          <Galeri name="Yosemite" location="California" image={Yosemite} />
+          <Galeri name="Air Terjun" location="Ciamis" image={AirTerjun} />
+        </Stack>
+      </Section>
 
       <Section mx="auto" w="60%">
         <Stack textAlign="center" mb="10px">
@@ -283,6 +310,19 @@ const Landing = () => {
             objectFit="cover"
           />
         </Stack>
+      </Section>
+
+      <Section>
+        <Divider />
+        <Stack direction="row" spacing="3rem" justify="center" my="2rem">
+          <Image objectFit="contain" src={AirnbLogo} />
+          <Image objectFit="contain" src={FedexLogo} />
+          <Image objectFit="contain" src={GoogleLogo} />
+          <Image objectFit="contain" src={HubspotLogo} />
+          <Image objectFit="contain" src={MicrosoftLogo} />
+          <Image objectFit="contain" src={WalmartLogo} />
+        </Stack>
+        <Divider />
       </Section>
     </Layout>
   );

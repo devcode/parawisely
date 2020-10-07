@@ -1,0 +1,4 @@
+.header {
+    backdrop-filter: blur(8px);
+    background: red;
+}

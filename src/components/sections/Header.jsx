@@ -30,6 +30,8 @@ const Header = props => {
       py="1rem"
       px="5rem"
       color="primary.800"
+      zIndex={9999}
+      backgroundColor="white"
       {...props}
     >
       <Flex align="center">
