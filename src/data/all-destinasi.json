@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "image": "/images/bali.jpg",
+        "name": "Bali",
+        "location": "Indonesia"
+    },
+    {
+        "id": "2",
+        "image": "/images/raja-ampat.jpg",
+        "name": "Raja Ampat",
+        "location": "Indonesia"
+    },
+    {
+        "id": "3",
+        "image": "/images/air-terjun.jpg",
+        "name": "Air Terjun",
+        "location": "Indonesia"
+    },
+    {
+        "id": "4",
+        "image": "/images/yosemite.jpg",
+        "name": "Yosemite",
+        "location": "Indonesia"
+    }
+]

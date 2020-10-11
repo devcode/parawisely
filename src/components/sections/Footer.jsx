@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  Box,
-  Divider,
-  Heading,
-  Icon,
-  Image,
-  Link,
-  Stack,
-  Text,
-} from '@chakra-ui/core';
+import { Box, Divider, Icon, Image, Link, Stack, Text } from '@chakra-ui/core';
 import { FaInstagram, FaTwitter, FaFacebook, FaDribbble } from 'react-icons/fa';
 import { Link as RouterLink } from 'react-router-dom';
 

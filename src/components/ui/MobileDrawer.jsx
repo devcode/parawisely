@@ -31,14 +31,15 @@ const MobileDrawer = () => {
 
   return (
     <>
-      <Box bottom={0} d={{ md: 'none' }} p={5} pos="fixed" right={0} zIndex={1}>
+      <Box>
         <IconButton
           aria-label="Open Menu"
           icon={<Icon as={isOpen ? FaTimes : FaBars} />}
-          isRound
           onClick={onToggle}
           ref={btnRef}
           size="lg"
+          color="blue.500"
+          variant="ghost"
         />
 
         <Drawer

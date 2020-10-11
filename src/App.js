@@ -21,7 +21,7 @@ function App() {
           <Route path="/kontak" component={Kontak} />
           <Route path="/tentang" component={Tentang} />
           <Route path="/eksplor" component={Eksplor} />
-          <Route path="/" component={Landing} />
+          <Route path="/" component={Landing} exact />
         </Switch>
       </Router>
     </ChakraProvider>

@@ -2,3 +2,7 @@
     backdrop-filter: blur(8px);
     background: red;
 }
+
+.is-active {
+    color: red !important
+}

@@ -2,7 +2,6 @@ import React from 'react';
 import { Flex } from '@chakra-ui/core';
 import Header from '../sections/Header';
 import Footer from '../sections/Footer';
-import MobileDrawer from '../ui/MobileDrawer';
 
 const index = props => {
   return (
@@ -15,7 +14,6 @@ const index = props => {
       <Header />
       {props.children}
 
-      <MobileDrawer />
       <Footer />
     </Flex>
   );

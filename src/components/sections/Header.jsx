@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link as RouterLink } from 'react-router-dom';
-import { Box, Flex, Link, Text } from '@chakra-ui/core';
-import { ColorModeSwitcher } from '../../ColorModeSwitcher';
+import { NavLink as RouterLink } from 'react-router-dom';
+import { Box, Flex, Link, Text, Button, Image, Stack } from '@chakra-ui/core';
+
+import MobileDrawer from '../ui/MobileDrawer';
+import Logo from '../../assets/logo/logo.png';
 
 const MenuItems = ({ children, isLast, to = '/', ...rest }) => {
   return (
@@ -26,24 +28,21 @@ const Header = props => {
       justify="space-between"
       wrap="wrap"
       w="100%"
-      // mb={}
+      shadow="md"
       py="1rem"
-      px="5rem"
+      px={['2rem', '2rem', '3rem', '5rem']}
       color="primary.800"
-      zIndex={9999}
       backgroundColor="white"
       {...props}
     >
       <Flex align="center">
         <RouterLink to="/">
-          <Link href="/" fontWeight={600} variant="link" fontSize="lg">
-            Parawisely
-          </Link>
+          <Image src={Logo} />
         </RouterLink>
       </Flex>
 
       <Box
-        display={{ base: 'none', md: 'block' }}
+        display={['none', 'none', 'none', 'block']}
         flexBasis={{ base: '100%', md: 'auto' }}
       >
         <Flex
@@ -59,7 +58,25 @@ const Header = props => {
           <MenuItems to="/kontak">Kontak</MenuItems>
         </Flex>
       </Box>
-      <ColorModeSwitcher />
+
+      <Stack
+        display={['none', 'none', 'none', 'block']}
+        direction="row"
+        spacing="1rem"
+      >
+        <Button px="1.5rem" colorScheme="blue" variant="ghost">
+          <span role="img" aria-label="ingris">
+            🇬🇧
+          </span>
+        </Button>
+        <Button px="1.5rem" colorScheme="blue">
+          Rekomendasi
+        </Button>
+      </Stack>
+
+      <Box display={['block', 'block', 'block', 'none']}>
+        <MobileDrawer />
+      </Box>
     </Flex>
   );
 };

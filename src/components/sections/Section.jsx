@@ -3,7 +3,7 @@ import React from 'react';
 
 const Section = ({ children, ...rest }) => {
   return (
-    <Box p="5rem" {...rest}>
+    <Box p={['2rem', '2rem', '3rem', '5rem']} {...rest}>
       {children}
     </Box>
   );
