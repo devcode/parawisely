@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",
+        "nama": "Airnb",
+        "images": "/images/sponsor/airnb.png"
+    },
+    {
+        "id": "2",
+        "nama": "Fedex",
+        "images": "/images/sponsor/fedex.png"
+    },
+    {
+        "id": "3",
+        "nama": "Google",
+        "images": "/images/sponsor/google.png"
+    },
+    {
+        "id": "4",
+        "nama": "Hubspot",
+        "images": "/images/sponsor/hubspot.png"
+    },
+    {
+        "id": "5",
+        "nama": "Microsoft",
+        "images": "/images/sponsor/microsoft.png"
+    },
+    {
+        "id": "6",
+        "nama": "Walmart",
+        "images": "/images/sponsor/walmart.png"
+    }
+]
