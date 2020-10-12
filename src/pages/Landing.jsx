@@ -34,7 +34,7 @@ import { Hero } from '../components/sections/Hero';
 import Destinasi from '../components/sections/Destinasi';
 
 const Kelebihan = ({ total, title }) => (
-  <Box w="300px">
+  <Box>
     <Heading>{total}</Heading>
     <Text>{title}</Text>
     <Divider w="full" style={{ height: '3px', backgroundColor: '#000' }} />
@@ -117,12 +117,7 @@ const Landing = () => {
         </SimpleGrid>
 
         <Box mt="3rem">
-          <ReactPlayer
-            url={PesonaIndoVideo}
-            playing
-            width="100%"
-            height="40%"
-          />
+          <ReactPlayer url={PesonaIndoVideo} width="100%" height="40%" />
         </Box>
       </Section>
 
@@ -162,27 +157,26 @@ const Landing = () => {
         <Destinasi />
       </Section>
 
-      <Section mt="-100px" mx="auto" w="60%">
-        <Stack textAlign="center" mb="10px">
-          <Heading mb="1px">
+      <Section mt="-100px" mx="auto" w={['full', 'full', 'full', '80%']}>
+        <Stack textAlign="center" spacing="0.7rem" mb="10px">
+          <Heading fontSize={['24px', '24px', '24px', '56px']}>
             Jelajahi Keberagaman dan Keseruan budaya indonesia
           </Heading>
-          <Text>
+          <Text fontSize={['14px', '14px', '14px', '18px']}>
             Telurusuri keindahan dan keberagaman berbagai budaya negara
             Indonesia bersama dengan kami anda bisa menikmati indahnya negara
             Indonesia
           </Text>
         </Stack>
-        <Stack direction="row" justify="center">
-          <Button colorScheme="purple">
-            Ekporasi{' '}
-            <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
-          </Button>
-          <Button colorScheme="purple">
-            Rekomendasi{' '}
-            <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
-          </Button>
-        </Stack>
+        <SimpleGrid
+          mx="auto"
+          w={['full', 'full', 'full', '50%']}
+          spacing="1rem"
+          columns={[1, 1, 1, 2]}
+        >
+          <Button colorScheme="blue">Ekporasi</Button>
+          <Button colorScheme="blue">Rekomendasi</Button>
+        </SimpleGrid>
       </Section>
 
       <Section h="302px" mb="5rem">

@@ -9,12 +9,12 @@ import EksplorIMG from '../assets/images/eksplor.jpg';
 const Eksplor = () => {
   return (
     <Layout>
-      <Image h="572px" objectFit="cover" src={EksplorIMG} />
-      <Wraper>
-        <Box textAlign="center" w="70%" mx="auto">
-          <Heading>Kategori Wisata</Heading>
-        </Box>
-      </Wraper>
+      <Image
+        src={EksplorIMG}
+        h="375px"
+        objectPosition="center"
+        objectFit="cover"
+      />
     </Layout>
   );
 };

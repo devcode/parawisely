@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Stack, Heading, Text, Image } from '@chakra-ui/core';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 import destinasiJson from '../../data/all-destinasi.json';
 
@@ -30,24 +31,48 @@ const DestinasiItem = ({ image, name, location }) => (
   </Box>
 );
 
+const breakpoints = {
+  320: {
+    slidesPerView: 1,
+    spaceBetween: 20,
+  },
+  // when window width is >= 480px
+  480: {
+    slidesPerView: 2,
+    spaceBetween: 30,
+  },
+  // when window width is >= 640px
+  640: {
+    slidesPerView: 4,
+    spaceBetween: 40,
+  },
+};
+
 const Destinasi = () => {
   return (
     <Box>
-      <Stack direction="row" justify="space-between">
+      <Stack
+        direction="row"
+        justify={['center', 'center', 'center', 'space-between']}
+      >
         <Heading>Destinasi Pilihan</Heading>
         <Text>Lihat Semua</Text>
       </Stack>
 
-      <Stack mt="2rem" spacing="1rem" justify="space-around" direction="row">
-        {destinasiJson.map(destinasi => (
-          <DestinasiItem
-            key={destinasi.id}
-            image={destinasi.image}
-            location={destinasi.location}
-            name={destinasi.name}
-          />
-        ))}
-      </Stack>
+      <Box mt="2rem">
+        <Swiper slidesPerView={4} breakpoints={breakpoints}>
+          {destinasiJson.map(destinasi => (
+            <SwiperSlide>
+              <DestinasiItem
+                key={destinasi.id}
+                image={destinasi.image}
+                location={destinasi.location}
+                name={destinasi.name}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </Box>
     </Box>
   );
 };

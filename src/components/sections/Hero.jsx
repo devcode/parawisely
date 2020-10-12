@@ -41,7 +41,7 @@ export const Hero = () => {
             Jelajahi Indahnya Indonesia Bersama Kami
           </Heading>
           <Text
-            w={['100%', '100%', '100%', '70%']}
+            w={['100%', '100%', '100%', '80%']}
             color="gray.700"
             fontSize="17px"
           >
