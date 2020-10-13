@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Button,
   Box,
@@ -10,20 +11,22 @@ import {
   Divider,
   SimpleGrid,
 } from '@chakra-ui/core';
-import React from 'react';
-import Layout from '../components/layouts';
 import ReactPlayer from 'react-player';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 import { RiMapPinAddFill, RiHeart3Fill, RiUserStarLine } from 'react-icons/ri';
 
+import Section from '../components/sections/Section';
+import Hero from '../components/sections/Hero';
+import Sponsor from '../components/sections/Sponsor';
+import LokasiCarousel from '../components/sections/LokasiCarousel';
+import Layout from '../components/layouts';
+
 import PesonaIndoVideo from '../assets/video/pesona-indonesia.mp4';
 import Bali from '../assets/images/bali.jpg';
 import RajaAmpat from '../assets/images/raja-ampat.jpg';
-import Section from '../components/sections/Section';
 
-import { Hero } from '../components/sections/Hero';
-import Destinasi from '../components/sections/Destinasi';
-import Sponsor from '../components/sections/Sponsor';
+import destinasiJson from '../data/destinasi.json';
+import CardRekomendasi from '../components/ui/CardRekomendasi';
 
 const Kelebihan = ({ total, title }) => (
   <Box>
@@ -145,7 +148,11 @@ const Landing = () => {
       </Section>
 
       <Section>
-        <Destinasi />
+        <LokasiCarousel
+          title="Destinasi Pilihan"
+          link="/eksplor/pilihan"
+          data={destinasiJson}
+        />
       </Section>
 
       <Section mt="-100px" mx="auto" w={['full', 'full', 'full', '80%']}>
@@ -170,30 +177,12 @@ const Landing = () => {
         </SimpleGrid>
       </Section>
 
-      <Section h="302px" mb="5rem">
-        <Stack
-          direction="row"
-          background="blue.500"
-          color="white"
-          align="center"
-          borderRadius="lg"
-        >
-          <Box p="3rem">
-            <Heading size="xl">Bergabung bersama komunitas wisatawan</Heading>
-            <Button mt="1rem" background="white" color="blue.800">
-              Gabung{' '}
-              <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
-            </Button>
-          </Box>
-          <Image
-            d={['none', 'block', 'block', 'block']}
-            borderLeftRadius="full"
-            src={RajaAmpat}
-            h="300px"
-            objectFit="cover"
-          />
-        </Stack>
-      </Section>
+      <CardRekomendasi image={RajaAmpat} isRadius>
+        <Heading>Bergabung bersama komunitas wisatawan</Heading>
+        <Button mt="1rem" background="white" color="blue.800">
+          Gabung <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
+        </Button>
+      </CardRekomendasi>
 
       <Section>
         <Sponsor />

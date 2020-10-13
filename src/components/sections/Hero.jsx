@@ -16,7 +16,7 @@ import Bali from '../../assets/images/bali.jpg';
 
 SwiperCore.use([Navigation]);
 
-export const Hero = () => {
+const Hero = props => {
   return (
     <Box
       p={['5rem 2rem', '5rem 2rem', '5rem 2rem', '5rem 0 5rem 5rem']}
@@ -70,3 +70,5 @@ export const Hero = () => {
     </Box>
   );
 };
+
+export default Hero;
