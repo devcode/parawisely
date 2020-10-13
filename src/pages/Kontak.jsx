@@ -4,9 +4,11 @@ import {
   FormControl,
   FormLabel,
   Heading,
+  IconButton,
   Image,
   Input,
   Select,
+  SimpleGrid,
   Stack,
   Text,
   Textarea,
@@ -14,15 +16,27 @@ import {
 import React from 'react';
 
 import KontakIMG from '../assets/images/kontak.jpg';
+import { FaMoneyCheck, FaMap, FaCalendar, FaClone } from 'react-icons/fa';
 
 import Layout from '../components/layouts';
 import Wraper from '../components/layouts/Wraper';
+import Section from '../components/sections/Section';
 
 const FormInput = ({ id, type, label }) => (
   <FormControl id={id}>
     <FormLabel>{label}</FormLabel>
     <Input type={type} />
   </FormControl>
+);
+
+const FaqItem = ({ icon, title, description }) => (
+  <Stack spacing="1.5rem" direction="row" align="start">
+    <IconButton isRound icon={icon} />
+    <Stack>
+      <Heading size="md">{title}</Heading>
+      <Text>{description}</Text>
+    </Stack>
+  </Stack>
 );
 
 const Kontak = () => {
@@ -53,10 +67,35 @@ const Kontak = () => {
             <FormLabel>Pesan</FormLabel>
             <Textarea />
           </FormControl>
-
-          <Button colorScheme="purple">Submit</Button>
+          <Button colorScheme="blue">Submit</Button>
         </Stack>
       </Wraper>
+
+      <Section>
+        <Heading>FAQ</Heading>
+        <SimpleGrid spacing="2rem" mt="2rem" columns={[1, 1, 1, 2]}>
+          <FaqItem
+            icon={<FaMoneyCheck />}
+            title="Apakah ke indonesia mahal?"
+            description="Tidak mahal kok, buat kamu wisatawan bisa datang ke indonesia dengan harga yang terjangkau lho!"
+          />
+          <FaqItem
+            icon={<FaMoneyCheck />}
+            title="Apakah ke indonesia mahal?"
+            description="Tidak mahal kok, buat kamu wisatawan bisa datang ke indonesia dengan harga yang terjangkau lho!"
+          />
+          <FaqItem
+            icon={<FaMoneyCheck />}
+            title="Apakah ke indonesia mahal?"
+            description="Tidak mahal kok, buat kamu wisatawan bisa datang ke indonesia dengan harga yang terjangkau lho!"
+          />
+          <FaqItem
+            icon={<FaMoneyCheck />}
+            title="Apakah ke indonesia mahal?"
+            description="Tidak mahal kok, buat kamu wisatawan bisa datang ke indonesia dengan harga yang terjangkau lho!"
+          />
+        </SimpleGrid>
+      </Section>
     </Layout>
   );
 };
