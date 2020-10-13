@@ -7,14 +7,11 @@ import { FaMapMarkerAlt } from 'react-icons/fa';
 import EksplorIMG from '../assets/images/eksplor.jpg';
 import { useParams } from 'react-router-dom';
 import {
-  Box,
   Button,
-  Flex,
   Heading,
   Icon,
   Image,
   SimpleGrid,
-  Spacer,
   Stack,
   Text,
 } from '@chakra-ui/core';

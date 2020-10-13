@@ -38,7 +38,7 @@ const Kelebihan = ({ total, title }) => (
 
 const Feature = ({ title, description, icon }) => (
   <Stack spacing="1rem" direction="row">
-    <IconButton icon={icon} isRound size="md" />
+    <IconButton colorScheme="blue" icon={icon} isRound size="md" />
     <Box>
       <Heading size="sm">{title}</Heading>
       <Text size="xs">{description}</Text>
@@ -139,7 +139,7 @@ const Landing = () => {
               risus, sem egestas odio cras adipiscing vulputate. Nisi, risus in
               suscipit non. Non commodo volutpat, pharetra, vel.
             </Text>
-            <Button colorScheme="purple" variant="ghost">
+            <Button colorScheme="blue" variant="ghost">
               Get Started
               <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
             </Button>
