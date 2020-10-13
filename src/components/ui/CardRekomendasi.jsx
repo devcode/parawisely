@@ -2,13 +2,7 @@ import React from 'react';
 import { Box, Image, Flex, Spacer } from '@chakra-ui/core';
 import Section from '../sections/Section';
 
-const CardRekomendasi = ({
-  title,
-  description,
-  image,
-  isRadius = false,
-  children,
-}) => {
+const CardRekomendasi = ({ image, isRadius = false, children }) => {
   return (
     <Section>
       <Flex borderRadius="lg" bg="blue.500" color="white">
