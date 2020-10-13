@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Button,
   Box,
@@ -10,28 +11,22 @@ import {
   Divider,
   SimpleGrid,
 } from '@chakra-ui/core';
-import React from 'react';
-import Layout from '../components/layouts';
 import ReactPlayer from 'react-player';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 import { RiMapPinAddFill, RiHeart3Fill, RiUserStarLine } from 'react-icons/ri';
 
+import Section from '../components/sections/Section';
+import Hero from '../components/sections/Hero';
+import Sponsor from '../components/sections/Sponsor';
+import LokasiCarousel from '../components/sections/LokasiCarousel';
+import Layout from '../components/layouts';
+
 import PesonaIndoVideo from '../assets/video/pesona-indonesia.mp4';
-import AirTerjun from '../assets/images/air-terjun.jpg';
 import Bali from '../assets/images/bali.jpg';
 import RajaAmpat from '../assets/images/raja-ampat.jpg';
-import Yosemite from '../assets/images/yosemite.jpg';
-import Pemetaan from '../components/ui/Pemetaan';
-import Section from '../components/sections/Section';
 
-import AirnbLogo from '../assets/logo/airnb.png';
-import FedexLogo from '../assets/logo/fedex.png';
-import GoogleLogo from '../assets/logo/google.png';
-import HubspotLogo from '../assets/logo/hubspot.png';
-import MicrosoftLogo from '../assets/logo/microsoft.png';
-import WalmartLogo from '../assets/logo/walmart.png';
-import { Hero } from '../components/sections/Hero';
-import Destinasi from '../components/sections/Destinasi';
+import destinasiJson from '../data/destinasi.json';
+import CardRekomendasi from '../components/ui/CardRekomendasi';
 
 const Kelebihan = ({ total, title }) => (
   <Box>
@@ -64,8 +59,7 @@ const Landing = () => {
           Peta Pariwisata <br /> Negara Republik Indonesia
         </Heading>
 
-        {/* <Box h="400px" w="full" bg="gray.300" mb="1.3rem"></Box> */}
-        <Pemetaan />
+        <Box h="400px" w="full" bg="gray.300" mb="1.3rem"></Box>
 
         <SimpleGrid
           justify="center"
@@ -154,7 +148,11 @@ const Landing = () => {
       </Section>
 
       <Section>
-        <Destinasi />
+        <LokasiCarousel
+          title="Destinasi Pilihan"
+          link="/eksplor/pilihan"
+          data={destinasiJson}
+        />
       </Section>
 
       <Section mt="-100px" mx="auto" w={['full', 'full', 'full', '80%']}>
@@ -171,7 +169,7 @@ const Landing = () => {
         <SimpleGrid
           mx="auto"
           w={['full', 'full', 'full', '50%']}
-          spacing="1rem"
+          spacing={['0.5rem', '0.5rem', '0.5rem', '1rem']}
           columns={[1, 1, 1, 2]}
         >
           <Button colorScheme="blue">Ekporasi</Button>
@@ -179,42 +177,15 @@ const Landing = () => {
         </SimpleGrid>
       </Section>
 
-      <Section h="302px" mb="5rem">
-        <Stack
-          justify="space-between"
-          align="center"
-          direction="row"
-          background="purple.800"
-          color="white"
-          borderRadius="lg"
-        >
-          <Box p="3rem">
-            <Heading size="xl">Bergabung bersama komunitas wisatawan</Heading>
-            <Button mt="1rem" background="white" color="purple.800">
-              Gabung{' '}
-              <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
-            </Button>
-          </Box>
-          <Image
-            borderLeftRadius="full"
-            src={RajaAmpat}
-            h="300px"
-            objectFit="cover"
-          />
-        </Stack>
-      </Section>
+      <CardRekomendasi image={RajaAmpat} isRadius>
+        <Heading>Bergabung bersama komunitas wisatawan</Heading>
+        <Button mt="1rem" background="white" color="blue.800">
+          Gabung <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
+        </Button>
+      </CardRekomendasi>
 
       <Section>
-        <Divider />
-        <Stack direction="row" spacing="3rem" justify="center" my="2rem">
-          <Image objectFit="contain" src={AirnbLogo} />
-          <Image objectFit="contain" src={FedexLogo} />
-          <Image objectFit="contain" src={GoogleLogo} />
-          <Image objectFit="contain" src={HubspotLogo} />
-          <Image objectFit="contain" src={MicrosoftLogo} />
-          <Image objectFit="contain" src={WalmartLogo} />
-        </Stack>
-        <Divider />
+        <Sponsor />
       </Section>
     </Layout>
   );
