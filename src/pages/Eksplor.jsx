@@ -1,8 +1,7 @@
-import { Box, Heading, Image } from '@chakra-ui/core';
+import { Image } from '@chakra-ui/core';
 import React from 'react';
 
 import Layout from '../components/layouts';
-import Wraper from '../components/layouts/Wraper';
 
 import EksplorIMG from '../assets/images/eksplor.jpg';
 

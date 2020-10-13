@@ -1,20 +1,6 @@
 import React from 'react';
 import { NavLink as RouterLink } from 'react-router-dom';
-import {
-  Box,
-  Menu,
-  MenuButton,
-  MenuGroup,
-  MenuDivider,
-  MenuItem,
-  MenuList,
-  Flex,
-  Link,
-  Text,
-  Button,
-  Image,
-  Stack,
-} from '@chakra-ui/core';
+import { Box, Flex, Link, Text, Button, Image, Stack } from '@chakra-ui/core';
 
 import MobileDrawer from '../ui/MobileDrawer';
 import Logo from '../../assets/logo/logo.png';
@@ -78,22 +64,6 @@ const Header = props => {
         direction="row"
         spacing="1rem"
       >
-        <Menu>
-          <MenuButton as={Button} colorScheme="pink">
-            Profile
-          </MenuButton>
-          <MenuList>
-            <MenuGroup title="Profile">
-              <MenuItem>My Account</MenuItem>
-              <MenuItem>Payments </MenuItem>
-            </MenuGroup>
-            <MenuDivider />
-            <MenuGroup title="Help">
-              <MenuItem>Docs</MenuItem>
-              <MenuItem>FAQ</MenuItem>
-            </MenuGroup>
-          </MenuList>
-        </Menu>
         <Button px="1.5rem" colorScheme="blue" variant="ghost">
           <span role="img" aria-label="ingris">
             🇬🇧
