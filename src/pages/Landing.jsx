@@ -23,7 +23,7 @@ import Section from '../components/sections/Section';
 
 import { Hero } from '../components/sections/Hero';
 import Destinasi from '../components/sections/Destinasi';
-import Sponsor from '../components/ui/Sponsor';
+import Sponsor from '../components/sections/Sponsor';
 
 const Kelebihan = ({ total, title }) => (
   <Box>
