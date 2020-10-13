@@ -3,18 +3,27 @@ import { Link as RouterLink } from 'react-router-dom';
 import {
   Box,
   Drawer,
+  Button,
   DrawerBody,
   DrawerContent,
   DrawerHeader,
+  DrawerFooter,
   DrawerOverlay,
   Icon,
   IconButton,
   Link,
+  Image,
   Stack,
   useDisclosure,
 } from '@chakra-ui/core';
+import { FaInstagram, FaTwitter, FaFacebook, FaYoutube } from 'react-icons/fa';
 import { FaBars, FaTimes } from 'react-icons/fa';
-
+import Logo from '../../assets/logo/logo.png';
+const IconSosmed = ({ icon, url }) => (
+  <Link href={url} isExternal>
+    <Icon color="blue.500" as={icon} fontSize="lg" />
+  </Link>
+);
 const MobileDrawer = () => {
   const { isOpen, onClose, onToggle } = useDisclosure();
   const btnRef = useRef();
@@ -53,7 +62,7 @@ const MobileDrawer = () => {
               <DrawerHeader p={[8, 8, 4, 4]}>
                 <RouterLink to="/">
                   <Link href="/" onClick={onClose} variant="link">
-                    Parawisely
+                  <Image src={Logo} htmlWidth="30px" />
                   </Link>
                 </RouterLink>
               </DrawerHeader>
@@ -61,16 +70,26 @@ const MobileDrawer = () => {
               <DrawerBody
                 as={Stack}
                 fontSize="lg"
-                justify="center"
+                justify="top"
                 p={8}
                 spacing={4}
               >
                 <MenuItems to="/">Beranda</MenuItems>
-                <MenuItems to="/eksplor">Eksplor </MenuItems>
+                <MenuItems to="/eksplor">Eksplorasi </MenuItems>
                 <MenuItems to="/wisata-daerah">Wisata Daerah </MenuItems>
-                <MenuItems to="/tentang">Tetang</MenuItems>
+                <MenuItems to="/tentang">Tentang</MenuItems>
                 <MenuItems to="/kontak">Kontak</MenuItems>
+                <MenuItems to="/rekomendasi">Rekomendasi</MenuItems>
               </DrawerBody>
+
+              <DrawerFooter borderTopWidth="1px">
+              <Stack direction="row" align="left" spacing="1.5rem">
+            <IconSosmed url="https://facebook.com" icon={FaFacebook} />
+            <IconSosmed url="https://twitter.com" icon={FaTwitter} />
+            <IconSosmed url="https://instagram.com" icon={FaInstagram} />
+            <IconSosmed url="https://youtube.com" icon={FaYoutube} />
+          </Stack>
+          </DrawerFooter>
             </DrawerContent>
           </DrawerOverlay>
         </Drawer>

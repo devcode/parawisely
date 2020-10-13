@@ -55,6 +55,10 @@ const Landing = () => {
         <Heading
           sizes={['sm', 'sm', 'sm', 'xl']}
           w={['full', 'full', 'full', '60%']}
+          fontWeight="extra_bold"
+          fontSize="45px"
+          letterSpacing="-1px"
+          lineHeight="62px"
         >
           Peta Pariwisata <br /> Negara Republik Indonesia
         </Heading>
