@@ -22,19 +22,19 @@ const Hero = props => {
       h={['80vh', '80vh', '80vh', 'auto']}
     >
       <SimpleGrid alignItems="center" columns={[1, 1, 1, 2]}>
-        <Stack spacing={5} align="start">
+        <Stack spacing={4} align="start">
           <Text
             color="gray.400"
-            letterSpacing="1.8px"
+            letterSpacing="0px"
             lineHeight="20px"
             fontWeight="bold"
             fontSize="13px"
           >
-            PARAWISELY
+            Parawisely - Explore Indonesia
           </Text>
           <Heading
-            w={['100%', '100%', '100%', '70%']}
-            fontSize="36px"
+            w={['100%', '100%', '100%', '80%']}
+            fontSize="44px"
             letterSpacing="-1px"
             fontWeight="extra_bold"
             lineHeight="48px"
@@ -47,12 +47,18 @@ const Hero = props => {
             fontSize="17px"
             letterSpacing="0px"
             lineHeight="31px"
+            mb={5}
           >
            Jelajahi keindahan alam dan keberagaman budaya yang dimiliki Indonesia dengan berkunjung di Indonesia akan kami pastikan anda mendapat pengalaman berharga!
           </Text>
+          <Stack isInline spacing={3}>
           <Button px="3rem" size="lg" lineHeight="32px" letterSpacing="0.3px" fontWeight="extra_bold" fontSize="15px" colorScheme="blue">
             Mulai sekarang ➜
-          </Button>
+          </Button>  
+          <Button px="3rem" size="lg" lineHeight="32px" letterSpacing="0.3px" fontWeight="extra_bold" fontSize="15px" borderColor="#4737ff" color="#4737ff" variant="outline">
+    Rekomendasi
+  </Button> 
+          </Stack>   
         </Stack>
         <Box d={['none', 'none', 'none', 'block']} minW="lg">
           <Swiper slidesPerView={2.3} grabCursor loop={true} autoplay={{
