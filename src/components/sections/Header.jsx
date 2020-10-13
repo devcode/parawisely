@@ -1,6 +1,6 @@
 import React from 'react';
-import { NavLink as RouterLink } from 'react-router-dom';
-import { Box, Flex, Link, Text, Button, Image, Stack } from '@chakra-ui/core';
+import { Link as RouterLink } from 'react-router-dom';
+import { Box, Flex, Text, Button, Image, Stack } from '@chakra-ui/core';
 
 import MobileDrawer from '../ui/MobileDrawer';
 import Logo from '../../assets/logo/logo.png';
@@ -13,9 +13,7 @@ const MenuItems = ({ children, isLast, to = '/', ...rest }) => {
       display="block"
       {...rest}
     >
-      <RouterLink to={to}>
-        <Link href={to}>{children}</Link>
-      </RouterLink>
+      <RouterLink to={to}>{children}</RouterLink>
     </Text>
   );
 };
@@ -23,21 +21,20 @@ const MenuItems = ({ children, isLast, to = '/', ...rest }) => {
 const Header = props => {
   return (
     <Flex
+      zIndex={1}
       as="nav"
       align="center"
       justify="space-between"
       wrap="wrap"
-      w="100%"
       shadow="md"
       py="1rem"
       px={['2rem', '2rem', '3rem', '5rem']}
       color="primary.800"
       backgroundColor="white"
-      {...props}
     >
       <Flex align="center">
         <RouterLink to="/">
-          <Image src={Logo} />
+          <Image src={Logo} htmlWidth="30px" />
         </RouterLink>
       </Flex>
 
@@ -64,11 +61,6 @@ const Header = props => {
         direction="row"
         spacing="1rem"
       >
-        <Button px="1.5rem" colorScheme="blue" variant="ghost">
-          <span role="img" aria-label="ingris">
-            🇬🇧
-          </span>
-        </Button>
         <Button px="1.5rem" colorScheme="blue">
           Rekomendasi
         </Button>

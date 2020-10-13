@@ -23,11 +23,7 @@ const IconSosmed = ({ icon, url }) => (
 );
 
 const LinkItem = ({ to, children, ...rest }) => (
-  <RouterLink href={to} to={to}>
-    <Link href={to} {...rest}>
-      {children}
-    </Link>
-  </RouterLink>
+  <RouterLink to={to}>{children}</RouterLink>
 );
 
 const Footer = () => {

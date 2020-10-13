@@ -60,7 +60,7 @@ const Destinasi = () => {
       <Box mt="2rem">
         <Swiper slidesPerView={4} breakpoints={breakpoints}>
           {destinasiJson.map(destinasi => (
-            <SwiperSlide>
+            <SwiperSlide key={destinasi.id}>
               <DestinasiItem
                 key={destinasi.id}
                 image={destinasi.image}
