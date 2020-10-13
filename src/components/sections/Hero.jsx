@@ -8,13 +8,12 @@ import {
   Image,
   Stack,
 } from '@chakra-ui/core';
-import SwiperCore, { Navigation } from 'swiper';
+import SwiperCore, { Navigation,Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 
 import Bali from '../../assets/images/bali.jpg';
-
-SwiperCore.use([Navigation]);
+SwiperCore.use([Navigation, Autoplay]);
 
 const Hero = props => {
   return (
@@ -37,24 +36,30 @@ const Hero = props => {
             w={['100%', '100%', '100%', '70%']}
             fontSize="36px"
             letterSpacing="-1px"
+            fontWeight="extra_bold"
+            lineHeight="48px"
           >
             Jelajahi Indahnya Indonesia Bersama Kami
           </Heading>
           <Text
             w={['100%', '100%', '100%', '80%']}
-            color="gray.700"
+            color="#666666"
             fontSize="17px"
+            letterSpacing="0px"
+            lineHeight="31px"
           >
-            Jelajahi keindahan alam dan keberagaman budaya yang dimiliki
-            Indonesia dengan berkunjung di Indonesia akan kami pastikan anda
-            mendapat pengalaman berharga!
+           Jelajahi keindahan alam dan keberagaman budaya yang dimiliki Indonesia dengan berkunjung di Indonesia akan kami pastikan anda mendapat pengalaman berharga!
           </Text>
-          <Button px="3rem" size="lg" fontSize="15px" colorScheme="blue">
-            Mulai Sekarang
+          <Button px="3rem" size="lg" lineHeight="32px" letterSpacing="0.3px" fontWeight="extra_bold" fontSize="15px" colorScheme="blue">
+            Mulai sekarang ➜
           </Button>
         </Stack>
         <Box d={['none', 'none', 'none', 'block']} minW="lg">
-          <Swiper slidesPerView={2} grabCursor>
+          <Swiper slidesPerView={2.3} grabCursor loop={true} autoplay={{
+                    delay: 1300,
+                    disableOnInteraction: false
+                }}>
+            
             <SwiperSlide>
               <Image borderRadius="md" src={Bali} w="262px" h="410px" />
             </SwiperSlide>

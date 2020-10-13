@@ -4,6 +4,7 @@ import { Box, Flex, Text, Button, Image, Stack } from '@chakra-ui/core';
 
 import MobileDrawer from '../ui/MobileDrawer';
 import Logo from '../../assets/logo/logo.png';
+import '../../stylesheets/html.css';
 
 const MenuItems = ({ children, isLast, to = '/', ...rest }) => {
   return (
@@ -47,6 +48,7 @@ const Header = props => {
           justify={['center', 'space-between', 'start', 'start']}
           direction={['column', 'row', 'row', 'row']}
           pt={[4, 4, 0, 0]}
+          fontWeight="normal"
         >
           <MenuItems to="/">Beranda</MenuItems>
           <MenuItems to="/eksplor">Eksplor </MenuItems>
@@ -62,7 +64,11 @@ const Header = props => {
         spacing="1rem"
       >
         <Button px="1.5rem" colorScheme="blue">
+        <Text
+            fontWeight="extra_bold"
+          >
           Rekomendasi
+          </Text>
         </Button>
       </Stack>
 

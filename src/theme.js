@@ -29,4 +29,11 @@ export default {
     '5xl': '64px',
     '6xl': '72px',
   },
+  fontWeights: {
+    regular: 400,
+    medium: 500,
+    semi_bold: 600,
+    bold: 700,
+    extra_bold: 800,
+  },
 };
