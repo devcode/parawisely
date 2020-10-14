@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+import { NavLink as RouterLink } from 'react-router-dom';
 import { Box, Flex, Text, Button, Image, Stack } from '@chakra-ui/core';
 
 import MobileDrawer from '../ui/MobileDrawer';
@@ -14,7 +14,9 @@ const MenuItems = ({ children, isLast, to = '/', ...rest }) => {
       display="block"
       {...rest}
     >
-      <RouterLink to={to}>{children}</RouterLink>
+      <RouterLink activeStyle={{ fontWeight: 700, color: 'red' }} to={to}>
+        {children}
+      </RouterLink>
     </Text>
   );
 };
@@ -43,9 +45,8 @@ const Header = props => {
           fontWeight="regular"
         >
           <RouterLink to="/">
-            <Image mr={10} src={Logo} htmlWidth="30px" />
+            <Image mr="2rem" src={Logo} htmlWidth="30px" />
           </RouterLink>
-          <MenuItems to="/">Beranda</MenuItems>
           <MenuItems to="/eksplor">Eksplorasi</MenuItems>
           <MenuItems to="/wisata-daerah">Wisata Daerah</MenuItems>
           <MenuItems to="/tentang">Tentang</MenuItems>
