@@ -278,6 +278,7 @@ const Landing = () => {
           />
         </SimpleGrid>
       </Stack>
+      
 
       <Section
         background={`url(${backgroundDots})`}
@@ -323,6 +324,10 @@ const Landing = () => {
         </SimpleGrid>
       </Section>
 
+      <Section>
+        <Sponsor />
+      </Section>
+
       <CardRekomendasi image={RajaAmpat} isRadius>
         <Heading>Bergabung bersama komunitas wisatawan</Heading>
         <Button mt="1rem" background="white" color="blue.800">
@@ -330,9 +335,7 @@ const Landing = () => {
         </Button>
       </CardRekomendasi>
 
-      <Section>
-        <Sponsor />
-      </Section>
+     
     </Layout>
   );
 };
