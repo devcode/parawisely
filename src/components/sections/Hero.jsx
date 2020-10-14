@@ -36,11 +36,12 @@ const Hero = props => {
             mb={4}
           >
             Jelajahi keindahan alam dan keberagaman budaya yang dimiliki
-            Indonesia. Website ini bertujuan untuk membuat kamu menjadikan
+            Indonesia. Website ini bertujuan untuk menjadikan
             Indonesia sebagai destinasi-mu selanjutnya.
           </Text>
+          <Stack isInline>
           <Button
-            px="11rem"
+            px="4rem"
             size="lg"
             lineHeight="32px"
             letterSpacing="0.3px"
@@ -52,7 +53,7 @@ const Hero = props => {
           </Button>
 
           <Button
-            px="11rem"
+            px="4rem"
             size="lg"
             lineHeight="32px"
             letterSpacing="0.3px"
@@ -64,6 +65,7 @@ const Hero = props => {
           >
             Rekomendasi &nbsp;&nbsp;
           </Button>
+        </Stack>
         </Stack>
         <Box d={['none', 'none', 'none', 'block']} minW="lg">
           <Image
