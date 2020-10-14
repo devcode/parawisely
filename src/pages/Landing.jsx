@@ -46,57 +46,74 @@ const Landing = () => {
     <Layout>
       <Hero />
       <Box bg="blue.500" color="white" p="5rem" textAlign="center">
-        <Heading>Statik Sektor Parawisata</Heading>
+        <Heading>Statistik Sektor Parawisata</Heading>
+
         <Text>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga totam
-          quae veniam quod delectus quis commodi ullam itaque asperiores. Nam.
+          Data dibawah ditujukan untuk anda agar menjadikan Indonesia sebagai
+          destinasi selanjutnya <br></br>
         </Text>
 
         <Stack
           divider={<StackDivider borderColor="gray.400" />}
           direction="row"
-          spacing="1rem"
+          spacing="4rem"
           justify="center"
           mt="2rem"
         >
           <Stack>
-            <Heading>5</Heading>
-            <Text>Lorem ipsum dolor</Text>
+            <Heading>1000+</Heading>
+            <Text>Prestasi Diraih</Text>
           </Stack>
           <Stack>
-            <Heading>5</Heading>
-            <Text>Lorem ipsum dolor</Text>
+            <Heading>500+</Heading>
+            <Text>Tempat Pariwisata</Text>
           </Stack>
           <Stack>
-            <Heading>5</Heading>
-            <Text>Lorem ipsum dolor</Text>
+            <Heading>100K+</Heading>
+            <Text>Turis Pertahun</Text>
           </Stack>
           <Stack>
-            <Heading>5</Heading>
-            <Text>Lorem ipsum dolor</Text>
+            <Heading>500K+</Heading>
+            <Text>Turis puas</Text>
           </Stack>
         </Stack>
       </Box>
 
       <Section>
         <Box>
-          <Heading>Jelajahi Indonesia melewati video dibawah ini</Heading>
-          <Text>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero,
-            autem?
+          <Heading
+            textAlign="center"
+            letterSpacing="0px"
+            fontWeight="extra_bold"
+            fontSize="40px"
+          >
+            Jelajahi Indonesia melewati video dibawah ini
+          </Heading>
+          <Text textAlign="center" mt={2}>
+            Video ini dibuat oleh pihak Pesona Indonesia dalam rangka
+            memperingati hari pariwisata dunia <br></br> 2020, Mari bersama
+            jelajahi Indonesia dalam video singkat berikut!
           </Text>
-        </Box>
-        <div className="player-wrapper">
           <ReactPlayer
-            className="react-player"
+            style={{
+              margin: '30px auto 0 auto',
+            }}
+            width="full"
             url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
-            width="80%"
-            height="70%"
           />
-        </div>
+        </Box>
       </Section>
 
       <Section>
+        <Stack align="center" textAlign="center">
+          <Heading>Keberagaman & budaya Melimpah</Heading>
+          <Text w="60%">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+            modi assumenda sapiente, laboriosam perferendis soluta? Impedit iste
+            atque quisquam corrupti.
+          </Text>
+        </Stack>
+
         <SimpleGrid
           columns={[1, 1, 1, 2]}
           alignItems="center"
@@ -132,7 +149,7 @@ const Landing = () => {
         </SimpleGrid>
       </Section>
 
-      <Section mt="-200px">
+      <Section mt="-230px">
         <SimpleGrid
           columns={[1, 1, 1, 2]}
           alignItems="center"
@@ -170,7 +187,7 @@ const Landing = () => {
         </SimpleGrid>
       </Section>
 
-      <Section mt="-200px">
+      <Section mt="-230px">
         <SimpleGrid
           columns={[1, 1, 1, 2]}
           alignItems="center"
@@ -218,11 +235,54 @@ const Landing = () => {
         />
       </Section>
 
+      <Stack p={['2rem', '2rem', '2rem', '5rem']} spacing="2rem">
+        <Heading
+          sizes={['sm', 'sm', 'sm', 'xl']}
+          w={['full', 'full', 'full', 'full']}
+          fontWeight="extra_bold"
+          fontSize="45px"
+          letterSpacing="-1px"
+          lineHeight="24px"
+          textAlign="center"
+        >
+          Peta Pariwisata Negara Republik Indonesia
+        </Heading>
+        <Text textAlign="center">
+          Nikmati berbagai macam budaya, keberagaman, kuliner dan keindahan alam
+          yang membuat-mu <br></br> jatuh cinta dan menjadikan Indonesia sebagai
+          destinasi-mu selanjutnya
+        </Text>
+
+        <Box h="400px" w="full" bg="gray.300" mb="1.3rem"></Box>
+
+        <SimpleGrid
+          justify="center"
+          columns={[1, 1, 1, 3]}
+          spacing="2rem"
+          mt="2rem"
+        >
+          <Feature
+            title="Populer di Indonesia"
+            description="Tempat pariwisata yang populer dan pasti dikenal semua orang di Indonesia"
+            icon={<RiMapPinAddFill />}
+          />
+          <Feature
+            title="Favorit di Indonesia"
+            description="Tempat favorit dan disukai semua orang Indonesia maupun para wisatawan"
+            icon={<RiHeart3Fill />}
+          />
+          <Feature
+            title="Ramai di Indonesia"
+            description="Spot yang paling ramai dikunjungi para wisatawan sekaligus warga Indonesia"
+            icon={<RiUserStarLine />}
+          />
+        </SimpleGrid>
+      </Stack>
+
       <Section
         background={`url(${backgroundDots})`}
         backgroundPosition="center center"
         backgroundSize="cover"
-        mt="-100px"
         mx="auto"
         w={['full', 'full', 'full', '80%']}
       >
@@ -262,44 +322,6 @@ const Landing = () => {
           </Button>
         </SimpleGrid>
       </Section>
-
-      <Stack p={['2rem', '2rem', '2rem', '5rem']} spacing="2rem">
-        <Heading
-          sizes={['sm', 'sm', 'sm', 'xl']}
-          w={['full', 'full', 'full', '60%']}
-          fontWeight="extra_bold"
-          fontSize="45px"
-          letterSpacing="-1px"
-          lineHeight="62px"
-        >
-          Peta Pariwisata <br /> Negara Republik Indonesia
-        </Heading>
-
-        <Box h="400px" w="full" bg="gray.300" mb="1.3rem"></Box>
-
-        <SimpleGrid
-          justify="center"
-          columns={[1, 1, 1, 3]}
-          spacing="2rem"
-          mt="2rem"
-        >
-          <Feature
-            title="Populer di Indonesia"
-            description="Tempat pariwisata yang populer dan pasti dikenal semua orang di Indonesia"
-            icon={<RiMapPinAddFill />}
-          />
-          <Feature
-            title="Favorit di Indonesia"
-            description="Tempat favorit dan disukai semua orang Indonesia maupun para wisatawan"
-            icon={<RiHeart3Fill />}
-          />
-          <Feature
-            title="Ramai di Indonesia"
-            description="Spot yang paling ramai dikunjungi para wisatawan sekaligus warga Indonesia"
-            icon={<RiUserStarLine />}
-          />
-        </SimpleGrid>
-      </Stack>
 
       <CardRekomendasi image={RajaAmpat} isRadius>
         <Heading>Bergabung bersama komunitas wisatawan</Heading>

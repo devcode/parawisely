@@ -5,7 +5,7 @@ import Section from '../sections/Section';
 const CardRekomendasi = ({ image, isRadius = false, children }) => {
   return (
     <Section>
-      <Flex borderRadius="lg" bg="blue.500" color="white">
+      <Flex borderRadius="lg" shadow="lg" bg="blue.500" color="white">
         <Box p={10} w="100%">
           {children}
         </Box>

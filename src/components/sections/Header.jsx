@@ -47,12 +47,11 @@ const Header = props => {
           <RouterLink to="/">
             <Image mr="2rem" src={Logo} htmlWidth="30px" />
           </RouterLink>
-          <MenuItems to="/">Beranda</MenuItems>
-          <MenuItems to="/eksplor">Eksplorasi</MenuItems>
           <MenuItems to="/wisata-daerah">Wisata Daerah</MenuItems>
+          <MenuItems to="/eksplor">Eksplorasi</MenuItems>
           <MenuItems to="/tentang">Tentang</MenuItems>
           <MenuItems to="/kontak">Kontak</MenuItems>
-          <MenuItems to="/map">Map</MenuItems>
+          <MenuItems to="/map">Peta</MenuItems>
         </Flex>
       </Box>
 

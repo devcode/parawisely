@@ -22,7 +22,6 @@ const breakpoints = {
 const Sponsor = () => {
   return (
     <Box>
-      <Divider />
       <Box my="2rem">
         <Swiper breakpoints={breakpoints} loop>
           {sponsorJson.map(sponsor => (
@@ -32,7 +31,7 @@ const Sponsor = () => {
           ))}
         </Swiper>
       </Box>
-      <Divider />
+      
     </Box>
   );
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+💤import React from 'react';
 import { Button, Heading, Icon, Stack, Text } from '@chakra-ui/core';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 
@@ -52,15 +52,17 @@ const Eksplor = () => {
       </Section>
 
       <CardRekomendasi image={ilustrationIMG}>
-        <Heading>Masih bingung cari tempat yang cocok?</Heading>
-        <Text>
-          Tenang, kami mempunyai fitur rekomendasi yang membantu kamu mencari
-          tempat berlibur yang tepat dengan menjawab pertanyaan yang kami
-          berikan.
-        </Text>
-        <Button mt="1rem" background="white" color="blue.800">
-          Gabung <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
-        </Button>
+        <Stack spacing="1rem" align="start">
+          <Heading>Masih bingung cari tempat yang cocok?</Heading>
+          <Text>
+            Tenang, kami mempunyai fitur rekomendasi yang membantu kamu mencari
+            tempat berlibur yang tepat dengan menjawab pertanyaan yang kami
+            berikan.
+          </Text>
+          <Button mt="1rem" background="white" color="blue.800">
+            Gabung <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
+          </Button>
+        </Stack>
       </CardRekomendasi>
     </Layout>
   );
