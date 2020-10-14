@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Divider,
   Button,
   Box,
   Heading,
@@ -14,6 +13,7 @@ import {
   StackDivider,
 } from '@chakra-ui/core';
 import { IoIosArrowRoundForward } from 'react-icons/io';
+import ReactPlayer from 'react-player';
 import { RiMapPinAddFill, RiHeart3Fill, RiUserStarLine } from 'react-icons/ri';
 
 import Section from '../components/sections/Section';
@@ -77,6 +77,25 @@ const Landing = () => {
           </Stack>
         </Stack>
       </Box>
+
+      <Section>
+        <Box>
+          <Heading>Jelajahi Indonesia melewati video dibawah ini</Heading>
+          <Text>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero,
+            autem?
+          </Text>
+        </Box>
+        <div className="player-wrapper">
+          <ReactPlayer
+            className="react-player"
+            url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
+            width="80%"
+            height="70%"
+          />
+        </div>
+      </Section>
+
       <Section>
         <SimpleGrid
           columns={[1, 1, 1, 2]}
