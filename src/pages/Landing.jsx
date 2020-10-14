@@ -8,7 +8,6 @@ import {
   Text,
   Icon,
   IconButton,
-  Divider,
   SimpleGrid,
   Link,
 } from '@chakra-ui/core';
@@ -30,14 +29,6 @@ import RajaAmpat from '../assets/images/raja-ampat.jpg';
 import destinasiJson from '../data/destinasi.json';
 import CardRekomendasi from '../components/ui/CardRekomendasi';
 
-const Kelebihan = ({ total, title }) => (
-  <Box>
-    <Heading>{total}</Heading>
-    <Text>{title}</Text>
-    <Divider w="full" style={{ height: '3px', backgroundColor: '#000' }} />
-  </Box>
-);
-
 const Feature = ({ title, description, icon }) => (
   <Stack spacing="1rem" direction="row">
     <IconButton colorScheme="blue" icon={icon} isRound size="md" />
@@ -52,7 +43,6 @@ const Landing = () => {
   return (
     <Layout>
       <Hero />
-      
 
       <Section>
         <SimpleGrid
@@ -60,24 +50,33 @@ const Landing = () => {
           alignItems="center"
           spacing={['1rem', '1rem', '1rem', '5rem']}
         >
-          <Image
-            src={budayaImages}
-            w="640px"
-            objectFit="cover"
-          />
+          <Image src={budayaImages} w="640px" objectFit="cover" />
           <Stack spacing="1rem" align="start">
-            <Heading fontWeight="extra_bold" fontSize={['30px', '30px', '30px', '40px']}>
+            <Heading
+              fontWeight="extra_bold"
+              fontSize={['30px', '30px', '30px', '40px']}
+            >
               Keberagaman budaya yang bisa anda nikmati hanya di Indonesia!
             </Heading>
             <Text fontSize="18px">
-             Beragam budaya bisa kalian temuka di Indonesia. Mulai dari Bahasa Daerah, Tari Tradisional, Senjata Traditional, Baju Daerah dan Lagu Daerah yang bisa kalian nikmati di Indonesia yang kaya akan budaya dan keberagaman-nya.
+              Beragam budaya bisa kalian temuka di Indonesia. Mulai dari Bahasa
+              Daerah, Tari Tradisional, Senjata Traditional, Baju Daerah dan
+              Lagu Daerah yang bisa kalian nikmati di Indonesia yang kaya akan
+              budaya dan keberagaman-nya.
             </Text>
-            <Text color="#4737ff" fontWeight="extra_bold" colorScheme="blue" variant="ghost">
-            <Link href="/"> Selengkapnya
-              <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
+            <Text
+              color="#4737ff"
+              fontWeight="extra_bold"
+              colorScheme="blue"
+              variant="ghost"
+            >
+              <Link href="/">
+                {' '}
+                Selengkapnya
+                <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
               </Link>
             </Text>
-          </Stack>          
+          </Stack>
         </SimpleGrid>
       </Section>
 
@@ -88,24 +87,34 @@ const Landing = () => {
           spacing={['1rem', '1rem', '1rem', '5rem']}
         >
           <Stack spacing="1rem" align="start">
-            <Heading fontWeight="extra_bold" fontSize={['30px', '30px', '30px', '40px']}>
-              Keindahan alam yang di akui Dunia yang bisa kamu liat di Indonesia!
+            <Heading
+              fontWeight="extra_bold"
+              fontSize={['30px', '30px', '30px', '40px']}
+            >
+              Keindahan alam yang di akui Dunia yang bisa kamu liat di
+              Indonesia!
             </Heading>
             <Text fontSize="18px">
-             Keindahan alam yang dimiliki Indonesia membuatnya diakui dunia sebagai negara terindah di dunia. Memiliki pantai, gunung, tempat bersejarah dan wahana atraksi yang ada di Indonesia yang siap kalian kunjungi kapan saja.
+              Keindahan alam yang dimiliki Indonesia membuatnya diakui dunia
+              sebagai negara terindah di dunia. Memiliki pantai, gunung, tempat
+              bersejarah dan wahana atraksi yang ada di Indonesia yang siap
+              kalian kunjungi kapan saja.
             </Text>
-            
-            <Text color="#4737ff" fontWeight="extra_bold" colorScheme="blue" variant="ghost">
-            <Link href="/"> Selengkapnya
-              <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
+
+            <Text
+              color="#4737ff"
+              fontWeight="extra_bold"
+              colorScheme="blue"
+              variant="ghost"
+            >
+              <Link href="/">
+                {' '}
+                Selengkapnya
+                <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
               </Link>
             </Text>
-          </Stack>  
-          <Image
-            src={alamImages}
-            w="640px"
-            objectFit="cover"
-          />        
+          </Stack>
+          <Image src={alamImages} w="640px" objectFit="cover" />
         </SimpleGrid>
       </Section>
 
@@ -115,23 +124,37 @@ const Landing = () => {
           alignItems="center"
           spacing={['1rem', '1rem', '1rem', '5rem']}
         >
-          <Image
-            src={kulinerImages}
-            w="640px"
-            objectFit="cover"
-          />
+          <Image src={kulinerImages} w="640px" objectFit="cover" />
           <Stack spacing="1rem" align="start">
-            <Heading fontWeight="extra_bold" fontSize={['30px', '30px', '30px', '40px']}>
+            <Heading
+              fontWeight="extra_bold"
+              fontSize={['30px', '30px', '30px', '40px']}
+            >
               Kelezatan kuliner Indonesia yang memanjakan lidah-mu dan lezat!
             </Heading>
             <Text fontSize="18px">
-             Indonesia memiliki banyak ragam kuliner yang bisa kalian coba mulai dari minuman, makanan ataupun makanan khas tiap daerah yang siap mewarnai liburan mu di Indonesia dengan kelezatan yang nikmat hanya di Indonesia
+              Indonesia memiliki banyak ragam kuliner yang bisa kalian coba
+              mulai dari minuman, makanan ataupun makanan khas tiap daerah yang
+              siap mewarnai liburan mu di Indonesia dengan kelezatan yang nikmat
+              hanya di Indonesia
             </Text>
-            <Text color="#4737ff" fontWeight="extra_bold" colorScheme="blue" variant="ghost">
-              <Link href="/"> Selengkapnya
-              <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" /> </Link>
+            <Text
+              color="#4737ff"
+              fontWeight="extra_bold"
+              colorScheme="blue"
+              variant="ghost"
+            >
+              <Link href="/">
+                {' '}
+                Selengkapnya
+                <Icon
+                  as={IoIosArrowRoundForward}
+                  boxSize="2rem"
+                  ml="4px"
+                />{' '}
+              </Link>
             </Text>
-          </Stack>          
+          </Stack>
         </SimpleGrid>
       </Section>
 
@@ -143,15 +166,33 @@ const Landing = () => {
         />
       </Section>
 
-      <Section background={`url(${backgroundDots})`} backgroundPosition="center center" backgroundSize="cover" mt="-100px" mx="auto" w={['full', 'full', 'full', '80%']}>
-        <Stack pt="15px" pb="50px" textAlign="center" spacing="0.7rem" mb="10px">
-          <Heading fontWeight="extra_bold" lineHeight="54px"
+      <Section
+        background={`url(${backgroundDots})`}
+        backgroundPosition="center center"
+        backgroundSize="cover"
+        mt="-100px"
+        mx="auto"
+        w={['full', 'full', 'full', '80%']}
+      >
+        <Stack
+          pt="15px"
+          pb="50px"
+          textAlign="center"
+          spacing="0.7rem"
+          mb="10px"
+        >
+          <Heading
+            fontWeight="extra_bold"
+            lineHeight="54px"
             letterSpacing="-2.4px"
-            fontSize={['24px', '24px', '24px', '50px']}>
+            fontSize={['24px', '24px', '24px', '50px']}
+          >
             Jelajahi keberagaman dan <br></br> keseruan budaya Indonesia
           </Heading>
           <Text fontSize={['14px', '14px', '14px', '18px']}>
-          Telurusuri keindahan dan keberagaman berbagai budaya negara Indonesia <br></br> bersama dengan kami anda  bisa menikmati indahnya negara Indonesia
+            Telurusuri keindahan dan keberagaman berbagai budaya negara
+            Indonesia <br></br> bersama dengan kami anda bisa menikmati indahnya
+            negara Indonesia
           </Text>
         </Stack>
         <SimpleGrid
@@ -161,8 +202,12 @@ const Landing = () => {
           columns={[1, 1, 1, 2]}
           mt="-40px"
         >
-          <Button fontSize="16px" fontWeight="extra_bold" colorScheme="blue">Ekplorasi</Button>
-          <Button fontSize="16px" fontWeight="extra_bold" colorScheme="blue">Rekomendasi</Button>
+          <Button fontSize="16px" fontWeight="extra_bold" colorScheme="blue">
+            Ekplorasi
+          </Button>
+          <Button fontSize="16px" fontWeight="extra_bold" colorScheme="blue">
+            Rekomendasi
+          </Button>
         </SimpleGrid>
       </Section>
 

@@ -3,7 +3,6 @@ import { Link as RouterLink } from 'react-router-dom';
 import {
   Box,
   Drawer,
-  Button,
   DrawerBody,
   DrawerContent,
   DrawerHeader,
@@ -62,7 +61,7 @@ const MobileDrawer = () => {
               <DrawerHeader p={[8, 8, 4, 4]}>
                 <RouterLink to="/">
                   <Link href="/" onClick={onClose} variant="link">
-                  <Image src={Logo} htmlWidth="30px" />
+                    <Image src={Logo} htmlWidth="30px" />
                   </Link>
                 </RouterLink>
               </DrawerHeader>
@@ -83,13 +82,13 @@ const MobileDrawer = () => {
               </DrawerBody>
 
               <DrawerFooter borderTopWidth="1px">
-              <Stack direction="row" align="left" spacing="1.5rem">
-            <IconSosmed url="https://facebook.com" icon={FaFacebook} />
-            <IconSosmed url="https://twitter.com" icon={FaTwitter} />
-            <IconSosmed url="https://instagram.com" icon={FaInstagram} />
-            <IconSosmed url="https://youtube.com" icon={FaYoutube} />
-          </Stack>
-          </DrawerFooter>
+                <Stack direction="row" align="left" spacing="1.5rem">
+                  <IconSosmed url="https://facebook.com" icon={FaFacebook} />
+                  <IconSosmed url="https://twitter.com" icon={FaTwitter} />
+                  <IconSosmed url="https://instagram.com" icon={FaInstagram} />
+                  <IconSosmed url="https://youtube.com" icon={FaYoutube} />
+                </Stack>
+              </DrawerFooter>
             </DrawerContent>
           </DrawerOverlay>
         </Drawer>

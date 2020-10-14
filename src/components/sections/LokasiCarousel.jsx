@@ -3,6 +3,8 @@ import { Box, Image, Stack, Heading, Text } from '@chakra-ui/core';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
 
+import 'swiper/swiper-bundle.css';
+
 const breakpoints = {
   320: {
     slidesPerView: 1,
@@ -57,7 +59,7 @@ const LokasiCarousel = ({ title, link, data }) => {
       </Stack>
 
       <Box mt="2rem">
-        <Swiper slidesPerView={4} breakpoints={breakpoints}>
+        <Swiper breakpoints={breakpoints}>
           {data.map(location => (
             <SwiperSlide key={location.id}>
               <LokasiItem
