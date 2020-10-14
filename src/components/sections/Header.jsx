@@ -14,7 +14,7 @@ const MenuItems = ({ children, isLast, to = '/', ...rest }) => {
       display="block"
       {...rest}
     >
-      <RouterLink activeStyle={{ fontWeight: 700, color: 'red' }} to={to}>
+      <RouterLink activeStyle={{ fontWeight: 700}} to={to}>
         {children}
       </RouterLink>
     </Text>
@@ -47,6 +47,7 @@ const Header = props => {
           <RouterLink to="/">
             <Image mr="2rem" src={Logo} htmlWidth="30px" />
           </RouterLink>
+          <MenuItems to="/">Beranda</MenuItems>
           <MenuItems to="/eksplor">Eksplorasi</MenuItems>
           <MenuItems to="/wisata-daerah">Wisata Daerah</MenuItems>
           <MenuItems to="/tentang">Tentang</MenuItems>
