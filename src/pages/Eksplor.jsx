@@ -1,4 +1,4 @@
-💤import React from 'react';
+import React from 'react';
 import { Button, Heading, Icon, Stack, Text } from '@chakra-ui/core';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 
