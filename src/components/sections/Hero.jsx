@@ -10,7 +10,6 @@ import {
   Stack,
 } from '@chakra-ui/core';
 
-
 const Hero = props => {
   return (
     <Box
@@ -36,18 +35,42 @@ const Hero = props => {
             lineHeight="31px"
             mb={4}
           >
-           Jelajahi keindahan alam dan keberagaman budaya yang dimiliki Indonesia. Website ini bertujuan untuk membuat kamu menjadikan Indonesia sebagai destinasi-mu selanjutnya.
+            Jelajahi keindahan alam dan keberagaman budaya yang dimiliki
+            Indonesia. Website ini bertujuan untuk membuat kamu menjadikan
+            Indonesia sebagai destinasi-mu selanjutnya.
           </Text>
-          <Button px="11rem" size="lg" lineHeight="32px" letterSpacing="0.3px" fontWeight="extra_bold" fontSize="15px" colorScheme="blue">
+          <Button
+            px="11rem"
+            size="lg"
+            lineHeight="32px"
+            letterSpacing="0.3px"
+            fontWeight="extra_bold"
+            fontSize="15px"
+            colorScheme="blue"
+          >
             Mulai sekarang
-          </Button>  
-           
-          <Button px="11rem" size="lg" lineHeight="32px" letterSpacing="0.3px" fontWeight="extra_bold" fontSize="15px" borderColor="#4737ff" color="#4737ff" variant="outline">
-    Rekomendasi &nbsp;&nbsp;
-  </Button> 
+          </Button>
+
+          <Button
+            px="11rem"
+            size="lg"
+            lineHeight="32px"
+            letterSpacing="0.3px"
+            fontWeight="extra_bold"
+            fontSize="15px"
+            borderColor="#4737ff"
+            color="#4737ff"
+            variant="outline"
+          >
+            Rekomendasi &nbsp;&nbsp;
+          </Button>
         </Stack>
         <Box d={['none', 'none', 'none', 'block']} minW="lg">
-         <Image src={heroImages} size="xl" alt="Hero Section Images Parawisely" />
+          <Image
+            src={heroImages}
+            size="xl"
+            alt="Hero Section Images Parawisely"
+          />
         </Box>
       </SimpleGrid>
     </Box>

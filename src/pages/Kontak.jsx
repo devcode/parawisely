@@ -80,17 +80,17 @@ const Kontak = () => {
             description="Tidak mahal kok, buat kamu wisatawan bisa datang ke indonesia dengan harga yang terjangkau lho!"
           />
           <FaqItem
-            icon={<FaMoneyCheck />}
+            icon={<FaMap />}
             title="Apakah ke indonesia mahal?"
             description="Tidak mahal kok, buat kamu wisatawan bisa datang ke indonesia dengan harga yang terjangkau lho!"
           />
           <FaqItem
-            icon={<FaMoneyCheck />}
+            icon={<FaCalendar />}
             title="Apakah ke indonesia mahal?"
             description="Tidak mahal kok, buat kamu wisatawan bisa datang ke indonesia dengan harga yang terjangkau lho!"
           />
           <FaqItem
-            icon={<FaMoneyCheck />}
+            icon={<FaClone />}
             title="Apakah ke indonesia mahal?"
             description="Tidak mahal kok, buat kamu wisatawan bisa datang ke indonesia dengan harga yang terjangkau lho!"
           />

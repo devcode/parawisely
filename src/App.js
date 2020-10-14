@@ -11,6 +11,7 @@ import Tentang from './pages/Tentang';
 import Eksplor from './pages/Eksplor';
 import EksplorCategory from './pages/EksplorCategory';
 import WisataDaerah from './pages/WisataDaerah';
+import Map from './pages/Map';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <CSSReset />
       <Router>
         <Switch>
+          <Route path="/map" component={Map} />
           <Route path="/eksplor/:category" component={EksplorCategory} />
           <Route path="/wisata-daerah" component={WisataDaerah} />
           <Route path="/kontak" component={Kontak} />

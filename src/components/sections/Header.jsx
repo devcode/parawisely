@@ -21,11 +21,12 @@ const MenuItems = ({ children, isLast, to = '/', ...rest }) => {
 
 const Header = props => {
   return (
-    <Flex
+    <Stack
       zIndex={1}
       as="nav"
-      align="center"
+      direction="row"
       justify="space-between"
+      align="center"
       wrap="wrap"
       shadow="0px 43px 261px rgba(0, 0, 0, 0.03), 0px 19.8802px 120.668px rgba(0, 0, 0, 0.0221583), 0px 11.375px 69.0436px rgba(0, 0, 0, 0.0198316), 0px 6.90454px 41.909px rgba(0, 0, 0, 0.0177566), 0px 4.16029px 25.252px rgba(0, 0, 0, 0.0149977), 0px 2.31672px 14.0619px rgba(0, 0, 0, 0.0112133), 0px 0.996405px 6.04795px rgba(0, 0, 0, 0.00624311);"
       py="1rem"
@@ -33,16 +34,7 @@ const Header = props => {
       color="primary.800"
       backgroundColor="white"
     >
-      <Flex align="center">
-        <RouterLink to="/">
-          <Image src={Logo} htmlWidth="30px" />
-        </RouterLink>
-      </Flex>
-
-      <Box
-        display={['none', 'none', 'none', 'block']}
-        flexBasis={{ base: '100%', md: 'auto' }}
-      >
+      <Box display={['none', 'none', 'none', 'block']}>
         <Flex
           align={['center', 'center', 'center', 'center']}
           justify={['center', 'space-between', 'start', 'start']}
@@ -50,11 +42,15 @@ const Header = props => {
           pt={[4, 4, 0, 0]}
           fontWeight="regular"
         >
+          <RouterLink to="/">
+            <Image mr="2rem" src={Logo} htmlWidth="30px" />
+          </RouterLink>
           <MenuItems to="/">Beranda</MenuItems>
           <MenuItems to="/eksplor">Eksplorasi</MenuItems>
           <MenuItems to="/wisata-daerah">Wisata Daerah</MenuItems>
           <MenuItems to="/tentang">Tentang</MenuItems>
           <MenuItems to="/kontak">Kontak</MenuItems>
+          <MenuItems to="/map">Map</MenuItems>
         </Flex>
       </Box>
 
@@ -64,18 +60,14 @@ const Header = props => {
         spacing="1rem"
       >
         <Button px="1.5rem" colorScheme="blue">
-        <Text
-            fontWeight="extra_bold"
-          >
-          Rekomendasi
-          </Text>
+          <Text fontWeight="extra_bold">Rekomendasi</Text>
         </Button>
       </Stack>
 
       <Box display={['block', 'block', 'block', 'none']}>
         <MobileDrawer />
       </Box>
-    </Flex>
+    </Stack>
   );
 };
 
