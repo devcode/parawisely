@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Divider,
   Button,
   Box,
   Heading,
@@ -10,6 +11,7 @@ import {
   IconButton,
   SimpleGrid,
   Link,
+  StackDivider,
 } from '@chakra-ui/core';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 import { RiMapPinAddFill, RiHeart3Fill, RiUserStarLine } from 'react-icons/ri';
@@ -43,7 +45,38 @@ const Landing = () => {
   return (
     <Layout>
       <Hero />
+      <Box bg="blue.500" color="white" p="5rem" textAlign="center">
+        <Heading>Statik Sektor Parawisata</Heading>
+        <Text>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga totam
+          quae veniam quod delectus quis commodi ullam itaque asperiores. Nam.
+        </Text>
 
+        <Stack
+          divider={<StackDivider borderColor="gray.400" />}
+          direction="row"
+          spacing="1rem"
+          justify="center"
+          mt="2rem"
+        >
+          <Stack>
+            <Heading>5</Heading>
+            <Text>Lorem ipsum dolor</Text>
+          </Stack>
+          <Stack>
+            <Heading>5</Heading>
+            <Text>Lorem ipsum dolor</Text>
+          </Stack>
+          <Stack>
+            <Heading>5</Heading>
+            <Text>Lorem ipsum dolor</Text>
+          </Stack>
+          <Stack>
+            <Heading>5</Heading>
+            <Text>Lorem ipsum dolor</Text>
+          </Stack>
+        </Stack>
+      </Box>
       <Section>
         <SimpleGrid
           columns={[1, 1, 1, 2]}
