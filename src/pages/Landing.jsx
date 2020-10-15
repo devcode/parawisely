@@ -85,10 +85,8 @@ const Landing = () => {
       <Section>
         <Stack align="center" textAlign="center">
           <Heading>Keberagaman & budaya Melimpah</Heading>
-          <Text w="60%">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-            modi assumenda sapiente, laboriosam perferendis soluta? Impedit iste
-            atque quisquam corrupti.
+          <Text w="100%">
+            Nikmati berbagai macam budaya, keberagaman, kuliner dan keindahan alam yang membuat-mu <br></br> jatuh cinta dan menjadikan Indonesia sebagai destinasi-mu selanjutnya
           </Text>
         </Stack>
 
@@ -125,9 +123,7 @@ const Landing = () => {
             </Text>
           </Stack>
         </SimpleGrid>
-      </Section>
 
-      <Section mt="-230px">
         <SimpleGrid
           columns={[1, 1, 1, 2]}
           alignItems="center"
@@ -163,10 +159,8 @@ const Landing = () => {
           </Stack>
           <Image src={alamImages} w="640px" objectFit="cover" />
         </SimpleGrid>
-      </Section>
 
-      <Section mt="-230px">
-        <SimpleGrid
+          <SimpleGrid
           columns={[1, 1, 1, 2]}
           alignItems="center"
           spacing={['1rem', '1rem', '1rem', '5rem']}

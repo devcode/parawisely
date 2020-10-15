@@ -41,7 +41,7 @@ const LokasiItem = ({ image, name, location }) => (
         background: 'rgba(255, 255, 255, 0.7)',
       }}
     >
-      <Heading size="md">{name}</Heading>
+      <Heading fontWeight="extra_bold" size="md">{name}</Heading>
       <Text color="gray.600">{location}</Text>
     </Box>
   </Box>

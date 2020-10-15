@@ -78,6 +78,8 @@ const MobileDrawer = () => {
                 <MenuItems to="/tentang">Tentang</MenuItems>
                 <MenuItems to="/kontak">Kontak</MenuItems>
                 <MenuItems to="/rekomendasi">Rekomendasi</MenuItems>
+                <MenuItems to="/map">Peta Wisata</MenuItems>
+                <MenuItems to="/mitra">Mitra Pariwisata</MenuItems>
               </DrawerBody>
 
               <DrawerFooter borderTopWidth="1px">
