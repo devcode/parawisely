@@ -51,7 +51,7 @@ const Header = props => {
           <MenuItems to="/eksplor">Eksplorasi</MenuItems>
           <MenuItems to="/tentang">Tentang</MenuItems>
           <MenuItems to="/kontak">Kontak</MenuItems>
-          <MenuItems to="/map">Peta</MenuItems>
+          <MenuItems to="/map">Peta Pariwisata</MenuItems>
         </Flex>
       </Box>
 

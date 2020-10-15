@@ -36,7 +36,7 @@ const Hero = props => {
             mb={4}
           >
             Jelajahi keindahan alam dan keberagaman budaya yang dimiliki
-            Indonesia. Website ini bertujuan untuk menjadikan
+            Indonesia. Parawisely bertujuan untuk menjadikan
             Indonesia sebagai destinasi-mu selanjutnya.
           </Text>
           <Stack isInline>
@@ -63,7 +63,7 @@ const Hero = props => {
             color="#4737ff"
             variant="outline"
           >
-            Rekomendasi &nbsp;&nbsp;
+            Rekomendasi 
           </Button>
         </Stack>
         </Stack>

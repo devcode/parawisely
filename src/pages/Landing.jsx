@@ -48,9 +48,10 @@ const Landing = () => {
       <Box bg="blue.500" color="white" p="5rem" textAlign="center">
         <Heading>Statistik Sektor Parawisata</Heading>
 
-        <Text>
+        <Text mt="10px">
           Data dibawah ditujukan untuk anda agar menjadikan Indonesia sebagai
-          destinasi selanjutnya <br></br>
+          destinasi selanjutnya <br></br><br></br>
+
         </Text>
 
         <Stack
@@ -79,30 +80,7 @@ const Landing = () => {
         </Stack>
       </Box>
 
-      <Section>
-        <Box>
-          <Heading
-            textAlign="center"
-            letterSpacing="0px"
-            fontWeight="extra_bold"
-            fontSize="40px"
-          >
-            Jelajahi Indonesia melewati video dibawah ini
-          </Heading>
-          <Text textAlign="center" mt={2}>
-            Video ini dibuat oleh pihak Pesona Indonesia dalam rangka
-            memperingati hari pariwisata dunia <br></br> 2020, Mari bersama
-            jelajahi Indonesia dalam video singkat berikut!
-          </Text>
-          <ReactPlayer
-            style={{
-              margin: '30px auto 0 auto',
-            }}
-            width="full"
-            url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
-          />
-        </Box>
-      </Section>
+      
 
       <Section>
         <Stack align="center" textAlign="center">
@@ -225,6 +203,31 @@ const Landing = () => {
             </Text>
           </Stack>
         </SimpleGrid>
+      </Section>
+
+      <Section>
+        <Box>
+          <Heading
+            textAlign="center"
+            letterSpacing="0px"
+            fontWeight="extra_bold"
+            fontSize="40px"
+          >
+            Jelajahi Indonesia melewati video dibawah ini
+          </Heading>
+          <Text textAlign="center" mt={2}>
+            Video ini dibuat oleh pihak Pesona Indonesia dalam rangka
+            memperingati hari pariwisata dunia <br></br> 2020, Mari bersama
+            jelajahi Indonesia dalam video singkat berikut!
+          </Text>
+          <ReactPlayer
+            style={{
+              margin: '30px auto 0 auto',
+            }}
+            width="full"
+            url="https://www.youtube.com/watch?v=0kEnZN_WlgU"
+          />
+        </Box>
       </Section>
 
       <Section>
