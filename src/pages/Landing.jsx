@@ -50,14 +50,14 @@ const Landing = () => {
 
         <Text mt="10px">
           Data dibawah ditujukan untuk anda agar menjadikan Indonesia sebagai
-          destinasi selanjutnya <br></br><br></br>
-
+          destinasi selanjutnya <br></br>
+          <br></br>
         </Text>
 
         <Stack
           divider={<StackDivider borderColor="gray.400" />}
-          direction="row"
-          spacing="4rem"
+          direction={['column', 'row']}
+          spacing={['2rem', '4rem']}
           justify="center"
           mt="2rem"
         >
@@ -80,13 +80,13 @@ const Landing = () => {
         </Stack>
       </Box>
 
-      
-
       <Section>
         <Stack align="center" textAlign="center">
           <Heading>Keberagaman & budaya Melimpah</Heading>
           <Text w="100%">
-            Nikmati berbagai macam budaya, keberagaman, kuliner dan keindahan alam yang membuat-mu <br></br> jatuh cinta dan menjadikan Indonesia sebagai destinasi-mu selanjutnya
+            Nikmati berbagai macam budaya, keberagaman, kuliner dan keindahan
+            alam yang membuat-mu <br></br> jatuh cinta dan menjadikan Indonesia
+            sebagai destinasi-mu selanjutnya
           </Text>
         </Stack>
 
@@ -160,7 +160,7 @@ const Landing = () => {
           <Image src={alamImages} w="640px" objectFit="cover" />
         </SimpleGrid>
 
-          <SimpleGrid
+        <SimpleGrid
           columns={[1, 1, 1, 2]}
           alignItems="center"
           spacing={['1rem', '1rem', '1rem', '5rem']}
@@ -275,7 +275,6 @@ const Landing = () => {
           />
         </SimpleGrid>
       </Stack>
-      
 
       <Section
         background={`url(${backgroundDots})`}
@@ -331,8 +330,6 @@ const Landing = () => {
           Gabung <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
         </Button>
       </CardRekomendasi>
-
-     
     </Layout>
   );
 };
