@@ -1,5 +1,9 @@
 import React, { useRef, useEffect, useState } from 'react';
-import ReactMapGL, { NavigationControl, GeolocateControl } from 'react-map-gl';
+import ReactMapGL, {
+  Popup,
+  NavigationControl,
+  GeolocateControl,
+} from 'react-map-gl';
 import Pins from './Pins';
 import CityInfo from './CityInfo';
 
@@ -23,7 +27,24 @@ const Mapbox = () => {
   const mapRef = useRef();
 
   const _onClickMarker = city => {
-    setPopupInfo({ city });
+    setPopupInfo(city);
+  };
+
+  const _renderPopup = () => {
+    return (
+      popupInfo && (
+        <Popup
+          tipSize={5}
+          anchor="top"
+          longitude={popupInfo.longitude}
+          latitude={popupInfo.latitude}
+          closeOnClick={false}
+          onClose={() => setPopupInfo(null)}
+        >
+          <CityInfo info={popupInfo} />
+        </Popup>
+      )
+    );
   };
 
   return (
@@ -39,6 +60,8 @@ const Mapbox = () => {
         mapStyle="mapbox://styles/supryantohehe/ckg9ifl6q011w19n2889icri2"
       >
         <Pins data={DATA} onClick={_onClickMarker} />
+
+        {_renderPopup()}
 
         <div style={navStyle}>
           <NavigationControl />
