@@ -4,6 +4,7 @@ import ReactMapGL, {
   NavigationControl,
   GeolocateControl,
 } from 'react-map-gl';
+import { useQuery } from 'react-query';
 import Pins from './Pins';
 import CityInfo from './CityInfo';
 
@@ -23,6 +24,12 @@ const Mapbox = () => {
     height: '80vh',
     zoom: 4,
   });
+
+  const { isLoading, error, data } = useQuery('repoData', () =>
+    fetch('http://parawisely-backend.test/api/travel-place').then(res =>
+      res.json()
+    )
+  );
 
   const mapRef = useRef();
 
@@ -46,6 +53,10 @@ const Mapbox = () => {
       )
     );
   };
+
+  if (isLoading) return 'Loading...';
+
+  if (error) return 'An error has occurred: ' + error.message;
 
   return (
     <div>
@@ -74,6 +85,10 @@ const Mapbox = () => {
           />
         </div>
       </ReactMapGL>
+
+      {data.data.map((item, index) => (
+        <li>{item.name_place}</li>
+      ))}
     </div>
   );
 };
