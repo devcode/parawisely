@@ -26,7 +26,7 @@ const Header = props => {
     <Stack
       top="0"
       position="sticky"
-      zIndex={1}
+      zIndex={2}
       as="nav"
       direction="row"
       justify="space-between"
