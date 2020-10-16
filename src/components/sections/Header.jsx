@@ -14,7 +14,7 @@ const MenuItems = ({ children, isLast, to = '/', ...rest }) => {
       display="block"
       {...rest}
     >
-      <RouterLink activeStyle={{ fontWeight: 700}} to={to}>
+      <RouterLink activeStyle={{ fontWeight: 700 }} to={to}>
         {children}
       </RouterLink>
     </Text>
@@ -38,7 +38,7 @@ const Header = props => {
       color="primary.800"
       backgroundColor="white"
     >
-      <Box display={['none', 'none', 'none', 'block']}>
+      <Box>
         <Flex
           align={['center', 'center', 'center', 'center']}
           justify={['center', 'space-between', 'start', 'start']}
@@ -49,12 +49,14 @@ const Header = props => {
           <RouterLink to="/">
             <Image mr="2rem" src={Logo} htmlWidth="30px" />
           </RouterLink>
-          <MenuItems to="/wisata-daerah">Wisata Daerah</MenuItems>
-          <MenuItems to="/eksplor">Eksplorasi</MenuItems>
-          <MenuItems to="/tentang">Tentang</MenuItems>
-          <MenuItems to="/kontak">Kontak</MenuItems>
-          <MenuItems to="/map">Peta Wisata</MenuItems>
-           <MenuItems to="/mitra">Mitra Pariwisata</MenuItems>
+          <Box d={['none', 'none', 'none', 'flex']}>
+            <MenuItems to="/wisata-daerah">Wisata Daerah</MenuItems>
+            <MenuItems to="/eksplor">Eksplorasi</MenuItems>
+            <MenuItems to="/tentang">Tentang</MenuItems>
+            <MenuItems to="/kontak">Kontak</MenuItems>
+            <MenuItems to="/map">Peta Wisata</MenuItems>
+            <MenuItems to="/mitra">Mitra Pariwisata</MenuItems>
+          </Box>
         </Flex>
       </Box>
 
