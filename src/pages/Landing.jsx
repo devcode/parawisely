@@ -48,9 +48,10 @@ const Landing = () => {
       <Box bg="blue.500" color="white" p="5rem" textAlign="center">
         <Heading>Statistik Sektor Parawisata</Heading>
 
-        <Text>
+        <Text mt="10px">
           Data dibawah ditujukan untuk anda agar menjadikan Indonesia sebagai
-          destinasi selanjutnya <br></br>
+          destinasi selanjutnya <br></br><br></br>
+
         </Text>
 
         <Stack
@@ -79,38 +80,13 @@ const Landing = () => {
         </Stack>
       </Box>
 
-      <Section>
-        <Box>
-          <Heading
-            textAlign="center"
-            letterSpacing="0px"
-            fontWeight="extra_bold"
-            fontSize="40px"
-          >
-            Jelajahi Indonesia melewati video dibawah ini
-          </Heading>
-          <Text textAlign="center" mt={2}>
-            Video ini dibuat oleh pihak Pesona Indonesia dalam rangka
-            memperingati hari pariwisata dunia <br></br> 2020, Mari bersama
-            jelajahi Indonesia dalam video singkat berikut!
-          </Text>
-          <ReactPlayer
-            style={{
-              margin: '30px auto 0 auto',
-            }}
-            width="full"
-            url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
-          />
-        </Box>
-      </Section>
+      
 
       <Section>
         <Stack align="center" textAlign="center">
           <Heading>Keberagaman & budaya Melimpah</Heading>
-          <Text w="60%">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-            modi assumenda sapiente, laboriosam perferendis soluta? Impedit iste
-            atque quisquam corrupti.
+          <Text w="100%">
+            Nikmati berbagai macam budaya, keberagaman, kuliner dan keindahan alam yang membuat-mu <br></br> jatuh cinta dan menjadikan Indonesia sebagai destinasi-mu selanjutnya
           </Text>
         </Stack>
 
@@ -147,9 +123,7 @@ const Landing = () => {
             </Text>
           </Stack>
         </SimpleGrid>
-      </Section>
 
-      <Section mt="-230px">
         <SimpleGrid
           columns={[1, 1, 1, 2]}
           alignItems="center"
@@ -185,10 +159,8 @@ const Landing = () => {
           </Stack>
           <Image src={alamImages} w="640px" objectFit="cover" />
         </SimpleGrid>
-      </Section>
 
-      <Section mt="-230px">
-        <SimpleGrid
+          <SimpleGrid
           columns={[1, 1, 1, 2]}
           alignItems="center"
           spacing={['1rem', '1rem', '1rem', '5rem']}
@@ -225,6 +197,31 @@ const Landing = () => {
             </Text>
           </Stack>
         </SimpleGrid>
+      </Section>
+
+      <Section>
+        <Box>
+          <Heading
+            textAlign="center"
+            letterSpacing="0px"
+            fontWeight="extra_bold"
+            fontSize="40px"
+          >
+            Jelajahi Indonesia melewati video dibawah ini
+          </Heading>
+          <Text textAlign="center" mt={2}>
+            Video ini dibuat oleh pihak Pesona Indonesia dalam rangka
+            memperingati hari pariwisata dunia <br></br> 2020, Mari bersama
+            jelajahi Indonesia dalam video singkat berikut!
+          </Text>
+          <ReactPlayer
+            style={{
+              margin: '30px auto 0 auto',
+            }}
+            width="full"
+            url="https://www.youtube.com/watch?v=0kEnZN_WlgU"
+          />
+        </Box>
       </Section>
 
       <Section>

@@ -24,6 +24,8 @@ const MenuItems = ({ children, isLast, to = '/', ...rest }) => {
 const Header = props => {
   return (
     <Stack
+      top="0"
+      position="sticky"
       zIndex={1}
       as="nav"
       direction="row"
@@ -51,7 +53,8 @@ const Header = props => {
           <MenuItems to="/eksplor">Eksplorasi</MenuItems>
           <MenuItems to="/tentang">Tentang</MenuItems>
           <MenuItems to="/kontak">Kontak</MenuItems>
-          <MenuItems to="/map">Peta</MenuItems>
+          <MenuItems to="/map">Peta Wisata</MenuItems>
+           <MenuItems to="/mitra">Mitra Pariwisata</MenuItems>
         </Flex>
       </Box>
 
