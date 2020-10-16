@@ -14,13 +14,13 @@ const Hero = props => {
   return (
     <Box
       p={['5rem 2rem', '5rem 2rem', '5rem 2rem', '0 0 5rem 5rem']}
-      h={['80vh', '80vh', '80vh', 'auto']}
+      h={['100vh', '100vh', '100vh', 'auto']}
     >
       <SimpleGrid alignItems="center" columns={[1, 1, 1, 2]}>
         <Stack spacing={4} align="start">
           <Heading
-            w={['100%', '100%', '100%', '80%']}
-            fontSize="44px"
+            w={['auto', 'auto', 'auto', '80%']}
+            fontSize={['28px', '28px', '28px', '44px']}
             letterSpacing="-1px"
             fontWeight="extra_bold"
             lineHeight="48px"
@@ -30,42 +30,42 @@ const Hero = props => {
           <Text
             w={['100%', '100%', '100%', '80%']}
             color="#666666"
-            fontSize="19px"
+            fontSize={['16px', '19px']}
             letterSpacing="0px"
             lineHeight="31px"
             mb={4}
           >
             Jelajahi keindahan alam dan keberagaman budaya yang dimiliki
-            Indonesia. Parawisely bertujuan untuk menjadikan
-            Indonesia sebagai destinasi-mu selanjutnya.
+            Indonesia. Parawisely bertujuan untuk menjadikan Indonesia sebagai
+            destinasi-mu selanjutnya.
           </Text>
-          <Stack isInline>
-          <Button
-            px="4rem"
-            size="lg"
-            lineHeight="32px"
-            letterSpacing="0.3px"
-            fontWeight="extra_bold"
-            fontSize="15px"
-            colorScheme="blue"
-          >
-            Mulai sekarang
-          </Button>
+          <SimpleGrid w={['full', 'auto']} spacing="0.5rem" columns={[1, 2]}>
+            <Button
+              px="4rem"
+              size="lg"
+              lineHeight="32px"
+              letterSpacing="0.3px"
+              fontWeight="extra_bold"
+              fontSize="15px"
+              colorScheme="blue"
+            >
+              Mulai sekarang
+            </Button>
 
-          <Button
-            px="4rem"
-            size="lg"
-            lineHeight="32px"
-            letterSpacing="0.3px"
-            fontWeight="extra_bold"
-            fontSize="15px"
-            borderColor="#4737ff"
-            color="#4737ff"
-            variant="outline"
-          >
-            Rekomendasi 
-          </Button>
-        </Stack>
+            <Button
+              px="4rem"
+              size="lg"
+              lineHeight="32px"
+              letterSpacing="0.3px"
+              fontWeight="extra_bold"
+              fontSize="15px"
+              borderColor="#4737ff"
+              color="#4737ff"
+              variant="outline"
+            >
+              Rekomendasi
+            </Button>
+          </SimpleGrid>
         </Stack>
         <Box d={['none', 'none', 'none', 'block']} minW="lg">
           <Image
