@@ -4,18 +4,17 @@ import ReactMapGL, {
   NavigationControl,
   GeolocateControl,
 } from 'react-map-gl';
-import { useQuery } from 'react-query';
 import Pins from './Pins';
 import CityInfo from './CityInfo';
+import DATA from '../../../data/regencies.json';
 
-import '../../stylesheets/map.css';
-
-import DATA from '../../data/cities.json';
+import '../../../stylesheets/map.css';
 
 const navStyle = { padding: '10px', position: 'absolute', right: 0 };
 const geolocateStyle = { padding: '10px', position: 'absolute', top: 0 };
 
 const Mapbox = () => {
+  const mapRef = useRef();
   const [popupInfo, setPopupInfo] = useState(null);
   const [viewport, setViewport] = useState({
     latitude: -2.68496,
@@ -24,14 +23,6 @@ const Mapbox = () => {
     height: '80vh',
     zoom: 4,
   });
-
-  const { isLoading, error, data } = useQuery('repoData', () =>
-    fetch('http://parawisely-backend.test/api/travel-place').then(res =>
-      res.json()
-    )
-  );
-
-  const mapRef = useRef();
 
   const _onClickMarker = city => {
     setPopupInfo(city);
@@ -53,10 +44,6 @@ const Mapbox = () => {
       )
     );
   };
-
-  if (isLoading) return 'Loading...';
-
-  if (error) return 'An error has occurred: ' + error.message;
 
   return (
     <div>
@@ -85,10 +72,6 @@ const Mapbox = () => {
           />
         </div>
       </ReactMapGL>
-
-      {data.data.map((item, index) => (
-        <li>{item.name_place}</li>
-      ))}
     </div>
   );
 };

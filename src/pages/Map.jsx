@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/layouts';
-import Mapbox from '../components/ui/Mapbox';
+import Mapbox from '../components/ui/map/Mapbox';
 
 const Map = props => {
   return (
