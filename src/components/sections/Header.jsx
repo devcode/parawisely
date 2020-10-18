@@ -47,7 +47,7 @@ const Header = props => {
           fontWeight="regular"
         >
           <RouterLink to="/">
-            <Image mr="2rem" src={Logo} htmlWidth="30px" />
+            <Image display={['none', 'none', 'none', 'block']} mr="2rem" src={Logo} htmlWidth="24px" />
           </RouterLink>
           <Box d={['none', 'none', 'none', 'flex']}>
             <MenuItems to="/wisata-daerah">Wisata Daerah</MenuItems>

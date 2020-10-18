@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import AOS from 'aos';
 import {
   Button,
   Box,
@@ -11,6 +12,7 @@ import {
   SimpleGrid,
   Link,
   StackDivider,
+  Spinner,
 } from '@chakra-ui/core';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 import ReactPlayer from 'react-player';
@@ -42,13 +44,20 @@ const Feature = ({ title, description, icon }) => (
 );
 
 const Landing = () => {
+useEffect(() => {
+  AOS.init({
+    duration : 2000
+  });
+}, []);
   return (
     <Layout>
       <Hero />
-      <Box bg="blue.500" color="white" p="5rem" textAlign="center">
-        <Heading>Statistik Sektor Parawisata</Heading>
+      <Box bg="blue.500" color="white" p="4.5rem" textAlign="center">
+        <Heading data-aos-duration="1700"
+            data-aos="fade-up">Statistik Sektor Parawisata</Heading>
 
-        <Text mt="10px">
+        <Text data-aos-duration="1700"
+            data-aos="fade-up" data-aos-delay="100" mt="10px">
           Data dibawah ditujukan untuk anda agar menjadikan Indonesia sebagai
           destinasi selanjutnya <br></br>
           <br></br>
@@ -61,19 +70,19 @@ const Landing = () => {
           justify="center"
           mt="2rem"
         >
-          <Stack>
+          <Stack data-aos="fade-up" data-aos-duration="1500"> 
             <Heading>1000+</Heading>
             <Text>Prestasi Diraih</Text>
           </Stack>
-          <Stack>
+          <Stack data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
             <Heading>500+</Heading>
             <Text>Tempat Pariwisata</Text>
           </Stack>
-          <Stack>
+          <Stack data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
             <Heading>100K+</Heading>
             <Text>Turis Pertahun</Text>
           </Stack>
-          <Stack>
+          <Stack data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
             <Heading>500K+</Heading>
             <Text>Turis puas</Text>
           </Stack>
@@ -82,8 +91,10 @@ const Landing = () => {
 
       <Section>
         <Stack align="center" textAlign="center">
-          <Heading>Keberagaman & budaya Melimpah</Heading>
-          <Text w="100%">
+          <Heading fontWeigth="extra-bold" data-aos-duration="1700"
+            data-aos="fade-up">Keberagaman & budaya Melimpah</Heading>
+          <Text w="100%" data-aos-duration="1700"
+            data-aos="fade-up" data-aos-delay="100">
             Nikmati berbagai macam budaya, keberagaman, kuliner dan keindahan
             alam yang membuat-mu <br></br> jatuh cinta dan menjadikan Indonesia
             sebagai destinasi-mu selanjutnya
@@ -95,15 +106,19 @@ const Landing = () => {
           alignItems="center"
           spacing={['1rem', '1rem', '1rem', '5rem']}
         >
-          <Image src={budayaImages} w="640px" objectFit="cover" />
+          <Image data-aos-duration="1700"
+            data-aos="fade-right" data-aos-delay="50" src={budayaImages} w="640px" objectFit="cover" />
           <Stack spacing="1rem" align="start">
             <Heading
               fontWeight="extra_bold"
               fontSize={['30px', '30px', '30px', '40px']}
+              data-aos-duration="2500"
+            data-aos="fade-left"
             >
               Keberagaman budaya yang bisa anda nikmati hanya di Indonesia!
             </Heading>
-            <Text fontSize="18px">
+            <Text  data-aos-duration="1700"
+            data-aos="fade-left" data-aos-delay="100" fontSize="18px">
               Beragam budaya bisa kalian temuka di Indonesia. Mulai dari Bahasa
               Daerah, Tari Tradisional, Senjata Traditional, Baju Daerah dan
               Lagu Daerah yang bisa kalian nikmati di Indonesia yang kaya akan
@@ -114,6 +129,8 @@ const Landing = () => {
               fontWeight="extra_bold"
               colorScheme="blue"
               variant="ghost"
+               data-aos-duration="1700"
+            data-aos="fade-left" data-aos-delay="150"
             >
               <Link href="/">
                 {' '}
@@ -133,11 +150,14 @@ const Landing = () => {
             <Heading
               fontWeight="extra_bold"
               fontSize={['30px', '30px', '30px', '40px']}
+               data-aos-duration="2500"
+            data-aos="fade-right" data-aos-delay="50"
             >
               Keindahan alam yang di akui Dunia yang bisa kamu liat di
               Indonesia!
             </Heading>
-            <Text fontSize="18px">
+            <Text  data-aos-duration="1700"
+            data-aos="fade-right" data-aos-delay="100" fontSize="18px">
               Keindahan alam yang dimiliki Indonesia membuatnya diakui dunia
               sebagai negara terindah di dunia. Memiliki pantai, gunung, tempat
               bersejarah dan wahana atraksi yang ada di Indonesia yang siap
@@ -149,6 +169,8 @@ const Landing = () => {
               fontWeight="extra_bold"
               colorScheme="blue"
               variant="ghost"
+               data-aos-duration="1700"
+            data-aos="fade-left" data-aos-delay="300"
             >
               <Link href="/">
                 {' '}
@@ -157,7 +179,8 @@ const Landing = () => {
               </Link>
             </Text>
           </Stack>
-          <Image src={alamImages} w="640px" objectFit="cover" />
+          <Image data-aos-duration="1700"
+            data-aos="fade-left" data-aos-delay="50" src={alamImages} w="640px" objectFit="cover" />
         </SimpleGrid>
 
         <SimpleGrid

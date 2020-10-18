@@ -1,6 +1,6 @@
 import './stylesheets/html.css';
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import { ChakraProvider, CSSReset } from '@chakra-ui/core';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import theme from './theme';

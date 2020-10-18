@@ -1,3 +1,11 @@
+html,
+body {
+  max-width: 100%;
+  height: auto;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
 .header {
     backdrop-filter: blur(8px);
     background: red;

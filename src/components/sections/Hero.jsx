@@ -24,6 +24,8 @@ const Hero = props => {
             letterSpacing="-1px"
             fontWeight="extra_bold"
             lineHeight="48px"
+            data-aos-duration="1500"
+            data-aos="fade-up"
           >
             Temukan keindahan dan keberagaman budaya negara Indonesia
           </Heading>
@@ -34,6 +36,8 @@ const Hero = props => {
             letterSpacing="0px"
             lineHeight="31px"
             mb={4}
+            data-aos-duration="1600"
+            data-aos="fade-up"
           >
             Jelajahi keindahan alam dan keberagaman budaya yang dimiliki
             Indonesia. Parawisely bertujuan untuk menjadikan Indonesia sebagai
@@ -48,6 +52,8 @@ const Hero = props => {
               fontWeight="extra_bold"
               fontSize="15px"
               colorScheme="blue"
+               data-aos-duration="1700"
+            data-aos="fade-up"
             >
               Mulai sekarang
             </Button>
@@ -62,12 +68,15 @@ const Hero = props => {
               borderColor="#4737ff"
               color="#4737ff"
               variant="outline"
+               data-aos-duration="1700"
+            data-aos="fade-up"
             >
               Rekomendasi
             </Button>
           </SimpleGrid>
         </Stack>
-        <Box d={['none', 'none', 'none', 'block']} minW="lg">
+        <Box d={['none', 'none', 'none', 'block']} minW="lg"  data-aos-duration="1700"
+            data-aos="fade-up">
           <Image
             src={heroImages}
             size="xl"

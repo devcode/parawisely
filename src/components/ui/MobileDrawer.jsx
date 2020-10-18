@@ -57,24 +57,17 @@ const MobileDrawer = () => {
           placement="right"
         >
           <DrawerOverlay>
-            <DrawerContent>
-              <DrawerHeader p={[8, 8, 4, 4]}>
-                <RouterLink to="/">
-                  <Link href="/" onClick={onClose} variant="link">
-                    <Image src={Logo} htmlWidth="30px" />
-                  </Link>
-                </RouterLink>
-              </DrawerHeader>
-
+            <DrawerContent  bgColor="blue.500" color="white">
               <DrawerBody
                 as={Stack}
                 fontSize="lg"
-                justify="top"
+                justify="center"
                 p={8}
                 spacing={4}
               >
-                <MenuItems to="/wisata-daerah">Wisata Daerah </MenuItems>
-                <MenuItems to="/eksplor">Eksplorasi </MenuItems>
+                <MenuItems to="/">Beranda</MenuItems>
+                <MenuItems to="/wisata-daerah">Wisata Daerah</MenuItems>
+                <MenuItems to="/eksplor">Eksplorasi</MenuItems>
                 <MenuItems to="/tentang">Tentang</MenuItems>
                 <MenuItems to="/kontak">Kontak</MenuItems>
                 <MenuItems to="/rekomendasi">Rekomendasi</MenuItems>
@@ -82,14 +75,7 @@ const MobileDrawer = () => {
                 <MenuItems to="/mitra">Mitra Pariwisata</MenuItems>
               </DrawerBody>
 
-              <DrawerFooter borderTopWidth="1px">
-                <Stack direction="row" align="left" spacing="1.5rem">
-                  <IconSosmed url="https://facebook.com" icon={FaFacebook} />
-                  <IconSosmed url="https://twitter.com" icon={FaTwitter} />
-                  <IconSosmed url="https://instagram.com" icon={FaInstagram} />
-                  <IconSosmed url="https://youtube.com" icon={FaYoutube} />
-                </Stack>
-              </DrawerFooter>
+              
             </DrawerContent>
           </DrawerOverlay>
         </Drawer>
