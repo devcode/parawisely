@@ -67,8 +67,8 @@ const MobileDrawer = () => {
                 spacing={4}
               >
                 <MenuItems to="/">Beranda</MenuItems>
+                 <MenuItems to="/eksplorasi">Eksplorasi</MenuItems>
                 <MenuItems to="/wisata-daerah">Wisata Daerah</MenuItems>
-                <MenuItems to="/eksplorasi">Eksplorasi</MenuItems>
                 <MenuItems to="/peta-wisata">Peta Wisata</MenuItems>
                 <MenuItems to="/mitra-pariwisata">Mitra Pariwisata</MenuItems>
                  <MenuItems to="/tentang">Tentang</MenuItems>

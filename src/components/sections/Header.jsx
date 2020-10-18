@@ -32,7 +32,10 @@ const Header = props => {
       justify="space-between"
       align="center"
       wrap="wrap"
-      shadow="0px 43px 261px rgba(0, 0, 0, 0.03), 0px 19.8802px 120.668px rgba(0, 0, 0, 0.0221583), 0px 11.375px 69.0436px rgba(0, 0, 0, 0.0198316), 0px 6.90454px 41.909px rgba(0, 0, 0, 0.0177566), 0px 4.16029px 25.252px rgba(0, 0, 0, 0.0149977), 0px 2.31672px 14.0619px rgba(0, 0, 0, 0.0112133), 0px 0.996405px 6.04795px rgba(0, 0, 0, 0.00624311);"
+      shadow="
+  0px 43px 261px rgba(0, 0, 0, 0.03), 0px 19.8802px 120.668px rgba(0, 0, 0, 0.0221583), 0px 11.375px 69.0436px rgba(0, 0, 0, 0.0198316), 0px 6.90454px 41.909px rgba(0, 0, 0, 0.0177566), 0px 4.16029px 25.252px rgba(0, 0, 0, 0.0149977), 0px 2.31672px 14.0619px rgba(0, 0, 0, 0.0112133), 0px 0.996405px 6.04795px rgba(0, 0, 0, 0.00624311);
+;
+"
       py="1rem"
       px={['2rem', '2rem', '3rem', '5rem']}
       color="primary.800"
@@ -49,8 +52,8 @@ const Header = props => {
             <Image mr={['0', '0', '0', '2rem']} src={Logo} htmlWidth="24px" />
           </RouterLink>
           <Box d={['none', 'none', 'none', 'flex']}>
+          <MenuItems to="/eksplorasi">Eksplorasi</MenuItems>  
             <MenuItems to="/wisata-daerah">Wisata Daerah</MenuItems>
-            <MenuItems to="/eksplorasi">Eksplorasi</MenuItems>        
             <MenuItems to="/peta-wisata">Peta Wisata</MenuItems>
             <MenuItems to="/mitra-pariwisata">Mitra Pariwisata</MenuItems>
             <MenuItems to="/tentang">Tentang</MenuItems>
