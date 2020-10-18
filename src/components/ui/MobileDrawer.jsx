@@ -68,11 +68,11 @@ const MobileDrawer = () => {
               >
                 <MenuItems to="/">Beranda</MenuItems>
                 <MenuItems to="/wisata-daerah">Wisata Daerah</MenuItems>
-                <MenuItems to="/eksplor">Eksplorasi</MenuItems>
-                <MenuItems to="/tentang">Tentang</MenuItems>
+                <MenuItems to="/eksplorasi">Eksplorasi</MenuItems>
+                <MenuItems to="/peta-wisata">Peta Wisata</MenuItems>
+                <MenuItems to="/mitra-pariwisata">Mitra Pariwisata</MenuItems>
+                 <MenuItems to="/tentang">Tentang</MenuItems>
                 <MenuItems to="/kontak">Kontak</MenuItems>
-                <MenuItems to="/map">Peta Wisata</MenuItems>
-                <MenuItems to="/mitra">Mitra Pariwisata</MenuItems>
                 <MenuItems to="/rekomendasi">Rekomendasi</MenuItems>
               </DrawerBody>
 

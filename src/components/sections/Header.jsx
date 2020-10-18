@@ -14,7 +14,7 @@ const MenuItems = ({ children, isLast, to = '/', ...rest }) => {
       display="block"
       {...rest}
     >
-      <RouterLink activeStyle={{ fontWeight: 800 }} to={to}>
+      <RouterLink activeStyle={{ color: 'blue' }} to={to}>
         {children}
       </RouterLink>
     </Text>
@@ -50,11 +50,11 @@ const Header = props => {
           </RouterLink>
           <Box d={['none', 'none', 'none', 'flex']}>
             <MenuItems to="/wisata-daerah">Wisata Daerah</MenuItems>
-            <MenuItems to="/eksplor">Eksplorasi</MenuItems>
+            <MenuItems to="/eksplorasi">Eksplorasi</MenuItems>        
+            <MenuItems to="/peta-wisata">Peta Wisata</MenuItems>
+            <MenuItems to="/mitra-pariwisata">Mitra Pariwisata</MenuItems>
             <MenuItems to="/tentang">Tentang</MenuItems>
             <MenuItems to="/kontak">Kontak</MenuItems>
-            <MenuItems to="/map">Peta Wisata</MenuItems>
-            <MenuItems to="/mitra">Mitra Pariwisata</MenuItems>
           </Box>
         </Flex>
       </Box>
@@ -64,9 +64,11 @@ const Header = props => {
         direction="row"
         spacing="1rem"
       >
+      <RouterLink to="/rekomendasi">
         <Button px="1.5rem" colorScheme="blue">
           <Text fontWeight="extra_bold">Rekomendasi</Text>
         </Button>
+          </RouterLink>
       </Stack>
 
       <Box display={['block', 'block', 'block', 'none']}>
