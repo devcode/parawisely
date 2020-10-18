@@ -16,7 +16,7 @@ const Hero = props => {
       p={['5rem 2rem', '5rem 2rem', '5rem 2rem', '0 0 5rem 5rem']}
       h={['100vh', '100vh', '100vh', 'auto']}
     >
-      <SimpleGrid alignItems="center" columns={[1, 1, 1, 2]}>
+      <SimpleGrid  alignItems="center" columns={[1, 1, 1, 2]}>
         <Stack spacing={4} align="start">
           <Heading
             w={['auto', 'auto', 'auto', '80%']}
@@ -24,8 +24,6 @@ const Hero = props => {
             letterSpacing="-1px"
             fontWeight="extra_bold"
             lineHeight="48px"
-            data-aos-duration="1500"
-            data-aos="fade-up"
           >
             Temukan keindahan dan keberagaman budaya negara Indonesia
           </Heading>
@@ -36,8 +34,6 @@ const Hero = props => {
             letterSpacing="0px"
             lineHeight="31px"
             mb={4}
-            data-aos-duration="1600"
-            data-aos="fade-up"
           >
             Jelajahi keindahan alam dan keberagaman budaya yang dimiliki
             Indonesia. Parawisely bertujuan untuk menjadikan Indonesia sebagai
@@ -52,8 +48,6 @@ const Hero = props => {
               fontWeight="extra_bold"
               fontSize="15px"
               colorScheme="blue"
-               data-aos-duration="1700"
-            data-aos="fade-up"
             >
               Mulai sekarang
             </Button>
@@ -68,15 +62,12 @@ const Hero = props => {
               borderColor="#4737ff"
               color="#4737ff"
               variant="outline"
-               data-aos-duration="1700"
-            data-aos="fade-up"
             >
               Rekomendasi
             </Button>
           </SimpleGrid>
         </Stack>
-        <Box d={['none', 'none', 'none', 'block']} minW="lg"  data-aos-duration="1700"
-            data-aos="fade-up">
+        <Box d={['block', 'none', 'none', 'block']} >
           <Image
             src={heroImages}
             size="xl"

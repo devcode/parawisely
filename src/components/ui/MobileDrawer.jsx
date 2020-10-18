@@ -48,6 +48,7 @@ const MobileDrawer = () => {
           size="lg"
           color="blue.500"
           variant="ghost"
+          bgColor="gray.50"
         />
 
         <Drawer
@@ -70,9 +71,9 @@ const MobileDrawer = () => {
                 <MenuItems to="/eksplor">Eksplorasi</MenuItems>
                 <MenuItems to="/tentang">Tentang</MenuItems>
                 <MenuItems to="/kontak">Kontak</MenuItems>
-                <MenuItems to="/rekomendasi">Rekomendasi</MenuItems>
                 <MenuItems to="/map">Peta Wisata</MenuItems>
                 <MenuItems to="/mitra">Mitra Pariwisata</MenuItems>
+                <MenuItems to="/rekomendasi">Rekomendasi</MenuItems>
               </DrawerBody>
 
               

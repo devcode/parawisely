@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import AOS from 'aos';
+import sal from 'sal.js'
 import {
   Button,
   Box,
@@ -45,19 +45,15 @@ const Feature = ({ title, description, icon }) => (
 
 const Landing = () => {
 useEffect(() => {
-  AOS.init({
-    duration : 2000
-  });
+  sal();
 }, []);
   return (
     <Layout>
       <Hero />
       <Box bg="blue.500" color="white" p="4.5rem" textAlign="center">
-        <Heading data-aos-duration="1700"
-            data-aos="fade-up">Statistik Sektor Parawisata</Heading>
+        <Heading>Statistik Sektor Parawisata</Heading>
 
-        <Text data-aos-duration="1700"
-            data-aos="fade-up" data-aos-delay="100" mt="10px">
+        <Text mt="10px">
           Data dibawah ditujukan untuk anda agar menjadikan Indonesia sebagai
           destinasi selanjutnya <br></br>
           <br></br>
@@ -70,19 +66,19 @@ useEffect(() => {
           justify="center"
           mt="2rem"
         >
-          <Stack data-aos="fade-up" data-aos-duration="1500"> 
+          <Stack> 
             <Heading>1000+</Heading>
             <Text>Prestasi Diraih</Text>
           </Stack>
-          <Stack data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+          <Stack>
             <Heading>500+</Heading>
             <Text>Tempat Pariwisata</Text>
           </Stack>
-          <Stack data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
+          <Stack>
             <Heading>100K+</Heading>
             <Text>Turis Pertahun</Text>
           </Stack>
-          <Stack data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
+          <Stack>
             <Heading>500K+</Heading>
             <Text>Turis puas</Text>
           </Stack>
@@ -90,11 +86,9 @@ useEffect(() => {
       </Box>
 
       <Section>
-        <Stack align="center" textAlign="center">
-          <Heading fontWeigth="extra-bold" data-aos-duration="1700"
-            data-aos="fade-up">Keberagaman & budaya Melimpah</Heading>
-          <Text w="100%" data-aos-duration="1700"
-            data-aos="fade-up" data-aos-delay="100">
+        <Stack>
+          <Heading fontWeigth="extra-bold">Keberagaman & budaya Melimpah</Heading>
+          <Text w="100%">
             Nikmati berbagai macam budaya, keberagaman, kuliner dan keindahan
             alam yang membuat-mu <br></br> jatuh cinta dan menjadikan Indonesia
             sebagai destinasi-mu selanjutnya
@@ -106,19 +100,15 @@ useEffect(() => {
           alignItems="center"
           spacing={['1rem', '1rem', '1rem', '5rem']}
         >
-          <Image data-aos-duration="1700"
-            data-aos="fade-right" data-aos-delay="50" src={budayaImages} w="640px" objectFit="cover" />
+          <Image src={budayaImages} w="640px" objectFit="cover" />
           <Stack spacing="1rem" align="start">
             <Heading
               fontWeight="extra_bold"
               fontSize={['30px', '30px', '30px', '40px']}
-              data-aos-duration="2500"
-            data-aos="fade-left"
             >
               Keberagaman budaya yang bisa anda nikmati hanya di Indonesia!
             </Heading>
-            <Text  data-aos-duration="1700"
-            data-aos="fade-left" data-aos-delay="100" fontSize="18px">
+            <Text fontSize="18px">
               Beragam budaya bisa kalian temuka di Indonesia. Mulai dari Bahasa
               Daerah, Tari Tradisional, Senjata Traditional, Baju Daerah dan
               Lagu Daerah yang bisa kalian nikmati di Indonesia yang kaya akan
@@ -129,8 +119,6 @@ useEffect(() => {
               fontWeight="extra_bold"
               colorScheme="blue"
               variant="ghost"
-               data-aos-duration="1700"
-            data-aos="fade-left" data-aos-delay="150"
             >
               <Link href="/">
                 {' '}
@@ -150,14 +138,11 @@ useEffect(() => {
             <Heading
               fontWeight="extra_bold"
               fontSize={['30px', '30px', '30px', '40px']}
-               data-aos-duration="2500"
-            data-aos="fade-right" data-aos-delay="50"
             >
               Keindahan alam yang di akui Dunia yang bisa kamu liat di
               Indonesia!
             </Heading>
-            <Text  data-aos-duration="1700"
-            data-aos="fade-right" data-aos-delay="100" fontSize="18px">
+            <Text fontSize="18px">
               Keindahan alam yang dimiliki Indonesia membuatnya diakui dunia
               sebagai negara terindah di dunia. Memiliki pantai, gunung, tempat
               bersejarah dan wahana atraksi yang ada di Indonesia yang siap
@@ -169,8 +154,6 @@ useEffect(() => {
               fontWeight="extra_bold"
               colorScheme="blue"
               variant="ghost"
-               data-aos-duration="1700"
-            data-aos="fade-left" data-aos-delay="300"
             >
               <Link href="/">
                 {' '}
@@ -179,8 +162,7 @@ useEffect(() => {
               </Link>
             </Text>
           </Stack>
-          <Image data-aos-duration="1700"
-            data-aos="fade-left" data-aos-delay="50" src={alamImages} w="640px" objectFit="cover" />
+          <Image src={alamImages} w="640px" objectFit="cover" />
         </SimpleGrid>
 
         <SimpleGrid
