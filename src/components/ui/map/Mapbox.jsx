@@ -39,7 +39,7 @@ const Mapbox = () => {
 
   const _sourceRef = createRef();
 
-  const _onViewportChange = viewport => setViewport({ viewport });
+  const _onViewportChange = viewport => setViewport({ ...viewport });
 
   const _onClick = e => {
     const feature = e.features[0];
@@ -52,7 +52,13 @@ const Mapbox = () => {
         return;
       }
 
-      _onViewportChange();
+      _onViewportChange({
+        ...viewport,
+        latitude: feature.geometry.coordinates[1],
+        longitude: feature.geometry.coordinates[0],
+        zoom,
+        transitionDuration: 300,
+      });
     });
   };
 
@@ -83,9 +89,7 @@ const Mapbox = () => {
         height="80vh"
         maxZoom={20}
         mapboxApiAccessToken={apiToken}
-        onViewportChange={newViewport => {
-          setViewport({ ...newViewport });
-        }}
+        onViewportChange={_onViewportChange}
         ref={mapRef}
         mapStyle={mapStyle}
       >
