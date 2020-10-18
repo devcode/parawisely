@@ -12,8 +12,9 @@ import {
   unclusteredPointLayer,
 } from './Layers';
 import Pins from './Pins';
-import CityInfo from './CityInfo';
 import DATA from '../../../data/regencies.json';
+import CityInfo from './CityInfo';
+
 import '../../../stylesheets/map.css';
 
 const apiToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
@@ -36,30 +37,24 @@ const Mapbox = () => {
     setPopupInfo(city);
   };
 
+  const _sourceRef = createRef();
+
   const _onViewportChange = viewport => setViewport({ viewport });
 
   const _onClick = e => {
     const feature = e.features[0];
     const clusterId = feature.properties.cluster_id;
 
-    const mapboxSource = this._sourceRef.current.getSource();
+    const mapboxSource = _sourceRef.current.getSource();
 
     mapboxSource.getClusterExpansionZoom(clusterId, (err, zoom) => {
       if (err) {
         return;
       }
 
-      _onViewportChange({
-        ...viewport,
-        longitude: feature.geometry.coordinates[0],
-        latitude: feature.geometry.coordinates[1],
-        zoom,
-        transitionDuration: 500,
-      });
+      _onViewportChange();
     });
   };
-
-  const _sourceRef = createRef();
 
   const _renderPopup = () => {
     return (
@@ -81,11 +76,11 @@ const Mapbox = () => {
   return (
     <div>
       <MapGL
+        {...viewport}
         interactiveLayerIds={[clusterLayer.id]}
         onClick={_onClick}
         width="100vw"
         height="80vh"
-        {...viewport}
         maxZoom={20}
         mapboxApiAccessToken={apiToken}
         onViewportChange={newViewport => {
@@ -106,9 +101,6 @@ const Mapbox = () => {
           <Layer {...clusterCountLayer} />
           <Layer {...unclusteredPointLayer} />
         </Source>
-        <Pins data={DATA} onClick={_onClickMarker} />
-
-        {_renderPopup()}
 
         <div style={navStyle}>
           <NavigationControl />
