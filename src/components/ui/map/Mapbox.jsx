@@ -57,7 +57,7 @@ const Mapbox = () => {
         latitude: feature.geometry.coordinates[1],
         longitude: feature.geometry.coordinates[0],
         zoom,
-        transitionDuration: 300,
+        transitionDuration: 1000,
       });
     });
   };
