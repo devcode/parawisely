@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react';
-import sal from 'sal.js'
+import React, { useEffect } from 'react';
+import sal from 'sal.js';
 import {
   Button,
   Box,
@@ -17,6 +17,7 @@ import {
 import { IoIosArrowRoundForward } from 'react-icons/io';
 import ReactPlayer from 'react-player';
 import { RiMapPinAddFill, RiHeart3Fill, RiUserStarLine } from 'react-icons/ri';
+import Mapbox from '../components/ui/map/Mapbox';
 
 import Section from '../components/sections/Section';
 import Hero from '../components/sections/Hero';
@@ -44,9 +45,9 @@ const Feature = ({ title, description, icon }) => (
 );
 
 const Landing = () => {
-useEffect(() => {
-  sal();
-}, []);
+  useEffect(() => {
+    sal();
+  }, []);
   return (
     <Layout>
       <Hero />
@@ -66,7 +67,7 @@ useEffect(() => {
           justify="center"
           mt="2rem"
         >
-          <Stack> 
+          <Stack>
             <Heading>1000+</Heading>
             <Text>Prestasi Diraih</Text>
           </Stack>
@@ -87,7 +88,9 @@ useEffect(() => {
 
       <Section>
         <Stack>
-          <Heading fontWeigth="extra-bold">Keberagaman & budaya Melimpah</Heading>
+          <Heading fontWeigth="extra-bold">
+            Keberagaman & budaya Melimpah
+          </Heading>
           <Text w="100%">
             Nikmati berbagai macam budaya, keberagaman, kuliner dan keindahan
             alam yang membuat-mu <br></br> jatuh cinta dan menjadikan Indonesia
@@ -255,7 +258,8 @@ useEffect(() => {
           destinasi-mu selanjutnya
         </Text>
 
-        <Box h="400px" w="full" bg="gray.300" mb="1.3rem"></Box>
+        <Mapbox width="auto" height="400px" />
+        {/* <Box h="400px" w="full" bg="gray.300" mb="1.3rem"></Box> */}
 
         <SimpleGrid
           justify="center"

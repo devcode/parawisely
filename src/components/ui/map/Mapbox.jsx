@@ -9,6 +9,7 @@ import MapGL, {
 import { useQuery } from 'react-query';
 import DeckGL, { GeoJsonLayer } from 'deck.gl';
 import Geocoder from 'react-map-gl-geocoder';
+import dumyData from '../../../data/cities.json';
 
 import Spinner from '../Spinner';
 import Pins from './Pins';
@@ -38,7 +39,7 @@ const fetchTravelplace = async () => {
   return res.json();
 };
 
-const Mapbox = () => {
+const Mapbox = ({ width = '100vw', height = '89vh' }) => {
   const { data, status, error } = useQuery('travel-place', fetchTravelplace);
 
   const [popInfo, setPopInfo] = useState(null);
@@ -49,8 +50,8 @@ const Mapbox = () => {
     zoom: 4,
     bearing: 0,
     pitch: 0,
-    width: '100vw',
-    height: '89vh',
+    width,
+    height,
   });
 
   const mapRef = useRef();
@@ -115,16 +116,6 @@ const Mapbox = () => {
 
   return (
     <div>
-      <div
-        ref={geocoderRef}
-        style={{
-          height: 50,
-          background: 'black',
-          display: 'flex',
-          alignItems: 'center',
-          paddingLeft: 4,
-        }}
-      />
       {status === 'loading' && <Spinner />}
 
       {status === 'error' && <div>{error}</div>}
@@ -143,9 +134,11 @@ const Mapbox = () => {
             onResult={handleOnResult}
             onViewportChange={handleGeocoderViewportChange}
             mapboxApiAccessToken={apiToken}
+            position="top-left"
           />
 
           <Pins data={data.data} onClick={_onClickMarker} />
+          <Pins data={dumyData} onClick={_onClickMarker} />
           {renderPopup()}
 
           <div style={geolocateControlStyle}>
