@@ -1,20 +1,13 @@
 import React from 'react';
+import { Image } from '@chakra-ui/core';
 
 const CityInfo = ({ info }) => {
-  const displayName = `${info.city}, ${info.state}`;
+  const displayName = `${info.name_place}`;
 
   return (
     <div>
-      <div>
-        {displayName} |{' '}
-        <a
-          target="_new"
-          href={`http://en.wikipedia.org/w/index.php?title=Special:Search&search=${displayName}`}
-        >
-          Wikipedia
-        </a>
-      </div>
-      <img width={240} src={info.image} alt={info.city} />
+      {displayName}
+      <Image src={info.image} w="200px" h="230px" />
     </div>
   );
 };

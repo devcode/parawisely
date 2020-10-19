@@ -18,6 +18,7 @@
     "react-map-gl": "^5.2.9",
     "react-map-gl-geocoder": "^2.1.5",
     "react-player": "^2.6.2",
+    "react-query": "^2.23.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "swiper": "^6.3.3",
