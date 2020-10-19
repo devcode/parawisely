@@ -13,8 +13,10 @@ const Pins = ({ data, onClick }) => {
         onClick={() => onClick(city)}
         src={city.image}
         borderRadius="full"
+        shadow="xl"
         w="50px"
         h="50px"
+        objectFit="cover"
       />
     </Marker>
   ));
