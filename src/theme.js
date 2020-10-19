@@ -1,26 +1,22 @@
 import { theme } from '@chakra-ui/core';
 
-const sans = ['Fira Sans', 'Inter', '--aple-system'];
-
 export default {
   ...theme,
 
   colors: {
     ...theme.colors,
-    primary: {
-      100: '#5A93FF',
-      500: '#345DEE',
-      600: '#2B6CB0',
-      800: '#18214D',
+    blue: {
+      ...theme.colors.blue,
+      300: '#56CCF2',
+      400: '#2D9CDB',
+      500: '#4737FF',
     },
   },
-
   fonts: {
     ...theme.fonts,
-    heading: `${sans}`,
-    body: `${sans}`,
+    heading: 'Manrope',
+    body: 'Manrope',
   },
-
   fontSizes: {
     xs: '14px',
     sm: '16px',
@@ -32,5 +28,12 @@ export default {
     '4xl': '48px',
     '5xl': '64px',
     '6xl': '72px',
+  },
+  fontWeights: {
+    regular: 400,
+    medium: 500,
+    semi_bold: 600,
+    bold: 700,
+    extra_bold: 800,
   },
 };

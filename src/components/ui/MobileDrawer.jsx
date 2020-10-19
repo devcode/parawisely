@@ -6,15 +6,23 @@ import {
   DrawerBody,
   DrawerContent,
   DrawerHeader,
+  DrawerFooter,
   DrawerOverlay,
   Icon,
   IconButton,
   Link,
+  Image,
   Stack,
   useDisclosure,
 } from '@chakra-ui/core';
+import { FaInstagram, FaTwitter, FaFacebook, FaYoutube } from 'react-icons/fa';
 import { FaBars, FaTimes } from 'react-icons/fa';
-
+import Logo from '../../assets/logo/logo.png';
+const IconSosmed = ({ icon, url }) => (
+  <Link href={url} isExternal>
+    <Icon color="blue.500" as={icon} fontSize="lg" />
+  </Link>
+);
 const MobileDrawer = () => {
   const { isOpen, onClose, onToggle } = useDisclosure();
   const btnRef = useRef();
@@ -31,14 +39,16 @@ const MobileDrawer = () => {
 
   return (
     <>
-      <Box bottom={0} d={{ md: 'none' }} p={5} pos="fixed" right={0} zIndex={1}>
+      <Box>
         <IconButton
           aria-label="Open Menu"
           icon={<Icon as={isOpen ? FaTimes : FaBars} />}
-          isRound
           onClick={onToggle}
           ref={btnRef}
           size="lg"
+          color="blue.500"
+          variant="ghost"
+          bgColor="gray.50"
         />
 
         <Drawer
@@ -48,15 +58,7 @@ const MobileDrawer = () => {
           placement="right"
         >
           <DrawerOverlay>
-            <DrawerContent>
-              <DrawerHeader p={[8, 8, 4, 4]}>
-                <RouterLink to="/">
-                  <Link href="/" onClick={onClose} variant="link">
-                    Parawisely
-                  </Link>
-                </RouterLink>
-              </DrawerHeader>
-
+            <DrawerContent  bgColor="blue.500" color="white">
               <DrawerBody
                 as={Stack}
                 fontSize="lg"
@@ -65,11 +67,16 @@ const MobileDrawer = () => {
                 spacing={4}
               >
                 <MenuItems to="/">Beranda</MenuItems>
-                <MenuItems to="/eksplor">Eksplor </MenuItems>
-                <MenuItems to="/wisata-daerah">Wisata Daerah </MenuItems>
-                <MenuItems to="/tentang">Tetang</MenuItems>
+                 <MenuItems to="/eksplorasi">Eksplorasi</MenuItems>
+                <MenuItems to="/wisata-daerah">Wisata Daerah</MenuItems>
+                <MenuItems to="/peta-wisata">Peta Wisata</MenuItems>
+                <MenuItems to="/mitra-pariwisata">Mitra Pariwisata</MenuItems>
+                 <MenuItems to="/tentang">Tentang</MenuItems>
                 <MenuItems to="/kontak">Kontak</MenuItems>
+                <MenuItems to="/rekomendasi">Rekomendasi</MenuItems>
               </DrawerBody>
+
+              
             </DrawerContent>
           </DrawerOverlay>
         </Drawer>
