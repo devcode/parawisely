@@ -16,7 +16,7 @@ const Hero = props => {
       p={['5rem 2rem', '5rem 2rem', '5rem 2rem', '0 0 5rem 5rem']}
       h={['100vh', '100vh', '100vh', 'auto']}
     >
-      <SimpleGrid alignItems="center" columns={[1, 1, 1, 2]}>
+      <SimpleGrid  alignItems="center" columns={[1, 1, 1, 2]}>
         <Stack spacing={4} align="start">
           <Heading
             w={['auto', 'auto', 'auto', '80%']}
@@ -67,7 +67,7 @@ const Hero = props => {
             </Button>
           </SimpleGrid>
         </Stack>
-        <Box d={['none', 'none', 'none', 'block']} minW="lg">
+        <Box d={['block', 'none', 'none', 'block']} >
           <Image
             src={heroImages}
             size="xl"

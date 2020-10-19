@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import sal from 'sal.js'
 import {
   Button,
   Box,
@@ -11,6 +12,7 @@ import {
   SimpleGrid,
   Link,
   StackDivider,
+  Spinner,
 } from '@chakra-ui/core';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 import ReactPlayer from 'react-player';
@@ -42,10 +44,13 @@ const Feature = ({ title, description, icon }) => (
 );
 
 const Landing = () => {
+useEffect(() => {
+  sal();
+}, []);
   return (
     <Layout>
       <Hero />
-      <Box bg="blue.500" color="white" p="5rem" textAlign="center">
+      <Box bg="blue.500" color="white" p="4.5rem" textAlign="center">
         <Heading>Statistik Sektor Parawisata</Heading>
 
         <Text mt="10px">
@@ -61,7 +66,7 @@ const Landing = () => {
           justify="center"
           mt="2rem"
         >
-          <Stack>
+          <Stack> 
             <Heading>1000+</Heading>
             <Text>Prestasi Diraih</Text>
           </Stack>
@@ -81,8 +86,8 @@ const Landing = () => {
       </Box>
 
       <Section>
-        <Stack align="center" textAlign="center">
-          <Heading>Keberagaman & budaya Melimpah</Heading>
+        <Stack>
+          <Heading fontWeigth="extra-bold">Keberagaman & budaya Melimpah</Heading>
           <Text w="100%">
             Nikmati berbagai macam budaya, keberagaman, kuliner dan keindahan
             alam yang membuat-mu <br></br> jatuh cinta dan menjadikan Indonesia
