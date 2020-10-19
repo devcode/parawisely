@@ -19,7 +19,7 @@ import '../../../stylesheets/map.css';
 
 const apiToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 const mapStyle = 'mapbox://styles/supryantowp/ckgfd9g312kjw19pduhgr0n8p';
-const baseURL = 'http://parawisely-backend.test/api/travel-place';
+const baseURL = 'http://parawisely.herokuapp.com/api/travel-place';
 
 const geolocateControlStyle = {
   padding: '20px',
