@@ -17,11 +17,7 @@ const Legend = () => {
       {status === 'loading' && <div>loading</div>}
       {status === 'error' && <div>{error}</div>}
       {status === 'success' && (
-        <Box bg="white" my="10vh" mx="15px" color="black">
-          {data.data.map((item, index) => (
-            <div>{item.id}</div>
-          ))}
-        </Box>
+        <Box bg="white" my="10vh" mx="15px" color="black"></Box>
       )}
     </div>
   );

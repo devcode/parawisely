@@ -153,7 +153,7 @@ const Mapbox = ({ width = '100vw', height = '89vh' }) => {
             <NavigationControl />
           </div>
 
-          <Legend />
+          {/* <Legend /> */}
         </MapGL>
       )}
     </div>

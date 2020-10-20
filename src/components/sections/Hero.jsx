@@ -16,7 +16,7 @@ const Hero = props => {
       p={['5rem 2rem', '5rem 2rem', '5rem 2rem', '0 0 5rem 5rem']}
       h={['100vh', '100vh', '100vh', 'auto']}
     >
-      <SimpleGrid  alignItems="center" columns={[1, 1, 1, 2]}>
+      <SimpleGrid alignItems="center" columns={[1, 1, 1, 2]}>
         <Stack spacing={4} align="start">
           <Heading
             w={['auto', 'auto', 'auto', '80%']}
@@ -25,7 +25,7 @@ const Hero = props => {
             fontWeight="extra_bold"
             lineHeight="48px"
           >
-            Temukan keindahan dan keberagaman budaya negara Indonesia
+            Temukan keindahan dan keberagaman budaya negara Indonesia.
           </Heading>
           <Text
             w={['100%', '100%', '100%', '80%']}
@@ -33,13 +33,12 @@ const Hero = props => {
             fontSize={['16px', '19px']}
             letterSpacing="0px"
             lineHeight="31px"
-            mb={4}
           >
-            Jelajahi keindahan alam dan keberagaman budaya yang dimiliki
-            Indonesia. Parawisely bertujuan untuk menjadikan Indonesia sebagai
-            destinasi-mu selanjutnya.
+            Parawisely membantu kamu untuk memilih tempat wisata di Indonesia
+            yang kaya akan budaya dan keberagaman dan petualangan yang
+            menunggumu di Indonesia.
           </Text>
-          <SimpleGrid w={['full', 'auto']} spacing="0.5rem" columns={[1, 2]}>
+          <SimpleGrid w={['full', 'auto']} spacing="8px" columns={[1, 2]}>
             <Button
               px="4rem"
               size="lg"
@@ -67,7 +66,7 @@ const Hero = props => {
             </Button>
           </SimpleGrid>
         </Stack>
-        <Box d={['block', 'none', 'none', 'block']} >
+        <Box d={['block', 'none', 'none', 'block']}>
           <Image
             src={heroImages}
             size="xl"
