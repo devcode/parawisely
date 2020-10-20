@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import sal from 'sal.js';
 import {
-  Button,
   Box,
   Heading,
   Image,
@@ -11,7 +10,6 @@ import {
   IconButton,
   SimpleGrid,
   Link,
-  StackDivider,
 } from '@chakra-ui/core';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 import ReactPlayer from 'react-player';
@@ -34,7 +32,6 @@ import rekomendasiImages from '../assets/images/rekomendasi-section-images.png';
 import petaWisataImages from '../assets/images/peta-wisata-section-images.png';
 
 import destinasiJson from '../data/destinasi.json';
-import CardRekomendasi from '../components/ui/CardRekomendasi';
 
 const Feature = ({ title, description, icon }) => (
   <Stack spacing="1rem" direction="row">

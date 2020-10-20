@@ -13,7 +13,7 @@ const MenuItems = ({ children, isLast, to = '/', ...rest }) => {
       display="block"
       {...rest}
     >
-      <RouterLink activeStyle={{ color: 'blue' }} to={to}>
+      <RouterLink activeStyle={{ color: 'blue' }} exact to={to}>
         {children}
       </RouterLink>
     </Text>
@@ -51,6 +51,7 @@ const Header = props => {
             <Image mr={['0', '0', '0', '2rem']} src={Logo} htmlWidth="24px" />
           </RouterLink>
           <Box d={['none', 'none', 'none', 'flex']}>
+            <MenuItems to="/">Beranda</MenuItems>
             <MenuItems to="/eksplorasi">Eksplorasi</MenuItems>
             <MenuItems to="/wisata-daerah">Wisata Daerah</MenuItems>
             <MenuItems to="/peta-wisata">Peta Wisata</MenuItems>
