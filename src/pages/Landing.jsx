@@ -17,6 +17,7 @@ import {
 import { IoIosArrowRoundForward } from 'react-icons/io';
 import ReactPlayer from 'react-player';
 import { RiMapPinAddFill, RiHeart3Fill, RiUserStarLine } from 'react-icons/ri';
+import Mapbox from '../components/ui/map/Mapbox';
 
 import Section from '../components/sections/Section';
 import Hero from '../components/sections/Hero';
@@ -257,7 +258,8 @@ const Landing = () => {
           destinasi-mu selanjutnya
         </Text>
 
-        <Box h="400px" w="full" bg="gray.300" mb="1.3rem"></Box>
+        <Mapbox width="auto" height="400px" />
+        {/* <Box h="400px" w="full" bg="gray.300" mb="1.3rem"></Box> */}
 
         <SimpleGrid
           justify="center"
