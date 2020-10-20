@@ -32,7 +32,6 @@ import rekomendasiImages from '../assets/images/rekomendasi-section-images.png';
 import petaWisataImages from '../assets/images/peta-wisata-section-images.png';
 
 import destinasiJson from '../data/destinasi.json';
-import CardRekomendasi from '../components/ui/CardRekomendasi';
 
 import { getDestinasiPilihan } from '../api/fetchData';
 
