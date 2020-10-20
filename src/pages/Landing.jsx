@@ -324,13 +324,13 @@ const Landing = () => {
         </SimpleGrid>
       </Section>
 
-      {/* <Section>
+      <Section>
         <LokasiCarousel
           title="Destinasi Pilihan"
           link="/eksplor/pilihan"
           data={destinasiJson}
         />
-      </Section> */}
+      </Section>
 
       <Stack p={['2rem', '2rem', '2rem', '5rem']} spacing="2rem">
         <Stack textAlign="center">
