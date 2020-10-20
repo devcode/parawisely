@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react';
-import sal from 'sal.js'
+import React, { useEffect } from 'react';
+import sal from 'sal.js';
 import {
   Button,
   Box,
@@ -44,9 +44,9 @@ const Feature = ({ title, description, icon }) => (
 );
 
 const Landing = () => {
-useEffect(() => {
-  sal();
-}, []);
+  useEffect(() => {
+    sal();
+  }, []);
   return (
     <Layout>
       <Hero />
@@ -66,7 +66,7 @@ useEffect(() => {
           justify="center"
           mt="2rem"
         >
-          <Stack> 
+          <Stack>
             <Heading>1000+</Heading>
             <Text>Prestasi Diraih</Text>
           </Stack>
@@ -87,7 +87,9 @@ useEffect(() => {
 
       <Section>
         <Stack>
-          <Heading fontWeigth="extra-bold">Keberagaman & budaya Melimpah</Heading>
+          <Heading fontWeigth="extra-bold">
+            Keberagaman & budaya Melimpah
+          </Heading>
           <Text w="100%">
             Nikmati berbagai macam budaya, keberagaman, kuliner dan keindahan
             alam yang membuat-mu <br></br> jatuh cinta dan menjadikan Indonesia

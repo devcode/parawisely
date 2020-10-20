@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink as RouterLink } from 'react-router-dom';
 import { Box, Flex, Text, Button, Image, Stack } from '@chakra-ui/core';
-
 import MobileDrawer from '../ui/MobileDrawer';
 import Logo from '../../assets/logo/logo.png';
 import '../../stylesheets/html.css';
@@ -52,10 +51,11 @@ const Header = props => {
             <Image mr={['0', '0', '0', '2rem']} src={Logo} htmlWidth="24px" />
           </RouterLink>
           <Box d={['none', 'none', 'none', 'flex']}>
-          <MenuItems to="/eksplorasi">Eksplorasi</MenuItems>  
+            <MenuItems to="/eksplorasi">Eksplorasi</MenuItems>
             <MenuItems to="/wisata-daerah">Wisata Daerah</MenuItems>
             <MenuItems to="/peta-wisata">Peta Wisata</MenuItems>
             <MenuItems to="/mitra-pariwisata">Mitra Pariwisata</MenuItems>
+            <MenuItems to="/virtual-tour">Virtual Tour</MenuItems>
             <MenuItems to="/tentang">Tentang</MenuItems>
             <MenuItems to="/kontak">Kontak</MenuItems>
           </Box>
@@ -67,11 +67,11 @@ const Header = props => {
         direction="row"
         spacing="1rem"
       >
-      <RouterLink to="/rekomendasi">
-        <Button px="1.5rem" colorScheme="blue">
-          <Text fontWeight="extra_bold">Rekomendasi</Text>
-        </Button>
-          </RouterLink>
+        <RouterLink to="/rekomendasi">
+          <Button px="1.5rem" colorScheme="blue">
+            <Text fontWeight="extra_bold">Rekomendasi</Text>
+          </Button>
+        </RouterLink>
       </Stack>
 
       <Box display={['block', 'block', 'block', 'none']}>
