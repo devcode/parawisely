@@ -51,57 +51,18 @@ const Landing = () => {
   return (
     <Layout>
       <Hero />
-      <Box bg="blue.500" color="white" p="4.5rem" textAlign="center">
-        <Heading>Indonesia Negara Pariwisata</Heading>
-
-        <Text mt="8px">
-          Indonesia memiliki berbagai macam budaya dan keindahan alam yang unik
-          membuatnya ramai dikunjungi turis
-        </Text>
-
-        <Stack
-          divider={<StackDivider borderColor="gray.400" />}
-          direction={['column', 'row']}
-          spacing={['2rem', '4rem']}
-          justify="center"
-          mt="2rem"
-        >
-          <Stack>
-            <Heading>
-              1.231<sup>+</sup>
-            </Heading>
-            <Text>Prestasi Diraih Indonesia</Text>
-          </Stack>
-          <Stack>
-            <Heading>
-              962<sup>+</sup>
-            </Heading>
-            <Text>Tempat Pariwisata di Indonesia</Text>
-          </Stack>
-          <Stack>
-            <Heading>
-              1.377.638<sup>+</sup>
-            </Heading>
-            <Text>Kunjungan Turis Pertahun</Text>
-          </Stack>
-          <Stack>
-            <Heading>
-              52.521<sup>+</sup>
-            </Heading>
-            <Text>Turis Puas</Text>
-          </Stack>
-        </Stack>
-      </Box>
-
       <Section>
         <Stack textAlign="center">
-          <Heading fontWeigth="extra-bold">
-            Keberagaman & budaya Melimpah
+          <Text w="100%" fontWeight="extra_bold" color="blue.500">
+            KEINDAHAN INDONESIA
+          </Text>
+          <Heading fontWeight="extra_bold">
+            Keberagaman & Budaya Indonesia
           </Heading>
-          <Text w="100%">
+          <Text className="col-md-8 mx-auto">
             Nikmati berbagai macam budaya, keberagaman, kuliner dan keindahan
-            alam yang membuat-mu <br></br> jatuh cinta dan menjadikan Indonesia
-            sebagai destinasi-mu selanjutnya
+            alam yang membuat-mu jatuh cinta dan menjadikan Indonesia sebagai
+            destinasi-mu selanjutnya
           </Text>
         </Stack>
 
@@ -119,10 +80,10 @@ const Landing = () => {
               Keberagaman budaya yang bisa anda nikmati hanya di Indonesia!
             </Heading>
             <Text fontSize="18px">
-              Beragam budaya bisa kalian temuka di Indonesia. Mulai dari Bahasa
+              Beragam budaya bisa kalian temukan di Indonesia. Mulai dari Bahasa
               Daerah, Tari Tradisional, Senjata Traditional, Baju Daerah dan
               Lagu Daerah yang bisa kalian nikmati di Indonesia yang kaya akan
-              budaya dan keberagaman-nya.
+              budaya dan keberagamanya.
             </Text>
             <Text
               color="#4737ff"
@@ -154,8 +115,8 @@ const Landing = () => {
             </Heading>
             <Text fontSize="18px">
               Keindahan alam yang dimiliki Indonesia membuatnya diakui dunia
-              sebagai negara terindah di dunia. Memiliki pantai, gunung, tempat
-              bersejarah dan wahana atraksi yang ada di Indonesia yang siap
+              sebagai negara terindah di dunia. Memiliki Pantai, Gunung, Tempat
+              Bersejarah dan Wahana Atraksi yang ada di Indonesia yang siap
               kalian kunjungi kapan saja.
             </Text>
 
@@ -192,7 +153,7 @@ const Landing = () => {
               Indonesia memiliki banyak ragam kuliner yang bisa kalian coba
               mulai dari minuman, makanan ataupun makanan khas tiap daerah yang
               siap mewarnai liburan mu di Indonesia dengan kelezatan yang nikmat
-              hanya di Indonesia
+              hanya di Indonesia.
             </Text>
             <Text
               color="#4737ff"
@@ -216,54 +177,173 @@ const Landing = () => {
 
       <Section>
         <Box>
-          <Heading
-            textAlign="center"
-            letterSpacing="0px"
-            fontWeight="extra_bold"
-            fontSize="40px"
-          >
-            Jelajahi Indonesia melewati video dibawah ini
-          </Heading>
-          <Text textAlign="center" mt={2}>
-            Video ini dibuat oleh pihak Pesona Indonesia dalam rangka
-            memperingati hari pariwisata dunia <br></br> 2020, Mari bersama
-            jelajahi Indonesia dalam video singkat berikut!
-          </Text>
+          <Stack textAlign="center">
+            <Text w="100%" fontWeight="extra_bold" color="blue.500">
+              VIDEO PARIWISATA INDONESIA
+            </Text>
+            <Heading fontWeight="extra_bold">
+              Jelajahi Indonesia Lewat Video Ini
+            </Heading>
+            <Text className="col-md-8 mx-auto">
+              Video dibawah dibuat oleh Pesona Indonesia dalam rangka merayakan
+              hari Pariwisata dunia menampilkan keindahan alam dan keberagaman
+              budaya yang dimiliki Indonesia!
+            </Text>
+          </Stack>
           <ReactPlayer
             style={{
               margin: '30px auto 0 auto',
             }}
             width="full"
+            height="560px"
             url="https://www.youtube.com/watch?v=0kEnZN_WlgU"
           />
         </Box>
       </Section>
 
       <Section>
+        <Stack textAlign="center">
+          <Text w="100%" fontWeight="extra_bold" color="blue.500">
+            FITUR PARAWISELY
+          </Text>
+          <Heading fontWeight="extra_bold">
+            Apa yang membuat Parawisely Spesial?
+          </Heading>
+          <Text className="col-md-8 mx-auto">
+            Parawisely membantu kamu agar mendapat pengalaman liburan di
+            Indonesia dengan pengalaman menyenangkan dengan berbagai fitur yang
+            kami tawarkan. Apa saja?
+          </Text>
+        </Stack>
+
+        <SimpleGrid
+          columns={[1, 1, 1, 2]}
+          alignItems="center"
+          spacing={['1rem', '1rem', '1rem', '5rem']}
+        >
+          <Stack spacing="1rem" align="start">
+            <Heading
+              fontWeight="extra_bold"
+              fontSize={['30px', '30px', '30px', '40px']}
+            >
+              Virtual Tour yang membantu anda mengenal lebih dekat Indonesia
+              secara online!
+            </Heading>
+            <Text fontSize="18px">
+              Virtual Tour membantu anda mengenal dan melihat tempat secara
+              bebas. Berbeda dengan photo biasa, dengan Virtual Tour anda bisa
+              bebas mengelilingi dan menjelajahi tempat yang ingin kalian lihat.
+            </Text>
+
+            <Text
+              color="#4737ff"
+              fontWeight="extra_bold"
+              colorScheme="blue"
+              variant="ghost"
+            >
+              <Link href="/">
+                {' '}
+                Selengkapnya
+                <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
+              </Link>
+            </Text>
+          </Stack>
+          <Image src={alamImages} w="640px" objectFit="cover" />
+        </SimpleGrid>
+
+        <SimpleGrid
+          columns={[1, 1, 1, 2]}
+          alignItems="center"
+          spacing={['1rem', '1rem', '1rem', '5rem']}
+        >
+          <Image src={kulinerImages} w="640px" objectFit="cover" />
+          <Stack spacing="1rem" align="start">
+            <Heading
+              fontWeight="extra_bold"
+              fontSize={['30px', '30px', '30px', '40px']}
+            >
+              Peta Wisata membantumu menemukan tempat wisata di seluruh
+              Indonesia!
+            </Heading>
+            <Text fontSize="18px">
+              Peta Wisata membantu anda untuk menemukan berbagai macam tempat
+              pariwisata di Indonesia dengan cepat dan akurat sekaligus membantu
+              anda menemukan tempat yang cocok.
+            </Text>
+            <Text
+              color="#4737ff"
+              fontWeight="extra_bold"
+              colorScheme="blue"
+              variant="ghost"
+            >
+              <Link href="/">
+                {' '}
+                Selengkapnya
+                <Icon
+                  as={IoIosArrowRoundForward}
+                  boxSize="2rem"
+                  ml="4px"
+                />{' '}
+              </Link>
+            </Text>
+          </Stack>
+        </SimpleGrid>
+
+        <SimpleGrid
+          columns={[1, 1, 1, 2]}
+          alignItems="center"
+          spacing={['1rem', '1rem', '1rem', '5rem']}
+        >
+          <Stack spacing="1rem" align="start">
+            <Heading
+              fontWeight="extra_bold"
+              fontSize={['30px', '30px', '30px', '40px']}
+            >
+              Rekomendasi membantu kamu memilih tempat wisata di Indonesia!
+            </Heading>
+            <Text fontSize="18px">
+              Bingung mau kemana? dan pusing memilih pilihan? Tenang, Parawisely
+              menyediakan fitur rekomendasi untuk kamu agar dapat menemukan
+              tempat pariwisata yang cocok denganmu.
+            </Text>
+
+            <Text
+              color="#4737ff"
+              fontWeight="extra_bold"
+              colorScheme="blue"
+              variant="ghost"
+            >
+              <Link href="/">
+                {' '}
+                Selengkapnya
+                <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
+              </Link>
+            </Text>
+          </Stack>
+          <Image src={alamImages} w="640px" objectFit="cover" />
+        </SimpleGrid>
+      </Section>
+
+      {/* <Section>
         <LokasiCarousel
           title="Destinasi Pilihan"
           link="/eksplor/pilihan"
           data={destinasiJson}
         />
-      </Section>
+      </Section> */}
 
       <Stack p={['2rem', '2rem', '2rem', '5rem']} spacing="2rem">
-        <Heading
-          sizes={['sm', 'sm', 'sm', 'xl']}
-          w={['full', 'full', 'full', 'full']}
-          fontWeight="extra_bold"
-          fontSize="45px"
-          letterSpacing="-1px"
-          lineHeight="24px"
-          textAlign="center"
-        >
-          Peta Pariwisata Negara Republik Indonesia
-        </Heading>
-        <Text textAlign="center">
-          Nikmati berbagai macam budaya, keberagaman, kuliner dan keindahan alam
-          yang membuat-mu <br></br> jatuh cinta dan menjadikan Indonesia sebagai
-          destinasi-mu selanjutnya
-        </Text>
+        <Stack textAlign="center">
+          <Text w="100%" fontWeight="extra_bold" color="blue.500">
+            PETA PARIWISATA INDONESIA
+          </Text>
+          <Heading fontWeight="extra_bold">Peta Pariwisata Indonesia</Heading>
+          <Text className="col-md-8 mx-auto">
+            Berikut dibawah ini merupakan peta pariwisata Indonesia yang bisa
+            anda jelajahi dan anda gunakan untuk menemukan tempat selanjutnya
+            yang akan anda kunjungi.
+          </Text>
+        </Stack>
 
         <Mapbox width="auto" height="400px" />
         {/* <Box h="400px" w="full" bg="gray.300" mb="1.3rem"></Box> */}
@@ -292,60 +372,9 @@ const Landing = () => {
         </SimpleGrid>
       </Stack>
 
-      <Section
-        background={`url(${backgroundDots})`}
-        backgroundPosition="center center"
-        backgroundSize="cover"
-        mx="auto"
-        w={['full', 'full', 'full', '80%']}
-      >
-        <Stack
-          pt="15px"
-          pb="50px"
-          textAlign="center"
-          spacing="0.7rem"
-          mb="10px"
-        >
-          <Heading
-            fontWeight="extra_bold"
-            lineHeight="54px"
-            letterSpacing="-2.4px"
-            fontSize={['24px', '24px', '24px', '50px']}
-          >
-            Jelajahi keberagaman dan <br></br> keseruan budaya Indonesia
-          </Heading>
-          <Text fontSize={['14px', '14px', '14px', '18px']}>
-            Telurusuri keindahan dan keberagaman berbagai budaya negara
-            Indonesia <br></br> bersama dengan kami anda bisa menikmati indahnya
-            negara Indonesia
-          </Text>
-        </Stack>
-        <SimpleGrid
-          mx="auto"
-          w={['full', 'full', 'full', '50%']}
-          spacing={['0.5rem', '0.5rem', '0.5rem', '1rem']}
-          columns={[1, 1, 1, 2]}
-          mt="-40px"
-        >
-          <Button fontSize="16px" fontWeight="extra_bold" colorScheme="blue">
-            Ekplorasi
-          </Button>
-          <Button fontSize="16px" fontWeight="extra_bold" colorScheme="blue">
-            Rekomendasi
-          </Button>
-        </SimpleGrid>
-      </Section>
-
       <Section>
         <Sponsor />
       </Section>
-
-      <CardRekomendasi image={RajaAmpat} isRadius>
-        <Heading>Bergabung bersama komunitas wisatawan</Heading>
-        <Button mt="1rem" background="white" color="blue.800">
-          Gabung <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
-        </Button>
-      </CardRekomendasi>
     </Layout>
   );
 };

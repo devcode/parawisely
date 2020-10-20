@@ -64,15 +64,16 @@ const Footer = () => {
           <Heading fontSize="lg">Hubungi Kami</Heading>
           <LinkItem to="mailto:app@parawisely.com">
             <Icon color="blue.500" as={FiMail} mr="0.5rem" fontSize="lg" />
-            app@parawisely.com
+            apps.parawisely@gmail.com
           </LinkItem>
           <LinkItem to="callto:+62891203910">
             <Icon color="blue.500" as={FiPhone} mr="0.5rem" fontSize="lg" />
-            +62891203910
+            (0265) 771204
           </LinkItem>
           <LinkItem to="https://smknciamis.id">
             <Icon color="blue.500" as={FiMapPin} mr="0.5rem" fontSize="lg" />
-            SMKN 1 CIAMIS
+            Jl. Jenderal Sudirman No. 269 RT 13/RW 09, Desa Sindangrasa,
+            Sindangrasa, Kec. Ciamis, Kabupaten Ciamis, Jawa Barat 46215
           </LinkItem>
         </Stack>
       </SimpleGrid>
