@@ -25,27 +25,27 @@ const Eksplor = () => {
         <Stack spacing="1rem">
           <LokasiCarousel
             title="Pantai di Indonesia"
-            link="/eksplor/pantai"
+            link="/eksplorasi/pantai"
             data={pantaiJson}
           />
           <LokasiCarousel
             title="Pegunungan di Indonesia"
-            link="/eksplor/pegunungan"
+            link="/eksplorasi/pegunungan"
             data={pantaiJson}
           />
           <LokasiCarousel
             title="Tempat Bersejarah di Indonesia"
-            link="/eksplor/sejarah"
+            link="/eksplorasi/sejarah"
             data={pantaiJson}
           />
           <LokasiCarousel
             title="Kuliner di Indonesia"
-            link="/eksplor/sejarah"
+            link="/eksplorasi/sejarah"
             data={pantaiJson}
           />
           <LokasiCarousel
             title="Wahana Aktrasi di Indonesia"
-            link="/eksplor/sejarah"
+            link="/eksplorasi/sejarah"
             data={pantaiJson}
           />
         </Stack>
