@@ -41,13 +41,19 @@ const LokasiItem = ({ image, name, location }) => (
         background: 'rgba(255, 255, 255, 0.7)',
       }}
     >
-      <Heading fontWeight="extra_bold" size="md">{name}</Heading>
-      <Text color="gray.600">{location}</Text>
+      <Link to="/wisata-daerah">
+        <Heading fontWeight="extra_bold" size="md">
+          {name}
+        </Heading>
+        <Text color="gray.600">{location}</Text>
+      </Link>
     </Box>
   </Box>
 );
 
 const LokasiCarousel = ({ title, link, data }) => {
+  const assetImage =
+    'http://parawisely-backend.test/backend/uploads/placeImage/';
   return (
     <Box>
       <Stack
@@ -63,9 +69,9 @@ const LokasiCarousel = ({ title, link, data }) => {
           {data.map(location => (
             <SwiperSlide key={location.id}>
               <LokasiItem
-                image={location.image}
-                location={location.location}
-                name={location.name}
+                image={`${assetImage}${location.image}`}
+                location={location.provinsi}
+                name={location.name_place}
               />
             </SwiperSlide>
           ))}

@@ -12,18 +12,19 @@ import {
   SimpleGrid,
   Link,
   StackDivider,
-  Spinner,
 } from '@chakra-ui/core';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 import ReactPlayer from 'react-player';
 import { RiMapPinAddFill, RiHeart3Fill, RiUserStarLine } from 'react-icons/ri';
 import Mapbox from '../components/ui/map/Mapbox';
+import { useQuery } from 'react-query';
 
 import Section from '../components/sections/Section';
 import Hero from '../components/sections/Hero';
 import Sponsor from '../components/sections/Sponsor';
 import LokasiCarousel from '../components/sections/LokasiCarousel';
 import Layout from '../components/layouts';
+import Spinner from '../components/ui/Spinner';
 
 import alamImages from '../assets/images/alam-section-images.png';
 import kulinerImages from '../assets/images/kuliner-section-images.png';
@@ -44,10 +45,22 @@ const Feature = ({ title, description, icon }) => (
   </Stack>
 );
 
+const fetchDestinasiPilihan = async () => {
+  const link = 'http://parawisely-backend.test/api/destinasi-pilihan';
+  const res = await fetch(link);
+  return res.json();
+};
+
 const Landing = () => {
   useEffect(() => {
     sal();
   }, []);
+
+  const { data, status, error } = useQuery(
+    'destinasi-pilihan',
+    fetchDestinasiPilihan
+  );
+
   return (
     <Layout>
       <Hero />
@@ -233,11 +246,15 @@ const Landing = () => {
       </Section>
 
       <Section>
-        <LokasiCarousel
-          title="Destinasi Pilihan"
-          link="/eksplor/pilihan"
-          data={destinasiJson}
-        />
+        {status === 'loading' && <Spinner />}
+        {status === 'error' && <div>{error}</div>}
+        {status === 'success' && (
+          <LokasiCarousel
+            title="Destinasi Pilihan"
+            link="/eksplorasi/pilihan"
+            data={data.data}
+          />
+        )}
       </Section>
 
       <Stack p={['2rem', '2rem', '2rem', '5rem']} spacing="2rem">

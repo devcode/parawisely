@@ -4,6 +4,8 @@ import Section from '../components/sections/Section';
 import Banner from '../components/sections/Banner';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 
+import { useQuery } from 'react-query';
+
 import EksplorIMG from '../assets/images/eksplor.jpg';
 import { useParams } from 'react-router-dom';
 import {

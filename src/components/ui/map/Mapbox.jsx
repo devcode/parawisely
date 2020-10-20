@@ -11,9 +11,11 @@ import DeckGL, { GeoJsonLayer } from 'deck.gl';
 import Geocoder from 'react-map-gl-geocoder';
 import dumyData from '../../../data/cities.json';
 
+import indonesiaGeosjon from '../../../data/indonesia.geojson';
 import Spinner from '../Spinner';
 import Pins from './Pins';
 import CityInfo from './CityInfo';
+import Legend from './Legend';
 
 import '../../../stylesheets/map.css';
 
@@ -129,6 +131,9 @@ const Mapbox = ({ width = '100vw', height = '89vh' }) => {
           mapStyle={mapStyle}
         >
           <Geocoder
+            placeholder="Cari tempat"
+            language="id"
+            countries="id"
             mapRef={mapRef}
             containerRef={geocoderRef}
             onResult={handleOnResult}
@@ -138,7 +143,6 @@ const Mapbox = ({ width = '100vw', height = '89vh' }) => {
           />
 
           <Pins data={data.data} onClick={_onClickMarker} />
-          <Pins data={dumyData} onClick={_onClickMarker} />
           {renderPopup()}
 
           <div style={geolocateControlStyle}>
@@ -148,6 +152,8 @@ const Mapbox = ({ width = '100vw', height = '89vh' }) => {
           <div style={NavigationControlStyle}>
             <NavigationControl />
           </div>
+
+          <Legend />
         </MapGL>
       )}
     </div>
