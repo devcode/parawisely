@@ -27,8 +27,9 @@ import Spinner from '../components/ui/Spinner';
 import alamImages from '../assets/images/alam-section-images.png';
 import kulinerImages from '../assets/images/kuliner-section-images.png';
 import budayaImages from '../assets/images/budaya-section-images.png';
-import backgroundDots from '../assets/images/dot-bubble-bg.png';
-import RajaAmpat from '../assets/images/raja-ampat.jpg';
+import virtualTourImages from '../assets/images/virtual-tour-section-images.png';
+import rekomendasiImages from '../assets/images/rekomendasi-section-images.png';
+import petaWisataImages from '../assets/images/peta-wisata-section-images.png';
 
 import destinasiJson from '../data/destinasi.json';
 import CardRekomendasi from '../components/ui/CardRekomendasi';
@@ -255,7 +256,7 @@ const Landing = () => {
               </Link>
             </Text>
           </Stack>
-          <Image src={alamImages} w="640px" objectFit="cover" />
+          <Image src={virtualTourImages} w="640px" objectFit="cover" />
         </SimpleGrid>
 
         <SimpleGrid
@@ -263,7 +264,7 @@ const Landing = () => {
           alignItems="center"
           spacing={['1rem', '1rem', '1rem', '5rem']}
         >
-          <Image src={kulinerImages} w="640px" objectFit="cover" />
+          <Image src={petaWisataImages} w="640px" objectFit="cover" />
           <Stack spacing="1rem" align="start">
             <Heading
               fontWeight="extra_bold"
@@ -327,7 +328,7 @@ const Landing = () => {
               </Link>
             </Text>
           </Stack>
-          <Image src={alamImages} w="640px" objectFit="cover" />
+          <Image src={rekomendasiImages} w="640px" objectFit="cover" />
         </SimpleGrid>
       </Section>
 
