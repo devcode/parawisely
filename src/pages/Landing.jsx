@@ -52,12 +52,11 @@ const Landing = () => {
     <Layout>
       <Hero />
       <Box bg="blue.500" color="white" p="4.5rem" textAlign="center">
-        <Heading>Statistik Sektor Parawisata</Heading>
+        <Heading>Indonesia Negara Pariwisata</Heading>
 
-        <Text mt="10px">
-          Data dibawah ditujukan untuk anda agar menjadikan Indonesia sebagai
-          destinasi selanjutnya <br></br>
-          <br></br>
+        <Text mt="8px">
+          Indonesia memiliki berbagai macam budaya dan keindahan alam yang unik
+          membuatnya ramai dikunjungi turis
         </Text>
 
         <Stack
@@ -68,26 +67,34 @@ const Landing = () => {
           mt="2rem"
         >
           <Stack>
-            <Heading>1000+</Heading>
-            <Text>Prestasi Diraih</Text>
+            <Heading>
+              1.231<sup>+</sup>
+            </Heading>
+            <Text>Prestasi Diraih Indonesia</Text>
           </Stack>
           <Stack>
-            <Heading>500+</Heading>
-            <Text>Tempat Pariwisata</Text>
+            <Heading>
+              962<sup>+</sup>
+            </Heading>
+            <Text>Tempat Pariwisata di Indonesia</Text>
           </Stack>
           <Stack>
-            <Heading>100K+</Heading>
-            <Text>Turis Pertahun</Text>
+            <Heading>
+              1.377.638<sup>+</sup>
+            </Heading>
+            <Text>Kunjungan Turis Pertahun</Text>
           </Stack>
           <Stack>
-            <Heading>500K+</Heading>
-            <Text>Turis puas</Text>
+            <Heading>
+              52.521<sup>+</sup>
+            </Heading>
+            <Text>Turis Puas</Text>
           </Stack>
         </Stack>
       </Box>
 
       <Section>
-        <Stack>
+        <Stack textAlign="center">
           <Heading fontWeigth="extra-bold">
             Keberagaman & budaya Melimpah
           </Heading>

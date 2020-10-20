@@ -33,13 +33,12 @@ const Hero = props => {
             fontSize={['16px', '19px']}
             letterSpacing="0px"
             lineHeight="31px"
-            mb={4}
           >
             Parawisely membantu kamu untuk memilih tempat wisata di Indonesia
             yang kaya akan budaya dan keberagaman dan petualangan yang
             menunggumu di Indonesia.
           </Text>
-          <SimpleGrid w={['full', 'auto']} spacing="0.5rem" columns={[1, 2]}>
+          <SimpleGrid w={['full', 'auto']} spacing="8px" columns={[1, 2]}>
             <Button
               px="4rem"
               size="lg"
