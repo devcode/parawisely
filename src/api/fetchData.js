@@ -11,4 +11,14 @@ export const getDestinasiPilihan = async () => {
   return res.json();
 };
 
+export const getTypePlace = async () => {
+  const res = await fetch(base_api + '/type-place');
+  return res.json();
+};
+
+export const getEksplorasi = async () => {
+  const res = await fetch(base_api + '/eksplorasi');
+  return res.json();
+};
+
 export const getPlaceByCategory = async category => {};

@@ -1,8 +1,10 @@
 import React from 'react';
 import { Button, Heading, Icon, Stack, Text } from '@chakra-ui/core';
 import { IoIosArrowRoundForward } from 'react-icons/io';
+import { useQuery } from 'react-query';
 
 import Layout from '../components/layouts';
+import Spinner from '../components/ui/Spinner';
 import Section from '../components/sections/Section';
 
 import EksplorIMG from '../assets/images/eksplor.jpg';
@@ -13,7 +15,11 @@ import pantaiJson from '../data/pantai-carousel.json';
 import LokasiCarousel from '../components/sections/LokasiCarousel';
 import CardRekomendasi from '../components/ui/CardRekomendasi';
 
+import { getTypePlace, getEksplorasi } from '../api/fetchData';
+
 const Eksplor = () => {
+  const { data, status, error } = useQuery('type-place', getEksplorasi);
+
   return (
     <Layout>
       <Banner
@@ -23,31 +29,21 @@ const Eksplor = () => {
       />
       <Section>
         <Stack spacing="1rem">
-          <LokasiCarousel
-            title="Pantai di Indonesia"
-            link="/eksplorasi/pantai"
-            data={pantaiJson}
-          />
-          <LokasiCarousel
-            title="Pegunungan di Indonesia"
-            link="/eksplorasi/pegunungan"
-            data={pantaiJson}
-          />
-          <LokasiCarousel
-            title="Tempat Bersejarah di Indonesia"
-            link="/eksplorasi/sejarah"
-            data={pantaiJson}
-          />
-          <LokasiCarousel
-            title="Kuliner di Indonesia"
-            link="/eksplorasi/sejarah"
-            data={pantaiJson}
-          />
-          <LokasiCarousel
-            title="Wahana Aktrasi di Indonesia"
-            link="/eksplorasi/sejarah"
-            data={pantaiJson}
-          />
+          {status === 'loading' && <Spinner />}
+          {status === 'error' && <div>{error}</div>}
+          {status === 'success' && (
+            <div>
+              {data.data.map((item, index) => {
+                return (
+                  <LokasiCarousel
+                    title={`${item.type_name} di Indonesia`}
+                    link={`${item.id}`}
+                    data={item.places}
+                  />
+                );
+              })}
+            </div>
+          )}
         </Stack>
       </Section>
 
