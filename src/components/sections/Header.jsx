@@ -69,8 +69,8 @@ const Header = props => {
         spacing="1rem"
       >
         <RouterLink to="/rekomendasi">
-          <Button px="1.5rem" colorScheme="blue">
-            <Text fontWeight="extra_bold">Rekomendasi</Text>
+          <Button px="2rem" colorScheme="blue">
+            <Text fontWeight="bold">Rekomendasi</Text>
           </Button>
         </RouterLink>
       </Stack>
