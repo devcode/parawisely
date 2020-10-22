@@ -11,11 +11,10 @@ import EksplorIMG from '../assets/images/eksplor.jpg';
 import ilustrationIMG from '../assets/ilustration/ilus-ekplor.png';
 import Banner from '../components/sections/Banner';
 
-import pantaiJson from '../data/pantai-carousel.json';
 import LokasiCarousel from '../components/sections/LokasiCarousel';
 import CardRekomendasi from '../components/ui/CardRekomendasi';
 
-import { getTypePlace, getEksplorasi } from '../api/fetchData';
+import { getEksplorasi } from '../api/fetchData';
 
 const Eksplor = () => {
   const { data, status, error } = useQuery('type-place', getEksplorasi);
@@ -34,13 +33,20 @@ const Eksplor = () => {
           {status === 'success' && (
             <div>
               {data.data.map((item, index) => {
-                return (
-                  <LokasiCarousel
-                    title={`${item.type_name} di Indonesia`}
-                    link={`${item.id}`}
-                    data={item.places}
-                  />
-                );
+                if (item.places.length > 0) {
+                  return (
+                    <LokasiCarousel
+                      key={item.id}
+                      title={`${item.type_name} di Indonesia`}
+                      slug={item.slug}
+                      type_name={item.type_name}
+                      link={`eksplorasi/${item.slug}`}
+                      data={item.places}
+                    />
+                  );
+                } else {
+                  return <div></div>;
+                }
               })}
             </div>
           )}

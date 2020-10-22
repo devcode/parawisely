@@ -16,6 +16,7 @@ import EksplorCategory from './pages/EksplorCategory';
 import WisataDaerah from './pages/WisataDaerah';
 import Map from './pages/Map';
 import virtualTour from './pages/virtualTour';
+import PlaceDetail from './pages/PlaceDetail';
 
 function App() {
   return (
@@ -24,8 +25,11 @@ function App() {
       <Router>
         <Switch>
           <Route path="/" component={Landing} exact />
+
+          <Route path="/eksplorasi/:type/:slug" component={PlaceDetail} />
+          <Route path="/eksplorasi/:type" component={EksplorCategory} />
           <Route path="/eksplorasi" component={Eksplor} />
-          <Route path="/eksplorasi/:category" component={EksplorCategory} />
+
           <Route path="/wisata-daerah" component={WisataDaerah} />
           <Route path="/peta-wisata" component={Map} />
           <Route path="/virtual-tour" component={virtualTour} />

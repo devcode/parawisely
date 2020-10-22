@@ -1,13 +1,5 @@
 import React from 'react';
-import Layout from '../components/layouts';
-import Section from '../components/sections/Section';
-import Banner from '../components/sections/Banner';
-import { FaMapMarkerAlt } from 'react-icons/fa';
-
 import { useQuery } from 'react-query';
-
-import EksplorIMG from '../assets/images/eksplor.jpg';
-import { useParams } from 'react-router-dom';
 import {
   Button,
   Heading,
@@ -17,43 +9,66 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/core';
+import { useParams } from 'react-router-dom';
+import { FaMapMarkerAlt } from 'react-icons/fa';
+
+import Layout from '../components/layouts';
+import Section from '../components/sections/Section';
+import Banner from '../components/sections/Banner';
+import Spinner from '../components/ui/Spinner';
+
+import { getPlacebyType } from '../api/fetchData.js';
+import EksplorIMG from '../assets/images/eksplor.jpg';
+import { capitalize } from '../utils/helper';
 
 const EksplorCategory = () => {
-  const { category } = useParams();
+  const { type } = useParams();
+  const { data, status, error } = useQuery('place-by-type', () =>
+    getPlacebyType(type)
+  );
+
   return (
     <Layout>
       <Banner
-        title={`${category} Indonesia`}
+        title={`${capitalize(type)} Indonesia`}
         description="Di halaman ini anda bisa eksplorasi berbagai macam kategori tempat pariwisata yang sudah kami kelompokan agar lebih mudah anda cari"
         image={EksplorIMG}
       />
       <Section>
-        <Heading>Jelajahi {category} dibawah ini</Heading>
-        <SimpleGrid mt="2rem" columns={5}>
-          <Stack shadow="lg">
-            <Image
-              h="272px"
-              objectFit="cover"
-              borderRadius="lg"
-              src={EksplorIMG}
-            />
-            <Stack spacing="0.5rem" p={2}>
-              <Heading size="sm">Pantai Pangandaran</Heading>
-              <Stack align="center" direction="row" spacing="5px">
-                <Icon as={FaMapMarkerAlt} />
-                <Text fontSize="13px">Pangandaran, Jawa Barat</Text>
-              </Stack>
-              <Stack spacing="4px" direction="row">
-                <Button size="sm" colorScheme="green">
-                  4.5
-                </Button>
-                <Button size="sm" colorScheme="blue" w="full">
-                  Selengkapnya
-                </Button>
-              </Stack>
-            </Stack>
-          </Stack>
-        </SimpleGrid>
+        <Heading>Jelajahi {capitalize(type)} dibawah ini</Heading>
+        {status === 'loading' && <Spinner />}
+        {status === 'error' && <div>Error</div>}
+        {status === 'success' && (
+          <SimpleGrid mt="2rem" spacing="2rem" columns={5}>
+            {!data.data && <div>kosong</div>}
+            {data.data[0] &&
+              data.data[0].places.map((item, index) => (
+                <Stack key={index} shadow="lg">
+                  <Image
+                    h="272px"
+                    objectFit="cover"
+                    borderRadius="lg"
+                    src={EksplorIMG}
+                  />
+                  <Stack spacing="0.5rem" p={2}>
+                    <Heading size="sm">{item.name_place}</Heading>
+                    <Stack align="center" direction="row" spacing="5px">
+                      <Icon as={FaMapMarkerAlt} />
+                      <Text fontSize="13px">{item.address}</Text>
+                    </Stack>
+                    <Stack spacing="4px" direction="row">
+                      <Button size="sm" colorScheme="green">
+                        4.5
+                      </Button>
+                      <Button size="sm" colorScheme="blue" w="full">
+                        Selengkapnya
+                      </Button>
+                    </Stack>
+                  </Stack>
+                </Stack>
+              ))}
+          </SimpleGrid>
+        )}
       </Section>
     </Layout>
   );

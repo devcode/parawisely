@@ -1,8 +1,19 @@
-const APP_ENV = process.env.APP_ENV;
+import imageNotFound from '../assets/ilustration/image-notfound.jpg';
 const base_api = 'http://parawisely-backend.test/api';
+const base_url = 'http://parawisely-backend.test/';
 
 export const fetchAllPlace = async () => {
-  const res = await fetch(base_api + '/travel-place');
+  const res = await fetch(base_api + '/place');
+  return res.json();
+};
+
+export const getPlacebyType = async type => {
+  const res = await fetch(base_api + '/type/' + type);
+  return res.json();
+};
+
+export const getPlaceDetail = async slug => {
+  const res = await fetch(base_api + '/place/' + slug);
   return res.json();
 };
 
@@ -14,6 +25,18 @@ export const getDestinasiPilihan = async () => {
 export const getTypePlace = async () => {
   const res = await fetch(base_api + '/type-place');
   return res.json();
+};
+
+export const getImage = async path => {
+  await fetch(base_url + '/backend/uploads/' + path, { method: 'HEAD' })
+    .then(res => {
+      if (res.ok) {
+        return base_url + '/backend/uploads/' + path;
+      } else {
+        return imageNotFound;
+      }
+    })
+    .catch(err => console.log('error: ', err));
 };
 
 export const getEksplorasi = async () => {
