@@ -16,6 +16,7 @@ import EksplorCategory from './pages/EksplorCategory';
 import WisataDaerah from './pages/WisataDaerah';
 import Map from './pages/Map';
 import virtualTour from './pages/virtualTour';
+import candiBorobudur from './pages/candiBorobudur';
 
 function App() {
   return (
@@ -29,6 +30,10 @@ function App() {
           <Route path="/wisata-daerah" component={WisataDaerah} />
           <Route path="/peta-wisata" component={Map} />
           <Route path="/virtual-tour" component={virtualTour} />
+          <Route
+            path="/virtual-tour/candi-borobudur"
+            component={candiBorobudur}
+          />
           <Route path="/mitra-pariwisata" component={Eksplor} />
           <Route path="/tentang" component={Tentang} />
           <Route path="/kontak" component={Kontak} />
