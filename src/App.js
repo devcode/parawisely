@@ -17,8 +17,10 @@ import WisataDaerah from './pages/WisataDaerah';
 import Map from './pages/Map';
 import virtualTour from './pages/virtualTour';
 import PlaceDetail from './pages/PlaceDetail';
+import candiBorobudur from './pages/candiBorobudur';
 
 function App() {
+  console.log(process.env);
   return (
     <ChakraProvider theme={theme}>
       <CSSReset />
@@ -32,6 +34,10 @@ function App() {
 
           <Route path="/wisata-daerah" component={WisataDaerah} />
           <Route path="/peta-wisata" component={Map} />
+          <Route
+            path="/virtual-tour/candi-borobudur"
+            component={candiBorobudur}
+          />
           <Route path="/virtual-tour" component={virtualTour} />
           <Route path="/mitra-pariwisata" component={Eksplor} />
           <Route path="/tentang" component={Tentang} />
