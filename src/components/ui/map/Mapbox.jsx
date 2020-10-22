@@ -9,7 +9,6 @@ import MapGL, {
 import { useQuery } from 'react-query';
 import DeckGL, { GeoJsonLayer } from 'deck.gl';
 import Geocoder from 'react-map-gl-geocoder';
-import dumyData from '../../../data/cities.json';
 
 import indonesiaGeosjon from '../../../data/indonesia.geojson';
 import Spinner from '../Spinner';
@@ -17,11 +16,13 @@ import Pins from './Pins';
 import CityInfo from './CityInfo';
 import Legend from './Legend';
 
+import { fetchAllPlace } from '../../../api/fetchData';
+
 import '../../../stylesheets/map.css';
 
 const apiToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 const mapStyle = 'mapbox://styles/supryantowp/ckgfd9g312kjw19pduhgr0n8p';
-const baseURL = 'https://parawisely.herokuapp.com/api/travel-place';
+const baseURL = 'http://parawisely-backend.test/api/travel-place';
 
 const geolocateControlStyle = {
   padding: '20px',
@@ -42,7 +43,7 @@ const fetchTravelplace = async () => {
 };
 
 const Mapbox = ({ width = '100vw', height = '89vh' }) => {
-  const { data, status, error } = useQuery('travel-place', fetchTravelplace);
+  const { data, status, error } = useQuery('travel-place', fetchAllPlace);
 
   const [popInfo, setPopInfo] = useState(null);
   const [searchResult, setSearchResult] = useState(null);

@@ -33,6 +33,8 @@ import petaWisataImages from '../assets/images/peta-wisata-section-images.png';
 
 import destinasiJson from '../data/destinasi.json';
 
+import { getDestinasiPilihan } from '../api/fetchData';
+
 const Feature = ({ title, description, icon }) => (
   <Stack spacing="1rem" direction="row">
     <IconButton colorScheme="blue" icon={icon} isRound size="md" />
@@ -43,12 +45,6 @@ const Feature = ({ title, description, icon }) => (
   </Stack>
 );
 
-const fetchDestinasiPilihan = async () => {
-  const link = 'http://parawisely-backend.test/api/destinasi-pilihan';
-  const res = await fetch(link);
-  return res.json();
-};
-
 const Landing = () => {
   useEffect(() => {
     sal();
@@ -56,7 +52,7 @@ const Landing = () => {
 
   const { data, status, error } = useQuery(
     'destinasi-pilihan',
-    fetchDestinasiPilihan
+    getDestinasiPilihan
   );
 
   return (
@@ -336,11 +332,15 @@ const Landing = () => {
       </Section>
 
       <Section>
-        <LokasiCarousel
-          title="Destinasi Pilihan"
-          link="/eksplor/pilihan"
-          data={destinasiJson}
-        />
+        {status === 'loading' && <Spinner />}
+        {status === 'error' && <div>{error}</div>}
+        {status === 'success' && (
+          <LokasiCarousel
+            title="Destinasi Pilihan"
+            link="/eksplorasi/pilihan"
+            data={data.data}
+          />
+        )}
       </Section>
 
       <Stack p={['2rem', '2rem', '2rem', '5rem']} spacing="2rem">

@@ -66,6 +66,7 @@ const LokasiCarousel = ({ title, link, data }) => {
 
       <Box mt="2rem">
         <Swiper breakpoints={breakpoints}>
+          {data.length == 0 && <div>kosong</div>}
           {data.map(location => (
             <SwiperSlide key={location.id}>
               <LokasiItem
