@@ -19,6 +19,7 @@ import virtualTour from './pages/virtualTour';
 import PlaceDetail from './pages/PlaceDetail';
 import candiBorobudur from './pages/candiBorobudur';
 import danauToba from './pages/danauToba';
+import detailWisata from './pages/detailWisata';
 
 function App() {
   console.log(process.env);
@@ -32,6 +33,7 @@ function App() {
           <Route path="/eksplorasi/:type/:slug" component={PlaceDetail} />
           <Route path="/eksplorasi/:type" component={EksplorCategory} />
           <Route path="/eksplorasi" component={Eksplor} />
+          <Route path="/detail-wisata" component={detailWisata} />
 
           <Route path="/wisata-daerah" component={WisataDaerah} />
           <Route path="/peta-wisata" component={Map} />
