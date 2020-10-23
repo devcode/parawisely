@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Divider, Heading, Image, Text } from '@chakra-ui/core';
+import { Box, Divider, Heading, Image, Text, Stack } from '@chakra-ui/core';
 import Layout from '../components/layouts';
 import Wraper from '../components/layouts/Wraper';
 
@@ -8,19 +8,17 @@ import TentangIMG from '../assets/images/tentang.jpg';
 const Tentang = () => {
   return (
     <Layout>
-      <Image h="572px" src={TentangIMG} objectFit="cover" />
-      <Wraper>
-        <Box textAlign="center" mx="auto" w="70%">
-          <Heading>Parawisely</Heading>
-          <Text>
-            Parawisely merupakan agen travel yang bergerak di bidang pariwisata
-            Indonesia yang didukung penuh oleh kementrian pariwisatan dan
-            ekonomi kreatif Indonesia
-          </Text>
-        </Box>
-        <Divider my="2rem" />
-        <Box bg="gray.300" h="350px"></Box>
-      </Wraper>
+      <Stack textAlign="center" pt="2.5rem">
+        <Text w="100%" fontWeight="extra_bold" color="blue.500">
+          TENTANG KAMI
+        </Text>
+        <Heading fontWeight="extra_bold">Tentang Kami</Heading>
+        <Text className="col-md-6 mx-auto">
+          Nikmati keindahan negara Indonesia dari layar anda dengan fitur
+          Virtual Tour dari Parawisely yang membantu anda untuk menjelajahi
+          Indonesia secara online.
+        </Text>
+      </Stack>
     </Layout>
   );
 };
