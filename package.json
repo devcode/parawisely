@@ -10,6 +10,7 @@
     "@testing-library/react": "^10.2.1",
     "@testing-library/user-event": "^12.1.8",
     "deck.gl": "^8.3.2",
+    "env-cmd": "^10.1.0",
     "mapbox-gl": "^1.12.0",
     "node-sass": "^4.14.1",
     "react": "^16.14.0",
@@ -30,6 +31,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:staging": "env-cmd -f .env.staging react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

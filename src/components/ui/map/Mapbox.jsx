@@ -16,13 +16,12 @@ import Pins from './Pins';
 import CityInfo from './CityInfo';
 import Legend from './Legend';
 
-import { fetchAllPlace } from '../../../api/fetchData';
+import { getAllPlace } from '../../../api/fetchData';
 
 import '../../../stylesheets/map.css';
 
 const apiToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 const mapStyle = 'mapbox://styles/supryantowp/ckgfd9g312kjw19pduhgr0n8p';
-const baseURL = 'http://parawisely-backend.test/api/travel-place';
 
 const geolocateControlStyle = {
   padding: '20px',
@@ -37,13 +36,8 @@ const NavigationControlStyle = {
   top: 40,
 };
 
-const fetchTravelplace = async () => {
-  const res = await fetch(baseURL);
-  return res.json();
-};
-
 const Mapbox = ({ width = '100vw', height = '89vh' }) => {
-  const { data, status, error } = useQuery('travel-place', fetchAllPlace);
+  const { data, status, error } = useQuery('travel-place', getAllPlace);
 
   const [popInfo, setPopInfo] = useState(null);
   const [searchResult, setSearchResult] = useState(null);
@@ -121,7 +115,7 @@ const Mapbox = ({ width = '100vw', height = '89vh' }) => {
     <div>
       {status === 'loading' && <Spinner />}
 
-      {status === 'error' && <div>{error}</div>}
+      {status === 'error' && <div>{error.message}</div>}
 
       {status === 'success' && (
         <MapGL
