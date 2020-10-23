@@ -333,7 +333,7 @@ const Landing = () => {
 
       <Section>
         {status === 'loading' && <Spinner />}
-        {status === 'error' && <div>{error}</div>}
+        {status === 'error' && <div>{error.message}</div>}
         {status === 'success' && (
           <LokasiCarousel
             title="Destinasi Pilihan"

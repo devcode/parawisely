@@ -1,9 +1,9 @@
 import imageNotFound from '../assets/ilustration/image-notfound.jpg';
-const base_api = 'http://parawisely-backend.test/api';
+const base_api = process.env.REACT_APP_API_ENDPOINT;
 const base_url = 'http://parawisely-backend.test/';
 
-export const fetchAllPlace = async () => {
-  const res = await fetch(base_api + '/place');
+export const getAllPlace = async () => {
+  const res = await fetch(base_api + 'place');
   return res.json();
 };
 
