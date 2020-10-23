@@ -28,7 +28,7 @@ const LokasiItem = ({ data, type_name }) => {
           background: 'rgba(255, 255, 255, 0.7)',
         }}
       >
-        <Link to={`eksplorasi/${type_name}/${slug}`}>
+        <Link to={`place/${slug}`}>
           <Heading fontWeight="extra_bold" size="md">
             {name_place}
           </Heading>

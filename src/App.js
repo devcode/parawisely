@@ -21,7 +21,6 @@ import candiBorobudur from './pages/candiBorobudur';
 import danauToba from './pages/danauToba';
 
 function App() {
-  console.log(process.env);
   return (
     <ChakraProvider theme={theme}>
       <CSSReset />
@@ -29,7 +28,8 @@ function App() {
         <Switch>
           <Route path="/" component={Landing} exact />
 
-          <Route path="/eksplorasi/:type/:slug" component={PlaceDetail} />
+          <Route path="/place/:slug" component={PlaceDetail} />
+
           <Route path="/eksplorasi/:type" component={EksplorCategory} />
           <Route path="/eksplorasi" component={Eksplor} />
 

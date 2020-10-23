@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/core';
 import { useParams } from 'react-router-dom';
 import { FaMapMarkerAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 import Layout from '../components/layouts';
 import Section from '../components/sections/Section';
@@ -56,14 +57,11 @@ const EksplorCategory = () => {
                       <Icon as={FaMapMarkerAlt} />
                       <Text fontSize="13px">{item.address}</Text>
                     </Stack>
-                    <Stack spacing="4px" direction="row">
-                      <Button size="sm" colorScheme="green">
-                        4.5
-                      </Button>
+                    <Link to={`/place/${item.slug}`} d="block">
                       <Button size="sm" colorScheme="blue" w="full">
                         Selengkapnya
                       </Button>
-                    </Stack>
+                    </Link>
                   </Stack>
                 </Stack>
               ))}

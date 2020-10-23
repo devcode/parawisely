@@ -14,14 +14,14 @@ const PlaceDetail = () => {
     getPlaceDetail(slug)
   );
 
+  console.log(data);
+
   return (
     <Layout>
       <Section>
         {status === 'loading' && <Spinner />}
         {status === 'error' && <div>Error</div>}
-        {status === 'success' && data.data > 0 && (
-          <Heading>{data.data.name_place}</Heading>
-        )}
+        {status === 'success' && <div>{data.status}</div>}
       </Section>
     </Layout>
   );
