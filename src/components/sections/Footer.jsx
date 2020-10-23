@@ -57,7 +57,9 @@ const Footer = () => {
           <LinkItem to="/">Beranda</LinkItem>
           <LinkItem to="eksplor">Eksplorasi</LinkItem>
           <LinkItem to="wisata-daerah">Wisata Daerah</LinkItem>
-          <LinkItem to="tentang">Tentang</LinkItem>
+          <Link href="http://parawisely.herokuapp.com/registrasi" isExternal>
+            Mitra Pariwisata
+          </Link>
           <LinkItem to="kontak">Kontak</LinkItem>
         </Stack>
         <Stack spacing="1rem">
