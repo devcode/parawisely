@@ -1,5 +1,14 @@
 import React from 'react';
-import { Box, Divider, Heading, Image, Text, Stack } from '@chakra-ui/core';
+import { NavLink as RouterLink } from 'react-router-dom';
+import {
+  Box,
+  Divider,
+  Heading,
+  Image,
+  Text,
+  Stack,
+  Link,
+} from '@chakra-ui/core';
 import Layout from '../components/layouts';
 import candiBorobudur from '../assets/images/candi-borobudur.jpg';
 import danauToba from '../assets/images/danau-toba.jpg';
@@ -29,25 +38,31 @@ const virtualTour = () => {
         <div className="container">
           <div className="row mt-5">
             <div className="col-md-4">
-              <div className="card m-2 virtual-tour-card" w="18rem">
-                <Image h="400px" src={candiBorobudur} objectFit="cover" />
-                <div className="card-body">
-                  <h2 className="card-title text-center font-weight-bold">
-                    Candi Borobudur
-                  </h2>
+              <RouterLink to="/virtual-tour/candi-borobudur">
+                <div className="card m-2 virtual-tour-card" w="18rem">
+                  <Image h="400px" src={candiBorobudur} objectFit="cover" />
+                  <div className="card-body">
+                    <h2 className="card-title text-center font-weight-bold">
+                      Candi Borobudur
+                    </h2>
+                  </div>
                 </div>
-              </div>
+              </RouterLink>
             </div>
+
             <div className="col-md-4">
-              <div className="card m-2 virtual-tour-card" w="18rem">
-                <Image h="400px" src={danauToba} objectFit="cover" />
-                <div className="card-body">
-                  <h2 className="card-title text-center font-weight-bold">
-                    Danau Toba
-                  </h2>
+              <RouterLink to="/virtual-tour/danau-toba">
+                <div className="card m-2 virtual-tour-card" w="18rem">
+                  <Image h="400px" src={danauToba} objectFit="cover" />
+                  <div className="card-body">
+                    <h2 className="card-title text-center font-weight-bold">
+                      Danau Toba
+                    </h2>
+                  </div>
                 </div>
-              </div>
+              </RouterLink>
             </div>
+
             <div className="col-md-4">
               <div className="card m-2 virtual-tour-card" w="18rem">
                 <Image h="400px" src={keratonYogyakarta} objectFit="cover" />

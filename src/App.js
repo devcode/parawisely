@@ -18,6 +18,7 @@ import Map from './pages/Map';
 import virtualTour from './pages/virtualTour';
 import PlaceDetail from './pages/PlaceDetail';
 import candiBorobudur from './pages/candiBorobudur';
+import danauToba from './pages/danauToba';
 
 function App() {
   console.log(process.env);
@@ -38,6 +39,7 @@ function App() {
             path="/virtual-tour/candi-borobudur"
             component={candiBorobudur}
           />
+          <Route path="/virtual-tour/danau-toba" component={danauToba} />
           <Route path="/virtual-tour" component={virtualTour} />
           <Route path="/mitra-pariwisata" component={Eksplor} />
           <Route path="/tentang" component={Tentang} />
