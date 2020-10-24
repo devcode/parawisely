@@ -12,7 +12,7 @@ import {
   Link,
 } from '@chakra-ui/core';
 import { IoIosArrowRoundForward } from 'react-icons/io';
-import ReactPlayer from 'react-player';
+import ReactPlayer from 'react-player/youtube';
 import { RiMapPinAddFill, RiHeart3Fill, RiUserStarLine } from 'react-icons/ri';
 import Mapbox from '../components/ui/map/Mapbox';
 import { useQuery } from 'react-query';
@@ -59,7 +59,7 @@ const Landing = () => {
     <Layout>
       <Hero />
       <Section>
-        <Stack textAlign="center">
+        <Stack id="mulai-sekarang-target" textAlign="center">
           <Text w="100%" fontWeight="extra_bold" color="blue.500">
             KEINDAHAN INDONESIA
           </Text>
@@ -98,7 +98,7 @@ const Landing = () => {
               colorScheme="blue"
               variant="ghost"
             >
-              <Link href="/">
+              <Link href="/eksplorasi/museum">
                 {' '}
                 Selengkapnya
                 <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
@@ -133,7 +133,7 @@ const Landing = () => {
               colorScheme="blue"
               variant="ghost"
             >
-              <Link href="/">
+              <Link href="/eksplorasi/pantai">
                 {' '}
                 Selengkapnya
                 <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
@@ -168,7 +168,7 @@ const Landing = () => {
               colorScheme="blue"
               variant="ghost"
             >
-              <Link href="/">
+              <Link href="/eksplorasi/kuliner">
                 {' '}
                 Selengkapnya
                 <Icon
