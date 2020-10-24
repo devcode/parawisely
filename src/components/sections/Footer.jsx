@@ -55,7 +55,7 @@ const Footer = () => {
         <Stack justify="space-between">
           <Heading fontSize="lg">Menu</Heading>
           <LinkItem to="/">Beranda</LinkItem>
-          <LinkItem to="eksplor">Eksplorasi</LinkItem>
+          <LinkItem to="eksplorasi">Eksplorasi</LinkItem>
           <LinkItem to="wisata-daerah">Wisata Daerah</LinkItem>
           <Link href="http://parawisely.herokuapp.com/registrasi" isExternal>
             Mitra Pariwisata
@@ -72,10 +72,12 @@ const Footer = () => {
             <Icon color="blue.500" as={FiPhone} mr="0.5rem" fontSize="lg" />
             (0265) 771204
           </LinkItem>
-          <LinkItem to="https://smknciamis.id">
-            <Icon color="blue.500" as={FiMapPin} mr="0.5rem" fontSize="lg" />
-            Jl. Jenderal Sudirman No. 269 RT 13/RW 09, Desa Sindangrasa,
-            Sindangrasa, Kec. Ciamis, Kabupaten Ciamis, Jawa Barat 46215
+          <LinkItem>
+            <Text textAlign="justify">
+              <Icon color="blue.500" as={FiMapPin} mr="0.5rem" fontSize="lg" />
+              Jl. Jenderal Sudirman No. 269 RT 13/RW 09, Desa Sindangrasa,
+              Sindangrasa, Kec. Ciamis, Kabupaten Ciamis, Jawa Barat 46215
+            </Text>
           </LinkItem>
         </Stack>
       </SimpleGrid>

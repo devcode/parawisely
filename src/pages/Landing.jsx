@@ -66,7 +66,7 @@ const Landing = () => {
           <Heading fontWeight="extra_bold">
             Keberagaman & Budaya Indonesia
           </Heading>
-          <Text className="col-md-8 mx-auto">
+          <Text className="col-md-7 mx-auto">
             Nikmati berbagai macam budaya, keberagaman, kuliner dan keindahan
             alam yang membuat-mu jatuh cinta dan menjadikan Indonesia sebagai
             destinasi-mu selanjutnya
@@ -86,7 +86,7 @@ const Landing = () => {
             >
               Keberagaman budaya yang bisa anda nikmati hanya di Indonesia!
             </Heading>
-            <Text fontSize="18px">
+            <Text textAlign="justify" fontSize="18px">
               Beragam budaya bisa kalian temukan di Indonesia. Mulai dari Bahasa
               Daerah, Tari Tradisional, Senjata Traditional, Baju Daerah dan
               Lagu Daerah yang bisa kalian nikmati di Indonesia yang kaya akan
@@ -120,7 +120,7 @@ const Landing = () => {
               Keindahan alam yang di akui Dunia yang bisa kamu liat di
               Indonesia!
             </Heading>
-            <Text fontSize="18px">
+            <Text fontSize="18px" textAlign="justify">
               Keindahan alam yang dimiliki Indonesia membuatnya diakui dunia
               sebagai negara terindah di dunia. Memiliki Pantai, Gunung, Tempat
               Bersejarah dan Wahana Atraksi yang ada di Indonesia yang siap
@@ -156,7 +156,7 @@ const Landing = () => {
             >
               Kelezatan kuliner Indonesia yang memanjakan lidah-mu dan lezat!
             </Heading>
-            <Text fontSize="18px">
+            <Text textAlign="justify" fontSize="18px">
               Indonesia memiliki banyak ragam kuliner yang bisa kalian coba
               mulai dari minuman, makanan ataupun makanan khas tiap daerah yang
               siap mewarnai liburan mu di Indonesia dengan kelezatan yang nikmat
@@ -236,7 +236,7 @@ const Landing = () => {
               Virtual Tour yang membantu anda mengenal lebih dekat Indonesia
               secara online!
             </Heading>
-            <Text fontSize="18px">
+            <Text fontSize="18px" textAlign="justify">
               Virtual Tour membantu anda mengenal dan melihat tempat secara
               bebas. Berbeda dengan photo biasa, dengan Virtual Tour anda bisa
               bebas mengelilingi dan menjelajahi tempat yang ingin kalian lihat.
@@ -248,7 +248,7 @@ const Landing = () => {
               colorScheme="blue"
               variant="ghost"
             >
-              <Link href="/">
+              <Link href="/virtual-tour">
                 {' '}
                 Selengkapnya
                 <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
@@ -272,7 +272,7 @@ const Landing = () => {
               Peta Wisata membantumu menemukan tempat wisata di seluruh
               Indonesia!
             </Heading>
-            <Text fontSize="18px">
+            <Text fontSize="18px" textAlign="justify">
               Peta Wisata membantu anda untuk menemukan berbagai macam tempat
               pariwisata di Indonesia dengan cepat dan akurat sekaligus membantu
               anda menemukan tempat yang cocok.
@@ -283,7 +283,7 @@ const Landing = () => {
               colorScheme="blue"
               variant="ghost"
             >
-              <Link href="/">
+              <Link href="/peta-wisata">
                 {' '}
                 Selengkapnya
                 <Icon
@@ -306,9 +306,9 @@ const Landing = () => {
               fontWeight="extra_bold"
               fontSize={['30px', '30px', '30px', '40px']}
             >
-              Rekomendasi membantu kamu memilih tempat wisata di Indonesia!
+              Rekomendasi membantumu memilih tempat wisata di Indonesia!
             </Heading>
-            <Text fontSize="18px">
+            <Text fontSize="18px" textAlign="justify">
               Bingung mau kemana? dan pusing memilih pilihan? Tenang, Parawisely
               menyediakan fitur rekomendasi untuk kamu agar dapat menemukan
               tempat pariwisata yang cocok denganmu.
@@ -320,7 +320,7 @@ const Landing = () => {
               colorScheme="blue"
               variant="ghost"
             >
-              <Link href="/">
+              <Link href="/rekomendasi">
                 {' '}
                 Selengkapnya
                 <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
@@ -357,7 +357,6 @@ const Landing = () => {
         </Stack>
 
         <Mapbox width="auto" height="400px" />
-        {/* <Box h="400px" w="full" bg="gray.300" mb="1.3rem"></Box> */}
 
         <SimpleGrid
           justify="center"

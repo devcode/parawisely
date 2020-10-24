@@ -8,6 +8,7 @@ import {
   Box,
   Image,
   Stack,
+  Link,
 } from '@chakra-ui/core';
 
 const Hero = props => {
@@ -33,37 +34,41 @@ const Hero = props => {
             fontSize={['16px', '19px']}
             letterSpacing="0px"
             lineHeight="31px"
+            textAlign="justify"
           >
             Parawisely membantu kamu untuk memilih tempat wisata di Indonesia
             yang kaya akan budaya dan keberagaman dan petualangan yang
             menunggumu di Indonesia.
           </Text>
           <SimpleGrid w={['full', 'auto']} spacing="8px" columns={[1, 2]}>
-            <Button
-              px="4rem"
-              size="lg"
-              lineHeight="32px"
-              letterSpacing="0.3px"
-              fontWeight="extra_bold"
-              fontSize="15px"
-              colorScheme="blue"
-            >
-              Mulai sekarang
-            </Button>
-
-            <Button
-              px="4rem"
-              size="lg"
-              lineHeight="32px"
-              letterSpacing="0.3px"
-              fontWeight="extra_bold"
-              fontSize="15px"
-              borderColor="#4737ff"
-              color="#4737ff"
-              variant="outline"
-            >
-              Rekomendasi
-            </Button>
+            <Link href="/eksplorasi" isExternal>
+              <Button
+                px="4rem"
+                size="lg"
+                lineHeight="32px"
+                letterSpacing="0.3px"
+                fontWeight="extra_bold"
+                fontSize="15px"
+                colorScheme="blue"
+              >
+                Mulai sekarang
+              </Button>
+            </Link>
+            <Link href="/rekomendasi" isExternal>
+              <Button
+                px="4rem"
+                size="lg"
+                lineHeight="32px"
+                letterSpacing="0.3px"
+                fontWeight="extra_bold"
+                fontSize="15px"
+                borderColor="#4737ff"
+                color="#4737ff"
+                variant="outline"
+              >
+                Rekomendasi
+              </Button>
+            </Link>
           </SimpleGrid>
         </Stack>
         <Box d={['block', 'none', 'none', 'block']}>
