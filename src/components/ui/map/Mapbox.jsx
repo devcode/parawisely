@@ -21,7 +21,7 @@ import { getAllPlace } from '../../../api/fetchData';
 import '../../../stylesheets/map.css';
 
 const apiToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
-const mapStyle = 'mapbox://styles/supryantowp/ckgfd9g312kjw19pduhgr0n8p';
+const mapStyle = 'mapbox://styles/parawisely/ckgnp4gx411k119o1o70ffyvb';
 
 const geolocateControlStyle = {
   padding: '20px',

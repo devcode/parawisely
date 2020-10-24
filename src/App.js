@@ -19,7 +19,7 @@ import virtualTour from './pages/virtualTour';
 import PlaceDetail from './pages/PlaceDetail';
 import candiBorobudur from './pages/candiBorobudur';
 import danauToba from './pages/danauToba';
-import detailWisata from './pages/detailWisata';
+import detailWisata from './pages/DetailWisata';
 
 function App() {
   return (
@@ -29,7 +29,7 @@ function App() {
         <Switch>
           <Route path="/" component={Landing} exact />
 
-          <Route path="/place/:slug" component={PlaceDetail} />
+          <Route path="/place/:slug" component={detailWisata} />
 
           <Route path="/eksplorasi/:type" component={EksplorCategory} />
           <Route path="/eksplorasi" component={Eksplor} />
