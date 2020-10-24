@@ -1,6 +1,7 @@
 html,
 body {
   max-width: 100%;
+  scroll-behavior: smooth;
 }
 
 .header {
@@ -51,3 +52,7 @@ body {
     transition: 0.5s ease;
     cursor: pointer;
   }
+
+.button-hero{
+  box-shadow: 0 2px 25px rgba(71, 55, 255, 0.4);
+}  

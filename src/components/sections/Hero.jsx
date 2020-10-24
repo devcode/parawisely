@@ -37,11 +37,11 @@ const Hero = props => {
             textAlign="justify"
           >
             Parawisely membantu kamu untuk memilih tempat wisata di Indonesia
-            yang kaya akan budaya dan keberagaman dan petualangan yang
+            yang kaya akan budaya dan keberagaman serta petualangan yang
             menunggumu di Indonesia.
           </Text>
           <SimpleGrid w={['full', 'auto']} spacing="8px" columns={[1, 2]}>
-            <Link href="/eksplorasi" isExternal>
+            <Link href="#mulai-sekarang-target">
               <Button
                 px="4rem"
                 size="lg"
@@ -50,6 +50,7 @@ const Hero = props => {
                 fontWeight="extra_bold"
                 fontSize="15px"
                 colorScheme="blue"
+                className="button-hero"
               >
                 Mulai sekarang
               </Button>

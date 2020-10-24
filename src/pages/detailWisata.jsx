@@ -38,13 +38,17 @@ const DetailWisata = () => {
               <div className="row mt-3">
                 <div className="col-md-10 mx-auto">
                   <Text
-                    fontSize="24px"
+                    fontSize="48px"
                     className="m-5 text-center"
                     fontWeight="extra_bold"
                   >
                     {data.data.name_place}
                   </Text>
-                  <Text fontSize="16px" fontWeight="regular">
+                  <Text
+                    fontSize="16px"
+                    textAlign="justify"
+                    fontWeight="regular"
+                  >
                     {data.data.description}
                   </Text>
                 </div>

@@ -19,9 +19,10 @@ import virtualTour from './pages/virtualTour';
 import PlaceDetail from './pages/PlaceDetail';
 import candiBorobudur from './pages/candiBorobudur';
 import danauToba from './pages/danauToba';
-import detailWisata from './pages/DetailWisata';
+import DetailWisata from './pages/DetailWisata';
 
 function App() {
+ 
   return (
     <ChakraProvider theme={theme}>
       <CSSReset />
@@ -29,11 +30,11 @@ function App() {
         <Switch>
           <Route path="/" component={Landing} exact />
 
-          <Route path="/place/:slug" component={detailWisata} />
+          <Route path="/place/:slug" component={DetailWisata} />
 
           <Route path="/eksplorasi/:type" component={EksplorCategory} />
           <Route path="/eksplorasi" component={Eksplor} />
-          <Route path="/detail-wisata" component={detailWisata} />
+          <Route path="/detail-wisata" component={DetailWisata} />
 
           <Route path="/wisata-daerah" component={WisataDaerah} />
           <Route path="/peta-wisata" component={Map} />

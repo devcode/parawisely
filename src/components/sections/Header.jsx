@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink as RouterLink } from 'react-router-dom';
 import { Box, Flex, Text, Button, Image, Stack } from '@chakra-ui/core';
 import MobileDrawer from '../ui/MobileDrawer';
@@ -21,11 +21,14 @@ const MenuItems = ({ children, isLast, to = '/', ...rest }) => {
 };
 
 const Header = props => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Stack
       top="0"
       position="sticky"
-      zIndex={2}
+      zIndex={99}
       as="nav"
       direction="row"
       justify="space-between"

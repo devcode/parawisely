@@ -55,7 +55,7 @@ const EksplorCategory = () => {
                     <Heading size="sm">{item.name_place}</Heading>
                     <Stack align="center" direction="row" spacing="5px">
                       <Icon as={FaMapMarkerAlt} />
-                      <Text fontSize="13px">{item.address}</Text>
+                      <Text fontSize="13px">{item.provinsi}</Text>
                     </Stack>
                     <Link to={`/place/${item.slug}`} d="block">
                       <Button size="sm" colorScheme="blue" w="full">

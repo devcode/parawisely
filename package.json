@@ -26,6 +26,7 @@
     "sal.js": "^0.8.1",
     "smooth-scrollbar": "^8.5.3",
     "swiper": "^6.3.3",
+    "video-react": "^0.14.1",
     "web-vitals": "^0.2.2"
   },
   "scripts": {
