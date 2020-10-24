@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../components/layouts';
 import { Stack, Heading, Text, Image } from '@chakra-ui/core';
 import Spinner from '../components/ui/Spinner';
+import Comment from '../components/ui/Comment'
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import { getPlaceDetail } from '../api/fetchData';
@@ -51,6 +52,8 @@ const DetailWisata = () => {
               </div>
             </div>
           </div>
+
+          <Comment />
         </div>
       )}
     </Layout>

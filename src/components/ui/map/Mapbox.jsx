@@ -141,7 +141,11 @@ const Mapbox = ({ width = '100vw', height = '89vh' }) => {
           {renderPopup()}
 
           <div style={geolocateControlStyle}>
-            <GeolocateControl />
+            <GeolocateControl
+              positionOptions={{ enableHighAccuracy: true }}
+              auto={true}
+              trackUserLocation={true}
+            />
           </div>
 
           <div style={NavigationControlStyle}>
