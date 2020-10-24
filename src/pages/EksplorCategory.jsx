@@ -17,9 +17,9 @@ import Layout from '../components/layouts';
 import Section from '../components/sections/Section';
 import Banner from '../components/sections/Banner';
 import Spinner from '../components/ui/Spinner';
+import eksplorasiImages from '../assets/images/eksplorasi-images.png';
 
 import { getPlacebyType } from '../api/fetchData.js';
-import EksplorIMG from '../assets/images/eksplor.jpg';
 import { capitalize } from '../utils/helper';
 
 const EksplorCategory = () => {
@@ -33,7 +33,7 @@ const EksplorCategory = () => {
       <Banner
         title={`${capitalize(type)} Indonesia`}
         description="Di halaman ini anda bisa eksplorasi berbagai macam kategori tempat pariwisata yang sudah kami kelompokan agar lebih mudah anda cari"
-        image={EksplorIMG}
+        image={eksplorasiImages}
       />
       <Section>
         <Heading>Jelajahi {capitalize(type)} dibawah ini</Heading>
@@ -49,7 +49,7 @@ const EksplorCategory = () => {
                     h="272px"
                     objectFit="cover"
                     borderRadius="lg"
-                    src={EksplorIMG}
+                    src={eksplorasiImages}
                   />
                   <Stack spacing="0.5rem" p={2}>
                     <Heading size="sm">{item.name_place}</Heading>

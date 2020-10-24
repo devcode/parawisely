@@ -19,6 +19,9 @@ const Hero = props => {
     >
       <SimpleGrid alignItems="center" columns={[1, 1, 1, 2]}>
         <Stack spacing={4} align="start">
+          <Text w="100%" fontWeight="extra_bold" color="blue.500">
+            SELAMAT DATANG DI PARAWISELY
+          </Text>
           <Heading
             w={['auto', 'auto', 'auto', '80%']}
             fontSize={['28px', '28px', '28px', '44px']}

@@ -80,6 +80,9 @@ const Landing = () => {
         >
           <Image src={budayaImages} w="640px" objectFit="cover" />
           <Stack spacing="1rem" align="start">
+            <Text w="100%" fontWeight="extra_bold" color="blue.500">
+              KEBERAGAMAN INDONESIA
+            </Text>
             <Heading
               fontWeight="extra_bold"
               fontSize={['30px', '30px', '30px', '40px']}
@@ -113,6 +116,9 @@ const Landing = () => {
           spacing={['1rem', '1rem', '1rem', '5rem']}
         >
           <Stack spacing="1rem" align="start">
+            <Text w="100%" fontWeight="extra_bold" color="blue.500">
+              KEINDAHAN INDONESIA
+            </Text>
             <Heading
               fontWeight="extra_bold"
               fontSize={['30px', '30px', '30px', '40px']}
@@ -150,6 +156,9 @@ const Landing = () => {
         >
           <Image src={kulinerImages} w="640px" objectFit="cover" />
           <Stack spacing="1rem" align="start">
+            <Text w="100%" fontWeight="extra_bold" color="blue.500">
+              KULINER INDONESIA
+            </Text>
             <Heading
               fontWeight="extra_bold"
               fontSize={['30px', '30px', '30px', '40px']}
@@ -229,6 +238,9 @@ const Landing = () => {
           spacing={['1rem', '1rem', '1rem', '5rem']}
         >
           <Stack spacing="1rem" align="start">
+            <Text w="100%" fontWeight="extra_bold" color="blue.500">
+              FITUR VIRTUAL TOUR
+            </Text>
             <Heading
               fontWeight="extra_bold"
               fontSize={['30px', '30px', '30px', '40px']}
@@ -265,6 +277,9 @@ const Landing = () => {
         >
           <Image src={petaWisataImages} w="640px" objectFit="cover" />
           <Stack spacing="1rem" align="start">
+            <Text w="100%" fontWeight="extra_bold" color="blue.500">
+              FITUR PETA WISATA
+            </Text>
             <Heading
               fontWeight="extra_bold"
               fontSize={['30px', '30px', '30px', '40px']}
@@ -302,6 +317,9 @@ const Landing = () => {
           spacing={['1rem', '1rem', '1rem', '5rem']}
         >
           <Stack spacing="1rem" align="start">
+            <Text w="100%" fontWeight="extra_bold" color="blue.500">
+              FITUR REKOMENDASI
+            </Text>
             <Heading
               fontWeight="extra_bold"
               fontSize={['30px', '30px', '30px', '40px']}

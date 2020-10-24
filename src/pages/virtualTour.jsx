@@ -10,12 +10,12 @@ import {
   Link,
 } from '@chakra-ui/core';
 import Layout from '../components/layouts';
-import candiBorobudur from '../assets/images/candi-borobudur.jpg';
-import danauToba from '../assets/images/danau-toba.jpg';
-import keratonYogyakarta from '../assets/images/keraton-yogyakarta.jpg';
-import labuanBajo from '../assets/images/labuan-bajo.jpg';
-import rajaAmpat from '../assets/images/raja-ampat.jpg';
-import pantaiPangandaran from '../assets/images/pantai-pangandaran.jpg';
+import candiBorobudur from '../assets/images/candi-borobudur.jpeg';
+import danauToba from '../assets/images/danau-toba.jpeg';
+import keratonYogyakarta from '../assets/images/keraton-yogyakarta.jpeg';
+import labuanBajo from '../assets/images/labuan-bajo.jpeg';
+import rajaAmpat from '../assets/images/raja-ampat.jpeg';
+import pantaiPangandaran from '../assets/images/pantai-pangandaran.jpeg';
 import '../stylesheets/html.css';
 
 const virtualTour = () => {
@@ -64,46 +64,54 @@ const virtualTour = () => {
             </div>
 
             <div className="col-md-4">
-              <div className="card m-2 virtual-tour-card" w="18rem">
-                <Image h="400px" src={keratonYogyakarta} objectFit="cover" />
-                <div className="card-body">
-                  <h2 className="card-title text-center font-weight-bold">
-                    Keraton Yogyakarta
-                  </h2>
+              <RouterLink to="/virtual-tour/keraton-yogyakarta">
+                <div className="card m-2 virtual-tour-card" w="18rem">
+                  <Image h="400px" src={keratonYogyakarta} objectFit="cover" />
+                  <div className="card-body">
+                    <h2 className="card-title text-center font-weight-bold">
+                      Keraton Yogyakarta
+                    </h2>
+                  </div>
                 </div>
-              </div>
+              </RouterLink>
             </div>
           </div>
           <div className="row mt-5">
             <div className="col-md-4">
-              <div className="card m-2 virtual-tour-card" w="18rem">
-                <Image h="400px" src={labuanBajo} objectFit="cover" />
-                <div className="card-body">
-                  <h2 className="card-title text-center font-weight-bold">
-                    Labuan Bajo
-                  </h2>
+              <RouterLink to="/virtual-tour/labuan-bajo">
+                <div className="card m-2 virtual-tour-card" w="18rem">
+                  <Image h="400px" src={labuanBajo} objectFit="cover" />
+                  <div className="card-body">
+                    <h2 className="card-title text-center font-weight-bold">
+                      Labuan Bajo
+                    </h2>
+                  </div>
                 </div>
-              </div>
+              </RouterLink>
             </div>
             <div className="col-md-4">
-              <div className="card m-2 virtual-tour-card" w="18rem">
-                <Image h="400px" src={rajaAmpat} objectFit="cover" />
-                <div className="card-body">
-                  <h2 className="card-title text-center font-weight-bold">
-                    Raja Ampat
-                  </h2>
+              <RouterLink to="/virtual-tour/raja-ampat">
+                <div className="card m-2 virtual-tour-card" w="18rem">
+                  <Image h="400px" src={rajaAmpat} objectFit="cover" />
+                  <div className="card-body">
+                    <h2 className="card-title text-center font-weight-bold">
+                      Raja Ampat
+                    </h2>
+                  </div>
                 </div>
-              </div>
+              </RouterLink>
             </div>
             <div className="col-md-4">
-              <div className="card m-2 virtual-tour-card" w="18rem">
-                <Image h="400px" src={pantaiPangandaran} objectFit="cover" />
-                <div className="card-body">
-                  <h2 className="card-title text-center font-weight-bold">
-                    Pantai Pangandaran
-                  </h2>
+              <RouterLink to="/virtual-tour/pantai-pangandaran">
+                <div className="card m-2 virtual-tour-card" w="18rem">
+                  <Image h="400px" src={pantaiPangandaran} objectFit="cover" />
+                  <div className="card-body">
+                    <h2 className="card-title text-center font-weight-bold">
+                      Pantai Pangandaran
+                    </h2>
+                  </div>
                 </div>
-              </div>
+              </RouterLink>
             </div>
           </div>
         </div>
