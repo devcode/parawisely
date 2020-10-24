@@ -22,16 +22,19 @@ const breakpoints = {
 const Sponsor = () => {
   return (
     <Box>
-      <Box my="2rem">
+      <Box>
         <Swiper breakpoints={breakpoints} loop>
           {sponsorJson.map(sponsor => (
             <SwiperSlide key={sponsor.id}>
-              <Image src={sponsor.images} objectFit="contain" />
+              <Image
+                className="mx-auto"
+                src={sponsor.images}
+                objectFit="contain"
+              />
             </SwiperSlide>
           ))}
         </Swiper>
       </Box>
-      
     </Box>
   );
 };

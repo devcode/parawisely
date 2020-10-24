@@ -31,29 +31,41 @@ const Footer = () => {
     <Box p={['2rem', '2rem', '3rem', '5rem']}>
       <SimpleGrid columns={[1, 1, 1, 4]} spacing="3rem">
         <Stack spacing="1rem" align="start">
-          <Image src={Logo} />
-          <Text fontSize="14px">
+          <RouterLink to="/">
+            {' '}
+            <Image src={Logo} />
+          </RouterLink>
+          <Text textAlign="justify" fontSize="14px">
             Parawisely adalah project website yang dibuat untuk lomba IT Expo
             yang diselenggarakan UNJ. Kami dari team SERVER-RPL mempersembahkan
             website ini sebagai hasil karya orisinal.
           </Text>
           <Stack direction="row" spacing="1rem">
-            <IconSosmed url="https://facebook.com" icon={FaFacebook} />
-            <IconSosmed url="https://twitter.com" icon={FaTwitter} />
-            <IconSosmed url="https://instagram.com" icon={FaInstagram} />
-            <IconSosmed url="https://youtube.com" icon={FaYoutube} />
+            <IconSosmed
+              url="https://www.facebook.com/pages/Smkn%201%20Ciamis/856236581136537/"
+              icon={FaFacebook}
+            />
+            <IconSosmed url="https://twitter.com/smkn1cms" icon={FaTwitter} />
+            <IconSosmed
+              url="https://www.instagram.com/smkn1ciamis_/"
+              icon={FaInstagram}
+            />
+            <IconSosmed
+              url="https://www.youtube.com/channel/UC8AFooRNkRnNuoPPDJ9PhjA"
+              icon={FaYoutube}
+            />
           </Stack>
         </Stack>
         <Stack justify="space-between">
-          <Heading fontSize="lg">Kategori</Heading>
-          <LinkItem to="kategory/pantai">Pantai</LinkItem>
-          <LinkItem to="kategory/gunung">Gunung</LinkItem>
-          <LinkItem to="kategory/sejarah">Bersejarah</LinkItem>
-          <LinkItem to="kategory/kuliner">Kuliner</LinkItem>
-          <LinkItem to="kategory/wahana">Wahana</LinkItem>
+          <Heading fontSize="lg">Kategori Pariwisata</Heading>
+          <LinkItem to="eksplorasi/pantai">Pantai</LinkItem>
+          <LinkItem to="eksplorasi/pegunungan">Pegunungan</LinkItem>
+          <LinkItem to="eksplorasi/museum">Museum</LinkItem>
+          <LinkItem to="eksplorasi/kuliner">Kuliner</LinkItem>
+          <LinkItem to="eksplorasi/wahana-atraksi">Wahana Atraksi</LinkItem>
         </Stack>
         <Stack justify="space-between">
-          <Heading fontSize="lg">Menu</Heading>
+          <Heading fontSize="lg">Menu Parawisely</Heading>
           <LinkItem to="/">Beranda</LinkItem>
           <LinkItem to="eksplorasi">Eksplorasi</LinkItem>
           <LinkItem to="wisata-daerah">Wisata Daerah</LinkItem>
@@ -65,16 +77,16 @@ const Footer = () => {
         <Stack spacing="1rem">
           <Heading fontSize="lg">Hubungi Kami</Heading>
           <LinkItem to="mailto:app@parawisely.com">
-            <Icon color="blue.500" as={FiMail} mr="0.5rem" fontSize="lg" />
+            <Icon color="blue.500" as={FiMail} mr="1rem" fontSize="lg" />
             apps.parawisely@gmail.com
           </LinkItem>
-          <LinkItem to="callto:+62891203910">
-            <Icon color="blue.500" as={FiPhone} mr="0.5rem" fontSize="lg" />
+          <LinkItem to="callto:(0265)771204">
+            <Icon color="blue.500" as={FiPhone} mr="1rem" fontSize="lg" />
             (0265) 771204
           </LinkItem>
           <LinkItem>
             <Text textAlign="justify">
-              <Icon color="blue.500" as={FiMapPin} mr="0.5rem" fontSize="lg" />
+              <Icon color="blue.500" as={FiMapPin} mr="1rem" fontSize="lg" />
               Jl. Jenderal Sudirman No. 269 RT 13/RW 09, Desa Sindangrasa,
               Sindangrasa, Kec. Ciamis, Kabupaten Ciamis, Jawa Barat 46215
             </Text>
