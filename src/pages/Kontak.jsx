@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  Divider,
   FormControl,
   FormLabel,
   Heading,
@@ -12,16 +13,22 @@ import {
   Stack,
   Text,
   Textarea,
+  Link,
 } from '@chakra-ui/core';
 import React from 'react';
+import { FaMoneyCheck, FaMap, FaCalendar, FaClone } from 'react-icons/fa';
 
 import Layout from '../components/layouts';
+import Section from '../components/sections/Section';
 
-const FormInput = ({ id, type, label }) => (
-  <FormControl id={id}>
-    <FormLabel>{label}</FormLabel>
-    <Input type={type} />
-  </FormControl>
+const FaqItem = ({ icon, title, description }) => (
+  <Stack spacing="1.5rem" direction="row" align="start">
+    <IconButton isRound icon={icon} />
+    <Stack>
+      <Heading size="md">{title}</Heading>
+      <Text>{description}</Text>
+    </Stack>
+  </Stack>
 );
 
 const Kontak = () => {
@@ -32,26 +39,32 @@ const Kontak = () => {
           <div className="col-md-12 display-6 font-weight-bold">
             Hubungi Kami
           </div>
-          <div className="col-md-12 mt-2" style={{ fontSize: 16 }}>
+          <div className="col-md-12 mt-3" style={{ fontSize: 16 }}>
             {' '}
             Hubungi kami sekarang untuk mengenal lebih jauh Parawisely bisa
             membantu kamu dalam{' '}
             <b> tempat wisata, virtual tour dan liburan di Indonesia.</b>
           </div>
         </div>
-        <div className="row mt-5">
+        <div className="row mt-4">
           <div className="col-md-5">
-            <FormControl className="mt-3" id="nama_lengkap">
-              <FormLabel>Nama Lengkap</FormLabel>
+            <FormControl id="nama_lengkap">
+              <FormLabel>
+                Nama Lengkap <span style={{ color: '#10a0ff' }}>*</span>{' '}
+              </FormLabel>
               <Input type="name" />
             </FormControl>
             <FormControl className="mt-3" id="email">
-              <FormLabel>Email</FormLabel>
+              <FormLabel>
+                Alamat Email <span style={{ color: '#10a0ff' }}>*</span>
+              </FormLabel>
               <Input type="email" />
             </FormControl>
             <FormControl className="mt-3" id="pesan">
-              <FormLabel>Apa pesanmu?</FormLabel>
-              <Textarea placeholder="Here is a sample placeholder" />
+              <FormLabel>
+                Apa Pesanmu? <span style={{ color: '#10a0ff' }}>*</span>
+              </FormLabel>
+              <Textarea />
             </FormControl>
             <Button colorScheme="blue" px="4rem" className="mt-3">
               Submit
@@ -67,8 +80,21 @@ const Kontak = () => {
                 <b> Bagaimana cara memakai fitur Parawisely</b>
               </p>
               <p>
-                Anda bisa menjelajahi fitur eksplorasi, wisata daerah dan fitur
-                virtual tour untuk menikmati fitur Parawisely.
+                Anda bisa menjelajahi fitur{' '}
+                <Link color="blue.500" href="/eksplorasi">
+                  {' '}
+                  eksplorasi{' '}
+                </Link>
+                ,{' '}
+                <Link color="blue.500" href="/wisata-daerah">
+                  wisata daerah
+                </Link>{' '}
+                dan fitur{' '}
+                <Link color="blue.500" href="/virtual-tour">
+                  {' '}
+                  virtual tour{' '}
+                </Link>
+                untuk menikmati fitur Parawisely.
               </p>
             </div>
             <div className="mt-3">
@@ -78,7 +104,11 @@ const Kontak = () => {
               </p>
               <p>
                 Jika tempat anda tidak terdaftar di Database kami, anda dapat
-                memasukan nya secara manual dengan fitur mitra pariwisata.
+                memasukan nya secara manual dengan fitur{' '}
+                <Link color="blue.500" href="/mitra-pariwisata">
+                  {' '}
+                  mitra pariwisata.
+                </Link>
               </p>
             </div>
             <div className="mt-3">
