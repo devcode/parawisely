@@ -1,8 +1,9 @@
 // Importing Stylesheets
 import './stylesheets/html.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Importing Library
-import React, { useEffect } from 'react';
+import React from 'react';
 import { ChakraProvider, CSSReset } from '@chakra-ui/core';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import theme from './theme';
@@ -16,13 +17,12 @@ import EksplorCategory from './pages/EksplorCategory';
 import WisataDaerah from './pages/WisataDaerah';
 import Map from './pages/Map';
 import virtualTour from './pages/virtualTour';
-import PlaceDetail from './pages/PlaceDetail';
+// import PlaceDetail from './pages/PlaceDetail';
 import candiBorobudur from './pages/candiBorobudur';
 import danauToba from './pages/danauToba';
-import DetailWisata from './pages/DetailWisata';
+import DetailWisata from './pages/detailWisata';
 
 function App() {
- 
   return (
     <ChakraProvider theme={theme}>
       <CSSReset />

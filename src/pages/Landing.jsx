@@ -31,8 +31,6 @@ import virtualTourImages from '../assets/images/virtual-tour-section-images.png'
 import rekomendasiImages from '../assets/images/rekomendasi-section-images.png';
 import petaWisataImages from '../assets/images/peta-wisata-section-images.png';
 
-import destinasiJson from '../data/destinasi.json';
-
 import { getDestinasiPilihan } from '../api/fetchData';
 
 const Feature = ({ title, description, icon }) => (

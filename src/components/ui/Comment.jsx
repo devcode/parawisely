@@ -1,14 +1,34 @@
 import React from 'react';
-import { Box, Heading } from '@chakra-ui/core';
-import Section from '../sections/Section';
+import { Box, Heading, Stack, Text, StackDivider } from '@chakra-ui/core';
 
 const Comment = () => {
   return (
-    <Section>
-      <Box shadow="lg" p="2rem">
-        <Heading fontSize="md">Ulasan</Heading>
-      </Box>
-    </Section>
+    <Box borderRadius="md" shadow="md" p="2rem">
+      <Heading fontSize="24px">Ulasan (0) </Heading>
+
+      <Stack
+        spacing="2rem"
+        divider={<StackDivider borderColor="red.300" />}
+        mt="2rem"
+      >
+        <Stack>
+          <Heading fontSize="18px">Supryanto wp</Heading>
+          <Text>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque
+            facere sapiente commodi accusamus maxime sunt hic eius perferendis
+            ea minima.
+          </Text>
+        </Stack>
+        <Stack>
+          <Heading fontSize="18px">Supryanto wp</Heading>
+          <Text>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque
+            facere sapiente commodi accusamus maxime sunt hic eius perferendis
+            ea minima.
+          </Text>
+        </Stack>
+      </Stack>
+    </Box>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Divider, Heading, Image, Text, Stack } from '@chakra-ui/core';
+import { Heading, Text, Stack } from '@chakra-ui/core';
 import Layout from '../components/layouts';
 import Iframe from 'react-iframe';
 
@@ -25,7 +25,7 @@ const candiBorobudur = () => {
               width="100%"
               height="560px"
               frameborder="0"
-              style="border:0;"
+              style={{ border: 0 }}
               allowfullscreen="true"
               aria-hidden="false"
               tabindex="0"

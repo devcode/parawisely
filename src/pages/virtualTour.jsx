@@ -1,14 +1,6 @@
 import React from 'react';
 import { NavLink as RouterLink } from 'react-router-dom';
-import {
-  Box,
-  Divider,
-  Heading,
-  Image,
-  Text,
-  Stack,
-  Link,
-} from '@chakra-ui/core';
+import { Heading, Image, Text, Stack } from '@chakra-ui/core';
 import Layout from '../components/layouts';
 import candiBorobudur from '../assets/images/candi-borobudur.jpg';
 import danauToba from '../assets/images/danau-toba.jpg';

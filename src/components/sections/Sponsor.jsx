@@ -1,6 +1,6 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Box, Image, Divider } from '@chakra-ui/core';
+import { Box, Image } from '@chakra-ui/core';
 
 import sponsorJson from '../../data/sponsor.json';
 
@@ -31,7 +31,6 @@ const Sponsor = () => {
           ))}
         </Swiper>
       </Box>
-      
     </Box>
   );
 };

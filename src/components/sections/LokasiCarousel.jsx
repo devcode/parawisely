@@ -21,8 +21,6 @@ const breakpoints = {
   },
 };
 
-const assetImage = 'http://parawisely-backend.test/backend/uploads/placeImage/';
-
 const LokasiCarousel = ({ title, link, data, slug, type_name }) => {
   return (
     <Box>

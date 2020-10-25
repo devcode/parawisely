@@ -1,7 +1,6 @@
 import React from 'react';
-import { Box, Divider, Heading, Image, Text, Stack } from '@chakra-ui/core';
+import { Heading, Image, Text, Stack } from '@chakra-ui/core';
 import Layout from '../components/layouts';
-import Wraper from '../components/layouts/Wraper';
 
 import aboutImages from '../assets/images/about-images.png';
 
