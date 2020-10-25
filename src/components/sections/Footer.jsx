@@ -84,13 +84,13 @@ const Footer = () => {
             <Icon color="blue.500" as={FiPhone} mr="1rem" fontSize="lg" />
             (0265) 771204
           </LinkItem>
-          <LinkItem>
+          <Link>
             <Text textAlign="justify">
               <Icon color="blue.500" as={FiMapPin} mr="1rem" fontSize="lg" />
               Jl. Jenderal Sudirman No. 269 RT 13/RW 09, Desa Sindangrasa,
               Sindangrasa, Kec. Ciamis, Kabupaten Ciamis, Jawa Barat 46215
             </Text>
-          </LinkItem>
+          </Link>
         </Stack>
       </SimpleGrid>
     </Box>

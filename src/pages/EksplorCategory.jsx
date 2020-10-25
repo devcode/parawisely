@@ -24,7 +24,7 @@ import { capitalize } from '../utils/helper';
 
 const EksplorCategory = () => {
   const { type } = useParams();
-  const { data, status, error } = useQuery('place-by-type', () =>
+  const { data, status } = useQuery('place-by-type', () =>
     getPlacebyType(type)
   );
 

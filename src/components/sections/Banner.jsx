@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  Box,
-  Heading,
-  Text,
-  Image,
-  SimpleGrid,
-  Link,
-  Button,
-} from '@chakra-ui/core';
+import { Box, Heading, Text, Image } from '@chakra-ui/core';
 
 const Banner = ({ title, description, image }) => {
   return (

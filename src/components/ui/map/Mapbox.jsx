@@ -1,5 +1,6 @@
 import 'mapbox-gl/dist/mapbox-gl.css';
 import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
+
 import React, { createRef, useRef, useState, useEffect } from 'react';
 import MapGL, {
   GeolocateControl,
@@ -7,14 +8,12 @@ import MapGL, {
   Popup,
 } from 'react-map-gl';
 import { useQuery } from 'react-query';
-import DeckGL, { GeoJsonLayer } from 'deck.gl';
+import { GeoJsonLayer } from 'deck.gl';
 import Geocoder from 'react-map-gl-geocoder';
 
-import indonesiaGeosjon from '../../../data/indonesia.geojson';
 import Spinner from '../Spinner';
 import Pins from './Pins';
 import CityInfo from './CityInfo';
-import Legend from './Legend';
 
 import { getAllPlace } from '../../../api/fetchData';
 
@@ -56,7 +55,7 @@ const Mapbox = ({ width = '100vw', height = '89vh' }) => {
 
   useEffect(() => {
     window.removeEventListener('resize', resize);
-  }, []);
+  });
 
   const resize = () => {
     handleViewportChange({
@@ -88,7 +87,7 @@ const Mapbox = ({ width = '100vw', height = '89vh' }) => {
     );
   };
 
-  const onViewportHandler = viewport => setViewport({ ...viewport });
+  // const onViewportHandler = viewport => setViewport({ ...viewport });
 
   const _onClickMarker = city => {
     setPopInfo(city);
@@ -113,6 +112,7 @@ const Mapbox = ({ width = '100vw', height = '89vh' }) => {
 
   return (
     <div>
+      {searchResult}
       {status === 'loading' && <Spinner />}
 
       {status === 'error' && <div>{error.message}</div>}
@@ -141,7 +141,11 @@ const Mapbox = ({ width = '100vw', height = '89vh' }) => {
           {renderPopup()}
 
           <div style={geolocateControlStyle}>
-            <GeolocateControl />
+            <GeolocateControl
+              positionOptions={{ enableHighAccuracy: true }}
+              auto={true}
+              trackUserLocation={true}
+            />
           </div>
 
           <div style={NavigationControlStyle}>

@@ -45,7 +45,7 @@ const Eksplor = () => {
                     />
                   );
                 } else {
-                  return <div></div>;
+                  return <div key={`wtf-${index}`}></div>;
                 }
               })}
             </div>

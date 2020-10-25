@@ -1,6 +1,6 @@
-import imageNotFound from '../assets/ilustration/image-notfound.jpg';
+import axios from 'axios';
+import qs from 'querystring';
 const base_api = process.env.REACT_APP_API_ENDPOINT;
-const base_url = 'parawisely-backend.test/api';
 
 export const getAllPlace = async () => {
   const res = await fetch(base_api + '/place');
@@ -10,6 +10,18 @@ export const getAllPlace = async () => {
 export const getPlacebyType = async type => {
   const res = await fetch(base_api + '/type/' + type);
   return res.json();
+};
+
+export const createComment = async value => {
+  let data = qs.stringify(value);
+  let config = {
+    method: 'POST',
+    url: base_api + '/sendComment',
+    data,
+  };
+
+  const res = await axios(config);
+  return res.data;
 };
 
 export const getPlaceDetail = async slug => {
@@ -25,18 +37,6 @@ export const getDestinasiPilihan = async () => {
 export const getTypePlace = async () => {
   const res = await fetch(base_api + '/type-place');
   return res.json();
-};
-
-export const getImage = async path => {
-  await fetch(base_url + '/backend/uploads/' + path, { method: 'HEAD' })
-    .then(res => {
-      if (res.ok) {
-        return base_url + '/backend/uploads/' + path;
-      } else {
-        return imageNotFound;
-      }
-    })
-    .catch(err => console.log('error: ', err));
 };
 
 export const getEksplorasi = async () => {
