@@ -35,7 +35,7 @@ const Footer = () => {
             {' '}
             <Image src={Logo} />
           </RouterLink>
-          <Text textAlign="justify" fontSize="16px">
+          <Text textAlign="justify" fontSize="14px">
             Parawisely adalah project website yang dibuat untuk lomba IT Expo
             yang diselenggarakan UNJ. Kami dari team SERVER-RPL mempersembahkan
             website ini sebagai hasil karya orisinal.

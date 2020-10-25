@@ -9,39 +9,33 @@ const Tentang = () => {
   return (
     <Layout>
       <Stack textAlign="center" pt="2.5rem">
-        <Text w="100%" fontWeight="extra_bold" color="blue.500">
-          TENTANG KAMI
-        </Text>
-        <Heading fontWeight="extra_bold">Tentang Project Parawisely</Heading>
-        <Text className="col-md-6 mx-auto">
-          Nikmati keindahan negara Indonesia dari layar anda dengan fitur
-          Virtual Tour dari Parawisely yang membantu anda untuk menjelajahi
-          Indonesia secara online.
-        </Text>
+        <Heading fontSize="61px" lineHeight="73px" fontWeight="extra_bold">
+          Halo, Kami Adalah <span className="span-color">Parawisely</span>.
+        </Heading>
       </Stack>
-      <div className="container">
-        <div className="row mt-5">
-          <div className="col-md-12">
-            <Image
-              h="572px"
-              className="mx-auto"
-              src={aboutImages}
-              objectFit="cover"
-            />
-          </div>
+      <div className="row mt-3">
+        <div className="col-md-6 mt-5 mx-auto">
+          <Text
+            fontSize="20px"
+            lineHeight="31px"
+            textAlign="center"
+            fontWeight="regular"
+          >
+            Convertedin is the first Customer Marketing Platform for Retailers
+            that work in auto-pilot mode
+            <br />
+            <br />
+            We created a Customer Marketing Platform that unifies all customer
+            data from different retailer touchpoints: Pixels, Mobile apps (via
+            SDK), CRM Integration, APIs.
+            <br />
+            <br />
+            Convertedin segments all these customers & their data using AI to
+            create look-a-like audiences to expand your audiences, you will be
+            able to create campaigns & optimize them on autopilot using AI.
+          </Text>
         </div>
       </div>
-      <Stack textAlign="center" pt="2.5rem">
-        <Text w="100%" fontWeight="extra_bold" color="blue.500">
-          TENTANG KAMI
-        </Text>
-        <Heading fontWeight="extra_bold">Tentang Project Parawisely</Heading>
-        <Text className="col-md-6 mx-auto">
-          Nikmati keindahan negara Indonesia dari layar anda dengan fitur
-          Virtual Tour dari Parawisely yang membantu anda untuk menjelajahi
-          Indonesia secara online.
-        </Text>
-      </Stack>
     </Layout>
   );
 };
