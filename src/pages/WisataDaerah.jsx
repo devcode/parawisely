@@ -5,6 +5,7 @@ import Section from '../components/sections/Section';
 import Banner from '../components/sections/Banner';
 import { BsClock, BsBookmarks, BsEye } from 'react-icons/bs';
 
+import wisataDaerahImages from '../assets/images/wisata-daerah-images.png';
 import WisataDaerahIMG from '../assets/images/hero.png';
 import { Link } from 'react-router-dom';
 
@@ -14,7 +15,7 @@ const WisataDaerah = () => {
       <Banner
         title="Wisata Daerah"
         description="Disini anda bisa mencari dan menjelajahi kuliner, budaya, dan tempat pariwisata dari berbagai daerah di indonesa yang dikelompokan tiap provinsi"
-        image={WisataDaerahIMG}
+        image={wisataDaerahImages}
       />
 
       <Section>

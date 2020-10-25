@@ -20,7 +20,11 @@ import virtualTour from './pages/virtualTour';
 // import PlaceDetail from './pages/PlaceDetail';
 import candiBorobudur from './pages/candiBorobudur';
 import danauToba from './pages/danauToba';
-import DetailWisata from './pages/detailWisata';
+import keratonYogyakarta from './pages/keratonYogyakarta';
+import labuanBajo from './pages/labuanBajo';
+import rajaAmpat from './pages/rajaAmpat';
+import pantaiPangandaran from './pages/pantaiPangandaran';
+import DetailWisata from './pages/DetailWisata';
 
 function App() {
   return (
@@ -43,6 +47,16 @@ function App() {
             component={candiBorobudur}
           />
           <Route path="/virtual-tour/danau-toba" component={danauToba} />
+          <Route
+            path="/virtual-tour/keraton-yogyakarta"
+            component={keratonYogyakarta}
+          />
+          <Route path="/virtual-tour/labuan-bajo" component={labuanBajo} />
+          <Route path="/virtual-tour/raja-ampat" component={rajaAmpat} />
+          <Route
+            path="/virtual-tour/pantai-pangandaran"
+            component={pantaiPangandaran}
+          />
           <Route path="/virtual-tour" component={virtualTour} />
           <Route path="/mitra-pariwisata" component={Eksplor} />
           <Route path="/tentang" component={Tentang} />

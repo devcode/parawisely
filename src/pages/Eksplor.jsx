@@ -7,7 +7,7 @@ import Layout from '../components/layouts';
 import Spinner from '../components/ui/Spinner';
 import Section from '../components/sections/Section';
 
-import EksplorIMG from '../assets/images/eksplor.jpg';
+import eksplorasiImages from '../assets/images/eksplorasi-images.png';
 import ilustrationIMG from '../assets/ilustration/ilus-ekplor.png';
 import Banner from '../components/sections/Banner';
 
@@ -22,9 +22,9 @@ const Eksplor = () => {
   return (
     <Layout>
       <Banner
-        title="Ekplor Indonesia"
-        description="Di halaman ini anda bisa eksplorasi berbagai macam kategori tempat pariwisata yang sudah kami kelompokan agar lebih mudah anda cari"
-        image={EksplorIMG}
+        title="Ekplorasi Indonesia"
+        description="Di halaman ini anda bisa bereksplorasi berbagai macam kategori tempat pariwisata yang sudah kami kelompokan agar lebih mudah anda cari."
+        image={eksplorasiImages}
       />
       <Section>
         <Stack spacing="1rem">
@@ -37,7 +37,7 @@ const Eksplor = () => {
                   return (
                     <LokasiCarousel
                       key={item.id}
-                      title={`${item.type_name} di Indonesia`}
+                      title={`Wisata ${item.type_name} di Indonesia`}
                       slug={item.slug}
                       type_name={item.type_name}
                       link={`eksplorasi/${item.slug}`}
