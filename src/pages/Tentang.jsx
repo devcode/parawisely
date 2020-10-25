@@ -8,10 +8,27 @@ const Tentang = () => {
   return (
     <Layout>
       <Stack textAlign="center" pt="2.5rem">
-        <Heading fontSize="61px" lineHeight="73px" fontWeight="extra_bold">
-          Halo, Kami Adalah <span className="span-color">Parawisely</span>.
+        <Heading
+          className="col-md-8 mx-auto"
+          fontSize="48px"
+          lineHeight="56px"
+          fontWeight="extra_bold"
+        >
+          Membuat liburan anda di Indonesia menjadi lebih seru dan berkesan!
         </Heading>
       </Stack>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-8 mx-auto">
+            <Image
+              h="572px"
+              className="mx-auto"
+              src={aboutImages}
+              objectFit="cover"
+            />
+          </div>
+        </div>
+      </div>
       <div className="row mt-3">
         <div className="col-md-6 mt-5 mx-auto">
           <Text
