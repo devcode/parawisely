@@ -34,18 +34,6 @@ const Header = props => {
       justify="space-between"
       align="center"
       wrap="wrap"
-      shadow="
-      0 0.8px 8.7px rgba(0, 0, 0, 0.004),
-      0 1.8px 19.5px rgba(0, 0, 0, 0.007),
-      0 3.1px 33.3px rgba(0, 0, 0, 0.008),
-      0 4.7px 51.3px rgba(0, 0, 0, 0.009),
-      0 7px 76px rgba(0, 0, 0, 0.011),
-      0 10.3px 111.7px rgba(0, 0, 0, 0.012),
-      0 15.4px 167.4px rgba(0, 0, 0, 0.013),
-      0 24.5px 266.8px rgba(0, 0, 0, 0.016),
-      0 46px 500px rgba(0, 0, 0, 0.02)
-    ;
-"
       py="1rem"
       px={['2rem', '2rem', '3rem', '5rem']}
       color="primary.800"

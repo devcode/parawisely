@@ -34,9 +34,9 @@ const Hero = props => {
           <Text
             w={['100%', '100%', '100%', '80%']}
             color="#666666"
-            fontSize={['16px', '19px']}
+            fontSize={['12px', '16px']}
             letterSpacing="0px"
-            lineHeight="27px"
+            lineHeight="24px"
             textAlign="justify"
           >
             Parawisely membantu kamu untuk memilih tempat wisata di Indonesia
