@@ -8,6 +8,9 @@ const Tentang = () => {
   return (
     <Layout>
       <Stack textAlign="center" pt="2.5rem">
+        <Text w="100%" fontWeight="extra_bold" color="blue.500">
+          TENTANG KAMI PARAWISELY
+        </Text>
         <Heading
           className="col-md-8 mx-auto"
           fontSize="48px"
@@ -28,28 +31,32 @@ const Tentang = () => {
             />
           </div>
         </div>
-      </div>
-      <div className="row mt-3">
-        <div className="col-md-6 mt-5 mx-auto">
-          <Text
-            fontSize="20px"
-            lineHeight="31px"
-            textAlign="center"
-            fontWeight="regular"
-          >
-            Convertedin is the first Customer Marketing Platform for Retailers
-            that work in auto-pilot mode
-            <br />
-            <br />
-            We created a Customer Marketing Platform that unifies all customer
-            data from different retailer touchpoints: Pixels, Mobile apps (via
-            SDK), CRM Integration, APIs.
-            <br />
-            <br />
-            Convertedin segments all these customers & their data using AI to
-            create look-a-like audiences to expand your audiences, you will be
-            able to create campaigns & optimize them on autopilot using AI.
-          </Text>
+
+        <div className="row">
+          <div className="col-md-8 mx-auto">
+            <Text
+              fontSize="20px"
+              lineHeight="31px"
+              textAlign="center"
+              fontWeight="regular"
+            >
+              Parawisely merupakan website yang bertujuan untuk mengenalkan
+              Indonesia pada dunia bahwa Indonesia merupakan negara yang akan
+              budaya dan keberagaman, tentu di barengi keindahan alamnya membuat
+              Indonesia sangat pantas untuk kamu jadikan destinasi selanjutnya.
+              <br />
+              <br />
+              Kami juga mempunyai banyak fitur seperti peta wisata, virtual tour
+              dan fitur eksplorasi yang membuat kalian dapat melihat Indonesia
+              dari layar kaca anda dengan mudah.
+              <br />
+              <br />
+              Membuat Indonesia menjadi destinasi selanjutnya merupakan
+              prioritas kami, oleh karena itu semoga dengan adanya Parawisely
+              anda dapat tertarik untuk mengunjungi Indonesia di waktu nanti.
+              Kami tunggu kehadiran anda di Indonesia!
+            </Text>
+          </div>
         </div>
       </div>
     </Layout>

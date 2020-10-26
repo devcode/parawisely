@@ -18,7 +18,7 @@ const Hero = props => {
       h={['100vh', '100vh', '100vh', 'auto']}
     >
       <SimpleGrid alignItems="center" columns={[1, 1, 1, 2]}>
-        <Stack spacing={4} align="start">
+        <Stack spacing={5} align="start">
           <Text w="100%" fontWeight="extra_bold" color="blue.500">
             SELAMAT DATANG DI PARAWISELY
           </Text>
@@ -37,7 +37,7 @@ const Hero = props => {
             fontSize={['12px', '16px']}
             letterSpacing="0px"
             lineHeight="24px"
-            textAlign="justify"
+            textAlign="start"
           >
             Parawisely membantu kamu untuk memilih tempat wisata di Indonesia
             yang kaya akan budaya dan keberagaman serta petualangan yang
