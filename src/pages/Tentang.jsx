@@ -1,8 +1,24 @@
 import React from 'react';
-import { Heading, Image, Text, Stack } from '@chakra-ui/core';
+import { Heading, Image, Text, Stack, Icon, Link } from '@chakra-ui/core';
 import Layout from '../components/layouts';
+import Iframe from 'react-iframe';
 
 import aboutImages from '../assets/images/about-images.png';
+
+import {
+  FaInstagram,
+  FaTwitter,
+  FaFacebook,
+  FaYoutube,
+  FaRegAddressCard,
+} from 'react-icons/fa';
+import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
+
+const IconSosmed = ({ icon, url }) => (
+  <Link href={url} isExternal>
+    <Icon color="blue.500" as={icon} fontSize="lg" />
+  </Link>
+);
 
 const Tentang = () => {
   return (
@@ -33,11 +49,11 @@ const Tentang = () => {
         </div>
 
         <div className="row">
-          <div className="col-md-8 mx-auto">
+          <div className="col-md-10 mx-auto">
             <Text
               fontSize="20px"
               lineHeight="31px"
-              textAlign="center"
+              textAlign="justify"
               fontWeight="regular"
             >
               Parawisely merupakan website yang bertujuan untuk mengenalkan
@@ -56,6 +72,74 @@ const Tentang = () => {
               anda dapat tertarik untuk mengunjungi Indonesia di waktu nanti.
               Kami tunggu kehadiran anda di Indonesia!
             </Text>
+          </div>
+          <div className="row mt-5">
+            <div className="col-md-10 mx-auto">
+              <Iframe
+                url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15828.951924275474!2d108.33019786038814!3d-7.327146037234768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f5eba1b06f52f%3A0xaf882382d9de1508!2sSMK%20Negeri%201%20Ciamis!5e0!3m2!1sid!2sid!4v1603693091705!5m2!1sid!2sid"
+                width="100%"
+                height="560px"
+                frameborder="0"
+                style={{ border: 0 }}
+                allowfullscreen="true"
+                aria-hidden="false"
+                tabindex="0"
+                id="myId"
+                className="myClassname"
+              />
+            </div>
+            <div className="row mt-4">
+              <div className="col-md-10 mx-auto">
+                <p>
+                  <Text className="mx-auto" textAlign="start">
+                    <Icon
+                      color="blue.500"
+                      as={FiMapPin}
+                      mr="1rem"
+                      fontSize="lg"
+                    />
+                    Jl. Jenderal Sudirman No. 269 RT 13/RW 09, Desa Sindangrasa,
+                    Sindangrasa, Kabupaten Ciamis, Jawa Barat 46215
+                  </Text>
+                  <Text className="mx-auto" textAlign="start">
+                    <Icon
+                      color="blue.500"
+                      as={FaRegAddressCard}
+                      mr="1rem"
+                      fontSize="lg"
+                    />
+                    apps.pariwisata@gmail.com
+                  </Text>
+                  <Text className="mx-auto" textAlign="start">
+                    <Icon
+                      color="blue.500"
+                      as={FaInstagram}
+                      mr="1rem"
+                      fontSize="lg"
+                    />
+                    @parawisely
+                  </Text>
+                  <Text className="mx-auto" textAlign="start">
+                    <Icon
+                      color="blue.500"
+                      as={FaTwitter}
+                      mr="1rem"
+                      fontSize="lg"
+                    />
+                    @parawisely
+                  </Text>
+                  <Text className="mx-auto" textAlign="start">
+                    <Icon
+                      color="blue.500"
+                      as={FaFacebook}
+                      mr="1rem"
+                      fontSize="lg"
+                    />
+                    Parawisely
+                  </Text>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

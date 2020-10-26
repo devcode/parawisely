@@ -51,6 +51,9 @@ const Comment = ({ data, place_id }) => {
           {props => (
             <Form>
               <Stack spacing="1rem">
+                <Text fontWeight="extra_bold" fontSize="32px">
+                  Tulis ulasan anda disini
+                </Text>
                 <SimpleGrid spacing="2rem" columns={[1, 1, 2, 2]}>
                   <Field name="name">
                     {({ field, form }) => (
