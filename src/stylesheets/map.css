@@ -3,6 +3,11 @@
   height: 500px;
 }
 
+.map-container {
+  width: auto;
+  height: 500px;
+}
+
 .legend {
   max-width: 320px;
   background: #fff;

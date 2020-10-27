@@ -8,7 +8,7 @@ import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import { getPlaceDetail } from '../api/fetchData';
 
-const ASSET = process.env.REACT_APP_BACKEND_ASSET;
+const asset = process.env.REACT_APP_BACKEND_ASSET;
 
 const DetailWisata = () => {
   const { slug } = useParams();
@@ -37,7 +37,9 @@ const DetailWisata = () => {
                 <div className="row mt-5">
                   <div className="col-md-12 ">
                     <Image
-                      src={`${ASSET}/${data.data.image}`}
+                      src={`${asset}/placeImage/${data.data.image}`}
+                      h="720px"
+                      w="1920px"
                       fallbackSrc="https://via.placeholder.com/1920x720"
                       objectFit="fit"
                     />

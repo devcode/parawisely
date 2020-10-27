@@ -2,6 +2,16 @@ import axios from 'axios';
 import qs from 'querystring';
 const base_api = process.env.REACT_APP_API_ENDPOINT;
 
+export const getMap = async () => {
+  const res = await fetch(base_api + '/map');
+  return res.json();
+};
+
+export const getWisataDaerah = async () => {
+  const res = await fetch(base_api + '/wisata-daerah');
+  return res.json();
+};
+
 export const getAllPlace = async () => {
   const res = await fetch(base_api + '/place');
   return res.json();
