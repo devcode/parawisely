@@ -30,13 +30,13 @@ const ulasanSchema = Yup.object().shape({
     .required('Tidak boleh kosong'),
 });
 
-const CommentForm = ({ id, addComment }) => {
+const CommentForm = ({ place_id, addComment }) => {
   return (
     <Box borderRadius="md" shadow="lg" p="2rem">
       <Alert />
       <Formik
         initialValues={{
-          place_id: id,
+          place_id,
           name: '',
           email: '',
           comment: '',
@@ -51,11 +51,6 @@ const CommentForm = ({ id, addComment }) => {
         {props => (
           <Form>
             <Stack spacing="1rem">
-              <Field name="place_id">
-                {({ field, form }) => (
-                  <Input type="text" value={id} id="place_id" {...field} />
-                )}
-              </Field>
               <SimpleGrid spacing="2rem" columns={[1, 1, 2, 2]}>
                 <Field name="name">
                   {({ field, form }) => (
