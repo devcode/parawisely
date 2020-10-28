@@ -1,23 +1,51 @@
-import React from 'react';
-import { Button, Heading, Icon, Stack, Text } from '@chakra-ui/core';
+import React, { useEffect } from 'react';
+import Proptypes from 'prop-types';
+import { connect } from 'react-redux';
+import {
+  Box,
+  FormLabel,
+  FormControl,
+  Select,
+  Image,
+  Button,
+  Heading,
+  Icon,
+  SimpleGrid,
+  Stack,
+  Text,
+  Skeleton,
+} from '@chakra-ui/core';
+import { Link } from 'react-router-dom';
 import { IoIosArrowRoundForward } from 'react-icons/io';
-import { useQuery } from 'react-query';
+import { FaMapMarkerAlt } from 'react-icons/fa';
 
 import Layout from '../components/layouts';
-import Spinner from '../components/ui/Spinner';
 import Section from '../components/sections/Section';
+import Spinner from '../components/ui/Spinner';
 
 import eksplorasiImages from '../assets/images/eksplorasi-images.png';
 import ilustrationIMG from '../assets/ilustration/ilus-ekplor.png';
 import Banner from '../components/sections/Banner';
 
-import LokasiCarousel from '../components/sections/LokasiCarousel';
 import CardRekomendasi from '../components/ui/CardRekomendasi';
+import { getPlace, getTypePlace, getPlaceByType } from '../actions/wisata';
 
-import { getEksplorasi } from '../api/fetchData';
+const asset = process.env.REACT_APP_BACKEND_ASSET;
 
-const Eksplor = () => {
-  const { data, status, error } = useQuery('type-place', getEksplorasi);
+const Eksplor = ({
+  getPlace,
+  getTypePlace,
+  getPlaceByType,
+  wisata: { places, typePlace, loading },
+}) => {
+  useEffect(() => {
+    getPlace();
+    getTypePlace();
+  }, [getPlace, getTypePlace]);
+
+  const filterHandler = e => {
+    getPlaceByType(parseInt(e));
+  };
 
   return (
     <Layout>
@@ -27,29 +55,61 @@ const Eksplor = () => {
         image={eksplorasiImages}
       />
       <Section>
-        <Stack spacing="1rem">
-          {status === 'loading' && <Spinner />}
-          {status === 'error' && <div>{error}</div>}
-          {status === 'success' && (
-            <div>
-              {data.data.map((item, index) => {
-                if (item.places.length > 0) {
-                  return (
-                    <LokasiCarousel
-                      key={item.id}
-                      title={`Wisata ${item.type_name} di Indonesia`}
-                      slug={item.slug}
-                      type_name={item.type_name}
-                      link={`eksplorasi/${item.slug}`}
-                      data={item.places}
+        <Stack spacing="2rem" direction={['column', 'column', 'row', 'row']}>
+          <Stack minWidth="50vh">
+            <Heading fontSize="14px">Total ({places?.length})</Heading>
+            <FormControl
+              id="country"
+              onChange={e => filterHandler(e.target.value)}
+            >
+              <FormLabel>Kategori</FormLabel>
+
+              <Select>
+                <option value="0">Semua</option>
+                {typePlace &&
+                  typePlace.map((item, index) => (
+                    <>
+                      <option value={item.id} key={`type-${index}`}>
+                        {item.type_name}
+                      </option>
+                    </>
+                  ))}
+              </Select>
+            </FormControl>
+          </Stack>
+
+          <Skeleton isLoaded={places.length > 0} w="full" minHeight="272px">
+            <SimpleGrid spacing="1rem" columns={[2, 2, 4, 4]}>
+              {places &&
+                places.map((item, index) => (
+                  <Stack
+                    key={`place-${item.slug}`}
+                    borderRadius="lg"
+                    shadow="lg"
+                  >
+                    <Image
+                      h="272px"
+                      objectFit="cover"
+                      borderRadius="lg"
+                      src={`${asset}/placeImage/${item.image}`}
+                      fallbackSrc={item.image}
                     />
-                  );
-                } else {
-                  return <div key={`wtf-${index}`}></div>;
-                }
-              })}
-            </div>
-          )}
+                    <Stack spacing="0.5rem" p="1rem">
+                      <Heading size="sm">{item.name_place}</Heading>
+                      <Stack align="center" direction="row" spacing="5px">
+                        <Icon as={FaMapMarkerAlt} />
+                        <Text fontSize="13px">{item.provinsi}</Text>
+                      </Stack>
+                      <Link to={`/place/${item.slug}`} d="block">
+                        <Button size="sm" colorScheme="blue" w="full">
+                          Selengkapnya
+                        </Button>
+                      </Link>
+                    </Stack>
+                  </Stack>
+                ))}
+            </SimpleGrid>
+          </Skeleton>
         </Stack>
       </Section>
 
@@ -70,4 +130,19 @@ const Eksplor = () => {
   );
 };
 
-export default Eksplor;
+Eksplor.propTypes = {
+  getPlace: Proptypes.func.isRequired,
+  getTypePlace: Proptypes.func.isRequired,
+  getPlaceByType: Proptypes.func.isRequired,
+  wisata: Proptypes.object.isRequired,
+};
+
+const mapStateToProps = state => ({
+  wisata: state.wisata,
+});
+
+export default connect(mapStateToProps, {
+  getPlace,
+  getTypePlace,
+  getPlaceByType,
+})(Eksplor);

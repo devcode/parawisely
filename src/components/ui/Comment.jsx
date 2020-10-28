@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
 import {
   Heading,
   Stack,
@@ -16,6 +19,7 @@ import {
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { createComment } from '../../api/fetchData';
+import { addComment } from '../../actions/wisata';
 
 const ulasanSchema = Yup.object().shape({
   name: Yup.string()
@@ -29,8 +33,7 @@ const ulasanSchema = Yup.object().shape({
     .required('Tidak boleh kosong'),
 });
 
-const Comment = ({ data, place_id }) => {
-  const [comments, setComments] = useState(data);
+const Comment = ({ addComment, wisata: { place }, place_id }) => {
   return (
     <>
       <Box borderRadius="md" shadow="lg" p="2rem">
@@ -43,8 +46,7 @@ const Comment = ({ data, place_id }) => {
           }}
           validationSchema={ulasanSchema}
           onSubmit={async (values, actions) => {
-            const res = await createComment(values);
-            setComments([...comments, res.data]);
+            addComment(values);
             actions.resetForm();
           }}
         >
@@ -118,14 +120,16 @@ const Comment = ({ data, place_id }) => {
       </Box>
 
       <Box borderRadius="md" shadow="md" p="2rem">
-        <Heading fontSize="24px">Ulasan ({comments.length}) </Heading>
+        <Heading fontSize="24px">
+          Ulasan ({place?.data?.comments?.length}){' '}
+        </Heading>
 
         <Stack
           spacing="2rem"
           divider={<StackDivider borderColor="gray.300" />}
           mt="2rem"
         >
-          {comments.map((item, index) => (
+          {place?.data?.comments?.map((item, index) => (
             <Stack key={index}>
               <Heading fontSize="18px">{item.name}</Heading>
               <Text>{item.comment}</Text>
@@ -137,73 +141,15 @@ const Comment = ({ data, place_id }) => {
   );
 };
 
-export default Comment;
+Comment.proptTypes = {
+  addComment: PropTypes.func.isRequired,
+  place: PropTypes.object.isRequired,
+};
 
-// import React from 'react';
-// import {
-//   SimpleGrid,
-//   Box,
-//   Heading,
-//   Stack,
-//   FormControl,
-//   Input,
-//   FormLabel,
-//   Textarea,
-//   Button,
-//   FormErrorMessage,
-// } from '@chakra-ui/core';
-// import { useForm } from 'react-hook-form';
+const mapStateToProps = state => ({
+  wisata: state.wisata,
+});
 
-// const PostComment = () => {
-//   const { register, handleSubmit, errors } = useForm();
-//   const onSubmit = data => {
-//     console.log(data);
-//   };
-
-//   return (
-//     <Box borderRadius="md" shadow="md" p="2rem">
-//       <form onSubmit={handleSubmit(onSubmit)}>
-//         <Heading fontSize="24px">Tambah ulasan</Heading>
-
-//         <Stack spacing="1rem" mt="2rem">
-//           <SimpleGrid spacing="2rem" columns={[1, 1, 2, 2]}>
-//             <FormControl id="nama" isInvalid={errors.nama}>
-//               <FormLabel>Nama</FormLabel>
-//               <Input
-//                 name="nama"
-//                 type="text"
-//                 ref={register({ required: 'true', minLength: 3 })}
-//               />
-//               <FormErrorMessage>
-//                 {errors?.nama?.types?.required && (
-//                   <p>nama tidak boleh kosong</p>
-//                 )}
-//               </FormErrorMessage>
-//             </FormControl>
-//             <FormControl id="email">
-//               <FormLabel>Email</FormLabel>
-//               <Input
-//                 name="email"
-//                 type="email"
-//                 ref={register({ required: 'true' })}
-//               />
-//             </FormControl>
-//           </SimpleGrid>
-//           <FormControl id="email">
-//             <FormLabel>Ulasan</FormLabel>
-//             <Textarea
-//               name="ulasan"
-//               type="text"
-//               ref={register({ required: 'true' })}
-//             />
-//           </FormControl>
-//           <Button type="submit" colorScheme="blue">
-//             Tambah
-//           </Button>
-//         </Stack>
-//       </form>
-//     </Box>
-//   );
-// };
-
-// export default PostComment;
+export default connect(mapStateToProps, {
+  addComment,
+})(Comment);

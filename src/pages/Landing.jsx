@@ -84,6 +84,7 @@ const Landing = () => {
             <Heading
               fontWeight="extra_bold"
               fontSize={['30px', '30px', '30px', '40px']}
+              lineHeight="48px"
             >
               Keberagaman budaya yang bisa anda nikmati hanya di Indonesia!
             </Heading>
@@ -118,6 +119,7 @@ const Landing = () => {
               KEINDAHAN INDONESIA
             </Text>
             <Heading
+              lineHeight="48px"
               fontWeight="extra_bold"
               fontSize={['30px', '30px', '30px', '40px']}
             >
@@ -158,6 +160,7 @@ const Landing = () => {
               KULINER INDONESIA
             </Text>
             <Heading
+              lineHeight="48px"
               fontWeight="extra_bold"
               fontSize={['30px', '30px', '30px', '40px']}
             >
@@ -240,6 +243,7 @@ const Landing = () => {
               FITUR VIRTUAL TOUR
             </Text>
             <Heading
+              lineHeight="48px"
               fontWeight="extra_bold"
               fontSize={['30px', '30px', '30px', '40px']}
             >
@@ -279,6 +283,7 @@ const Landing = () => {
               FITUR PETA WISATA
             </Text>
             <Heading
+              lineHeight="48px"
               fontWeight="extra_bold"
               fontSize={['30px', '30px', '30px', '40px']}
             >
@@ -319,6 +324,7 @@ const Landing = () => {
               FITUR REKOMENDASI
             </Text>
             <Heading
+              lineHeight="48px"
               fontWeight="extra_bold"
               fontSize={['30px', '30px', '30px', '40px']}
             >

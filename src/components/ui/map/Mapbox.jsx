@@ -112,7 +112,6 @@ const Mapbox = ({ width = '100vw', height = '89vh' }) => {
 
   return (
     <div>
-      {searchResult}
       {status === 'loading' && <Spinner />}
 
       {status === 'error' && <div>{error.message}</div>}
