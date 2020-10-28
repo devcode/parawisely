@@ -2,6 +2,9 @@ import React, { useEffect } from 'react';
 import Proptypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
+  InputGroup,
+  Input,
+  InputLeftElement,
   Box,
   FormLabel,
   FormControl,
@@ -15,6 +18,7 @@ import {
   Text,
   Skeleton,
 } from '@chakra-ui/core';
+import { SearchIcon } from '@chakra-ui/icons';
 import { Link } from 'react-router-dom';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 import { FaMapMarkerAlt } from 'react-icons/fa';
@@ -55,6 +59,13 @@ const Eksplor = ({
         <Stack spacing="2rem" direction={['column', 'column', 'row', 'row']}>
           <Stack minWidth="50vh">
             <Heading fontSize="14px">Total ({places?.length})</Heading>
+            <InputGroup>
+              <InputLeftElement
+                pointerEvents="none"
+                children={<SearchIcon color="gray.300" />}
+              />
+              <Input type="phone" placeholder="Cari tempat" />
+            </InputGroup>
             <FormControl
               id="country"
               onChange={e => filterHandler(e.target.value)}
