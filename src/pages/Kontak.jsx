@@ -18,6 +18,8 @@ import {
 import React from 'react';
 import { FaMoneyCheck, FaMap, FaCalendar, FaClone } from 'react-icons/fa';
 
+import kontakImages from '../assets/images/kontak-images.png';
+import Banner from '../components/sections/Banner';
 import Layout from '../components/layouts';
 import Section from '../components/sections/Section';
 
@@ -34,6 +36,7 @@ const FaqItem = ({ icon, title, description }) => (
 const Kontak = () => {
   return (
     <Layout>
+     <Banner title="Kontak Kami" image={kontakImages} />
       <div className="container">
         <div className="row mt-3">
           <div className="col-md-12 display-6 font-weight-bold">
