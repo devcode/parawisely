@@ -23,3 +23,6 @@ export const ADD_KONTAK_ERROR = 'ADD_KONTAK_ERROR';
 
 export const SET_ALERT = 'SET_ALERT';
 export const REMOVE_ALERT = 'REMOVE_ALERT';
+
+export const SEARCH = 'SEARCH';
+export const SEARCH_ERROR = 'SEARCH_ERROR';

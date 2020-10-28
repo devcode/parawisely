@@ -25,7 +25,7 @@ const Sponsor = () => {
       <Box>
         <Swiper breakpoints={breakpoints} loop>
           {sponsorJson.map(sponsor => (
-            <SwiperSlide key={sponsor.id}>
+            <SwiperSlide key={`sponsor-${sponsor.id}`}>
               <Image
                 className="mx-auto"
                 src={sponsor.images}

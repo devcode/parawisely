@@ -84,7 +84,7 @@ const DetailWisata = ({ getPlaceDetail, wisata: { place }, match }) => {
                   mt="2rem"
                 >
                   {place?.comments?.map((item, idx) => (
-                    <CommentItem comment={item} />
+                    <CommentItem key={`maksd-${item.id}`} comment={item} />
                   ))}
                 </Stack>
               </Box>

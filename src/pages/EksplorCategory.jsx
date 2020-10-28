@@ -44,7 +44,7 @@ const EksplorCategory = () => {
             {!data.data && <div>kosong</div>}
             {data.data[0] &&
               data.data[0].places.map((item, index) => (
-                <Stack key={index} shadow="lg">
+                <Stack key={`lksdl${index}`} shadow="lg">
                   <Image
                     h="272px"
                     objectFit="cover"

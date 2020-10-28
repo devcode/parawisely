@@ -130,7 +130,7 @@ const Comment = ({ addComment, wisata: { place }, place_id }) => {
           mt="2rem"
         >
           {place?.data?.comments?.map((item, index) => (
-            <Stack key={index}>
+            <Stack key={`comment-${item.id}`}>
               <Heading fontSize="18px">{item.name}</Heading>
               <Text>{item.comment}</Text>
             </Stack>

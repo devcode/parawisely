@@ -1,4 +1,6 @@
 import {
+  SEARCH,
+  SEARCH_ERROR,
   GET_PLACE_COMMENT,
   GET_PLACE_DETAIL,
   GET_PLACE,
@@ -14,6 +16,7 @@ import {
 } from '../actions/types';
 
 const initialState = {
+  appliedFilter: [],
   places: [],
   place: {},
   typePlace: [],
@@ -42,6 +45,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         places: payload,
+        filteredPlaces: payload,
         loading: false,
       };
     case GET_PLACE_BYTYPE:
@@ -76,8 +80,31 @@ export default function (state = initialState, action) {
         placeComments: payload,
         loading: false,
       };
+    case SEARCH:
+      console.log('ke trigier');
+      let newState = Object.assign({}, state);
+      let value = payload.value;
+      let filteredValue = state.places.filter(place => {
+        return (
+          place.name_place.toLowerCase().includes(value) ||
+          place.provinsi.toLowerCase().includes(value)
+        );
+      });
+      let appliedFilters = state.appliedFilter;
+
+      if (value) {
+        appliedFilters = addFilterIfNotExists(SEARCH, appliedFilters);
+        newState.filteredPlaces = filteredValue;
+      } else {
+        appliedFilters = removeFilter(SEARCH, appliedFilters);
+        if (appliedFilters.length === 0) {
+          newState.filteredPlaces = newState.places;
+        }
+      }
+      return newState;
 
     case ADD_COMMENT_ERROR:
+    case SEARCH_ERROR:
     case WISATA_DAERAH_ERROR:
     case EKSPLORASI_ERROR:
     case TYPE_PLACE_ERROR:
@@ -89,4 +116,17 @@ export default function (state = initialState, action) {
     default:
       return state;
   }
+}
+
+function addFilterIfNotExists(filter, appliedFilters) {
+  let index = appliedFilters.indexOf(filter);
+  if (index === -1) appliedFilters.push(filter);
+
+  return appliedFilters;
+}
+
+function removeFilter(filter, appliedFilters) {
+  let index = appliedFilters.indexOf(filter);
+  appliedFilters.splice(index, 1);
+  return appliedFilters;
 }

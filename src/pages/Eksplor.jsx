@@ -2,10 +2,7 @@ import React, { useEffect } from 'react';
 import Proptypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
-  InputGroup,
-  Input,
-  InputLeftElement,
-  Box,
+  Checkbox,
   FormLabel,
   FormControl,
   Select,
@@ -18,14 +15,12 @@ import {
   Text,
   Skeleton,
 } from '@chakra-ui/core';
-import { SearchIcon } from '@chakra-ui/icons';
 import { Link } from 'react-router-dom';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 
 import Layout from '../components/layouts';
 import Section from '../components/sections/Section';
-import Spinner from '../components/ui/Spinner';
 
 import eksplorasiImages from '../assets/images/eksplorasi-images.png';
 import ilustrationIMG from '../assets/ilustration/ilus-ekplor.png';
@@ -33,6 +28,7 @@ import Banner from '../components/sections/Banner';
 
 import CardRekomendasi from '../components/ui/CardRekomendasi';
 import { getPlace, getTypePlace, getPlaceByType } from '../actions/wisata';
+import SearchBar from '../components/ui/SearchBar';
 
 const asset = process.env.REACT_APP_BACKEND_ASSET;
 
@@ -40,7 +36,7 @@ const Eksplor = ({
   getPlace,
   getTypePlace,
   getPlaceByType,
-  wisata: { places, typePlace, loading, error },
+  wisata: { places, typePlace, loading, error, filteredPlaces },
 }) => {
   useEffect(() => {
     getPlace();
@@ -57,41 +53,28 @@ const Eksplor = ({
       <Section>
         {error && error.msg}
         <Stack spacing="2rem" direction={['column', 'column', 'row', 'row']}>
-          <Stack minWidth="50vh">
+          <Stack minWidth="50vh" spacing="1rem">
             <Heading fontSize="14px">Total ({places?.length})</Heading>
-            <InputGroup>
-              <InputLeftElement
-                pointerEvents="none"
-                children={<SearchIcon color="gray.300" />}
-              />
-              <Input type="phone" placeholder="Cari tempat" />
-            </InputGroup>
-            <FormControl
-              id="country"
-              onChange={e => filterHandler(e.target.value)}
-            >
+            <SearchBar />
+            <FormControl onChange={e => alert(e.target.value)}>
               <FormLabel>Kategori</FormLabel>
-
-              <Select>
-                <option value="0">Semua</option>
-                {typePlace &&
-                  typePlace.map((item, index) => (
-                    <>
-                      <option value={item.id} key={`type-${index}`}>
-                        {item.type_name}
-                      </option>
-                    </>
-                  ))}
-              </Select>
+              <Stack>
+                <Checkbox defaultIsChecked>Semua</Checkbox>
+                {typePlace?.map((item, idx) => (
+                  <Checkbox value={item.id} key={`alsdklaskdl-${idx}`}>
+                    {item.type_name}
+                  </Checkbox>
+                ))}
+              </Stack>
             </FormControl>
           </Stack>
 
           <Skeleton isLoaded={places.length > 0} w="full" minHeight="272px">
             <SimpleGrid spacing="1rem" columns={[2, 2, 4, 4]}>
-              {places &&
-                places.map((item, index) => (
+              {filteredPlaces &&
+                filteredPlaces.map((item, index) => (
                   <Stack
-                    key={`place-${item.slug}`}
+                    key={`asaks-${item.name_place}-${index}`}
                     borderRadius="lg"
                     shadow="lg"
                   >

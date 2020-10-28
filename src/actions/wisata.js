@@ -1,5 +1,7 @@
 import api from '../api/api';
 import {
+  SEARCH,
+  SEARCH_ERROR,
   PLACE_COMMENT_ERROR,
   GET_EKSPLORASI,
   GET_TYPE_PLACE,
@@ -154,6 +156,27 @@ export const getWisataDaerah = () => async dispatch => {
   } catch (error) {
     dispatch({
       type: WISATA_DAERAH_ERROR,
+      payload: {
+        msg: error.message,
+      },
+    });
+  }
+};
+
+export const WTF = payload => ({
+  type: SEARCH,
+  payload,
+});
+
+export const getSearch = value => async dispatch => {
+  try {
+    dispatch({
+      type: SEARCH,
+      payload: { value },
+    });
+  } catch (error) {
+    dispatch({
+      type: SEARCH_ERROR,
       payload: {
         msg: error.message,
       },
