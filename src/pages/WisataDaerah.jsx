@@ -23,11 +23,7 @@ const WisataDaerah = () => {
 
   return (
     <Layout>
-      <Banner
-        title="Wisata Daerah"
-        description="Disini anda bisa mencari dan menjelajahi kuliner, budaya, dan tempat pariwisata dari berbagai daerah di indonesa yang dikelompokan tiap provinsi"
-        image={wisataDaerahImages}
-      />
+      <Banner title="Wisata Daerah" image={wisataDaerahImages} />
       <Section>
         {status === 'loading' && <Spinner />}
         {status === 'error' && <p>Error : {error.message}</p>}
