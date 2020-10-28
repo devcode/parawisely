@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Proptypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
+  Box,
   FormLabel,
   FormControl,
   Select,
@@ -12,6 +13,7 @@ import {
   SimpleGrid,
   Stack,
   Text,
+  Skeleton,
 } from '@chakra-ui/core';
 import { Link } from 'react-router-dom';
 import { IoIosArrowRoundForward } from 'react-icons/io';
@@ -34,7 +36,7 @@ const Eksplor = ({
   getPlace,
   getTypePlace,
   getPlaceByType,
-  wisata: { places, typePlace },
+  wisata: { places, typePlace, loading, error },
 }) => {
   useEffect(() => {
     getPlace();
@@ -49,6 +51,7 @@ const Eksplor = ({
     <Layout>
       <Banner title="Ekplorasi Indonesia" image={eksplorasiImages} />
       <Section>
+        {error && error.msg}
         <Stack spacing="2rem" direction={['column', 'column', 'row', 'row']}>
           <Stack minWidth="50vh">
             <Heading fontSize="14px">Total ({places?.length})</Heading>
@@ -57,6 +60,7 @@ const Eksplor = ({
               onChange={e => filterHandler(e.target.value)}
             >
               <FormLabel>Kategori</FormLabel>
+
               <Select>
                 <option value="0">Semua</option>
                 {typePlace &&
@@ -70,34 +74,39 @@ const Eksplor = ({
               </Select>
             </FormControl>
           </Stack>
-          <SimpleGrid spacing="1rem" columns={[2, 2, 4, 4]}>
-            {places == null && <Spinner />}
-            {places?.length === 0 && <p>data tidak ada</p>}
-            {places &&
-              places.map((item, index) => (
-                <Stack key={`place-${item.slug}`} borderRadius="lg" shadow="lg">
-                  <Image
-                    h="272px"
-                    objectFit="cover"
+
+          <Skeleton isLoaded={places.length > 0} w="full" minHeight="272px">
+            <SimpleGrid spacing="1rem" columns={[2, 2, 4, 4]}>
+              {places &&
+                places.map((item, index) => (
+                  <Stack
+                    key={`place-${item.slug}`}
                     borderRadius="lg"
-                    src={`${asset}/placeImage/${item.image}`}
-                    fallbackSrc={item.image}
-                  />
-                  <Stack spacing="0.5rem" p="1rem">
-                    <Heading size="sm">{item.name_place}</Heading>
-                    <Stack align="center" direction="row" spacing="5px">
-                      <Icon as={FaMapMarkerAlt} />
-                      <Text fontSize="13px">{item.provinsi}</Text>
+                    shadow="lg"
+                  >
+                    <Image
+                      h="272px"
+                      objectFit="cover"
+                      borderRadius="lg"
+                      src={`${asset}/placeImage/${item.image}`}
+                      fallbackSrc={item.image}
+                    />
+                    <Stack spacing="0.5rem" p="1rem">
+                      <Heading size="sm">{item.name_place}</Heading>
+                      <Stack align="center" direction="row" spacing="5px">
+                        <Icon as={FaMapMarkerAlt} />
+                        <Text fontSize="13px">{item.provinsi}</Text>
+                      </Stack>
+                      <Link to={`/place/${item.slug}`} d="block">
+                        <Button size="sm" colorScheme="blue" w="full">
+                          Selengkapnya
+                        </Button>
+                      </Link>
                     </Stack>
-                    <Link to={`/place/${item.slug}`} d="block">
-                      <Button size="sm" colorScheme="blue" w="full">
-                        Selengkapnya
-                      </Button>
-                    </Link>
                   </Stack>
-                </Stack>
-              ))}
-          </SimpleGrid>
+                ))}
+            </SimpleGrid>
+          </Skeleton>
         </Stack>
       </Section>
 

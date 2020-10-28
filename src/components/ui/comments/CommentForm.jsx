@@ -30,13 +30,13 @@ const ulasanSchema = Yup.object().shape({
     .required('Tidak boleh kosong'),
 });
 
-const CommentForm = ({ id, addComment }) => {
+const CommentForm = ({ place_id, addComment, wisata: { place } }) => {
   return (
     <Box borderRadius="md" shadow="lg" p="2rem">
       <Alert />
       <Formik
         initialValues={{
-          place_id: id,
+          place_id: place.id,
           name: '',
           email: '',
           comment: '',
@@ -51,11 +51,6 @@ const CommentForm = ({ id, addComment }) => {
         {props => (
           <Form>
             <Stack spacing="1rem">
-              <Field name="place_id">
-                {({ field, form }) => (
-                  <Input type="text" value={id} id="place_id" {...field} />
-                )}
-              </Field>
               <SimpleGrid spacing="2rem" columns={[1, 1, 2, 2]}>
                 <Field name="name">
                   {({ field, form }) => (
@@ -126,4 +121,8 @@ CommentForm.propTypes = {
   setAlert: PropTypes.func.isRequired,
 };
 
-export default connect(null, { addComment, setAlert })(CommentForm);
+const mapStateToProps = state => ({
+  wisata: state.wisata,
+});
+
+export default connect(mapStateToProps, { addComment, setAlert })(CommentForm);

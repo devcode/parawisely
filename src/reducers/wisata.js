@@ -31,7 +31,6 @@ export default function (state = initialState, action) {
       return {
         ...state,
         typePlace: payload,
-        loading: false,
       };
     case GET_PLACE_DETAIL:
       return {
@@ -66,6 +65,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         place: {
+          ...state.place,
           comments: payload,
         },
         loading: false,
