@@ -14,6 +14,7 @@ import {
   Stack,
   Text,
   Skeleton,
+  useColorMode,
 } from '@chakra-ui/core';
 import { Link } from 'react-router-dom';
 import { IoIosArrowRoundForward } from 'react-icons/io';
