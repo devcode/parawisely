@@ -321,19 +321,19 @@ const Landing = () => {
         >
           <Stack spacing="1rem" align="start">
             <Text w="100%" fontWeight="extra_bold" color="blue.500">
-              FITUR REKOMENDASI
+              FITUR EKSPLORASI
             </Text>
             <Heading
               lineHeight="48px"
               fontWeight="extra_bold"
               fontSize={['30px', '30px', '30px', '40px']}
             >
-              Rekomendasi membantumu memilih tempat wisata di Indonesia!
+              Eksplorasi membantumu memilih tempat wisata di Indonesia!
             </Heading>
             <Text fontSize="18px" textAlign="justify">
               Bingung mau kemana? dan pusing memilih pilihan? Tenang, Parawisely
-              menyediakan fitur rekomendasi untuk kamu agar dapat menemukan
-              tempat pariwisata yang cocok denganmu.
+              menyediakan fitur ekplorasi untuk kamu agar dapat menemukan tempat
+              pariwisata yang cocok denganmu.
             </Text>
 
             <Text
