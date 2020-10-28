@@ -1,5 +1,6 @@
 import 'mapbox-gl/dist/mapbox-gl.css';
 import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
+
 import React, { createRef, useRef, useState, useEffect } from 'react';
 import MapGL, {
   GeolocateControl,
@@ -7,19 +8,19 @@ import MapGL, {
   Popup,
 } from 'react-map-gl';
 import { useQuery } from 'react-query';
-import DeckGL, { GeoJsonLayer } from 'deck.gl';
+import { GeoJsonLayer } from 'deck.gl';
 import Geocoder from 'react-map-gl-geocoder';
-import dumyData from '../../../data/cities.json';
 
 import Spinner from '../Spinner';
 import Pins from './Pins';
 import CityInfo from './CityInfo';
 
+import { getAllPlace } from '../../../api/fetchData';
+
 import '../../../stylesheets/map.css';
 
 const apiToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
-const mapStyle = 'mapbox://styles/supryantowp/ckgfd9g312kjw19pduhgr0n8p';
-const baseURL = 'http://parawisely-backend.test/api/travel-place';
+const mapStyle = 'mapbox://styles/parawisely/ckgnp4gx411k119o1o70ffyvb';
 
 const geolocateControlStyle = {
   padding: '20px',
@@ -34,13 +35,8 @@ const NavigationControlStyle = {
   top: 40,
 };
 
-const fetchTravelplace = async () => {
-  const res = await fetch(baseURL);
-  return res.json();
-};
-
 const Mapbox = ({ width = '100vw', height = '89vh' }) => {
-  const { data, status, error } = useQuery('travel-place', fetchTravelplace);
+  const { data, status, error } = useQuery('travel-place', getAllPlace);
 
   const [popInfo, setPopInfo] = useState(null);
   const [searchResult, setSearchResult] = useState(null);
@@ -59,7 +55,7 @@ const Mapbox = ({ width = '100vw', height = '89vh' }) => {
 
   useEffect(() => {
     window.removeEventListener('resize', resize);
-  }, []);
+  });
 
   const resize = () => {
     handleViewportChange({
@@ -91,7 +87,7 @@ const Mapbox = ({ width = '100vw', height = '89vh' }) => {
     );
   };
 
-  const onViewportHandler = viewport => setViewport({ ...viewport });
+  // const onViewportHandler = viewport => setViewport({ ...viewport });
 
   const _onClickMarker = city => {
     setPopInfo(city);
@@ -118,7 +114,7 @@ const Mapbox = ({ width = '100vw', height = '89vh' }) => {
     <div>
       {status === 'loading' && <Spinner />}
 
-      {status === 'error' && <div>{error}</div>}
+      {status === 'error' && <div>{error.message}</div>}
 
       {status === 'success' && (
         <MapGL
@@ -129,6 +125,9 @@ const Mapbox = ({ width = '100vw', height = '89vh' }) => {
           mapStyle={mapStyle}
         >
           <Geocoder
+            placeholder="Cari tempat"
+            language="id"
+            countries="id"
             mapRef={mapRef}
             containerRef={geocoderRef}
             onResult={handleOnResult}
@@ -138,16 +137,21 @@ const Mapbox = ({ width = '100vw', height = '89vh' }) => {
           />
 
           <Pins data={data.data} onClick={_onClickMarker} />
-          <Pins data={dumyData} onClick={_onClickMarker} />
           {renderPopup()}
 
           <div style={geolocateControlStyle}>
-            <GeolocateControl />
+            <GeolocateControl
+              positionOptions={{ enableHighAccuracy: true }}
+              auto={true}
+              trackUserLocation={true}
+            />
           </div>
 
           <div style={NavigationControlStyle}>
             <NavigationControl />
           </div>
+
+          {/* <Legend /> */}
         </MapGL>
       )}
     </div>

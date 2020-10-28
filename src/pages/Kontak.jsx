@@ -15,7 +15,7 @@ import {
 } from '@chakra-ui/core';
 import React from 'react';
 
-import KontakIMG from '../assets/images/kontak.jpg';
+import KontakIMG from '../assets/images/kontak.jpeg';
 import { FaMoneyCheck, FaMap, FaCalendar, FaClone } from 'react-icons/fa';
 
 import Layout from '../components/layouts';

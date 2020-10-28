@@ -1,6 +1,6 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Box, Image, Divider } from '@chakra-ui/core';
+import { Box, Image } from '@chakra-ui/core';
 
 import sponsorJson from '../../data/sponsor.json';
 
@@ -22,16 +22,19 @@ const breakpoints = {
 const Sponsor = () => {
   return (
     <Box>
-      <Box my="2rem">
+      <Box>
         <Swiper breakpoints={breakpoints} loop>
           {sponsorJson.map(sponsor => (
             <SwiperSlide key={sponsor.id}>
-              <Image src={sponsor.images} objectFit="contain" />
+              <Image
+                className="mx-auto"
+                src={sponsor.images}
+                objectFit="contain"
+              />
             </SwiperSlide>
           ))}
         </Swiper>
       </Box>
-      
     </Box>
   );
 };

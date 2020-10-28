@@ -11,7 +11,7 @@ const Banner = ({ title, description, image }) => {
         position="absolute"
       >
         <Heading>{title}</Heading>
-        <Text>{description}</Text>
+        <Text className="col-md-10 mx-auto">{description}</Text>
       </Box>
       <Image src={image} h="375px" objectFit="cover" w="full" />
     </Box>
