@@ -353,18 +353,6 @@ const Landing = () => {
         </SimpleGrid>
       </Section>
 
-      <Section>
-        {status === 'loading' && <Spinner />}
-        {status === 'error' && <div>{error.message}</div>}
-        {status === 'success' && (
-          <LokasiCarousel
-            title="Destinasi Pilihan"
-            link="/eksplorasi/pilihan"
-            data={data.data}
-          />
-        )}
-      </Section>
-
       <Stack p={['2rem', '2rem', '2rem', '5rem']} spacing="2rem">
         <Stack textAlign="center">
           <Text w="100%" fontWeight="extra_bold" color="blue.500">

@@ -47,11 +47,7 @@ const Eksplor = ({
 
   return (
     <Layout>
-      <Banner
-        title="Ekplorasi Indonesia"
-        description="Di halaman ini anda bisa bereksplorasi berbagai macam kategori tempat pariwisata yang sudah kami kelompokan agar lebih mudah anda cari."
-        image={eksplorasiImages}
-      />
+      <Banner title="Ekplorasi Indonesia" image={eksplorasiImages} />
       <Section>
         <Stack spacing="2rem" direction={['column', 'column', 'row', 'row']}>
           <Stack minWidth="50vh">

@@ -4,6 +4,7 @@ import { Box, Flex, Text, Button, Image, Stack } from '@chakra-ui/core';
 import MobileDrawer from '../ui/MobileDrawer';
 import Logo from '../../assets/logo/logo.png';
 import '../../stylesheets/html.css';
+import '../../scripts/main.js';
 
 const MenuItems = ({ children, isLast, to = '/', ...rest }) => {
   return (
@@ -26,6 +27,7 @@ const Header = props => {
   }, []);
   return (
     <Stack
+      className="navigation"
       top="0"
       position="sticky"
       zIndex={99}

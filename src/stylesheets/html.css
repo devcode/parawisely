@@ -5,58 +5,60 @@ body {
 }
 
 .header {
-    backdrop-filter: blur(8px);
-    background: red;
+  backdrop-filter: blur(8px);
+  background: red;
 }
 
 .is-active {
-    color: red !important
+  color: red !important;
 }
 
 .navbar__link--active {
-    font-weight: 800 !important;
+  font-weight: 800 !important;
 }
 
 .player-wrapper {
-    margin-top: 30px;
-    position: relative;
-    padding-top: 56.25%
-        /* Player ratio: 100 / (1280 / 720) */
+  margin-top: 30px;
+  position: relative;
+  padding-top: 56.25%;
+  /* Player ratio: 100 / (1280 / 720) */
 }
 
-.span-color{
-  color: #4737FF;
+.span-color {
+  color: #4737ff;
 }
 
 .react-player {
-    position: absolute;
-    top: 0;
-    left: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-.virtual-tour-card{
-    border:none;
-    border-radius: 8px;
-    box-shadow:
-  0 1.9px 1.9px rgba(0, 0, 0, 0.002),
-  0 4.4px 4.3px rgba(0, 0, 0, 0.003),
-  0 7.8px 7.7px rgba(0, 0, 0, 0.006),
-  0 13px 12.8px rgba(0, 0, 0, 0.009),
-  0 21.4px 21.2px rgba(0, 0, 0, 0.013),
-  0 37.4px 37px rgba(0, 0, 0, 0.02),
-  0 81px 80px rgba(0, 0, 0, 0.04)
-;
+.virtual-tour-card {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 1.9px 1.9px rgba(0, 0, 0, 0.002),
+    0 4.4px 4.3px rgba(0, 0, 0, 0.003), 0 7.8px 7.7px rgba(0, 0, 0, 0.006),
+    0 13px 12.8px rgba(0, 0, 0, 0.009), 0 21.4px 21.2px rgba(0, 0, 0, 0.013),
+    0 37.4px 37px rgba(0, 0, 0, 0.02), 0 81px 80px rgba(0, 0, 0, 0.04);
 }
 
 .card:hover {
-    transform: scale(1.04);
-  }
-  .card {
-  
-    transition: 0.5s ease;
-    cursor: pointer;
-  }
+  transform: scale(1.04);
+}
+.card {
+  transition: 0.5s ease;
+  cursor: pointer;
+}
 
-.button-hero{
+.button-hero {
   box-shadow: 0 2px 25px rgba(71, 55, 255, 0.4);
-}  
+}
+
+.nav-on-scroll {
+  box-shadow: 0 0.8px 8.7px rgba(0, 0, 0, 0.004),
+    0 1.8px 19.5px rgba(0, 0, 0, 0.007), 0 3.1px 33.3px rgba(0, 0, 0, 0.008),
+    0 4.7px 51.3px rgba(0, 0, 0, 0.009), 0 7px 76px rgba(0, 0, 0, 0.011),
+    0 10.3px 111.7px rgba(0, 0, 0, 0.012), 0 15.4px 167.4px rgba(0, 0, 0, 0.013),
+    0 24.5px 266.8px rgba(0, 0, 0, 0.016), 0 46px 500px rgba(0, 0, 0, 0.02);
+}

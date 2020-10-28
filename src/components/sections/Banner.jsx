@@ -13,7 +13,7 @@ const Banner = ({ title, description, image }) => {
         <Heading>{title}</Heading>
         <Text className="col-md-10 mx-auto">{description}</Text>
       </Box>
-      <Image src={image} h="375px" objectFit="cover" w="full" />
+      <Image src={image} h="300px" objectFit="cover" w="full" />
     </Box>
   );
 };
