@@ -30,13 +30,13 @@ const ulasanSchema = Yup.object().shape({
     .required('Tidak boleh kosong'),
 });
 
-const CommentForm = ({ place_id, addComment }) => {
+const CommentForm = ({ place_id, addComment, wisata: { place } }) => {
   return (
     <Box borderRadius="md" shadow="lg" p="2rem">
       <Alert />
       <Formik
         initialValues={{
-          place_id,
+          place_id: place.id,
           name: '',
           email: '',
           comment: '',
@@ -121,4 +121,8 @@ CommentForm.propTypes = {
   setAlert: PropTypes.func.isRequired,
 };
 
-export default connect(null, { addComment, setAlert })(CommentForm);
+const mapStateToProps = state => ({
+  wisata: state.wisata,
+});
+
+export default connect(mapStateToProps, { addComment, setAlert })(CommentForm);

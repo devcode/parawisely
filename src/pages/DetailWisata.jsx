@@ -72,7 +72,7 @@ const DetailWisata = ({ getPlaceDetail, wisata: { place }, match }) => {
           <Skeleton isLoaded={place.comments}>
             <Stack spacing="1rem">
               {/* <Comment place_id={place.data.id} data={place.data.comments} /> */}
-              <CommentForm id={place.id} />
+              <CommentForm place_id={place.id} />
               <Heading fontSize="24px">
                 Ulasan ({place?.comments?.length}){' '}
               </Heading>

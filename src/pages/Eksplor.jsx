@@ -36,7 +36,7 @@ const Eksplor = ({
   getPlace,
   getTypePlace,
   getPlaceByType,
-  wisata: { places, typePlace, loading },
+  wisata: { places, typePlace, loading, error },
 }) => {
   useEffect(() => {
     getPlace();
@@ -55,6 +55,7 @@ const Eksplor = ({
         image={eksplorasiImages}
       />
       <Section>
+        {error && error.msg}
         <Stack spacing="2rem" direction={['column', 'column', 'row', 'row']}>
           <Stack minWidth="50vh">
             <Heading fontSize="14px">Total ({places?.length})</Heading>
