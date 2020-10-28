@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  Divider,
   FormControl,
   FormLabel,
   Heading,
@@ -12,22 +13,13 @@ import {
   Stack,
   Text,
   Textarea,
+  Link,
 } from '@chakra-ui/core';
 import React from 'react';
-
-import KontakIMG from '../assets/images/kontak.jpeg';
 import { FaMoneyCheck, FaMap, FaCalendar, FaClone } from 'react-icons/fa';
 
 import Layout from '../components/layouts';
-import Wraper from '../components/layouts/Wraper';
 import Section from '../components/sections/Section';
-
-const FormInput = ({ id, type, label }) => (
-  <FormControl id={id}>
-    <FormLabel>{label}</FormLabel>
-    <Input type={type} />
-  </FormControl>
-);
 
 const FaqItem = ({ icon, title, description }) => (
   <Stack spacing="1.5rem" direction="row" align="start">
@@ -42,60 +34,96 @@ const FaqItem = ({ icon, title, description }) => (
 const Kontak = () => {
   return (
     <Layout>
-      <Image h="572px" src={KontakIMG} objectFit="cover" />
-      <Wraper>
-        <Box textAlign="center" mx="auto" w="70%">
-          <Heading>Kontak Kami</Heading>
-          <Text>
-            Telusuri keindahan dan keberagaman berbagai budaya negara Indonesia
-            bersama dengan kami anda bisa menikmati indahnya negara Indonesia
-          </Text>
-        </Box>
-        <Stack spacing="1rem" mt="3rem">
-          <FormInput id="nama_lengkap" type="name" label="Nama Lengkap" />
-          <FormInput id="email" type="email" label="Email" />
-          <FormInput id="website" type="url" label="Website" />
-          <FormControl id="country">
-            <FormLabel>Subject</FormLabel>
-            <Select placeholder="Pilih">
-              <option>Promosi dan Penawaran</option>
-              <option>Pertanyaan tentang afiliasi</option>
-              <option>Komentar tentang website</option>
-            </Select>
-          </FormControl>
-          <FormControl>
-            <FormLabel>Pesan</FormLabel>
-            <Textarea />
-          </FormControl>
-          <Button colorScheme="blue">Submit</Button>
-        </Stack>
-      </Wraper>
-
-      <Section>
-        <Heading>FAQ</Heading>
-        <SimpleGrid spacing="2rem" mt="2rem" columns={[1, 1, 1, 2]}>
-          <FaqItem
-            icon={<FaMoneyCheck />}
-            title="Apakah ke indonesia mahal?"
-            description="Tidak mahal kok, buat kamu wisatawan bisa datang ke indonesia dengan harga yang terjangkau lho!"
-          />
-          <FaqItem
-            icon={<FaMap />}
-            title="Apakah ke indonesia mahal?"
-            description="Tidak mahal kok, buat kamu wisatawan bisa datang ke indonesia dengan harga yang terjangkau lho!"
-          />
-          <FaqItem
-            icon={<FaCalendar />}
-            title="Apakah ke indonesia mahal?"
-            description="Tidak mahal kok, buat kamu wisatawan bisa datang ke indonesia dengan harga yang terjangkau lho!"
-          />
-          <FaqItem
-            icon={<FaClone />}
-            title="Apakah ke indonesia mahal?"
-            description="Tidak mahal kok, buat kamu wisatawan bisa datang ke indonesia dengan harga yang terjangkau lho!"
-          />
-        </SimpleGrid>
-      </Section>
+      <div className="container">
+        <div className="row mt-3">
+          <div className="col-md-12 display-6 font-weight-bold">
+            Hubungi Kami
+          </div>
+          <div className="col-md-12 mt-3" style={{ fontSize: 16 }}>
+            {' '}
+            Hubungi kami sekarang untuk mengenal lebih jauh Parawisely bisa
+            membantu kamu dalam{' '}
+            <b> tempat wisata, virtual tour dan liburan di Indonesia.</b>
+          </div>
+        </div>
+        <div className="row mt-4">
+          <div className="col-md-5">
+            <FormControl id="nama_lengkap">
+              <FormLabel>
+                Nama Lengkap <span style={{ color: '#10a0ff' }}>*</span>{' '}
+              </FormLabel>
+              <Input type="name" />
+            </FormControl>
+            <FormControl className="mt-3" id="email">
+              <FormLabel>
+                Alamat Email <span style={{ color: '#10a0ff' }}>*</span>
+              </FormLabel>
+              <Input type="email" />
+            </FormControl>
+            <FormControl className="mt-3" id="pesan">
+              <FormLabel>
+                Apa Pesanmu? <span style={{ color: '#10a0ff' }}>*</span>
+              </FormLabel>
+              <Textarea />
+            </FormControl>
+            <Button colorScheme="blue" px="4rem" className="mt-3">
+              Submit
+            </Button>
+          </div>
+          <div className="col-md-7">
+            <p className="font-weight-bold" style={{ fontSize: 24 }}>
+              Tanya bagaimana cara kami membantu anda:
+            </p>
+            <div className="mt-3">
+              <p>
+                {' '}
+                <b> Bagaimana cara memakai fitur Parawisely</b>
+              </p>
+              <p>
+                Anda bisa menjelajahi fitur{' '}
+                <Link color="blue.500" href="/eksplorasi">
+                  {' '}
+                  eksplorasi{' '}
+                </Link>
+                ,{' '}
+                <Link color="blue.500" href="/wisata-daerah">
+                  wisata daerah
+                </Link>{' '}
+                dan fitur{' '}
+                <Link color="blue.500" href="/virtual-tour">
+                  {' '}
+                  virtual tour{' '}
+                </Link>
+                untuk menikmati fitur Parawisely.
+              </p>
+            </div>
+            <div className="mt-3">
+              <p>
+                {' '}
+                <b> Jika anda merupakan pengelola tempat pariwisata </b>
+              </p>
+              <p>
+                Jika tempat anda tidak terdaftar di Database kami, anda dapat
+                memasukan nya secara manual dengan fitur{' '}
+                <Link color="blue.500" href="/mitra-pariwisata">
+                  {' '}
+                  mitra pariwisata.
+                </Link>
+              </p>
+            </div>
+            <div className="mt-3">
+              <p>
+                {' '}
+                <b> Mengalami kesalahan dan bug </b>
+              </p>
+              <p>
+                Anda dapat menghubungi kami dengan mengisi form di sebelah kiri
+                anda, lalu akan kami balas secepatnya.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 };
