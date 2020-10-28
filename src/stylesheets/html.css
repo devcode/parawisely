@@ -24,6 +24,10 @@ body {
         /* Player ratio: 100 / (1280 / 720) */
 }
 
+.span-color{
+  color: #4737FF;
+}
+
 .react-player {
     position: absolute;
     top: 0;
