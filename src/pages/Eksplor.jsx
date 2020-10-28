@@ -12,8 +12,8 @@ import {
   SimpleGrid,
   Stack,
   Text,
-  Link,
 } from '@chakra-ui/core';
+import { Link } from 'react-router-dom';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 
@@ -41,8 +41,6 @@ const Eksplor = ({
     getTypePlace();
   }, [getPlace, getTypePlace]);
 
-  console.log({ places, typePlace });
-
   const filterHandler = e => {
     getPlaceByType(parseInt(e));
   };
@@ -57,7 +55,7 @@ const Eksplor = ({
       <Section>
         <Stack spacing="2rem" direction={['column', 'column', 'row', 'row']}>
           <Stack minWidth="50vh">
-            <Heading fontSize="14px">Total ({places.data?.length})</Heading>
+            <Heading fontSize="14px">Total ({places?.length})</Heading>
             <FormControl
               id="country"
               onChange={e => filterHandler(e.target.value)}
@@ -65,8 +63,8 @@ const Eksplor = ({
               <FormLabel>Kategori</FormLabel>
               <Select>
                 <option value="0">Semua</option>
-                {typePlace.data &&
-                  typePlace.data.map((item, index) => (
+                {typePlace &&
+                  typePlace.map((item, index) => (
                     <>
                       <option value={item.id} key={`type-${index}`}>
                         {item.type_name}
@@ -77,16 +75,17 @@ const Eksplor = ({
             </FormControl>
           </Stack>
           <SimpleGrid spacing="1rem" columns={[2, 2, 4, 4]}>
-            {places.data == null && <Spinner />}
-            {places.data?.length === 0 && <p>data tidak ada</p>}
-            {places.data &&
-              places.data.map((item, index) => (
+            {places == null && <Spinner />}
+            {places?.length === 0 && <p>data tidak ada</p>}
+            {places &&
+              places.map((item, index) => (
                 <Stack key={`place-${item.slug}`} borderRadius="lg" shadow="lg">
                   <Image
                     h="272px"
                     objectFit="cover"
                     borderRadius="lg"
                     src={`${asset}/placeImage/${item.image}`}
+                    fallbackSrc={item.image}
                   />
                   <Stack spacing="0.5rem" p="1rem">
                     <Heading size="sm">{item.name_place}</Heading>
@@ -94,7 +93,7 @@ const Eksplor = ({
                       <Icon as={FaMapMarkerAlt} />
                       <Text fontSize="13px">{item.provinsi}</Text>
                     </Stack>
-                    <Link to={`/place/ciamis`} d="block">
+                    <Link to={`/place/${item.slug}`} d="block">
                       <Button size="sm" colorScheme="blue" w="full">
                         Selengkapnya
                       </Button>
