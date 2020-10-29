@@ -22,6 +22,7 @@ import { FaMapMarkerAlt } from 'react-icons/fa';
 
 import Layout from '../components/layouts';
 import Section from '../components/sections/Section';
+import CardPlace from '../components/ui/CardPlace';
 
 import eksplorasiImages from '../assets/images/eksplorasi-images.png';
 import ilustrationIMG from '../assets/ilustration/ilus-ekplor.png';
@@ -71,35 +72,9 @@ const Eksplor = ({
           </Stack>
 
           <Skeleton isLoaded={places.length > 0} w="full" minHeight="272px">
-            <SimpleGrid spacing="1rem" columns={[2, 2, 4, 4]}>
+            <SimpleGrid spacing="1rem" columns={[2, 2, 3, 3]}>
               {filteredPlaces &&
-                filteredPlaces.map((item, index) => (
-                  <Stack
-                    key={`asaks-${item.name_place}-${index}`}
-                    borderRadius="lg"
-                    shadow="lg"
-                  >
-                    <Image
-                      h="272px"
-                      objectFit="cover"
-                      borderRadius="lg"
-                      src={`${asset}/placeImage/${item.image}`}
-                      fallbackSrc={item.image}
-                    />
-                    <Stack spacing="0.5rem" p="1rem">
-                      <Heading size="sm">{item.name_place}</Heading>
-                      <Stack align="center" direction="row" spacing="5px">
-                        <Icon as={FaMapMarkerAlt} />
-                        <Text fontSize="13px">{item.provinsi}</Text>
-                      </Stack>
-                      <Link to={`/place/${item.slug}`} d="block">
-                        <Button size="sm" colorScheme="blue" w="full">
-                          Selengkapnya
-                        </Button>
-                      </Link>
-                    </Stack>
-                  </Stack>
-                ))}
+                filteredPlaces.map((item, index) => <CardPlace data={item} />)}
             </SimpleGrid>
           </Skeleton>
         </Stack>
@@ -114,7 +89,7 @@ const Eksplor = ({
             berikan.
           </Text>
           <Button mt="1rem" background="white" color="blue.800">
-            Gabung <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
+            Gabung <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="3px" />
           </Button>
         </Stack>
       </CardRekomendasi>

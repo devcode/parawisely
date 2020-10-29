@@ -28,7 +28,6 @@ import labuanBajo from './pages/labuanBajo';
 import rajaAmpat from './pages/rajaAmpat';
 import pantaiPangandaran from './pages/pantaiPangandaran';
 import DetailWisata from './pages/DetailWisata';
-import Card from './pages/card';
 
 function App() {
   return (
@@ -67,7 +66,6 @@ function App() {
             <Route path="/mitra-pariwisata" component={Eksplor} />
             <Route path="/tentang" component={Tentang} />
             <Route path="/kontak" component={Kontak} />
-            <Route path="/card" component={Card} />
           </Switch>
         </Router>
       </ChakraProvider>

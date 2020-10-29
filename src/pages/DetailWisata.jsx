@@ -12,9 +12,6 @@ import {
   StackDivider,
   Skeleton,
 } from '@chakra-ui/core';
-import Spinner from '../components/ui/Spinner';
-import Comment from '../components/ui/Comment';
-import { useParams } from 'react-router-dom';
 
 import { getPlaceDetail } from '../actions/wisata';
 import CommentForm from '../components/ui/comments/CommentForm';
@@ -88,8 +85,6 @@ const DetailWisata = ({ getPlaceDetail, wisata: { place }, match }) => {
                   ))}
                 </Stack>
               </Box>
-
-              {/* <CommentItem comments={place.comments} /> */}
             </Stack>
           </Skeleton>
         </Section>
