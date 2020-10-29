@@ -36,7 +36,7 @@ const FaqItem = ({ icon, title, description }) => (
 const Kontak = () => {
   return (
     <Layout>
-     <Banner title="Kontak Kami" description="Beranda &nbsp; →  &nbsp; Kontak"  image={kontakImages} />
+     <Banner title="Kontak" description="Beranda &nbsp; →  &nbsp; Kontak"  image={kontakImages} />
       <div className="container">
         <div className="row mt-3">
           <div className="col-md-12 display-6 font-weight-bold">
