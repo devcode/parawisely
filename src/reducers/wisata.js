@@ -1,4 +1,5 @@
 import {
+  GET_PLACES,
   SEARCH,
   SEARCH_ERROR,
   GET_PLACE_COMMENT,
@@ -13,10 +14,13 @@ import {
   GET_PLACE_BYTYPE,
   ADD_COMMENT,
   ADD_COMMENT_ERROR,
+  PLACES_ERROR,
+  PLACES_REQUEST,
 } from '../actions/types';
 
 const initialState = {
   appliedFilter: [],
+  filteredPlaces: [],
   places: [],
   place: {},
   typePlace: [],
@@ -24,12 +28,30 @@ const initialState = {
   placeComments: [],
   error: {},
   loading: true,
+  hasMore: true,
+  page: 1,
+  limit: 12,
+  isFetching: false,
 };
 
 export default function (state = initialState, action) {
   const { type, payload } = action;
-
   switch (type) {
+    case PLACES_REQUEST:
+      return {
+        ...state,
+        isFetching: true,
+        page: action.page,
+        limit: action.limit,
+        hasMore: true,
+      };
+    case GET_PLACES:
+      return Object.assign({}, state, {
+        isFetching: false,
+        filteredPlaces: state.filteredPlaces.concat(payload),
+        places: state.places.concat(payload),
+        hasMore: action.hasMore,
+      });
     case GET_TYPE_PLACE:
       return {
         ...state,
@@ -81,7 +103,6 @@ export default function (state = initialState, action) {
         loading: false,
       };
     case SEARCH:
-      console.log('ke trigier');
       let newState = Object.assign({}, state);
       let value = payload.value;
       let filteredValue = state.places.filter(place => {
@@ -107,6 +128,7 @@ export default function (state = initialState, action) {
     case SEARCH_ERROR:
     case WISATA_DAERAH_ERROR:
     case EKSPLORASI_ERROR:
+    case PLACES_ERROR:
     case TYPE_PLACE_ERROR:
       return {
         ...state,

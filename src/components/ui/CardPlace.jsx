@@ -10,13 +10,20 @@ import {
   useColorMode,
   Heading,
 } from '@chakra-ui/core';
+import { Link } from 'react-router-dom';
 
 import eksplorasiImages from '../../assets/images/eksplor.jpeg';
 
 const CardPlace = ({ data }) => {
+  console.log(data);
   return (
     <Box rounded="lg" shadow="md" overflow="hidden">
-      <Image src={eksplorasiImages} alt="Course Cover" />
+      <Image
+        src={eksplorasiImages}
+        alt="Course Cover"
+        h="200px"
+        htmlHeight="200px"
+      />
       <Box p={5}>
         <Stack isInline align="baseline">
           <Text
@@ -38,18 +45,11 @@ const CardPlace = ({ data }) => {
             </Text>
           </Box>
         </Stack>
-        <Button
-          mt="1rem"
-          fontSize="16px"
-          colorScheme="blue"
-          variant="ghost"
-          boxShadow="sm"
-          isFullWidth
-          _hover={{ boxShadow: 'md' }}
-          _active={{ boxShadow: 'lg' }}
-        >
-          Selengkapnya
-        </Button>
+        <Link to={`/place/${data.slug}`}>
+          <Text fontSize="16px" mt="5px">
+            Selengkapnya
+          </Text>
+        </Link>
       </Box>
     </Box>
   );
