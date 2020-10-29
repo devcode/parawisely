@@ -51,7 +51,7 @@ const Eksplor = ({
 
   return (
     <Layout>
-      <Banner title="Ekplorasi Indonesia" description="Beranda &nbsp; →  &nbsp; Eksplorasi" image={eksplorasiImages} />
+      <Banner title="Ekplorasi" description="Beranda &nbsp; →  &nbsp; Eksplorasi" image={eksplorasiImages} />
       <Section>
         {error && error.msg}
         <Stack spacing="2rem" direction={['column', 'column', 'row', 'row']}>
