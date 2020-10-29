@@ -62,3 +62,36 @@ body {
     0 10.3px 111.7px rgba(0, 0, 0, 0.012), 0 15.4px 167.4px rgba(0, 0, 0, 0.013),
     0 24.5px 266.8px rgba(0, 0, 0, 0.016), 0 46px 500px rgba(0, 0, 0, 0.02);
 }
+
+.contact_info .info_item {
+  position: relative;
+}
+
+.contact_info .info_item i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 20px;
+  line-height: 24px;
+  color: #4dbf1c;
+  font-weight: 600;
+}
+
+.contact_info .info_item h6 {
+  font-size: 16px;
+  line-height: 24px;
+  color: 'Roboto', sans-serif;
+  font-weight: bold;
+  margin-bottom: 0px;
+  color: #222222;
+}
+
+.contact_info .info_item h6 a {
+  color: #222222;
+}
+
+.contact_info .info_item p {
+  font-size: 14px;
+  line-height: 24px;
+  padding: 2px 0px;
+}
