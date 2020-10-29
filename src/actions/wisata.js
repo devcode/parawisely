@@ -1,5 +1,7 @@
 import api from '../api/api';
 import {
+  PLACES_ERROR,
+  GET_PLACES,
   SEARCH,
   SEARCH_ERROR,
   PLACE_COMMENT_ERROR,
@@ -18,9 +20,35 @@ import {
   ADD_COMMENT,
   ADD_COMMENT_ERROR,
   GET_PLACE_COMMENT,
+  PLACES_REQUEST,
 } from './types';
 import qs from 'querystring';
 import { setAlert } from './alert';
+
+export const requestPosts = (page, limit) => ({
+  type: PLACES_REQUEST,
+  page: page + 1,
+  limit,
+});
+
+export const getPlaces = (page, limit) => async dispatch => {
+  try {
+    dispatch(requestPosts(page, limit));
+    const res = await api.get(`/places?page=${page}&limit=${limit}`);
+    dispatch({
+      type: GET_PLACES,
+      payload: res.data.data,
+      hasMore: res.data.data.length > 0,
+    });
+  } catch (error) {
+    dispatch({
+      type: PLACES_ERROR,
+      payload: {
+        msg: error.message,
+      },
+    });
+  }
+};
 
 export const getPlace = () => async dispatch => {
   try {

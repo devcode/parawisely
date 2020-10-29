@@ -2,11 +2,12 @@ import React, { useEffect } from 'react';
 import Proptypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
+  Box,
+  Alert,
+  AlertIcon,
   Checkbox,
   FormLabel,
   FormControl,
-  Select,
-  Image,
   Button,
   Heading,
   Icon,
@@ -14,12 +15,9 @@ import {
   Stack,
   Text,
   Skeleton,
-  useColorMode,
 } from '@chakra-ui/core';
-import { Link } from 'react-router-dom';
 import { IoIosArrowRoundForward } from 'react-icons/io';
-import { FaMapMarkerAlt } from 'react-icons/fa';
-import { NavLink as RouterLink } from 'react-router-dom';
+import ReduxLazyScroll from 'redux-lazy-scroll';
 
 import Layout from '../components/layouts';
 import Section from '../components/sections/Section';
@@ -30,21 +28,41 @@ import ilustrationIMG from '../assets/ilustration/ilus-ekplor.png';
 import Banner from '../components/sections/Banner';
 
 import CardRekomendasi from '../components/ui/CardRekomendasi';
-import { getPlace, getTypePlace, getPlaceByType } from '../actions/wisata';
+import {
+  getPlace,
+  getTypePlace,
+  getPlaceByType,
+  getPlaces,
+} from '../actions/wisata';
 import SearchBar from '../components/ui/SearchBar';
 
 const asset = process.env.REACT_APP_BACKEND_ASSET;
 
 const Eksplor = ({
+  getPlaces,
   getPlace,
   getTypePlace,
   getPlaceByType,
-  wisata: { places, typePlace, loading, error, filteredPlaces },
+  wisata: {
+    places,
+    typePlace,
+    loading,
+    error,
+    filteredPlaces,
+    page,
+    limit,
+    isFetching,
+    hasMore,
+  },
 }) => {
+  console.log({ page, limit });
   useEffect(() => {
-    getPlace();
     getTypePlace();
-  }, [getPlace, getTypePlace]);
+  }, [getTypePlace]);
+
+  const loadPlaces = () => {
+    getPlaces(page, limit);
+  };
 
   const filterHandler = e => {
     getPlaceByType(parseInt(e));
@@ -52,12 +70,16 @@ const Eksplor = ({
 
   return (
     <Layout>
-      <Banner title="Ekplorasi" description="Beranda &nbsp; →  &nbsp; Eksplorasi" image={eksplorasiImages} />
+      <Banner
+        title="Ekplorasi"
+        description="Beranda &nbsp; →  &nbsp; Eksplorasi"
+        image={eksplorasiImages}
+      />
       <Section>
         {error && error.msg}
         <Stack spacing="2rem" direction={['column', 'column', 'row', 'row']}>
           <Stack minWidth="50vh" spacing="1rem">
-            <Heading fontSize="14px">Total ({places?.length})</Heading>
+            <Heading fontSize="14px">Total ({filteredPlaces?.length})</Heading>
             <SearchBar />
             <FormControl onChange={e => alert(e.target.value)}>
               <FormLabel>Kategori</FormLabel>
@@ -71,12 +93,25 @@ const Eksplor = ({
               </Stack>
             </FormControl>
           </Stack>
-
           <Skeleton isLoaded={places.length > 0} w="full" minHeight="272px">
-            <SimpleGrid spacing="1rem" columns={[2, 2, 3, 3]}>
-              {filteredPlaces &&
-                filteredPlaces.map((item, index) => <CardPlace data={item} />)}
-            </SimpleGrid>
+            <Box>
+              {' '}
+              <ReduxLazyScroll
+                isFetching={isFetching}
+                error={error}
+                loadMore={loadPlaces}
+                hasMore={hasMore}
+              >
+                <SimpleGrid spacing="1rem" columns={[2, 2, 3, 3]}>
+                  {filteredPlaces?.map((item, index) => (
+                    <div>
+                      <CardPlace key={`uwu-${item.id}`} data={item} />
+                      {item.length > 10 && <div>loadmore</div>}
+                    </div>
+                  ))}
+                </SimpleGrid>
+              </ReduxLazyScroll>
+            </Box>
           </Skeleton>
         </Stack>
       </Section>
@@ -99,6 +134,7 @@ const Eksplor = ({
 };
 
 Eksplor.propTypes = {
+  getPlaces: Proptypes.func.isRequired,
   getPlace: Proptypes.func.isRequired,
   getTypePlace: Proptypes.func.isRequired,
   getPlaceByType: Proptypes.func.isRequired,
@@ -113,4 +149,5 @@ export default connect(mapStateToProps, {
   getPlace,
   getTypePlace,
   getPlaceByType,
+  getPlaces,
 })(Eksplor);
