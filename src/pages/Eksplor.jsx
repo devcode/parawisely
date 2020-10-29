@@ -19,6 +19,7 @@ import {
 import { Link } from 'react-router-dom';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 import { FaMapMarkerAlt } from 'react-icons/fa';
+import { NavLink as RouterLink } from 'react-router-dom';
 
 import Layout from '../components/layouts';
 import Section from '../components/sections/Section';
@@ -50,7 +51,7 @@ const Eksplor = ({
 
   return (
     <Layout>
-      <Banner title="Ekplorasi Indonesia" image={eksplorasiImages} />
+      <Banner title="Ekplorasi Indonesia" description="Beranda &nbsp; →  &nbsp; Eksplorasi" image={eksplorasiImages} />
       <Section>
         {error && error.msg}
         <Stack spacing="2rem" direction={['column', 'column', 'row', 'row']}>

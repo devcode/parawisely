@@ -23,7 +23,7 @@ const IconSosmed = ({ icon, url }) => (
 const Tentang = () => {
   return (
     <Layout>
-    <Banner title="Tentang Kami" image={tentangKamiImages} />
+    <Banner title="Tentang Kami" description="Beranda &nbsp; →  &nbsp; Tentang"  image={tentangKamiImages} />
       <Stack textAlign="center" pt="2.5rem">
         <Text w="100%" fontWeight="extra_bold" color="blue.500">
           TENTANG KAMI PARAWISELY

@@ -15,7 +15,7 @@ import Banner from '../components/sections/Banner';
 const virtualTour = () => {
   return (
     <Layout>
-     <Banner title="Virtual Tour" image={virtualTourImages} />
+     <Banner title="Virtual Tour" description="Beranda &nbsp; →  &nbsp; Virtual Tour"  image={virtualTourImages} />
       <Stack textAlign="center" pt="2.5rem">
         <Text w="100%" fontWeight="extra_bold" color="blue.500">
           VIRTUAL TOUR INDONESIA
