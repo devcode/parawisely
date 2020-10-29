@@ -2,8 +2,8 @@ import React from 'react';
 import { Heading, Image, Text, Stack, Icon, Link } from '@chakra-ui/core';
 import Layout from '../components/layouts';
 import Iframe from 'react-iframe';
-
-import aboutImages from '../assets/images/about-images.png';
+import tentangKamiImages from '../assets/images/tentang-kami-images.png';
+import Banner from '../components/sections/Banner';
 
 import {
   FaInstagram,
@@ -23,6 +23,7 @@ const IconSosmed = ({ icon, url }) => (
 const Tentang = () => {
   return (
     <Layout>
+    <Banner title="Tentang" description="Beranda &nbsp; →  &nbsp; Tentang"  image={tentangKamiImages} />
       <Stack textAlign="center" pt="2.5rem">
         <Text w="100%" fontWeight="extra_bold" color="blue.500">
           TENTANG KAMI PARAWISELY
@@ -42,7 +43,7 @@ const Tentang = () => {
             <Image
               h="572px"
               className="mx-auto"
-              src={aboutImages}
+            
               objectFit="cover"
             />
           </div>

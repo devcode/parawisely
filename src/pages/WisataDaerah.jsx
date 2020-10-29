@@ -23,7 +23,7 @@ const WisataDaerah = () => {
 
   return (
     <Layout>
-      <Banner title="Wisata Daerah" image={wisataDaerahImages} />
+      <Banner title="Wisata Daerah" description="Beranda &nbsp; →  &nbsp; Wisata Daerah"  image={wisataDaerahImages} />
       <Section>
         {status === 'loading' && <Spinner />}
         {status === 'error' && <p>Error : {error.message}</p>}
