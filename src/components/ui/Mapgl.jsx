@@ -46,7 +46,6 @@ const Mapgl = () => {
     map.on('load', async () => {
       geolocate.trigger();
       const res = await getMap();
-      console.log({ res });
       // add the data source for new a feature collection with no features
       map.addSource('random-points-data', {
         type: 'geojson',

@@ -40,7 +40,6 @@ const CommentForm = ({ place_id, addComment, wisata: { place } }) => {
         }}
         validationSchema={ulasanSchema}
         onSubmit={async (values, actions) => {
-          console.log({ values });
           addComment(values);
           actions.resetForm();
         }}

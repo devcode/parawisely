@@ -2,8 +2,15 @@ import React, { useEffect, useCallback, useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Autosuggest from 'react-autosuggest';
-
-import { InputGroup, InputRightElement, Input } from '@chakra-ui/core';
+import '../../stylesheets/search.css';
+import { Link } from 'react-router-dom';
+import {
+  InputGroup,
+  InputRightElement,
+  Input,
+  Box,
+  Text,
+} from '@chakra-ui/core';
 import { SearchIcon } from '@chakra-ui/icons';
 
 import { getPlace } from '../../actions/wisata';
@@ -12,18 +19,31 @@ const SearchHeader = ({ getPlace, wisata: { places } }) => {
   const getSuggestion = value => {
     const inputValue = value.trim().toLowerCase();
     const inputLength = value.length;
-
-    return inputLength === 0
-      ? []
-      : places.filter(
-          place =>
-            place.name_place.toLowerCase().slice(0, inputLength) === inputValue
-        );
+    const res =
+      inputLength === 0
+        ? []
+        : places.filter(
+            place =>
+              place.name_place.toLowerCase().slice(0, inputLength) ===
+              inputValue
+          );
+    return res;
   };
 
-  const getSuggestionValue = suggestion => suggestion.place_name;
+  const getSuggestionValue = suggestion =>
+    `${suggestion.name_place}, ${suggestion.provinsi}`;
 
-  const renderSuggestion = suggestion => <div>{suggestion.name}</div>;
+  const renderSuggestion = suggestion => {
+    return (
+      <Box>
+        <Link to={`/place/${suggestion.slug}`}>{suggestion.name_place}</Link>
+      </Box>
+    );
+  };
+
+  const renderSuggestionContainer = ({ containerProps, children, query }) => (
+    <div {...containerProps}>{children}</div>
+  );
 
   const [value, setValue] = useState('');
   const [suggestion, setSuggestion] = useState([]);
@@ -33,7 +53,10 @@ const SearchHeader = ({ getPlace, wisata: { places } }) => {
   };
 
   const onSuggestionRequested = ({ value }) => {
-    setSuggestion(value);
+    console.log({ value });
+    const data = getSuggestion(value);
+    console.log(data);
+    setSuggestion(data);
   };
 
   const onSuggestionClearRequested = () => {
@@ -41,7 +64,8 @@ const SearchHeader = ({ getPlace, wisata: { places } }) => {
   };
 
   const inputProps = {
-    placeHolder: 'Cari tempat',
+    placeholder: 'Cari tempat',
+    type: 'search',
     value,
     onChange: onChange,
   };
@@ -56,20 +80,30 @@ const SearchHeader = ({ getPlace, wisata: { places } }) => {
     loadData();
   }, [loadData]);
 
+  const renderInputComponent = inputProps => (
+    <InputGroup>
+      <InputRightElement
+        pointerEvents="none"
+        children={<SearchIcon color="blue.300" />}
+      />
+      <Input
+        {...inputProps}
+        type="phone"
+        placeholder="Cari tempat"
+        fontSize="16px"
+      />
+    </InputGroup>
+  );
+
   return (
-    // <InputGroup>
-    //   <InputRightElement
-    //     pointerEvents="none"
-    //     children={<SearchIcon color="blue.300" />}
-    //   />
-    //   <Input type="phone" placeholder="Cari tempat" fontSize="16px" />
-    // </InputGroup>
     <Autosuggest
+      renderInputComponent={renderInputComponent}
       suggestions={suggestion}
       onSuggestionsFetchRequested={onSuggestionRequested}
       onSuggestionsClearRequested={onSuggestionClearRequested}
       getSuggestionValue={getSuggestionValue}
       renderSuggestion={renderSuggestion}
+      renderSuggestionsContainer={renderSuggestionContainer}
       inputProps={inputProps}
     />
   );
