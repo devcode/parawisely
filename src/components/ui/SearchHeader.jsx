@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Autosuggest from 'react-autosuggest';
 import '../../stylesheets/search.css';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import {
   InputGroup,
   InputRightElement,
@@ -30,14 +30,11 @@ const SearchHeader = ({ getPlace, wisata: { places } }) => {
     return res;
   };
 
-  const getSuggestionValue = suggestion =>
-    `${suggestion.name_place}, ${suggestion.provinsi}`;
+  const getSuggestionValue = suggestion => `${suggestion.name_place}`;
 
   const renderSuggestion = suggestion => {
     return (
-      <Box>
-        <Link to={`/place/${suggestion.slug}`}>{suggestion.name_place}</Link>
-      </Box>
+      <Link to={`/place/${suggestion.slug}`}>{suggestion.name_place}</Link>
     );
   };
 
@@ -48,14 +45,12 @@ const SearchHeader = ({ getPlace, wisata: { places } }) => {
   const [value, setValue] = useState('');
   const [suggestion, setSuggestion] = useState([]);
 
-  const onChange = (e, { newValue }) => {
+  const onChange = (e, { newValue, method }) => {
     setValue(newValue);
   };
 
   const onSuggestionRequested = ({ value }) => {
-    console.log({ value });
     const data = getSuggestion(value);
-    console.log(data);
     setSuggestion(data);
   };
 
@@ -65,9 +60,9 @@ const SearchHeader = ({ getPlace, wisata: { places } }) => {
 
   const inputProps = {
     placeholder: 'Cari tempat',
-    type: 'search',
     value,
     onChange: onChange,
+    type: 'search',
   };
 
   const loadData = useCallback(() => {
@@ -75,6 +70,13 @@ const SearchHeader = ({ getPlace, wisata: { places } }) => {
       getPlace();
     }
   }, [getPlace, places.length]);
+
+  const onSelectedSuggestion = (
+    event,
+    { suggestion, suggestionValue, suggestionIndex, sectionIndex, method }
+  ) => {
+    return <Redirect to={`/place/${suggestion.slug}`} />;
+  };
 
   useEffect(() => {
     loadData();
@@ -99,6 +101,7 @@ const SearchHeader = ({ getPlace, wisata: { places } }) => {
     <Autosuggest
       renderInputComponent={renderInputComponent}
       suggestions={suggestion}
+      onSuggestionSelected={onSelectedSuggestion}
       onSuggestionsFetchRequested={onSuggestionRequested}
       onSuggestionsClearRequested={onSuggestionClearRequested}
       getSuggestionValue={getSuggestionValue}

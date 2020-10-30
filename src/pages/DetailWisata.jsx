@@ -11,11 +11,15 @@ import {
   Box,
   StackDivider,
   Skeleton,
+  SimpleGrid,
 } from '@chakra-ui/core';
+import MapPlace from '../components/ui/map/MapPlace';
 
 import { getPlaceDetail } from '../actions/wisata';
 import CommentForm from '../components/ui/comments/CommentForm';
 import CommentItem from '../components/ui/comments/CommentItem';
+
+import { capitalize } from '../utils/helper';
 
 const asset = process.env.REACT_APP_BACKEND_ASSET;
 
@@ -26,55 +30,39 @@ const DetailWisata = ({ getPlaceDetail, wisata: { place }, match }) => {
 
   return (
     <Layout>
+      <MapPlace longitude={place.longitude} latitude={place.latitude} />
       <Section>
+        <Skeleton isLoaded={place.image}>
+          <Image
+            src={`${asset}/placeImage/${place.image}`}
+            h="250px"
+            w="full"
+            fallbackSrc="https://via.placeholder.com/1920x720"
+            objectFit="fit"
+          />
+        </Skeleton>
         <Skeleton isLoaded={place.name_place}>
-          <Stack textAlign="center" pt="2.5rem">
-            <Heading fontWeight="extra_bold">{place.name_place}</Heading>
-            <Text className="col-md-6 mx-auto" color="gray.500">
-              {place.kabupaten}, {place.provinsi}
+          <Stack mt="2rem" spacing="0.5rem">
+            <Heading fontSize="28px" fontWeight="bold">
+              {place.name_place}
+            </Heading>
+            <Text color="gray.500">
+              {place.kabupaten?.toLowerCase()}, {place.provinsi?.toLowerCase()}
+            </Text>
+            <Text fontSize="16px" textAlign="justify" fontWeight="regular">
+              {place.description}
             </Text>
           </Stack>
         </Skeleton>
-        <div className="container">
-          <div className="row mt-5">
-            <div className="col-md-12 ">
-              <Skeleton isLoaded={place.image}>
-                <Image
-                  src={`${asset}/placeImage/${place.image}`}
-                  h="720px"
-                  w="1920px"
-                  fallbackSrc="https://via.placeholder.com/1920x720"
-                  objectFit="fit"
-                />
-              </Skeleton>
-            </div>
-            <div className="row mt-3">
-              <div className="col-md-10 mx-auto">
-                <Text
-                  fontSize="48px"
-                  className="m-5 text-center"
-                  fontWeight="extra_bold"
-                >
-                  {place.name_place}
-                </Text>
-                <Text fontSize="16px" textAlign="justify" fontWeight="regular">
-                  {place.description}
-                </Text>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <Section>
           <Skeleton isLoaded={place.comments}>
-            <Stack spacing="1rem">
-              {/* <Comment place_id={place.data.id} data={place.data.comments} /> */}
+            <SimpleGrid columns={[1, 1, 2, 2]} spacing="1rem">
               <CommentForm place_id={place.id} />
-              <Heading fontSize="24px">
-                Ulasan ({place?.comments?.length}){' '}
-              </Heading>
-
               <Box borderRadius="md" shadow="md" p="2rem">
+                <Heading fontSize="24px">
+                  Ulasan ({place?.comments?.length}){' '}
+                </Heading>
                 <Stack
                   spacing="2rem"
                   divider={<StackDivider borderColor="gray.300" />}
@@ -85,7 +73,7 @@ const DetailWisata = ({ getPlaceDetail, wisata: { place }, match }) => {
                   ))}
                 </Stack>
               </Box>
-            </Stack>
+            </SimpleGrid>
           </Skeleton>
         </Section>
       </Section>

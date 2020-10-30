@@ -3,6 +3,11 @@
   height: 500px;
 }
 
+.map-container-detail {
+  width: auto;
+  height: 250px;
+}
+
 .map-container {
   width: auto;
   height: 500px;
