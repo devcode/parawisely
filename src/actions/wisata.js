@@ -1,5 +1,6 @@
 import api from '../api/api';
 import {
+  FILTER_PLACE_TYPE,
   PLACES_ERROR,
   GET_PLACES,
   SEARCH,
@@ -21,6 +22,7 @@ import {
   ADD_COMMENT_ERROR,
   GET_PLACE_COMMENT,
   PLACES_REQUEST,
+  GET_WISATA_DAERAH_DETAIL,
 } from './types';
 import qs from 'querystring';
 import { setAlert } from './alert';
@@ -105,6 +107,13 @@ export const addComment = value => async dispatch => {
   }
 };
 
+export const filterPlace = type => async dispatch => {
+  dispatch({
+    type: FILTER_PLACE_TYPE,
+    payload: type,
+  });
+};
+
 export const getPlaceDetail = slug => async dispatch => {
   try {
     const res = await api.get(`/place/${slug}`);
@@ -123,13 +132,22 @@ export const getPlaceDetail = slug => async dispatch => {
   }
 };
 
-export const getPlaceByType = id => async dispatch => {
+export const getPlaceByType = (id, islandId = null) => async dispatch => {
   try {
-    const res = await api.get(`place/type/${id}`);
-    dispatch({
-      type: GET_PLACE_BYTYPE,
-      payload: res.data.data,
-    });
+    if (islandId) {
+      const res = await api.get(`/wisata-daerah/${islandId}/${id}`);
+      dispatch({
+        type: GET_PLACE_BYTYPE,
+        payload: res.data.data,
+        islandId,
+      });
+    } else {
+      const res = await api.get(`place/type/${id}`);
+      dispatch({
+        type: GET_PLACE_BYTYPE,
+        payload: res.data.data,
+      });
+    }
   } catch (error) {
     dispatch({
       type: PLACE_BYTPE_ERROR,
@@ -174,12 +192,29 @@ export const getEksplorasi = () => async dispatch => {
   }
 };
 
+export const getWisataDaerahDetail = slug => async dispatch => {
+  try {
+    const res = await api.get(`wisata-daerah/${slug}`);
+    dispatch({
+      type: GET_WISATA_DAERAH_DETAIL,
+      payload: res.data.data,
+    });
+  } catch (error) {
+    dispatch({
+      type: WISATA_DAERAH_ERROR,
+      payload: {
+        msg: error.message,
+      },
+    });
+  }
+};
+
 export const getWisataDaerah = () => async dispatch => {
   try {
     const res = await api.get('/wisata-daerah');
     dispatch({
       type: GET_WISATA_DAERAH,
-      payload: res.data,
+      payload: res.data.data,
     });
   } catch (error) {
     dispatch({

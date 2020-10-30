@@ -20,13 +20,7 @@ const MobileDrawer = () => {
   const btnRef = useRef();
 
   const MenuItems = ({ children, to = '/' }) => {
-    return (
-      <RouterLink to={to}>
-        <Link href={to} onClick={onClose}>
-          {children}
-        </Link>
-      </RouterLink>
-    );
+    return <RouterLink to={to}>{children}</RouterLink>;
   };
 
   return (

@@ -4,12 +4,11 @@ import Proptypes from 'prop-types';
 import { InputGroup, InputRightElement, Input } from '@chakra-ui/core';
 import { SearchIcon } from '@chakra-ui/icons';
 
-import { getSearch, WTF } from '../../actions/wisata';
+import { WTF } from '../../actions/wisata';
 
-const SearchBar = ({ getSearch, dispatch, wisata }) => {
-  console.log({ wisata });
+const SearchBar = ({ dispatch, wisata, where }) => {
   const onChangeHandler = e => {
-    dispatch(WTF({ value: e.target.value }));
+    dispatch(WTF({ value: e.target.value, where }));
   };
 
   return (
@@ -28,7 +27,7 @@ const SearchBar = ({ getSearch, dispatch, wisata }) => {
 };
 
 SearchBar.propTypes = {
-  getSearch: Proptypes.func.isRequired,
+  where: Proptypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({

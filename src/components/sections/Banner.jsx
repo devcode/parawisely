@@ -11,9 +11,17 @@ const Banner = ({ title, description, image }) => {
         position="absolute"
       >
         <Heading>{title}</Heading>
-        <Text fontSize="14px" className="col-md-10 mt-1 mx-auto">{description}</Text>
+        <Text fontSize="14px" className="col-md-10 mt-1 mx-auto">
+          {description}
+        </Text>
       </Box>
-      <Image src={image} h="300px" objectFit="cover" w="full" />
+      <Image
+        src={image}
+        h="300px"
+        objectFit="cover"
+        w="full"
+        fallbackSrc="https://via.placeholder.com/1920x720"
+      />
     </Box>
   );
 };

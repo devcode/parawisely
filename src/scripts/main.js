@@ -1,5 +1,17 @@
 window.onscroll = function () {
   const nav = document.querySelector('.navigation');
+  const panel = document.querySelector('.panel');
+
+  if (!panel) {
+    return false;
+  }
+
+  if (window.pageYOffset > 330) {
+    panel.classList.add('panel-fixed');
+  } else {
+    panel.classList.remove('panel-fixed');
+  }
+
   if (!nav) {
     return false;
   }
