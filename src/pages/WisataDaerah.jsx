@@ -30,7 +30,7 @@ const WisataDaerah = ({
       <Banner
         title="Wisata Daerah"
         description="Beranda &nbsp; →  &nbsp; Wisata Daerah"
-        image={wisataDaerahImages}
+          image={wisataDaerahImages}
       />
       <Section>
         <div>

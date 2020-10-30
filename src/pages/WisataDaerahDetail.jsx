@@ -11,6 +11,8 @@ import { capitalize } from '../utils/helper';
 import Section from '../components/sections/Section';
 import FilterPanel from '../components/ui/FilterPanel';
 
+const asset = process.env.REACT_APP_BACKEND_ASSET;
+
 const WisataDaerahDetail = ({
   getWisataDaerahDetail,
   wisata: {
@@ -29,7 +31,10 @@ const WisataDaerahDetail = ({
 
   return (
     <Layout>
-      <Banner title={`${capitalize(wisataDaerahDetail.name)}`} />
+      <Banner
+        image={`${asset}/island/${wisataDaerahDetail.image}`}
+        title={`${capitalize(wisataDaerahDetail.name)}`}
+      />
       <Section>
         {error && error.msg}
         <Stack spacing="2rem" direction={['column', 'column', 'row', 'row']}>
