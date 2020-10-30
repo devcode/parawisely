@@ -1,30 +1,19 @@
 import React from 'react';
-import {
-  Box,
-  Image,
-  Badge,
-  Text,
-  Stack,
-  Icon,
-  Button,
-  useColorMode,
-  Heading,
-} from '@chakra-ui/core';
+import { Box, Image, Text, Stack, Heading } from '@chakra-ui/core';
 import { Link } from 'react-router-dom';
 
 import eksplorasiImages from '../../assets/images/eksplor.jpeg';
 
 const CardPlace = ({ data }) => {
-  console.log(data);
   return (
-    <Box rounded="lg" shadow="md" overflow="hidden">
+    <Box rounded="lg" shadow="md" overflow="hidden" height="400px">
       <Image
         src={eksplorasiImages}
         alt="Course Cover"
         h="200px"
         htmlHeight="200px"
       />
-      <Box p={5}>
+      <Stack align="baseline" p={5}>
         <Stack isInline align="baseline">
           <Text
             textTransform="uppercase"
@@ -32,6 +21,7 @@ const CardPlace = ({ data }) => {
             color="gray.500"
             letterSpacing="wide"
           >
+            {data.type_id}
             {data.kabupaten.toUpperCase()} &bull; {data.provinsi.toUpperCase()}
           </Text>
         </Stack>
@@ -50,7 +40,7 @@ const CardPlace = ({ data }) => {
             Selengkapnya
           </Text>
         </Link>
-      </Box>
+      </Stack>
     </Box>
   );
 };

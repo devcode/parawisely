@@ -3,9 +3,7 @@ import Proptypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
   Box,
-  Alert,
-  AlertIcon,
-  Checkbox,
+  Select,
   FormLabel,
   FormControl,
   Button,
@@ -17,7 +15,6 @@ import {
   Skeleton,
 } from '@chakra-ui/core';
 import { IoIosArrowRoundForward } from 'react-icons/io';
-import ReduxLazyScroll from 'redux-lazy-scroll';
 
 import Layout from '../components/layouts';
 import Section from '../components/sections/Section';
@@ -32,17 +29,18 @@ import {
   getPlace,
   getTypePlace,
   getPlaceByType,
+  filterPlace,
   getPlaces,
 } from '../actions/wisata';
 import SearchBar from '../components/ui/SearchBar';
+import FilterPanel from '../components/ui/FilterPanel';
 
 const asset = process.env.REACT_APP_BACKEND_ASSET;
 
 const Eksplor = ({
-  getPlaces,
   getPlace,
-  getTypePlace,
   getPlaceByType,
+  filterPlace,
   wisata: {
     places,
     typePlace,
@@ -55,18 +53,9 @@ const Eksplor = ({
     hasMore,
   },
 }) => {
-  console.log({ page, limit });
   useEffect(() => {
-    getTypePlace();
-  }, [getTypePlace]);
-
-  const loadPlaces = () => {
-    getPlaces(page, limit);
-  };
-
-  const filterHandler = e => {
-    getPlaceByType(parseInt(e));
-  };
+    getPlace();
+  }, [getPlace]);
 
   return (
     <Layout>
@@ -78,39 +67,16 @@ const Eksplor = ({
       <Section>
         {error && error.msg}
         <Stack spacing="2rem" direction={['column', 'column', 'row', 'row']}>
-          <Stack minWidth="50vh" spacing="1rem">
-            <Heading fontSize="14px">Total ({filteredPlaces?.length})</Heading>
-            <SearchBar />
-            <FormControl onChange={e => alert(e.target.value)}>
-              <FormLabel>Kategori</FormLabel>
-              <Stack>
-                <Checkbox defaultIsChecked>Semua</Checkbox>
-                {typePlace?.map((item, idx) => (
-                  <Checkbox value={item.id} key={`alsdklaskdl-${idx}`}>
-                    {item.type_name}
-                  </Checkbox>
-                ))}
-              </Stack>
-            </FormControl>
-          </Stack>
+          <FilterPanel />
           <Skeleton isLoaded={places.length > 0} w="full" minHeight="272px">
             <Box>
-              {' '}
-              <ReduxLazyScroll
-                isFetching={isFetching}
-                error={error}
-                loadMore={loadPlaces}
-                hasMore={hasMore}
-              >
-                <SimpleGrid spacing="1rem" columns={[2, 2, 3, 3]}>
-                  {filteredPlaces?.map((item, index) => (
-                    <div>
-                      <CardPlace key={`uwu-${item.id}`} data={item} />
-                      {item.length > 10 && <div>loadmore</div>}
-                    </div>
-                  ))}
-                </SimpleGrid>
-              </ReduxLazyScroll>
+              <SimpleGrid spacing="1rem" columns={[2, 2, 3, 3]}>
+                {filteredPlaces?.map((item, index) => (
+                  <div>
+                    <CardPlace key={`uwu-${item.id}`} data={item} />
+                  </div>
+                ))}
+              </SimpleGrid>
             </Box>
           </Skeleton>
         </Stack>
@@ -134,6 +100,7 @@ const Eksplor = ({
 };
 
 Eksplor.propTypes = {
+  filterPlace: Proptypes.func.isRequired,
   getPlaces: Proptypes.func.isRequired,
   getPlace: Proptypes.func.isRequired,
   getTypePlace: Proptypes.func.isRequired,
@@ -147,7 +114,7 @@ const mapStateToProps = state => ({
 
 export default connect(mapStateToProps, {
   getPlace,
-  getTypePlace,
   getPlaceByType,
   getPlaces,
+  filterPlace,
 })(Eksplor);

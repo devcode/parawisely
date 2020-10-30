@@ -28,6 +28,7 @@ import labuanBajo from './pages/labuanBajo';
 import rajaAmpat from './pages/rajaAmpat';
 import pantaiPangandaran from './pages/pantaiPangandaran';
 import DetailWisata from './pages/DetailWisata';
+import WisataDaerahDetail from './pages/WisataDaerahDetail';
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
             <Route path="/eksplorasi" component={Eksplor} />
             <Route path="/detail-wisata" component={DetailWisata} />
 
+            <Route path="/wisata-daerah/:slug" component={WisataDaerahDetail} />
             <Route path="/wisata-daerah" component={WisataDaerah} />
             <Route path="/peta-wisata" component={Map} />
             <Route

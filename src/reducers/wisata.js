@@ -1,4 +1,5 @@
 import {
+  GET_WISATA_DAERAH_DETAIL,
   GET_PLACES,
   SEARCH,
   SEARCH_ERROR,
@@ -16,12 +17,16 @@ import {
   ADD_COMMENT_ERROR,
   PLACES_ERROR,
   PLACES_REQUEST,
+  FILTER_PLACE_TYPE,
 } from '../actions/types';
 
 const initialState = {
   appliedFilter: [],
   filteredPlaces: [],
   places: [],
+  wisataDaerah: [],
+  wisataDaerahDetail: {},
+  filteredWisataDaerahPlaces: [],
   place: {},
   typePlace: [],
   eksplorasi: [],
@@ -71,15 +76,30 @@ export default function (state = initialState, action) {
         loading: false,
       };
     case GET_PLACE_BYTYPE:
-      return {
-        ...state,
-        places: payload,
-      };
+      if (action.islandId) {
+        return {
+          ...state,
+          wisataDaerahDetail: payload,
+          filteredWisataDaerahPlaces: payload,
+        };
+      } else {
+        return {
+          ...state,
+          places: payload,
+          filteredPlaces: payload,
+        };
+      }
     case GET_WISATA_DAERAH:
       return {
         ...state,
         wisataDaerah: payload,
-        loading: false,
+      };
+    case GET_WISATA_DAERAH_DETAIL:
+      return {
+        ...state,
+        wisataDaerahDetail: payload,
+        filteredWisataDaerahPlaces: payload,
+        loading: true,
       };
     case GET_EKSPLORASI:
       return {
@@ -102,27 +122,58 @@ export default function (state = initialState, action) {
         placeComments: payload,
         loading: false,
       };
+    case FILTER_PLACE_TYPE:
+      return {
+        ...state,
+        filteredPlaces: state.filteredPlaces.filter(
+          item => item.type_id !== payload
+        ),
+      };
     case SEARCH:
-      let newState = Object.assign({}, state);
-      let value = payload.value;
-      let filteredValue = state.places.filter(place => {
-        return (
-          place.name_place.toLowerCase().includes(value) ||
-          place.provinsi.toLowerCase().includes(value)
-        );
-      });
-      let appliedFilters = state.appliedFilter;
+      if (payload.where === 'wisataDaerah') {
+        let newState = Object.assign({}, state);
+        let value = payload.value;
+        let filteredValue = state.wisataDaerahDetail.places.filter(place => {
+          return (
+            place.name_place.toLowerCase().includes(value) ||
+            place.provinsi.toLowerCase().includes(value)
+          );
+        });
+        let appliedFilters = state.appliedFilter;
 
-      if (value) {
-        appliedFilters = addFilterIfNotExists(SEARCH, appliedFilters);
-        newState.filteredPlaces = filteredValue;
-      } else {
-        appliedFilters = removeFilter(SEARCH, appliedFilters);
-        if (appliedFilters.length === 0) {
-          newState.filteredPlaces = newState.places;
+        if (value) {
+          appliedFilters = addFilterIfNotExists(SEARCH, appliedFilters);
+          newState.filteredWisataDaerahPlaces.places = filteredValue;
+        } else {
+          appliedFilters = removeFilter(SEARCH, appliedFilters);
+          if (appliedFilters.length === 0) {
+            newState.filteredWisataDaerahPlaces.places =
+              newState.wisataDaerahDetail.places;
+          }
         }
+        return newState;
+      } else {
+        let newState = Object.assign({}, state);
+        let value = payload.value;
+        let filteredValue = state.places.filter(place => {
+          return (
+            place.name_place.toLowerCase().includes(value) ||
+            place.provinsi.toLowerCase().includes(value)
+          );
+        });
+        let appliedFilters = state.appliedFilter;
+
+        if (value) {
+          appliedFilters = addFilterIfNotExists(SEARCH, appliedFilters);
+          newState.filteredPlaces = filteredValue;
+        } else {
+          appliedFilters = removeFilter(SEARCH, appliedFilters);
+          if (appliedFilters.length === 0) {
+            newState.filteredPlaces = newState.places;
+          }
+        }
+        return newState;
       }
-      return newState;
 
     case ADD_COMMENT_ERROR:
     case SEARCH_ERROR:
