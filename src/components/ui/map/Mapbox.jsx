@@ -35,7 +35,7 @@ const NavigationControlStyle = {
   top: 40,
 };
 
-const Mapbox = ({ width = '100vw', height = '89vh' }) => {
+const Mapbox = ({ width = '90%', height = '89vh' }) => {
   const { data, status, error } = useQuery('travel-place', getAllPlace);
 
   const [popInfo, setPopInfo] = useState(null);

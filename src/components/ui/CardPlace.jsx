@@ -1,17 +1,20 @@
 import React from 'react';
 import { Box, Image, Text, Stack, Heading } from '@chakra-ui/core';
 import { Link } from 'react-router-dom';
-
 import eksplorasiImages from '../../assets/images/eksplor.jpeg';
+
+const asset = process.env.REACT_APP_BACKEND_ASSET;
 
 const CardPlace = ({ data }) => {
   return (
     <Box rounded="lg" shadow="md" overflow="hidden" height="400px">
       <Image
-        src={eksplorasiImages}
+        src={`${asset}/placeImage/${data.image}`}
         alt="Course Cover"
         h="200px"
         htmlHeight="200px"
+        objectFit="cover"
+        w="full"
       />
       <Stack align="baseline" p={5}>
         <Stack isInline align="baseline">
@@ -21,7 +24,6 @@ const CardPlace = ({ data }) => {
             color="gray.500"
             letterSpacing="wide"
           >
-            {data.type_id}
             {data.kabupaten.toUpperCase()} &bull; {data.provinsi.toUpperCase()}
           </Text>
         </Stack>

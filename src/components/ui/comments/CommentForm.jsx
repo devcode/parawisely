@@ -19,10 +19,7 @@ import { setAlert } from '../../../actions/alert';
 import Alert from '../Alert';
 
 const ulasanSchema = Yup.object().shape({
-  name: Yup.string()
-    .min(2, 'Terlalu pendek!')
-    .max(13, 'Terlalu panjang!')
-    .required('Tidak boleh kosong'),
+  name: Yup.string().min(2, 'Terlalu pendek!').required('Tidak boleh kosong'),
   email: Yup.string().email('Email tidak valid').required('Tidak boleh kosong'),
   comment: Yup.string()
     .min(10, 'Terlalu pendek!')

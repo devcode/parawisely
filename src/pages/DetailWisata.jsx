@@ -37,7 +37,7 @@ const DetailWisata = ({ getPlaceDetail, wisata: { place }, match }) => {
             src={`${asset}/placeImage/${place.image}`}
             h="250px"
             w="full"
-            fallbackSrc="https://via.placeholder.com/1920x720"
+            fallbackSrc="https://via.placeholder.com/1920x250"
             objectFit="fit"
           />
         </Skeleton>
