@@ -11,11 +11,10 @@ import {
   FaRegAddressCard,
   FaHome,
   FaPhoneAlt,
-  FaFacebook
+  FaFacebook,
 } from 'react-icons/fa';
 import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
-import { MdEmail } from "react-icons/md";
-
+import { MdEmail } from 'react-icons/md';
 
 const IconSosmed = ({ icon, url }) => (
   <Link href={url} isExternal>
@@ -50,52 +49,97 @@ const Tentang = () => {
             <div className="col-md-6">
               <div className="contact_info">
                 <div className="info_item">
-                  <h6><Icon color="blue.500" as={FaHome} mr="0.5rem" fontSize="lg" /> Jl.Jendral Soedirman No.269 Ciamis, Jawa Barat</h6>
-                  <p>
-                    Diatas merupakan alamat kami, jika anda mempunyai kepentingan anda dapat menuju alamat tersebut.
-                  </p>
-                </div>
-                <div className="info_item">
                   <h6>
-                    <Icon color="blue.500" as={FaPhoneAlt} mr="0.5rem" fontSize="lg" />(0265) 771204
+                    <Icon
+                      color="blue.500"
+                      as={FaHome}
+                      mr="0.5rem"
+                      fontSize="lg"
+                    />{' '}
+                    Jl.Jendral Soedirman No.269 Ciamis, Jawa Barat
                   </h6>
                   <p>
-                    Anda dapat menghubungi kami lewat telepon jika kami tidak merespon pesan anda lewat fitur kontak di website ini.
+                    Diatas merupakan alamat kami, jika anda mempunyai
+                    kepentingan anda dapat menuju alamat tersebut.
                   </p>
                 </div>
-                <div className="info_item">
+                <div className="info_item mt-3">
                   <h6>
-                   <Icon color="blue.500" as={MdEmail} mr="0.5rem" fontSize="lg" /> apps.parawisely@gmail.com
+                    <Icon
+                      color="blue.500"
+                      as={FaPhoneAlt}
+                      mr="0.5rem"
+                      fontSize="lg"
+                    />
+                    (0265) 771204
                   </h6>
                   <p>
-                    Anda dapat menghubungi kami lewat email jika anda butuh informasi tentang website kami.
+                    Anda dapat menghubungi kami lewat telepon jika kami tidak
+                    merespon pesan anda lewat fitur kontak di website ini.
+                  </p>
+                </div>
+                <div className="info_item mt-3">
+                  <h6>
+                    <Icon
+                      color="blue.500"
+                      as={MdEmail}
+                      mr="0.5rem"
+                      fontSize="lg"
+                    />{' '}
+                    apps.parawisely@gmail.com
+                  </h6>
+                  <p>
+                    Anda dapat menghubungi kami lewat email jika anda butuh
+                    informasi tentang website kami.
                   </p>
                 </div>
               </div>
             </div>
             <div className="col-md-6">
-
               <div className="contact_info">
                 <div className="info_item">
-                  <h6><Icon color="blue.500" as={FaFacebook} mr="0.5rem" fontSize="lg" /> Parawisely - Travel Indonesia</h6>
-                  <p>
-                    Anda dapat mengikuti kami di platform facebook agar anda tidak kehilangan informasi terbaru tentang Parawisely.
-                  </p>
-                </div>
-                <div className="info_item">
                   <h6>
-                    <Icon color="blue.500" as={FaInstagram} mr="0.5rem" fontSize="lg" />@parawisely_travel
+                    <Icon
+                      color="blue.500"
+                      as={FaFacebook}
+                      mr="0.5rem"
+                      fontSize="lg"
+                    />{' '}
+                    Parawisely - Travel Indonesia
                   </h6>
                   <p>
-                     Anda dapat mengikuti kami di platform instagram agar anda tidak kehilangan informasi terbaru tentang Parawisely.
+                    Anda dapat mengikuti kami di platform facebook agar anda
+                    tidak kehilangan informasi terbaru tentang Parawisely.
                   </p>
                 </div>
-                <div className="info_item">
+                <div className="info_item mt-3">
                   <h6>
-                   <Icon color="blue.500" as={FaTwitter} mr="0.5rem" fontSize="lg" /> @parawisely_travel
+                    <Icon
+                      color="blue.500"
+                      as={FaInstagram}
+                      mr="0.5rem"
+                      fontSize="lg"
+                    />
+                    @parawisely_travel
                   </h6>
                   <p>
-                      Anda dapat mengikuti kami di platform twitter agar anda tidak kehilangan informasi terbaru tentang Parawisely.
+                    Anda dapat mengikuti kami di platform instagram agar anda
+                    tidak kehilangan informasi terbaru tentang Parawisely.
+                  </p>
+                </div>
+                <div className="info_item mt-3">
+                  <h6>
+                    <Icon
+                      color="blue.500"
+                      as={FaTwitter}
+                      mr="0.5rem"
+                      fontSize="lg"
+                    />{' '}
+                    @parawisely_travel
+                  </h6>
+                  <p>
+                    Anda dapat mengikuti kami di platform twitter agar anda
+                    tidak kehilangan informasi terbaru tentang Parawisely.
                   </p>
                 </div>
               </div>

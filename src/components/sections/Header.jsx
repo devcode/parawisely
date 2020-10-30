@@ -74,7 +74,7 @@ const Header = props => {
           <input
             className="form-control mr-2"
             type="search"
-            placeholder="Cari disini"
+            placeholder="Cari tempat wisata ..."
             aria-label="Search"
           ></input>
           <Button className="btn btn-outline-primary" type="submit">
