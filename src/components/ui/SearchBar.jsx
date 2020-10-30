@@ -15,7 +15,7 @@ const SearchBar = ({ dispatch, wisata, where }) => {
     <InputGroup>
       <InputRightElement
         pointerEvents="none"
-        children={<SearchIcon color="gray.300" />}
+        children={<SearchIcon color="blue.300" />}
       />
       <Input
         onChange={e => onChangeHandler(e)}

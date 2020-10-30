@@ -3,9 +3,6 @@ import Proptypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
   Box,
-  Select,
-  FormLabel,
-  FormControl,
   Button,
   Heading,
   Icon,
@@ -27,12 +24,10 @@ import Banner from '../components/sections/Banner';
 import CardRekomendasi from '../components/ui/CardRekomendasi';
 import {
   getPlace,
-  getTypePlace,
   getPlaceByType,
   filterPlace,
   getPlaces,
 } from '../actions/wisata';
-import SearchBar from '../components/ui/SearchBar';
 import FilterPanel from '../components/ui/FilterPanel';
 
 const asset = process.env.REACT_APP_BACKEND_ASSET;
@@ -103,7 +98,6 @@ Eksplor.propTypes = {
   filterPlace: Proptypes.func.isRequired,
   getPlaces: Proptypes.func.isRequired,
   getPlace: Proptypes.func.isRequired,
-  getTypePlace: Proptypes.func.isRequired,
   getPlaceByType: Proptypes.func.isRequired,
   wisata: Proptypes.object.isRequired,
 };
