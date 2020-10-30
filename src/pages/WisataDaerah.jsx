@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Heading, Icon, Image, Skeleton, Stack, Text } from '@chakra-ui/core';
+import { Heading, Icon, Skeleton, Stack, Text, Image } from '@chakra-ui/core';
 import Layout from '../components/layouts';
 import Section from '../components/sections/Section';
 import Banner from '../components/sections/Banner';

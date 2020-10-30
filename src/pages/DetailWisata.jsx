@@ -28,7 +28,7 @@ const DetailWisata = ({ getPlaceDetail, wisata: { place }, match }) => {
     <Layout>
       <Section>
         <Skeleton isLoaded={place.name_place}>
-          <Stack textAlign="center" pt="2.5rem">
+          <Stack textAlign="center">
             <Heading fontWeight="extra_bold">{place.name_place}</Heading>
             <Text className="col-md-6 mx-auto" color="gray.500">
               {place.kabupaten}, {place.provinsi}

@@ -55,10 +55,10 @@ const Hero = props => {
                 colorScheme="blue"
                 className="button-hero"
               >
-                Mulai sekarang
+                Mulai sekarang &nbsp;→
               </Button>
             </Link>
-            <Link href="/rekomendasi" isExternal>
+            <Link href="/ekplorasi" isExternal>
               <Button
                 px="4rem"
                 size="lg"
@@ -70,7 +70,7 @@ const Hero = props => {
                 color="#4737ff"
                 variant="outline"
               >
-                Rekomendasi
+                Ekplorasi
               </Button>
             </Link>
           </SimpleGrid>
