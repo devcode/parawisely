@@ -14,8 +14,6 @@ const PlaceDetail = () => {
     getPlaceDetail(slug)
   );
 
-  console.log(data);
-
   return (
     <Layout>
       <Section>
