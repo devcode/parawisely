@@ -1,4 +1,6 @@
 import {
+  SEARCH_HEADER,
+  SEARCH_HEADER_ERROR,
   GET_WISATA_DAERAH_DETAIL,
   GET_PLACES,
   SEARCH,
@@ -37,6 +39,7 @@ const initialState = {
   page: 1,
   limit: 12,
   isFetching: false,
+  suggestionPlace: [],
 };
 
 export default function (state = initialState, action) {
@@ -174,7 +177,12 @@ export default function (state = initialState, action) {
         }
         return newState;
       }
+    case SEARCH_HEADER:
+      return {
+        ...state,
+      };
 
+    case SEARCH_HEADER_ERROR:
     case ADD_COMMENT_ERROR:
     case SEARCH_ERROR:
     case WISATA_DAERAH_ERROR:

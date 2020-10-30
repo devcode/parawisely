@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { NavLink as RouterLink } from 'react-router-dom';
-import { Box, Flex, Text, Button, Image, Stack } from '@chakra-ui/core';
+import { Box, Flex, Text, Image, Stack } from '@chakra-ui/core';
 import MobileDrawer from '../ui/MobileDrawer';
 import Logo from '../../assets/logo/logo.png';
 import '../../stylesheets/html.css';
 import '../../scripts/main.js';
+import SearchHeader from '../ui/SearchHeader';
 
 const MenuItems = ({ children, isLast, to = '/', ...rest }) => {
   return (
@@ -68,11 +69,18 @@ const Header = props => {
         direction="row"
         spacing="1rem"
       >
-        <form class="d-flex">
-      <input className="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
-      </input>
-      <Button className="btn btn-outline-success" type="submit">Search</Button>
-    </form>
+        {/* <form className="d-flex">
+          <input
+            className="form-control mr-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          ></input>
+          <Button className="btn btn-outline-success" type="submit">
+            Search
+          </Button>
+        </form> */}
+        <SearchHeader />
       </Stack>
 
       <Box display={['block', 'block', 'block', 'none']}>

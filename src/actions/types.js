@@ -32,3 +32,5 @@ export const REMOVE_ALERT = 'REMOVE_ALERT';
 
 export const SEARCH = 'SEARCH';
 export const SEARCH_ERROR = 'SEARCH_ERROR';
+export const SEARCH_HEADER = 'SEARCH_HEADER';
+export const SEARCH_HEADER_ERROR = 'SEARCH_HEADER_ERROR';
