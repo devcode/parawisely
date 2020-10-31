@@ -20,7 +20,7 @@ const Banner = ({ title, description, image }) => {
         </Text>
       </Box>
       <Image
-        src={`${asset}/island/${image}`}
+        src={image}
         h="300px"
         objectFit="cover"
         w="full"

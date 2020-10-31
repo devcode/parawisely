@@ -32,6 +32,7 @@ const Mapgl = () => {
       countries: 'id',
       language: 'id',
     });
+
     const geolocate = new mapboxgl.GeolocateControl({
       positionOptions: {
         enableHighAccuracy: true,
@@ -93,6 +94,9 @@ const Mapgl = () => {
     map.addControl(new mapboxgl.NavigationControl(), 'top-left');
     map.addControl(geolocate, 'top-left');
     map.addControl(geocoder);
+    geolocate.on('geolocate', e => {
+      map.setMaxZoom(8);
+    });
 
     return () => map.remove();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps

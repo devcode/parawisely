@@ -33,14 +33,15 @@ const CommentForm = ({ place_id, addComment, wisata: { place } }) => {
       <Alert />
       <Formik
         initialValues={{
-          place_id: place.id,
+          place_id: place_id,
           name: '',
           email: '',
           comment: '',
         }}
         validationSchema={ulasanSchema}
-        onSubmit={async (values, actions) => {
-          await addComment(values);
+        onSubmit={(values, actions) => {
+          console.log({ values });
+          // await addComment(values);
           actions.resetForm();
         }}
       >
