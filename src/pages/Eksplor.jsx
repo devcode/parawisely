@@ -2,10 +2,11 @@ import React, { useEffect } from 'react';
 import Proptypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
-  Box,
+  Link,
   Button,
-  Heading,
   Icon,
+  Box,
+  Heading,
   SimpleGrid,
   Stack,
   Text,
@@ -31,6 +32,7 @@ import {
 import FilterPanel from '../components/ui/FilterPanel';
 
 const asset = process.env.REACT_APP_BACKEND_ASSET;
+const base_url = process.env.REACT_APP_BACKEND_URL;
 
 const Eksplor = ({
   getPlace,
@@ -86,7 +88,10 @@ const Eksplor = ({
             berikan.
           </Text>
           <Button mt="1rem" background="white" color="blue.800">
-            Gabung <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="3px" />
+            <Link href={`${base_url}registrasi`} isExternal>
+              Gabung
+              <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="3px" />
+            </Link>
           </Button>
         </Stack>
       </CardRekomendasi>
