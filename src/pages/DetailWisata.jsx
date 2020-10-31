@@ -35,7 +35,7 @@ const DetailWisata = ({ getPlaceDetail, wisata: { place }, match }) => {
         <Skeleton isLoaded={place.image}>
           <Image
             src={`${asset}/placeImage/${place.image}`}
-            h="250px"
+            h="350px"
             w="full"
             fallbackSrc="https://via.placeholder.com/1920x250"
             objectFit="cover"
