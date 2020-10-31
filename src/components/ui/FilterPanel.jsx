@@ -46,7 +46,7 @@ const FilterPanel = ({
       </Heading>
       <SearchBar where={isWisataDearah ? 'wisataDaerah' : 'filteredPlaces'} />
       <FormControl>
-        <FormLabel>Kategori {wisataDaerahDetail?.id} </FormLabel>
+        <FormLabel>Kategori </FormLabel>
         <Stack>
           <Select
             onChange={e => filterHandler(e.target.value, wisataDaerahDetail.id)}

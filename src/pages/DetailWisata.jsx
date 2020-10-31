@@ -38,7 +38,7 @@ const DetailWisata = ({ getPlaceDetail, wisata: { place }, match }) => {
             h="250px"
             w="full"
             fallbackSrc="https://via.placeholder.com/1920x250"
-            objectFit="fit"
+            objectFit="cover"
           />
         </Skeleton>
         <Skeleton isLoaded={place.name_place}>

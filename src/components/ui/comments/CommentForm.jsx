@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import {
@@ -40,7 +40,7 @@ const CommentForm = ({ place_id, addComment, wisata: { place } }) => {
         }}
         validationSchema={ulasanSchema}
         onSubmit={async (values, actions) => {
-          addComment(values);
+          await addComment(values);
           actions.resetForm();
         }}
       >

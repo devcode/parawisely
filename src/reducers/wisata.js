@@ -20,6 +20,8 @@ import {
   PLACES_ERROR,
   PLACES_REQUEST,
   FILTER_PLACE_TYPE,
+  ADD_KONTAK,
+  ADD_KONTAK_ERROR,
 } from '../actions/types';
 
 const initialState = {
@@ -45,6 +47,10 @@ const initialState = {
 export default function (state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
+    case ADD_KONTAK:
+      return {
+        ...state,
+      };
     case PLACES_REQUEST:
       return {
         ...state,
@@ -59,6 +65,7 @@ export default function (state = initialState, action) {
         filteredPlaces: state.filteredPlaces.concat(payload),
         places: state.places.concat(payload),
         hasMore: action.hasMore,
+        loading: false,
       });
     case GET_TYPE_PLACE:
       return {
@@ -84,12 +91,14 @@ export default function (state = initialState, action) {
           ...state,
           wisataDaerahDetail: payload,
           filteredWisataDaerahPlaces: payload,
+          loading: false,
         };
       } else {
         return {
           ...state,
           places: payload,
           filteredPlaces: payload,
+          loading: false,
         };
       }
     case GET_WISATA_DAERAH:
@@ -185,6 +194,7 @@ export default function (state = initialState, action) {
     case SEARCH_HEADER_ERROR:
     case ADD_COMMENT_ERROR:
     case SEARCH_ERROR:
+    case ADD_KONTAK_ERROR:
     case WISATA_DAERAH_ERROR:
     case EKSPLORASI_ERROR:
     case PLACES_ERROR:

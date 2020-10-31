@@ -38,7 +38,7 @@ const CardPlace = ({ data }) => {
           </Box>
         </Stack>
         <Link to={`/place/${data.slug}`}>
-          <Text fontSize="16px" mt="5px">
+          <Text color="blue.500" fontSize="16px" mt="5px">
             Selengkapnya
           </Text>
         </Link>

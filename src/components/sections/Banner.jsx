@@ -1,6 +1,10 @@
 import React from 'react';
 import { Box, Heading, Text, Image } from '@chakra-ui/core';
 
+import BannerDefault from '../../assets/images/danau-toba.jpeg';
+
+const asset = process.env.REACT_APP_BACKEND_ASSET;
+
 const Banner = ({ title, description, image }) => {
   return (
     <Box color="white" position="relative" textAlign="center">
@@ -16,11 +20,11 @@ const Banner = ({ title, description, image }) => {
         </Text>
       </Box>
       <Image
-        src={image}
+        src={`${asset}/island/${image}`}
         h="300px"
         objectFit="cover"
         w="full"
-        fallbackSrc="https://via.placeholder.com/1920x720"
+        fallbackSrc={BannerDefault}
       />
     </Box>
   );

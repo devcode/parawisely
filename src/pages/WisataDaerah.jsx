@@ -30,7 +30,7 @@ const WisataDaerah = ({
       <Banner
         title="Wisata Daerah"
         description="Beranda &nbsp; →  &nbsp; Wisata Daerah"
-          image={wisataDaerahImages}
+        image={wisataDaerahImages}
       />
       <Section>
         <div>
@@ -57,11 +57,13 @@ const WisataDaerah = ({
                 borderRadius="md"
               />
               <Stack align="start" w="60%">
-                <Heading fontSize="32px" fontWeight="extra_bold">
+                <Heading fontSize="24px" fontWeight="extra_bold">
                   {item.name}
                 </Heading>
                 <Text>{item.description}</Text>
-                <Link to={`/wisata-daerah/${item.slug}`}>Selengkapnya ...</Link>
+                <Link to={`/wisata-daerah/${item.slug}`}>
+                  <Text color="blue.500">Selengkapnya</Text>
+                </Link>
               </Stack>
             </Stack>
           ))}

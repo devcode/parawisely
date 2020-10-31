@@ -35,7 +35,7 @@ const Tentang = () => {
           <div w="100%">
             <Iframe
               width="100%"
-              height="600"
+              height="400"
               src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=SMKN%201%20CIAMIS+(Learnify)&amp;ie=UTF8&amp;t=&amp;z=18&amp;iwloc=A&amp;output=embed"
               frameborder="0"
               scrolling="no"

@@ -9,12 +9,13 @@ import {
   Icon,
   IconButton,
   SimpleGrid,
-  Link,
 } from '@chakra-ui/core';
+import { Link } from 'react-router-dom';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 import ReactPlayer from 'react-player/youtube';
 import { RiMapPinAddFill, RiHeart3Fill, RiUserStarLine } from 'react-icons/ri';
 import Mapbox from '../components/ui/map/Mapbox';
+import Mapgl from '../components/ui/Mapgl';
 import { useQuery } from 'react-query';
 
 import Section from '../components/sections/Section';
@@ -100,8 +101,7 @@ const Landing = () => {
               colorScheme="blue"
               variant="ghost"
             >
-              <Link href="/eksplorasi/museum">
-                {' '}
+              <Link to="/eksplorasi">
                 Selengkapnya
                 <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
               </Link>
@@ -139,8 +139,7 @@ const Landing = () => {
               colorScheme="blue"
               variant="ghost"
             >
-              <Link href="/eksplorasi/pantai">
-                {' '}
+              <Link to="/eksplorasi">
                 Selengkapnya
                 <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
               </Link>
@@ -178,14 +177,9 @@ const Landing = () => {
               colorScheme="blue"
               variant="ghost"
             >
-              <Link href="/eksplorasi/kuliner">
-                {' '}
+              <Link to="/eksplorasi">
                 Selengkapnya
-                <Icon
-                  as={IoIosArrowRoundForward}
-                  boxSize="2rem"
-                  ml="4px"
-                />{' '}
+                <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
               </Link>
             </Text>
           </Stack>
@@ -262,8 +256,7 @@ const Landing = () => {
               colorScheme="blue"
               variant="ghost"
             >
-              <Link href="/virtual-tour">
-                {' '}
+              <Link to="/virtual-tour">
                 Selengkapnya
                 <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
               </Link>
@@ -301,14 +294,9 @@ const Landing = () => {
               colorScheme="blue"
               variant="ghost"
             >
-              <Link href="/peta-wisata">
-                {' '}
+              <Link to="/peta-wisata">
                 Selengkapnya
-                <Icon
-                  as={IoIosArrowRoundForward}
-                  boxSize="2rem"
-                  ml="4px"
-                />{' '}
+                <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
               </Link>
             </Text>
           </Stack>
@@ -342,8 +330,7 @@ const Landing = () => {
               colorScheme="blue"
               variant="ghost"
             >
-              <Link href="/rekomendasi">
-                {' '}
+              <Link to="/eksplorasi">
                 Selengkapnya
                 <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
               </Link>
@@ -366,9 +353,9 @@ const Landing = () => {
           </Text>
         </Stack>
 
-        <Mapbox width="auto" height="400px" />
+        <Mapgl />
 
-        <SimpleGrid
+        {/* <SimpleGrid
           justify="center"
           columns={[1, 1, 1, 3]}
           spacing="2rem"
@@ -389,7 +376,7 @@ const Landing = () => {
             description="Spot yang paling ramai dikunjungi para wisatawan sekaligus warga Indonesia"
             icon={<RiUserStarLine />}
           />
-        </SimpleGrid>
+        </SimpleGrid> */}
       </Stack>
 
       <Sponsor />

@@ -1,15 +1,12 @@
 import ReactDOM from 'react-dom';
-import React, { useRef, useEffect, useState } from 'react';
-import { useQuery } from 'react-query';
+import React, { useRef, useEffect } from 'react';
 import { Box, Heading } from '@chakra-ui/core';
 import mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
 import Layout from '../layouts';
-import Spinner from '../ui/Spinner';
 
-import fetchFakeData from '../../api/fetchFakeData';
 import Popup from './Popup';
 import '../../stylesheets/map.css';
 import { getMap } from '../../api/fetchData';
@@ -19,7 +16,6 @@ mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 const Mapgl = () => {
   const mapContainerRef = useRef(null);
   const popUpRef = useRef(new mapboxgl.Popup({ offset: 15 }));
-  const { data, status, error } = useQuery('mapap', getMap());
 
   // initialize map when component mounts
   useEffect(() => {
@@ -46,19 +42,21 @@ const Mapgl = () => {
     map.on('load', async () => {
       geolocate.trigger();
       const res = await getMap();
+      console.log({ res });
       // add the data source for new a feature collection with no features
       map.addSource('random-points-data', {
         type: 'geojson',
         data: res,
       });
       // now add the layer, and reference the data source above by name
+
       map.addLayer({
         id: 'random-points-layer',
         source: 'random-points-data',
         type: 'symbol',
         layout: {
           // full list of icons here: https://labs.mapbox.com/maki-icons
-          'icon-image': 'mountain-15', // this will put little croissants on our map
+          'icon-image': ['get', 'icon'],
           'icon-padding': 0,
           'icon-allow-overlap': true,
         },
@@ -99,22 +97,7 @@ const Mapgl = () => {
     return () => map.remove();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  return (
-    <Layout>
-      <Box p="2rem">
-        <Heading fontSize="24px">Map Indoneisa</Heading>
-      </Box>
-      <div className="map-container" ref={mapContainerRef} />
-
-      {/* {status === 'error' && <p>Error: {error.message}</p>}
-      {status === 'loading' && <Spinner />}
-      {status === 'success' && (
-        <div>
-          <div className="map-container" ref={mapContainerRef} />
-        </div>
-      )} */}
-    </Layout>
-  );
+  return <div className="map-container" ref={mapContainerRef} />;
 };
 
 export default Mapgl;

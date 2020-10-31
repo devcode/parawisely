@@ -1,5 +1,7 @@
 import api from '../api/api';
 import {
+  ADD_KONTAK,
+  ADD_KONTAK_ERROR,
   FILTER_PLACE_TYPE,
   PLACES_ERROR,
   GET_PLACES,
@@ -89,7 +91,7 @@ export const getComment = placeId => async dispatch => {
 export const addComment = value => async dispatch => {
   try {
     const data = qs.stringify(value);
-    const res = await api.post(`/sendComment/`, data);
+    const res = await api.post('/sendComment', data);
     dispatch({
       type: ADD_COMMENT,
       payload: res.data.data,
@@ -244,5 +246,23 @@ export const getSearch = value => async dispatch => {
         msg: error.message,
       },
     });
+  }
+};
+
+export const sendContact = value => async dispatch => {
+  try {
+    const data = qs.stringify(value);
+    const res = await api.post('/sendContact', data);
+    dispatch({
+      type: ADD_KONTAK,
+      payload: res.data.data,
+    });
+    dispatch(setAlert('Berhasil', 'success', 5000));
+  } catch (error) {
+    dispatch({
+      type: ADD_KONTAK_ERROR,
+      payload: error.message,
+    });
+    dispatch(setAlert(error.message, 'error', 5000));
   }
 };
