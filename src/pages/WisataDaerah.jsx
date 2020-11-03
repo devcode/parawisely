@@ -45,7 +45,7 @@ const WisataDaerah = ({
               mb="20px"
             >
               <Image
-                src={`${asset}/island/${item.image}`}
+                src={item.image}
                 objectFit="cover"
                 width="150px"
                 htmlWidth="150px"
