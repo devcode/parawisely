@@ -5,13 +5,7 @@ import { BiCommentDetail } from 'react-icons/bi';
 
 const CardPlace = ({ data }) => {
   return (
-    <Box
-      justifyItems="center"
-      rounded="lg"
-      shadow="md"
-      overflow="hidden"
-      height="400px"
-    >
+    <Box justifyItems="center" rounded="lg" shadow="md" overflow="hidden">
       <Image
         src={data.image}
         alt={data.name_place}
@@ -21,7 +15,7 @@ const CardPlace = ({ data }) => {
         w="full"
       />
       <Stack
-        align="baseline"
+        align="start"
         spacing="1rem"
         alignContent="center"
         justify="space-between"
@@ -37,7 +31,7 @@ const CardPlace = ({ data }) => {
             {data.name_place}
           </Heading>
         </Link>
-        <Text color="gray.400">
+        <Text color="gray.400" fontSize="12px">
           {data.kabupaten}, {data.provinsi}
         </Text>
         <Stack direction="row" align="center" justify="center" spacing="0.5rem">
