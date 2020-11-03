@@ -356,7 +356,7 @@ const Landing = () => {
         </SimpleGrid> */}
       </Stack>
 
-      <Sponsor />
+      {/* <Sponsor /> */}
     </Layout>
   );
 };
