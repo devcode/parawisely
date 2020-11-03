@@ -33,7 +33,7 @@ const CommentForm = ({ place_id, addComment, wisata: { place } }) => {
       <Alert />
       <Formik
         initialValues={{
-          place_id: place_id,
+          place_id: place.id,
           name: '',
           email: '',
           comment: '',

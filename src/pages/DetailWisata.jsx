@@ -56,7 +56,7 @@ const DetailWisata = ({ getPlaceDetail, wisata: { place }, match }) => {
             <SimpleGrid columns={[1, 1, 2, 2]} spacing="1rem">
               <CommentForm place_id={place.id} />
               <Box borderRadius="md" shadow="md" p="2rem">
-                <Heading fontSize="20px">
+                <Heading fontSize="24px">
                   Ulasan ({place?.comments?.length}){' '}
                 </Heading>
                 <Stack

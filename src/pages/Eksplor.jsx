@@ -81,10 +81,11 @@ const Eksplor = ({
 
       <CardRekomendasi image={ilustrationIMG}>
         <Stack spacing="1rem" align="start">
-          <Heading>Ada tempat wisata di daerah kamu?</Heading>
+          <Heading>Masih bingung cari tempat yang cocok?</Heading>
           <Text>
-            Tenang, Kamu bisa mendaftarkan tempat daerah kamu sehingga dapat ter
-            eksplor oleh masyarakat banyak
+            Tenang, kami mempunyai fitur rekomendasi yang membantu kamu mencari
+            tempat berlibur yang tepat dengan menjawab pertanyaan yang kami
+            berikan.
           </Text>
           <Button mt="1rem" background="white" color="blue.800">
             <Link href={`${base_url}registrasi`} isExternal>

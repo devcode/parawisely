@@ -9,7 +9,7 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/core';
-import { FaInstagram, FaTwitter, FaFacebook, FaYoutube } from 'react-icons/fa';
+import { FaInstagram, FaTwitter, FaFacebook, FaYoutube, FaHome } from 'react-icons/fa';
 import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
 
 import { Link as RouterLink } from 'react-router-dom';
