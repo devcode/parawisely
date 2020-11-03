@@ -14,24 +14,24 @@ import {
 } from '@chakra-ui/core';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 
+import eksplorasiImages from '../assets/images/eksplorasi-images.png';
+import ilustrationIMG from '../assets/ilustration/ilus-ekplor.png';
+
 import Layout from '../components/layouts';
 import Section from '../components/sections/Section';
 import CardPlace from '../components/ui/CardPlace';
 
-import eksplorasiImages from '../assets/images/eksplorasi-images.png';
-import ilustrationIMG from '../assets/ilustration/ilus-ekplor.png';
 import Banner from '../components/sections/Banner';
-
 import CardRekomendasi from '../components/ui/CardRekomendasi';
+import FilterPanel from '../components/ui/FilterPanel';
+
 import {
   getPlace,
   getPlaceByType,
   filterPlace,
   getPlaces,
 } from '../actions/wisata';
-import FilterPanel from '../components/ui/FilterPanel';
 
-const asset = process.env.REACT_APP_BACKEND_ASSET;
 const base_url = process.env.REACT_APP_BACKEND_URL;
 
 const Eksplor = ({

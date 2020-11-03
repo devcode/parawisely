@@ -1,23 +1,50 @@
 import React from 'react';
-import { Box, Image, Text, Stack, Heading } from '@chakra-ui/core';
+import { Box, Image, Text, Stack, Heading, Badge } from '@chakra-ui/core';
 import { Link } from 'react-router-dom';
-import eksplorasiImages from '../../assets/images/eksplor.jpeg';
-
-const asset = process.env.REACT_APP_BACKEND_ASSET;
+import { BiCommentDetail } from 'react-icons/bi';
 
 const CardPlace = ({ data }) => {
   return (
-    <Box rounded="lg" shadow="md" overflow="hidden" height="400px">
+    <Box
+      justifyItems="center"
+      rounded="lg"
+      shadow="md"
+      overflow="hidden"
+      height="400px"
+    >
       <Image
-        src={`${asset}/placeImage/${data.image}`}
-        alt="Course Cover"
+        src={data.image}
+        alt={data.name_place}
         h="200px"
         htmlHeight="200px"
         objectFit="cover"
         w="full"
       />
-      <Stack align="baseline" p={5}>
-        <Stack isInline align="baseline">
+      <Stack
+        align="baseline"
+        spacing="1rem"
+        alignContent="center"
+        justify="space-between"
+        p={5}
+      >
+        <Badge>{data.type.type_name}</Badge>
+        <Link to={`/place/${data.slug}`}>
+          <Heading
+            _hover={{ color: 'blue.500' }}
+            fontSize="20px"
+            fontWeight="bold"
+          >
+            {data.name_place}
+          </Heading>
+        </Link>
+        <Text color="gray.400">
+          {data.kabupaten}, {data.provinsi}
+        </Text>
+        <Stack direction="row" align="center" justify="center" spacing="0.5rem">
+          <Box as={BiCommentDetail} size="24px" color="blue.500" />
+          <Text>{data.comments?.length} Ulasan</Text>
+        </Stack>
+        {/* <Stack isInline align="baseline">
           <Text
             textTransform="uppercase"
             fontSize="12px"
@@ -41,7 +68,7 @@ const CardPlace = ({ data }) => {
           <Text color="blue.500" fontSize="16px" mt="5px">
             Selengkapnya
           </Text>
-        </Link>
+        </Link> */}
       </Stack>
     </Box>
   );

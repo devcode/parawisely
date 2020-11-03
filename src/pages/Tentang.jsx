@@ -1,26 +1,19 @@
 import React from 'react';
-import { Heading, Image, Text, Stack, Icon, Link } from '@chakra-ui/core';
-import Layout from '../components/layouts';
+import { Icon } from '@chakra-ui/core';
 import Iframe from 'react-iframe';
-import tentangKamiImages from '../assets/images/tentang-kami-images.png';
-import Banner from '../components/sections/Banner';
 import {
   FaInstagram,
   FaTwitter,
-  FaYoutube,
-  FaRegAddressCard,
   FaHome,
   FaPhoneAlt,
   FaFacebook,
 } from 'react-icons/fa';
-import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
 import { MdEmail } from 'react-icons/md';
 
-const IconSosmed = ({ icon, url }) => (
-  <Link href={url} isExternal>
-    <Icon color="blue.500" as={icon} fontSize="lg" />
-  </Link>
-);
+import tentangKamiImages from '../assets/images/tentang-kami-images.png';
+
+import Layout from '../components/layouts';
+import Banner from '../components/sections/Banner';
 
 const Tentang = () => {
   return (

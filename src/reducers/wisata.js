@@ -50,6 +50,7 @@ export default function (state = initialState, action) {
     case ADD_KONTAK:
       return {
         ...state,
+        loading: false,
       };
     case PLACES_REQUEST:
       return {
@@ -58,6 +59,7 @@ export default function (state = initialState, action) {
         page: action.page,
         limit: action.limit,
         hasMore: true,
+        loading: false,
       };
     case GET_PLACES:
       return Object.assign({}, state, {
@@ -71,6 +73,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         typePlace: payload,
+        loading: false,
       };
     case GET_PLACE_DETAIL:
       return {
@@ -105,13 +108,14 @@ export default function (state = initialState, action) {
       return {
         ...state,
         wisataDaerah: payload,
+        loading: false,
       };
     case GET_WISATA_DAERAH_DETAIL:
       return {
         ...state,
         wisataDaerahDetail: payload,
         filteredWisataDaerahPlaces: payload,
-        loading: true,
+        loading: false,
       };
     case GET_EKSPLORASI:
       return {
@@ -140,6 +144,7 @@ export default function (state = initialState, action) {
         filteredPlaces: state.filteredPlaces.filter(
           item => item.type_id !== payload
         ),
+        loading: false,
       };
     case SEARCH:
       if (payload.where === 'wisataDaerah') {
@@ -189,6 +194,7 @@ export default function (state = initialState, action) {
     case SEARCH_HEADER:
       return {
         ...state,
+        loading: false,
       };
 
     case SEARCH_HEADER_ERROR:

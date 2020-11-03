@@ -7,8 +7,6 @@ import '../../stylesheets/html.css';
 import '../../scripts/main.js';
 import SearchHeader from '../ui/SearchHeader';
 
-import { ImSearch } from 'react-icons/im';
-
 const MenuItems = ({ children, isLast, to = '/', ...rest }) => {
   return (
     <Text

@@ -4,13 +4,7 @@ import PropTypes from 'prop-types';
 import Autosuggest from 'react-autosuggest';
 import '../../stylesheets/search.css';
 import { Link, Redirect } from 'react-router-dom';
-import {
-  InputGroup,
-  InputRightElement,
-  Input,
-  Box,
-  Text,
-} from '@chakra-ui/core';
+import { InputGroup, InputRightElement, Input } from '@chakra-ui/core';
 import { SearchIcon } from '@chakra-ui/icons';
 
 import { getPlace } from '../../actions/wisata';

@@ -39,6 +39,7 @@ const Mapbox = ({ width = '90%', height = '89vh' }) => {
   const { data, status, error } = useQuery('travel-place', getAllPlace);
 
   const [popInfo, setPopInfo] = useState(null);
+  // eslint-disable-next-line no-unused-vars
   const [searchResult, setSearchResult] = useState(null);
   const [viewport, setViewport] = useState({
     latitude: -2.68496,

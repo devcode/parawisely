@@ -7,23 +7,17 @@ import {
   Stack,
   Text,
   Icon,
-  IconButton,
   SimpleGrid,
 } from '@chakra-ui/core';
 import { Link } from 'react-router-dom';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 import ReactPlayer from 'react-player/youtube';
-import { RiMapPinAddFill, RiHeart3Fill, RiUserStarLine } from 'react-icons/ri';
-import Mapbox from '../components/ui/map/Mapbox';
 import Mapgl from '../components/ui/Mapgl';
-import { useQuery } from 'react-query';
 
 import Section from '../components/sections/Section';
 import Hero from '../components/sections/Hero';
 import Sponsor from '../components/sections/Sponsor';
-import LokasiCarousel from '../components/sections/LokasiCarousel';
 import Layout from '../components/layouts';
-import Spinner from '../components/ui/Spinner';
 
 import alamImages from '../assets/images/alam-section-images.png';
 import kulinerImages from '../assets/images/kuliner-section-images.png';
@@ -32,27 +26,10 @@ import virtualTourImages from '../assets/images/virtual-tour-section-images.png'
 import rekomendasiImages from '../assets/images/rekomendasi-section-images.png';
 import petaWisataImages from '../assets/images/peta-wisata-section-images.png';
 
-import { getDestinasiPilihan } from '../api/fetchData';
-
-const Feature = ({ title, description, icon }) => (
-  <Stack spacing="1rem" direction="row">
-    <IconButton colorScheme="blue" icon={icon} isRound size="md" />
-    <Box>
-      <Heading size="sm">{title}</Heading>
-      <Text size="xs">{description}</Text>
-    </Box>
-  </Stack>
-);
-
 const Landing = () => {
   useEffect(() => {
     sal();
   }, []);
-
-  const { data, status, error } = useQuery(
-    'destinasi-pilihan',
-    getDestinasiPilihan
-  );
 
   return (
     <Layout>

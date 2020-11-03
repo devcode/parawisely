@@ -8,7 +8,6 @@ import {
   DrawerOverlay,
   Icon,
   IconButton,
-  Link,
   Stack,
   useDisclosure,
 } from '@chakra-ui/core';

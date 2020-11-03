@@ -19,10 +19,6 @@ import { getPlaceDetail } from '../actions/wisata';
 import CommentForm from '../components/ui/comments/CommentForm';
 import CommentItem from '../components/ui/comments/CommentItem';
 
-import { capitalize } from '../utils/helper';
-
-const asset = process.env.REACT_APP_BACKEND_ASSET;
-
 const DetailWisata = ({ getPlaceDetail, wisata: { place }, match }) => {
   useEffect(() => {
     getPlaceDetail(match.params.slug);
@@ -34,7 +30,7 @@ const DetailWisata = ({ getPlaceDetail, wisata: { place }, match }) => {
       <Section>
         <Skeleton isLoaded={place.image}>
           <Image
-            src={`${asset}/placeImage/${place.image}`}
+            src={place.image}
             h="350px"
             w="full"
             fallbackSrc="https://via.placeholder.com/1920x250"

@@ -1,15 +1,14 @@
-import ReactDOM from 'react-dom';
-import React, { useRef, useEffect } from 'react';
-import { Box, Heading } from '@chakra-ui/core';
-import mapboxgl from 'mapbox-gl';
-import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
-import Layout from '../layouts';
+import ReactDOM from 'react-dom';
+import React, { useRef, useEffect } from 'react';
+import mapboxgl from 'mapbox-gl';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 import Popup from './Popup';
-import '../../stylesheets/map.css';
+
 import { getMap } from '../../api/fetchData';
+import '../../stylesheets/map.css';
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 

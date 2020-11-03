@@ -1,17 +1,16 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Layout from '../components/layouts';
-import { Stack, SimpleGrid, Skeleton, Box, Heading } from '@chakra-ui/core';
-import CardPlace from '../components/ui/CardPlace';
+import { Stack, SimpleGrid, Skeleton, Box } from '@chakra-ui/core';
 
-import { getWisataDaerahDetail } from '../actions/wisata';
+import CardPlace from '../components/ui/CardPlace';
+import Layout from '../components/layouts';
 import Banner from '../components/sections/Banner';
-import { capitalize } from '../utils/helper';
 import Section from '../components/sections/Section';
 import FilterPanel from '../components/ui/FilterPanel';
 
-const asset = process.env.REACT_APP_BACKEND_ASSET;
+import { getWisataDaerahDetail } from '../actions/wisata';
+import { capitalize } from '../utils/helper';
 
 const WisataDaerahDetail = ({
   getWisataDaerahDetail,
@@ -32,15 +31,18 @@ const WisataDaerahDetail = ({
   return (
     <Layout>
       <Banner
-        image={`${asset}/island/${wisataDaerahDetail.image}`}
+        image={wisataDaerahDetail.image}
         title={`${capitalize(wisataDaerahDetail.name)}`}
       />
       <Section>
         {error && error.msg}
         <Stack spacing="2rem" direction={['column', 'column', 'row', 'row']}>
           <FilterPanel isWisataDearah />
-          {filteredWisataDaerahPlaces.length === 0 && <div>tidak ada</div>}
-          <Skeleton isLoaded={loading} w="full" minHeight="272px">
+          <Skeleton
+            isLoaded={filteredWisataDaerahPlaces.length !== 0}
+            w="full"
+            minHeight="272px"
+          >
             <Box>
               <SimpleGrid spacing="1rem" columns={[2, 2, 3, 3]}>
                 {filteredWisataDaerahPlaces?.places?.map((item, index) => (

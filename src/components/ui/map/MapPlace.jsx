@@ -14,9 +14,7 @@ const MapPlace = ({ longitude = 113.95365, latitude = -2.68496 }) => {
       zoom: 8,
     });
 
-    var marker = new mapboxgl.Marker()
-      .setLngLat([longitude, latitude])
-      .addTo(map);
+    new mapboxgl.Marker().setLngLat([longitude, latitude]).addTo(map);
 
     return () => map.remove();
   }, [latitude, longitude]);

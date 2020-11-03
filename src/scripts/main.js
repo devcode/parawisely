@@ -10,7 +10,9 @@ window.onscroll = function () {
   }
 };
 
+// eslint-disable-next-line no-use-before-define
 var Tawk_API = Tawk_API || {},
+  // eslint-disable-next-line no-unused-vars
   Tawk_LoadStart = new Date();
 (function () {
   var s1 = document.createElement('script'),

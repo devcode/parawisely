@@ -1,19 +1,15 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Heading, Icon, Skeleton, Stack, Text, Image } from '@chakra-ui/core';
+import { Heading, Skeleton, Stack, Text, Image } from '@chakra-ui/core';
+import { Link } from 'react-router-dom';
+
 import Layout from '../components/layouts';
 import Section from '../components/sections/Section';
 import Banner from '../components/sections/Banner';
-import { BsClock } from 'react-icons/bs';
-
-import wisataDaerahImages from '../assets/images/wisata-daerah-images.png';
-import WisataDaerahIMG from '../assets/images/hero.png';
-import { Link } from 'react-router-dom';
 
 import { getWisataDaerah } from '../actions/wisata';
-
-import { FaMapMarkerAlt } from 'react-icons/fa';
+import wisataDaerahImages from '../assets/images/wisata-daerah-images.png';
 
 const asset = process.env.REACT_APP_BACKEND_ASSET;
 

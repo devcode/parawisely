@@ -3,8 +3,6 @@ import { Box, Heading, Text, Image } from '@chakra-ui/core';
 
 import BannerDefault from '../../assets/images/danau-toba.jpeg';
 
-const asset = process.env.REACT_APP_BACKEND_ASSET;
-
 const Banner = ({ title, description, image }) => {
   return (
     <Box color="white" position="relative" textAlign="center">

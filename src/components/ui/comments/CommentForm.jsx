@@ -39,9 +39,8 @@ const CommentForm = ({ place_id, addComment, wisata: { place } }) => {
           comment: '',
         }}
         validationSchema={ulasanSchema}
-        onSubmit={(values, actions) => {
-          console.log({ values });
-          // await addComment(values);
+        onSubmit={async (values, actions) => {
+          await addComment(values);
           actions.resetForm();
         }}
       >

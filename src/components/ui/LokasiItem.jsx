@@ -1,12 +1,11 @@
 import React from 'react';
-import { Box, Image, Heading, Text } from '@chakra-ui/core';
-import bg from '../../assets/images/candi-borobudur.jpeg';
+import { Box, Heading } from '@chakra-ui/core';
 import { Link } from 'react-router-dom';
 
 const asset = process.env.REACT_APP_BACKEND_ASSET;
 
 const LokasiItem = ({ data, type_name }) => {
-  const { image, name_place, provinsi, slug } = data;
+  const { image, name_place, slug } = data;
   return (
     <Box
       borderRadius="md"
