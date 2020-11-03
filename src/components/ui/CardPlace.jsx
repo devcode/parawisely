@@ -6,14 +6,16 @@ import { BiCommentDetail } from 'react-icons/bi';
 const CardPlace = ({ data }) => {
   return (
     <Box justifyItems="center" rounded="lg" shadow="md" overflow="hidden">
-      <Image
-        src={data.image}
-        alt={data.name_place}
-        h="200px"
-        htmlHeight="200px"
-        objectFit="cover"
-        w="full"
-      />
+      <Link to={`/place/${data.slug}`}>
+        <Image
+          src={data.image}
+          alt={data.name_place}
+          h="200px"
+          htmlHeight="200px"
+          objectFit="cover"
+          w="full"
+        />
+      </Link>
       <Stack
         align="start"
         spacing="1rem"

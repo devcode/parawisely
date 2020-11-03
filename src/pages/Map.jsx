@@ -7,7 +7,7 @@ import Mapgl from '../components/ui/Mapgl';
 
 const Map = props => {
   return (
-    <Layout mb="20rem">
+    <Layout>
       <Banner
         title="Peta Wisata"
         description="Beranda &nbsp; →  &nbsp; Peta Wisata"
