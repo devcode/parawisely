@@ -29,7 +29,6 @@ import rajaAmpat from './pages/rajaAmpat';
 import pantaiPangandaran from './pages/pantaiPangandaran';
 import DetailWisata from './pages/DetailWisata';
 import WisataDaerahDetail from './pages/WisataDaerahDetail';
-import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -69,7 +68,6 @@ function App() {
             <Route path="/mitra-pariwisata" component={Eksplor} />
             <Route path="/tentang" component={Tentang} />
             <Route path="/kontak" component={Kontak} />
-            <Route component={NotFound} />
           </Switch>
         </Router>
       </ChakraProvider>
