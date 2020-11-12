@@ -78,6 +78,7 @@ const Hero = props => {
         <Box d={['block', 'none', 'none', 'block']}>
           <Image
             src={heroImages}
+            htmlHeight="xl"
             size="xl"
             alt="Hero Section Images Parawisely"
           />

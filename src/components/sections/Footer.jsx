@@ -9,7 +9,13 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/core';
-import { FaInstagram, FaTwitter, FaFacebook, FaYoutube, FaHome } from 'react-icons/fa';
+import {
+  FaInstagram,
+  FaTwitter,
+  FaFacebook,
+  FaYoutube,
+  FaHome,
+} from 'react-icons/fa';
 import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
 
 import { Link as RouterLink } from 'react-router-dom';
@@ -58,11 +64,11 @@ const Footer = () => {
         </Stack>
         <Stack justify="space-between">
           <Heading fontSize="lg">Kategori Pariwisata</Heading>
-          <LinkItem to="eksplorasi/pantai">Pantai</LinkItem>
-          <LinkItem to="eksplorasi/pegunungan">Pegunungan</LinkItem>
-          <LinkItem to="eksplorasi/museum">Museum</LinkItem>
-          <LinkItem to="eksplorasi/kuliner">Kuliner</LinkItem>
-          <LinkItem to="eksplorasi/wahana-atraksi">Wahana Atraksi</LinkItem>
+          <LinkItem to="eksplorasi">Pantai</LinkItem>
+          <LinkItem to="eksplorasi">Pegunungan</LinkItem>
+          <LinkItem to="eksplorasi">Museum</LinkItem>
+          <LinkItem to="eksplorasi">Kuliner</LinkItem>
+          <LinkItem to="eksplorasi">Wahana Atraksi</LinkItem>
         </Stack>
         <Stack justify="space-between">
           <Heading fontSize="lg">Menu Parawisely</Heading>
