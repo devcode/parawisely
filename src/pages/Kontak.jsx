@@ -40,14 +40,14 @@ const Kontak = () => {
               </p>
               <p>
                 Anda bisa menjelajahi fitur
-                <Link color="blue.500" href="/eksplorasi">
+                <Link color="blue.500" mx="5px" href="/eksplorasi">
                   eksplorasi
                 </Link>
-                <Link color="blue.500" href="/wisata-daerah">
+                <Link color="blue.500" mx="5px" href="/wisata-daerah">
                   wisata daerah
                 </Link>
                 dan fitur
-                <Link color="blue.500" href="/virtual-tour">
+                <Link color="blue.500" mx="5px" href="/virtual-tour">
                   virtual tour
                 </Link>
                 untuk menikmati fitur Parawisely.
@@ -60,7 +60,11 @@ const Kontak = () => {
               <p>
                 Jika tempat anda tidak terdaftar di Database kami, anda dapat
                 memasukan nya secara manual dengan fitur{' '}
-                <Link color="blue.500" href="/mitra-pariwisata">
+                <Link
+                  color="blue.500"
+                  href="https://parawisely.herokuapp.com/registrasi"
+                  isExternal
+                >
                   mitra pariwisata.
                 </Link>
               </p>

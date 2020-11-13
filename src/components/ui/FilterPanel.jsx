@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
@@ -11,6 +12,10 @@ import {
 import SearchBar from './SearchBar';
 
 import { getTypePlace, getPlaceByType } from '../../actions/wisata';
+
+const useQuery = () => {
+  return new URLSearchParams(useLocation().search);
+};
 
 const FilterPanel = ({
   isWisataDearah = false,
@@ -26,6 +31,9 @@ const FilterPanel = ({
   useEffect(() => {
     getTypePlace();
   }, [getTypePlace]);
+
+  const query = useQuery();
+  const type = query.get('type');
 
   const filterHandler = (typeId, islandId) => {
     if (isWisataDearah) {
@@ -49,11 +57,18 @@ const FilterPanel = ({
         <FormLabel>Kategori </FormLabel>
         <Stack>
           <Select
-            onChange={e => filterHandler(e.target.value, wisataDaerahDetail.id)}
+            onChange={async e =>
+              await filterHandler(e.target.value, wisataDaerahDetail.id)
+            }
           >
             <option value="0">Semua</option>
             {typePlace?.map((item, idx) => (
-              <option value={item.id} key={`alsdklaskdl-${idx}`}>
+              <option
+                onChange={e => alert('asdkalsdkl')}
+                selected={parseInt(type) === item.id ? true : false}
+                value={item.id}
+                key={`alsdklaskdl-${idx}`}
+              >
                 {item.type_name}
               </option>
             ))}

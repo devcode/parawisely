@@ -16,7 +16,6 @@ import Mapgl from '../components/ui/Mapgl';
 
 import Section from '../components/sections/Section';
 import Hero from '../components/sections/Hero';
-import Sponsor from '../components/sections/Sponsor';
 import Layout from '../components/layouts';
 
 import alamImages from '../assets/images/alam-section-images.png';
@@ -78,7 +77,7 @@ const Landing = () => {
               colorScheme="blue"
               variant="ghost"
             >
-              <Link to="/eksplorasi">
+              <Link to="/eksplorasi?type=1">
                 Selengkapnya
                 <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
               </Link>
@@ -116,7 +115,7 @@ const Landing = () => {
               colorScheme="blue"
               variant="ghost"
             >
-              <Link to="/eksplorasi">
+              <Link to="/eksplorasi?type=2">
                 Selengkapnya
                 <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
               </Link>
@@ -154,7 +153,7 @@ const Landing = () => {
               colorScheme="blue"
               variant="ghost"
             >
-              <Link to="/eksplorasi">
+              <Link to="/eksplorasi?type=3">
                 Selengkapnya
                 <Icon as={IoIosArrowRoundForward} boxSize="2rem" ml="4px" />
               </Link>
