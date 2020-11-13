@@ -54,9 +54,9 @@ export const getPlaces = (page, limit) => async dispatch => {
   }
 };
 
-export const getPlace = () => async dispatch => {
+export const getPlace = typeId => async dispatch => {
   try {
-    const res = await api.get('/place');
+    const res = await api.get(`/place?type=${typeId}`);
     dispatch({
       type: GET_PLACE,
       payload: res.data.data,

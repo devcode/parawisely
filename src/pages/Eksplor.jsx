@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Proptypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
@@ -34,25 +35,16 @@ import {
 
 const base_url = process.env.REACT_APP_BACKEND_URL;
 
-const Eksplor = ({
-  getPlace,
-  getPlaceByType,
-  filterPlace,
-  wisata: {
-    places,
-    typePlace,
-    loading,
-    error,
-    filteredPlaces,
-    page,
-    limit,
-    isFetching,
-    hasMore,
-  },
-}) => {
+const useQuery = () => {
+  return new URLSearchParams(useLocation().search);
+};
+
+const Eksplor = ({ getPlace, wisata: { places, error, filteredPlaces } }) => {
+  const type = useQuery();
+
   useEffect(() => {
-    getPlace();
-  }, [getPlace]);
+    getPlace(type.get('type'));
+  }, [getPlace, type]);
 
   return (
     <Layout>
@@ -69,9 +61,7 @@ const Eksplor = ({
             <Box>
               <SimpleGrid spacing="1rem" columns={[2, 2, 3, 3]}>
                 {filteredPlaces?.map((item, index) => (
-                  <div>
-                    <CardPlace key={`uwu-${item.id}`} data={item} />
-                  </div>
+                  <CardPlace key={`uwu-${item.id}`} data={item} />
                 ))}
               </SimpleGrid>
             </Box>
