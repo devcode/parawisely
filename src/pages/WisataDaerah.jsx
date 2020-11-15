@@ -11,8 +11,6 @@ import Banner from '../components/sections/Banner';
 import { getWisataDaerah } from '../actions/wisata';
 import wisataDaerahImages from '../assets/images/wisata-daerah-images.png';
 
-const asset = process.env.REACT_APP_BACKEND_ASSET;
-
 const WisataDaerah = ({
   getWisataDaerah,
   wisata: { wisataDaerah, isFetching },
