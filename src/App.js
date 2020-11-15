@@ -15,7 +15,6 @@ import Landing from './pages/Landing';
 import Kontak from './pages/Kontak';
 import Tentang from './pages/Tentang';
 import Eksplor from './pages/Eksplor';
-import EksplorCategory from './pages/EksplorCategory';
 import WisataDaerah from './pages/WisataDaerah';
 import Map from './pages/Map';
 import Mapgl from './components/ui/Mapgl';
