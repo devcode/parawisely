@@ -44,7 +44,7 @@ const Eksplor = ({ getPlace, wisata: { places, error, filteredPlaces } }) => {
 
   useEffect(() => {
     getPlace(type.get('type'));
-  }, [getPlace, type]);
+  }, [getPlace]);
 
   return (
     <Layout>
