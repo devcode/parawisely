@@ -57,9 +57,7 @@ const FilterPanel = ({
         <FormLabel>Kategori </FormLabel>
         <Stack>
           <Select
-            onChange={async e =>
-              await filterHandler(e.target.value, wisataDaerahDetail.id)
-            }
+            onChange={e => filterHandler(e.target.value, wisataDaerahDetail.id)}
           >
             <option value="0">Semua</option>
             {typePlace?.map((item, idx) => (
