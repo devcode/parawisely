@@ -9,6 +9,7 @@ import {
   Image,
   Stack,
   Link,
+  Flex,
 } from '@chakra-ui/core';
 
 const Hero = props => {
@@ -27,16 +28,12 @@ const Hero = props => {
             fontSize={['28px', '28px', '28px', '44px']}
             letterSpacing="-1px"
             fontWeight="extra_bold"
-            lineHeight="48px"
           >
             Temukan keindahan dan keberagaman budaya negara Indonesia.
           </Heading>
           <Text
             w={['100%', '100%', '100%', '80%']}
             color="#666666"
-            fontSize={['12px', '16px']}
-            letterSpacing="0px"
-            lineHeight="24px"
             textAlign="start"
           >
             Parawisely membantu kamu untuk memilih tempat wisata di Indonesia
@@ -53,7 +50,7 @@ const Hero = props => {
                 fontWeight="extra_bold"
                 fontSize="15px"
                 colorScheme="blue"
-                className="button-hero"
+                isFullWidth={{ base: true, md: false }}
               >
                 Mulai sekarang &nbsp;→
               </Button>
@@ -69,13 +66,14 @@ const Hero = props => {
                 borderColor="#4737ff"
                 color="#4737ff"
                 variant="outline"
+                isFullWidth={{ base: true, md: false }}
               >
                 Ekplorasi
               </Button>
             </Link>
           </SimpleGrid>
         </Stack>
-        <Box d={['block', 'none', 'none', 'block']}>
+        <Box d={['none', 'none', 'none', 'block']}>
           <Image
             src={heroImages}
             size="xl"
